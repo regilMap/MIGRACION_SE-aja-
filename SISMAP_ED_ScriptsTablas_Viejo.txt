@@ -1,0 +1,1054 @@
+
+
+CREATE TABLE ['CENTROS SELECT$'] (
+	REGIONAL nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	DISTRITO nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	CODIGO nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[Centro educativo] nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	CODIGO_INSTITUCION float NULL,
+	REGIONAL1 nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	DISTRITO1 nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	CENTRO nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.ArchivoCargaEvidencia definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.ArchivoCargaEvidencia;
+
+CREATE TABLE ArchivoCargaEvidencia (
+	ArchivoCargaEvidenciaID int IDENTITY(1,1) NOT NULL,
+	CargaEvidenciaID int NULL,
+	NombreArchivo nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Descripcion nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Fecha datetime2 NULL,
+	FechaVencimiento datetime2 NULL,
+	UsuarioID nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	NombreUSuario nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	DepartamentoID int NULL,
+	Valor int NULL,
+	Estado nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.ArchivoCargaEvidenciaEdi definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.ArchivoCargaEvidenciaEdi;
+
+CREATE TABLE ArchivoCargaEvidenciaEdi (
+	ArchivoCargaEvidenciaEdiID int IDENTITY(1,1) NOT NULL,
+	CargaEvidenciaEdiID int NULL,
+	NombreArchivo nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Descripcion nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Fecha datetime2 NULL,
+	FechaVencimiento datetime2 NULL,
+	UsuarioID nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	NombreUSuario nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	DepartamentoID int NULL,
+	Valor int NULL,
+	Estado nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.ArchivoCargaEvidenciaMes definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.ArchivoCargaEvidenciaMes;
+
+CREATE TABLE ArchivoCargaEvidenciaMes (
+	TiempoKey nvarchar(12) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	ArchivoCargaEvidenciaID int NOT NULL,
+	CargaEvidenciaID int NULL,
+	NombreArchivo nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Descripcion nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Fecha datetime2 NULL,
+	FechaVencimiento datetime2 NULL,
+	UsuarioID nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	NombreUSuario nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	DepartamentoID int NULL,
+	Estado nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.ArchivoMetasEdi definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.ArchivoMetasEdi;
+
+CREATE TABLE ArchivoMetasEdi (
+	ArchivoMetasEdiID int IDENTITY(1,1) NOT NULL,
+	Fecha datetime2 NULL,
+	NombreUSuario nvarchar(250) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	OrganismoID int NULL,
+	Descripcion nvarchar(250) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	NombreArchivo nvarchar(250) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Estado nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.ArchivoNoaplica definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.ArchivoNoaplica;
+
+CREATE TABLE ArchivoNoaplica (
+	ArchivoNoaplicaID int IDENTITY(1,1) NOT NULL,
+	IndicadorID int NULL,
+	NombreArchivo nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Fecha datetime2 NULL,
+	NombreUsuario nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Estado nchar(10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.AuditLog definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.AuditLog;
+
+CREATE TABLE AuditLog (
+	AuditLogID uniqueidentifier NOT NULL,
+	UserID nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	EventDateUTC datetime NOT NULL,
+	EventType char(1) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	TableName nvarchar(100) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	RecordID nvarchar(100) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	ColumnName nvarchar(100) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	OriginalValue nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	NewValue nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	CONSTRAINT PK_AuditLog PRIMARY KEY (AuditLogID)
+);
+
+
+-- SISMAPV1DB_ED.dbo.AuditoriaIndicadores definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.AuditoriaIndicadores;
+
+CREATE TABLE AuditoriaIndicadores (
+	AuditoriaIndicadoresID int IDENTITY(1,1) NOT NULL,
+	Detalle nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Porcentaje numeric(18,2) NULL,
+	Estado nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.AuditoriaIndicadoresSubIndicadores definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.AuditoriaIndicadoresSubIndicadores;
+
+CREATE TABLE AuditoriaIndicadoresSubIndicadores (
+	AuditoriaIndicadoresSubIndicadoresID int IDENTITY(1,1) NOT NULL,
+	SubIndicadores_IndicadorID int NULL,
+	AuditoriaIndicadores_AuditoriaIndicadoresID int NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.Buzon definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.Buzon;
+
+CREATE TABLE Buzon (
+	BuzonID int IDENTITY(1,1) NOT NULL,
+	Fecha datetime2 NULL,
+	EsInstitucion int NULL,
+	NombreInstitucion nvarchar(180) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Telefono nvarchar(15) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	RequerimientoID int NULL,
+	TipoRequerimientoID int NULL,
+	IndicadorID int NULL,
+	DepartamentoID int NULL,
+	Correo nvarchar(150) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Asunto nvarchar(150) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Mensaje nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Nombres nvarchar(150) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Informacion nvarchar(150) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Sexo nchar(1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	RangoEdad int NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.CargaEvidencia definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.CargaEvidencia;
+
+CREATE TABLE CargaEvidencia (
+	CargaEvidenciaID int IDENTITY(1,1) NOT NULL,
+	OrganismoID int NULL,
+	IndicadorID int NULL,
+	EvidenciaID int NULL,
+	FechaRegistro datetime2 NULL,
+	ValorActual int NULL,
+	Comentario nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	FechaVencimiento datetime2 NULL,
+	TipoVencimiento int NULL,
+	UsuarioID nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	NombreUSuario nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	FechaActualizacion datetime2 NULL,
+	Estado nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	ColorEvidenciaID int NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.CargaEvidenciaEdi definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.CargaEvidenciaEdi;
+
+CREATE TABLE CargaEvidenciaEdi (
+	CargaEvidenciaEdiID int IDENTITY(1,1) NOT NULL,
+	OrganismoID int NULL,
+	IndicadorEdiID int NULL,
+	EvidenciaEdiID int NULL,
+	FechaRegistro datetime2 NULL,
+	ValorActual int NULL,
+	Comentario nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	FechaVencimiento datetime2 NULL,
+	TipoVencimiento int NULL,
+	UsuarioID nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	NombreUSuario nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	FechaActualizacion datetime2 NULL,
+	Estado nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	ColorEvidenciaID int NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.CargaEvidenciaMes definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.CargaEvidenciaMes;
+
+CREATE TABLE CargaEvidenciaMes (
+	TiempoKey nvarchar(12) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	CargaEvidenciaID int NOT NULL,
+	OrganismoID int NULL,
+	IndicadorID int NULL,
+	EvidenciaID int NULL,
+	FechaRegistro datetime2 NULL,
+	ValorActual int NULL,
+	Comentario nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	FechaVencimiento datetime2 NULL,
+	TipoVencimiento int NULL,
+	UsuarioID nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	NombreUSuario nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	FechaActualizacion datetime2 NULL,
+	Estado nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	ColorEvidenciaID int NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.Color definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.Color;
+
+CREATE TABLE Color (
+	ColorID int IDENTITY(1,1) NOT NULL,
+	CodigoRGB varchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Nombre varchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Valor decimal(18,0) NULL,
+	CONSTRAINT PK_Color PRIMARY KEY (ColorID)
+);
+
+
+-- SISMAPV1DB_ED.dbo.ColorEvidencia definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.ColorEvidencia;
+
+CREATE TABLE ColorEvidencia (
+	ColorEvidenciaID int NOT NULL,
+	EvidenciaID int NULL,
+	Codigo_Color varchar(10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Descripcion varchar(2000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Nombre_Color varchar(15) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	ColorID int NULL,
+	ValorInicial decimal(18,4) NULL,
+	ValorFinal decimal(18,4) NULL,
+	Estado nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.ColorSubIndicador definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.ColorSubIndicador;
+
+CREATE TABLE ColorSubIndicador (
+	ColorSubIndicadorID int IDENTITY(1,1) NOT NULL,
+	IndicadorID int NULL,
+	Codigo_Color varchar(10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Descripcion varchar(2000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Nombre_Color varchar(15) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	ColorID int NULL,
+	ValorInicial decimal(18,4) NULL,
+	ValorFinal decimal(18,4) NULL,
+	Estado nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	CONSTRAINT PK_ColorSubIndicadorID PRIMARY KEY (ColorSubIndicadorID)
+);
+
+
+-- SISMAPV1DB_ED.dbo.ColorSubIndicadorEdi definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.ColorSubIndicadorEdi;
+
+CREATE TABLE ColorSubIndicadorEdi (
+	ColorSubIndicadorEdiID int IDENTITY(1,1) NOT NULL,
+	IndicadorEdiID int NULL,
+	Codigo_Color varchar(10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Descripcion varchar(2000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Nombre_Color varchar(15) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	ColorID int NULL,
+	ValorInicial decimal(18,4) NULL,
+	ValorFinal decimal(18,4) NULL,
+	Estado nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	CONSTRAINT PK_ColorSubIndicadorEdiID PRIMARY KEY (ColorSubIndicadorEdiID)
+);
+
+
+-- SISMAPV1DB_ED.dbo.DATOS_ESTUDIANTES definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.DATOS_ESTUDIANTES;
+
+CREATE TABLE DATOS_ESTUDIANTES (
+	REGIONAL nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	DISTRITO nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	PROVINCIA nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	MUNICIPIO nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	CODIGO nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Nivel nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[Centro educativo] nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	LATITUD nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	LONGITUD nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	ADN nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	ZONA nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[Zona Res] nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	NIVEL1 nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	TANDA nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Estudiantes float NULL,
+	[Tamaño centro] nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[REND-3P] float NULL,
+	[CAT-3P] nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[REND-6P] float NULL,
+	[CAT-6P] nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[REND-3S] float NULL,
+	[CAT-3S] nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[REND-3y6] float NULL,
+	[CAT-3y6] nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.Datos definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.Datos;
+
+CREATE TABLE Datos (
+	DatosOrganismoID int IDENTITY(1,1) NOT NULL,
+	OrganismoID int NULL,
+	Codigo nvarchar(250) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Provincia nvarchar(250) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Municipio nvarchar(250) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Distrito nvarchar(250) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Seccion nvarchar(250) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Estudiantes int NULL
+);
+ CREATE NONCLUSTERED INDEX dix_mapa ON SISMAPV1DB_ED.dbo.Datos (  OrganismoID ASC  )  
+	 INCLUDE ( Codigo ) 
+	 WITH (  PAD_INDEX = OFF ,FILLFACTOR = 100  ,SORT_IN_TEMPDB = OFF , IGNORE_DUP_KEY = OFF , STATISTICS_NORECOMPUTE = OFF , ONLINE = OFF , ALLOW_ROW_LOCKS = ON , ALLOW_PAGE_LOCKS = ON  )
+	 ON [PRIMARY ] ;
+
+
+-- SISMAPV1DB_ED.dbo.Departamentos definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.Departamentos;
+
+CREATE TABLE Departamentos (
+	DepartamentoID int IDENTITY(1,1) NOT NULL,
+	Descripcion varchar(100) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	NombreLargo nvarchar(100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Email nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	CONSTRAINT PK_Departamentos PRIMARY KEY (DepartamentoID)
+);
+
+
+-- SISMAPV1DB_ED.dbo.Evidencia definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.Evidencia;
+
+CREATE TABLE Evidencia (
+	EvidenciaID int IDENTITY(1,1) NOT NULL,
+	Codigo nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Descipcion nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	NombreArchivo nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Prerequisito nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	IndicadorID int NULL,
+	Criterio nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Valor decimal(18,2) NULL,
+	AplicaVencimiento bit NULL,
+	TipoVencimiento int NULL,
+	FechaVencimiento datetime2 NULL,
+	CantDias nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Estado nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.EvidenciaEdi definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.EvidenciaEdi;
+
+CREATE TABLE EvidenciaEdi (
+	EvidenciaEdiID int IDENTITY(1,1) NOT NULL,
+	Codigo nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Descipcion nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	NombreArchivo nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Prerequisito nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	IndicadorEdiID int NULL,
+	Criterio nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Valor decimal(18,2) NULL,
+	AplicaVencimiento bit NULL,
+	TipoVencimiento int NULL,
+	FechaVencimiento datetime2 NULL,
+	CantDias nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Estado nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.FotosSlider definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.FotosSlider;
+
+CREATE TABLE FotosSlider (
+	ID int IDENTITY(1,1) NOT NULL,
+	Descripcion nvarchar(100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	ImagenID nvarchar(100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Fecha datetime2 NULL,
+	UsuarioID nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	orden int NULL,
+	Estado nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.Ibog definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.Ibog;
+
+CREATE TABLE Ibog (
+	IbogID int IDENTITY(1,1) NOT NULL,
+	Codigo nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Descripcion nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Peso decimal(18,2) NULL,
+	Valor decimal(18,2) NULL,
+	DepartamentoID int NULL,
+	BurocraciaCero bit NULL,
+	Estado nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.IbogEdi definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.IbogEdi;
+
+CREATE TABLE IbogEdi (
+	IbogEdiID int IDENTITY(1,1) NOT NULL,
+	Codigo nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Descripcion nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Peso decimal(18,2) NULL,
+	Valor decimal(18,2) NULL,
+	DepartamentoID int NULL,
+	BurocraciaCero bit NULL,
+	Estado nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.IndicadorEdiPeso definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.IndicadorEdiPeso;
+
+CREATE TABLE IndicadorEdiPeso (
+	IndicadorPesoID int IDENTITY(1,1) NOT NULL,
+	Descripcion nvarchar(250) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	Codigo nvarchar(250) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Peso decimal(18,2) NULL,
+	Estado nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.Informes definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.Informes;
+
+CREATE TABLE Informes (
+	InformeID int IDENTITY(1,1) NOT NULL,
+	Archivo nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Imagen nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Descripcion nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	UsuarioID nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	FechaActualizado datetime2 NULL,
+	Estado nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	CONSTRAINT PK_Informes PRIMARY KEY (InformeID)
+);
+
+
+-- SISMAPV1DB_ED.dbo.LineaBaseEDI definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.LineaBaseEDI;
+
+CREATE TABLE LineaBaseEDI (
+	ID int IDENTITY(1,1) NOT NULL,
+	TiempoKey nvarchar(12) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	nombreOrganismo varchar(250) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	ValorLineaBsae decimal(36,6) NOT NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.LineaBaseEDIHistorico definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.LineaBaseEDIHistorico;
+
+CREATE TABLE LineaBaseEDIHistorico (
+	ID int IDENTITY(1,1) NOT NULL,
+	TiempoKey nvarchar(12) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	nombreOrganismo varchar(250) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	ValorLineaBsae decimal(36,6) NOT NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.MensajeEnvio definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.MensajeEnvio;
+
+CREATE TABLE MensajeEnvio (
+	MensajeDeEnvioID int IDENTITY(1,1) NOT NULL,
+	RepositorioDeEnvioID int NULL,
+	Fecha datetime2 NULL,
+	Mensaje nvarchar(300) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	UsuarioID nvarchar(150) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	Estado nvarchar(150) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.MetasEdi definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.MetasEdi;
+
+CREATE TABLE MetasEdi (
+	MetasID int IDENTITY(1,1) NOT NULL,
+	institucion varchar(250) COLLATE Latin1_General_CI_AI NULL,
+	MT1 decimal(18,2) NULL,
+	Resultado1 decimal(18,2) NULL,
+	MT2 decimal(18,2) NULL,
+	Resultado2 decimal(18,2) NULL,
+	MT3 decimal(18,2) NULL,
+	Resultado3 decimal(18,2) NULL,
+	MT4 decimal(18,2) NULL,
+	Resultado4 decimal(18,2) NULL,
+	MA decimal(18,2) NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.MetasEdiHistorico definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.MetasEdiHistorico;
+
+CREATE TABLE MetasEdiHistorico (
+	MetasID int IDENTITY(1,1) NOT NULL,
+	TiempoKey nvarchar(12) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	institucion nvarchar(150) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	MT1 decimal(18,2) NULL,
+	Resultado1 decimal(18,2) NULL,
+	MT2 decimal(18,2) NULL,
+	Resultado2 decimal(18,2) NULL,
+	MT3 decimal(18,2) NULL,
+	Resultado3 decimal(18,2) NULL,
+	MT4 decimal(18,2) NULL,
+	Resultado4 decimal(18,2) NULL,
+	MA decimal(18,2) NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.Noticias definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.Noticias;
+
+CREATE TABLE Noticias (
+	ID int IDENTITY(1,1) NOT NULL,
+	Descripcion nvarchar(100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Fecha datetime2 NULL,
+	Imagen nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Documento nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	UsuarioID nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Estado nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.RankinGEDI definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.RankinGEDI;
+
+CREATE TABLE RankinGEDI (
+	ID int IDENTITY(1,1) NOT NULL,
+	TiempoKey nvarchar(12) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	nombreOrganismo varchar(250) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	ID1 decimal(36,6) NOT NULL,
+	ID2 decimal(36,6) NOT NULL,
+	ID3 decimal(36,6) NOT NULL,
+	ID4 decimal(36,6) NOT NULL,
+	ID5 decimal(36,6) NOT NULL,
+	ID7 decimal(36,6) NOT NULL,
+	ID8 decimal(36,6) NOT NULL,
+	ID9 decimal(36,6) NOT NULL,
+	ID10 decimal(36,6) NOT NULL,
+	ID11 decimal(36,6) NULL,
+	IDI decimal(36,6) NULL,
+	Estado nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.RankinGEDIHistorico definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.RankinGEDIHistorico;
+
+CREATE TABLE RankinGEDIHistorico (
+	ID int IDENTITY(1,1) NOT NULL,
+	TiempoKey nvarchar(12) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	nombreOrganismo varchar(250) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	ID1 decimal(36,6) NOT NULL,
+	ID2 decimal(36,6) NOT NULL,
+	ID3 decimal(36,6) NOT NULL,
+	ID4 decimal(36,6) NOT NULL,
+	ID5 decimal(36,6) NOT NULL,
+	ID6 decimal(36,6) NOT NULL,
+	ID7 decimal(36,6) NOT NULL,
+	ID8 decimal(36,6) NOT NULL,
+	ID9 decimal(36,6) NOT NULL,
+	ID10 decimal(36,6) NOT NULL,
+	ID11 decimal(36,6) NULL,
+	Estado nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.RankinHistorico definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.RankinHistorico;
+
+CREATE TABLE RankinHistorico (
+	TiempoKey nvarchar(12) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Anio nvarchar(30) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Mes nvarchar(30) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	OrganismoID int NOT NULL,
+	nombreOrganismo varchar(250) COLLATE Latin1_General_CI_AI NOT NULL,
+	Siglas varchar(250) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	SectorGobierno char(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	PromedioIBOG int NULL,
+	ColorIBOG varchar(12) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	PromedioIdnicador int NULL,
+	ColorIndicador varchar(12) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	PromedioPonderado decimal(36,6) NOT NULL,
+	ColorPromedioPonderado varchar(12) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.RepositorioDeEnvio definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.RepositorioDeEnvio;
+
+CREATE TABLE RepositorioDeEnvio (
+	RepositorioDeEnvioID int IDENTITY(1,1) NOT NULL,
+	Mensaje nvarchar(250) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	OrganismoID int NULL,
+	IndicadorID int NULL,
+	EvidenciaID int NULL,
+	UsuarioEnviaID nvarchar(150) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Archivo nvarchar(250) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	FechaEnvio datetime2 NULL,
+	FechaCumplimiento datetime2 NULL,
+	FechaActualizacion datetime2 NULL,
+	Revisado bit NULL,
+	Puntuado bit NULL,
+	UsuarioGestorID nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	EstadoEnvio nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Auditoria bit NULL,
+	UsuarioPuntuaID varchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.SentMail definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.SentMail;
+
+CREATE TABLE SentMail (
+	MailId int IDENTITY(1,1) NOT NULL,
+	DepartamentoID int NOT NULL,
+	SentToMail nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	SentFromMail nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	SentDate date NOT NULL,
+	CONSTRAINT PK_SentMail PRIMARY KEY (MailId)
+);
+
+
+-- SISMAPV1DB_ED.dbo.SigerdCoedom definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.SigerdCoedom;
+
+CREATE TABLE SigerdCoedom (
+	REGIONAL nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	DISTRITO nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	CODIGO_MINERD nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	CODIGO_COEDOM float NULL,
+	REGIONAL1 nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	DISTRITO1 nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	CENTRO nvarchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.SubIndicadorOrganismo definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.SubIndicadorOrganismo;
+
+CREATE TABLE SubIndicadorOrganismo (
+	SubIndicadorOrganismoID int IDENTITY(1,1) NOT NULL,
+	OrganismoID int NULL,
+	IndicadorID int NULL,
+	InactivoTemporal bit DEFAULT 0 NULL,
+	CONSTRAINT PK_IndicadorOrganismo PRIMARY KEY (SubIndicadorOrganismoID)
+);
+ CREATE NONCLUSTERED INDEX idxindicadores ON SISMAPV1DB_ED.dbo.SubIndicadorOrganismo (  OrganismoID ASC  )  
+	 INCLUDE ( IndicadorID ) 
+	 WITH (  PAD_INDEX = OFF ,FILLFACTOR = 100  ,SORT_IN_TEMPDB = OFF , IGNORE_DUP_KEY = OFF , STATISTICS_NORECOMPUTE = OFF , ONLINE = OFF , ALLOW_ROW_LOCKS = ON , ALLOW_PAGE_LOCKS = ON  )
+	 ON [PRIMARY ] ;
+
+
+-- SISMAPV1DB_ED.dbo.SubIndicadores definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.SubIndicadores;
+
+CREATE TABLE SubIndicadores (
+	IndicadorID int IDENTITY(1,1) NOT NULL,
+	ibogId int NULL,
+	Codigo nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Descripcion nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Comentario nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	DepartamentoID int NULL,
+	ValorTotal nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Peso decimal(18,2) NULL,
+	Color nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Aplica nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Estado nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.SubIndicadoresEdi definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.SubIndicadoresEdi;
+
+CREATE TABLE SubIndicadoresEdi (
+	IndicadorEdiID int IDENTITY(1,1) NOT NULL,
+	IbogEdiID int NULL,
+	Codigo nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Descripcion nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Comentario nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	DepartamentoID int NULL,
+	ValorTotal nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Peso decimal(18,2) NULL,
+	Color nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Aplica nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Estado nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.SubIndicadoresEdiOrganismo definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.SubIndicadoresEdiOrganismo;
+
+CREATE TABLE SubIndicadoresEdiOrganismo (
+	SubIndicadoresEdiOrganismoID int IDENTITY(1,1) NOT NULL,
+	Organismo_OrganismoID int NULL,
+	SubIndicadoresEdi_IndicadorEdiID int NULL,
+	CONSTRAINT PK_IndicadorEdiOrganismo PRIMARY KEY (SubIndicadoresEdiOrganismoID)
+);
+
+
+-- SISMAPV1DB_ED.dbo.TipoEvidencia definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.TipoEvidencia;
+
+CREATE TABLE TipoEvidencia (
+	TipoEvidenciaID int NOT NULL,
+	TipoEvidencia varchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	CONSTRAINT PK_TipoEvidencia PRIMARY KEY (TipoEvidenciaID)
+);
+
+
+-- SISMAPV1DB_ED.dbo.TipoIndicador definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.TipoIndicador;
+
+CREATE TABLE TipoIndicador (
+	TipoIndicadorID int IDENTITY(1,1) NOT NULL,
+	Descripcion varchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	PorcentajeTotal decimal(18,5) NULL,
+	CONSTRAINT PK_Tipo_Indicador PRIMARY KEY (TipoIndicadorID)
+);
+
+
+-- SISMAPV1DB_ED.dbo.TipoVencimiento definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.TipoVencimiento;
+
+CREATE TABLE TipoVencimiento (
+	TipoVencimientoID int IDENTITY(1,1) NOT NULL,
+	Descripcion nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Estado nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.Trimestre definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.Trimestre;
+
+CREATE TABLE Trimestre (
+	TrimestreID int IDENTITY(1,1) NOT NULL,
+	Descripcion nvarchar(150) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	CampoDeCalculo nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	FechaActivacion datetime2 NULL,
+	Estado nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.UsuarioGestor definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.UsuarioGestor;
+
+CREATE TABLE UsuarioGestor (
+	UsuarioGestorID int IDENTITY(1,1) NOT NULL,
+	UsuarioID nvarchar(150) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	OrganismoID int NULL,
+	Institucion nvarchar(250) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	DepartamentoID int NULL,
+	Departamento nvarchar(250) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	FechaCreacion datetime2 NULL,
+	Estado nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	EsGestor bit NULL,
+	Regional varchar(150) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Distrito varchar(150) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	CONSTRAINT PK_UsuarioGestor PRIMARY KEY (UsuarioGestorID)
+);
+
+
+-- SISMAPV1DB_ED.dbo.UsuarioGestorSubIndicadores definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.UsuarioGestorSubIndicadores;
+
+CREATE TABLE UsuarioGestorSubIndicadores (
+	UsuarioGestorSubIndicadoresID int IDENTITY(1,1) NOT NULL,
+	SubIndicadores_IndicadorID int NULL,
+	UsuarioGestor_UsuarioGestorID int NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.Videos definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.Videos;
+
+CREATE TABLE Videos (
+	VideoID int IDENTITY(1,1) NOT NULL,
+	VideoIndicador nvarchar(MAX) COLLATE Modern_Spanish_CI_AI NULL,
+	Link nvarchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	UsuarioID nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	FechaActualizado datetime2 NULL,
+	Estado nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.VistaFinalHistorico definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.VistaFinalHistorico;
+
+CREATE TABLE VistaFinalHistorico (
+	OrganismoID int NOT NULL,
+	TiempoKey nvarchar(12) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Anio nvarchar(30) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Mes nvarchar(30) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	nombreOrganismo varchar(250) COLLATE Latin1_General_CI_AI NOT NULL,
+	SectorGobierno varchar(MAX) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	cantidadIbog int NULL,
+	cantidadIndicador int NULL,
+	PromedioIBOG int NULL,
+	ColorIBOG varchar(12) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	PromedioPonderado decimal(18,2) NULL,
+	ColorPromedioPonderado varchar(12) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	PromedioIdnicador int NULL,
+	ColorIndicador varchar(12) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Ibog01 int NULL,
+	Ibog02 int NULL,
+	Ibog03 int NULL,
+	Ibog04 int NULL,
+	Ibog05 int NULL,
+	Ibog06 int NULL,
+	Ibog07 int NULL,
+	Ibog08 int NULL,
+	Ibog09 int NULL,
+	Ibog10 int NULL,
+	id01pt1 int NULL,
+	id01pt2 int NULL,
+	id01pt3 int NULL,
+	id01pt4 int NULL,
+	id01pt5 int NULL,
+	id01pt6 int NULL,
+	id01pt7 int NULL,
+	id02pt1 int NULL,
+	id03pt1 int NULL,
+	id04pt1 int NULL,
+	id04pt2 int NULL,
+	id04pt3 int NULL,
+	id05pt1 int NULL,
+	id05pt2 int NULL,
+	id06pt1 int NULL,
+	id07pt1 int NULL,
+	id07pt2 int NULL,
+	id07pt3 int NULL,
+	id08pt1 int NULL,
+	id09pt1 int NULL,
+	id09pt2 int NULL,
+	id09pt3 int NULL,
+	id09pt4 int NULL,
+	id09pt5 int NULL,
+	id10pt1 int NULL
+);
+
+
+-- SISMAPV1DB_ED.dbo.sysdiagrams definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.sysdiagrams;
+
+CREATE TABLE sysdiagrams (
+	name sysname COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	principal_id int NOT NULL,
+	diagram_id int IDENTITY(1,1) NOT NULL,
+	version int NULL,
+	definition varbinary(MAX) NULL,
+	CONSTRAINT PK__sysdiagr__C2B05B6176969D2E PRIMARY KEY (diagram_id),
+	CONSTRAINT UK_principal_name UNIQUE (principal_id,name)
+);
+
+
+-- SISMAPV1DB_ED.dbo.IndicadorColor definition
+
+-- Drop table
+
+-- DROP TABLE SISMAPV1DB_ED.dbo.IndicadorColor;
+
+CREATE TABLE IndicadorColor (
+	IndicadorColorID int IDENTITY(1,1) NOT NULL,
+	IndicadorID int NULL,
+	Codigo_Color varchar(10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Descripcion varchar(4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Nombre_Color varchar(15) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	ColorID int NULL,
+	Valor decimal(18,4) NULL,
+	Tolerancia decimal(18,4) NULL,
+	Tope decimal(18,4) NULL,
+	DocumentoCarga varchar(5000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Valoracion nvarchar(1000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Vigencia nvarchar(200) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	UsuarioID nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	NombreUsuario nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	RangoHasta decimal(18,4) NULL,
+	RangoDesde decimal(18,4) NULL,
+	Evidencia nvarchar(4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	Puntuacion_Vencimiento nvarchar(4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	CONSTRAINT PK_IndicadorColor PRIMARY KEY (IndicadorColorID),
+	CONSTRAINT FK_IndicadorColor_Color FOREIGN KEY (ColorID) REFERENCES Color(ColorID)
+);

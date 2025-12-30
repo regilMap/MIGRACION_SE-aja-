@@ -1,5 +1,5 @@
 from typing import List
-from models.entities import TipoVencimiento, TiposIndicador, Indicador, SubIndicador, EvidenciaDest, SubIndicadorEvidencia, FechaVencimientoSubIndicadorEvidencia
+from models.entities import TipoVencimiento, TiposIndicador, Indicador, SubIndicador, EvidenciaDest, SubIndicadorEvidencia, FechaVencimientoSubIndicadorEvidencia, PuntuacionDest, RevisionEvidenciaDest, ComentarioRevisionDest
 
 class DestinoRepository:
     """
@@ -17,17 +17,23 @@ class DestinoRepository:
     # ============================================================
     
     def insertar_tipos_vencimiento(self, datos: List[TipoVencimiento]) -> int:
-        """Inserta TipoVencimiento en destino"""
+        """Inserta o Actualiza TipoVencimiento en destino (UPSERT)"""
+        # Using MERGE to handle existing IDs (Constraint Violation Fix)
         query = """
-            INSERT INTO Mantenimiento.TipoVencimiento (
-                Id,
-                Nombre,
-                Descripcion,
-                CreatedAt,
-                CreatedBy,
-                IsActive,
-                IsDeleted
-            ) VALUES (?, ?, ?, ?, ?, ?, ?)
+            MERGE Mantenimiento.TipoVencimiento AS Target
+            USING (VALUES (?, ?, ?, ?, ?, ?, ?)) AS Source (Id, Nombre, Descripcion, CreatedAt, CreatedBy, IsActive, IsDeleted)
+            ON (Target.Id = Source.Id)
+            WHEN MATCHED THEN
+                UPDATE SET 
+                    Nombre = Source.Nombre,
+                    Descripcion = Source.Descripcion,
+                    UpdatedAt = GETDATE(),
+                    UpdatedBy = 'MigrationScript_Update',
+                    IsActive = Source.IsActive,
+                    IsDeleted = Source.IsDeleted
+            WHEN NOT MATCHED THEN
+                INSERT (Id, Nombre, Descripcion, CreatedAt, CreatedBy, IsActive, IsDeleted)
+                VALUES (Source.Id, Source.Nombre, Source.Descripcion, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted);
         """
         
         count = 0
@@ -94,20 +100,25 @@ class DestinoRepository:
     # ============================================================
     
     def insertar_indicadores(self, datos: List[Indicador]) -> int:
-        """Inserta Indicadores en destino"""
+        """Inserta o Actualiza Indicadores en destino (UPSERT)"""
         query = """
-            INSERT INTO Mantenimiento.Indicadores (
-                Id,
-                Codigo,
-                Nombre,
-                Descripcion,
-                TipoIndicadorId,
-                Peso,
-                CreatedAt,
-                CreatedBy,
-                IsActive,
-                IsDeleted
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            MERGE Mantenimiento.Indicadores AS Target
+            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)) AS Source (Id, Codigo, Nombre, Descripcion, TipoIndicadorId, Peso, CreatedAt, CreatedBy, IsActive, IsDeleted)
+            ON (Target.Id = Source.Id)
+            WHEN MATCHED THEN
+                UPDATE SET
+                    Codigo = Source.Codigo,
+                    Nombre = Source.Nombre,
+                    Descripcion = Source.Descripcion,
+                    TipoIndicadorId = Source.TipoIndicadorId,
+                    Peso = Source.Peso,
+                    UpdatedAt = GETDATE(),
+                    UpdatedBy = 'MigrationScript_Update',
+                    IsActive = Source.IsActive,
+                    IsDeleted = Source.IsDeleted
+            WHEN NOT MATCHED THEN
+                INSERT (Id, Codigo, Nombre, Descripcion, TipoIndicadorId, Peso, CreatedAt, CreatedBy, IsActive, IsDeleted)
+                VALUES (Source.Id, Source.Codigo, Source.Nombre, Source.Descripcion, Source.TipoIndicadorId, Source.Peso, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted);
         """
         
         count = 0
@@ -138,20 +149,25 @@ class DestinoRepository:
     # ============================================================
     
     def insertar_sub_indicadores(self, datos: List[SubIndicador]) -> int:
-        """Inserta SubIndicadores en destino"""
+        """Inserta o Actualiza SubIndicadores en destino (UPSERT)"""
         query = """
-            INSERT INTO Mantenimiento.SubIndicadores (
-                Id,
-                IndicadorId,
-                Codigo,
-                Nombre,
-                Descripcion,
-                Peso,
-                CreatedAt,
-                CreatedBy,
-                IsActive,
-                IsDeleted
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            MERGE Mantenimiento.SubIndicadores AS Target
+            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)) AS Source (Id, IndicadorId, Codigo, Nombre, Descripcion, Peso, CreatedAt, CreatedBy, IsActive, IsDeleted)
+            ON (Target.Id = Source.Id)
+            WHEN MATCHED THEN
+                UPDATE SET
+                    IndicadorId = Source.IndicadorId,
+                    Codigo = Source.Codigo,
+                    Nombre = Source.Nombre,
+                    Descripcion = Source.Descripcion,
+                    Peso = Source.Peso,
+                    UpdatedAt = GETDATE(),
+                    UpdatedBy = 'MigrationScript_Update',
+                    IsActive = Source.IsActive,
+                    IsDeleted = Source.IsDeleted
+            WHEN NOT MATCHED THEN
+                INSERT (Id, IndicadorId, Codigo, Nombre, Descripcion, Peso, CreatedAt, CreatedBy, IsActive, IsDeleted)
+                VALUES (Source.Id, Source.IndicadorId, Source.Codigo, Source.Nombre, Source.Descripcion, Source.Peso, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted);
         """
         
         count = 0
@@ -182,23 +198,28 @@ class DestinoRepository:
     # ============================================================
 
     def insertar_evidencias(self, datos: List[EvidenciaDest]) -> int:
-        """Inserta en Evidencia.Evidencias"""
+        """Inserta o Actualiza en Evidencia.Evidencias (UPSERT)"""
         query = """
-            INSERT INTO Evidencia.Evidencias (
-                Id,
-                Nombre,
-                Descripcion,
-                Valor,
-                PreRequisitoId,
-                CreatedAt,
-                CreatedBy,
-                IsActive,
-                IsDeleted,
-                AplicaVencimiento,
-                CantidadDias,
-                FechaVencimiento,
-                Codigo
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            MERGE Evidencia.Evidencias AS Target
+            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)) AS Source (Id, Nombre, Descripcion, Valor, PreRequisitoId, CreatedAt, CreatedBy, IsActive, IsDeleted, AplicaVencimiento, CantidadDias, FechaVencimiento, Codigo)
+            ON (Target.Id = Source.Id)
+            WHEN MATCHED THEN
+                UPDATE SET
+                    Nombre = Source.Nombre,
+                    Descripcion = Source.Descripcion,
+                    Valor = Source.Valor,
+                    PreRequisitoId = Source.PreRequisitoId,
+                    UpdatedAt = GETDATE(),
+                    UpdatedBy = 'MigrationScript_Update',
+                    IsActive = Source.IsActive,
+                    IsDeleted = Source.IsDeleted,
+                    AplicaVencimiento = Source.AplicaVencimiento,
+                    CantidadDias = Source.CantidadDias,
+                    FechaVencimiento = Source.FechaVencimiento,
+                    Codigo = Source.Codigo
+            WHEN NOT MATCHED THEN
+                INSERT (Id, Nombre, Descripcion, Valor, PreRequisitoId, CreatedAt, CreatedBy, IsActive, IsDeleted, AplicaVencimiento, CantidadDias, FechaVencimiento, Codigo)
+                VALUES (Source.Id, Source.Nombre, Source.Descripcion, Source.Valor, Source.PreRequisitoId, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted, Source.AplicaVencimiento, Source.CantidadDias, Source.FechaVencimiento, Source.Codigo);
         """
         count = 0
         for item in datos:
@@ -227,18 +248,23 @@ class DestinoRepository:
         return count
 
     def insertar_fecha_vencimiento_evidencias(self, datos: List[FechaVencimientoSubIndicadorEvidencia]) -> int:
-        """Inserta en Evidencia.FechaVencimientoSubIndicadorEvidencias"""
+        """Inserta o Actualiza en Evidencia.FechaVencimientoSubIndicadorEvidencias"""
         query = """
-            INSERT INTO Evidencia.FechaVencimientoSubIndicadorEvidencias (
-                Id,
-                TipoVencimientoId,
-                FechaVencimiento,
-                PeriodicidadDias,
-                CreatedAt,
-                CreatedBy,
-                IsActive,
-                IsDeleted
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            MERGE Evidencia.FechaVencimientoSubIndicadorEvidencias AS Target
+            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?)) AS Source (Id, TipoVencimientoId, FechaVencimiento, PeriodicidadDias, CreatedAt, CreatedBy, IsActive, IsDeleted)
+            ON (Target.Id = Source.Id)
+            WHEN MATCHED THEN
+                UPDATE SET
+                    TipoVencimientoId = Source.TipoVencimientoId,
+                    FechaVencimiento = Source.FechaVencimiento,
+                    PeriodicidadDias = Source.PeriodicidadDias,
+                    UpdatedAt = GETDATE(),
+                    UpdatedBy = 'MigrationScript_Update',
+                    IsActive = Source.IsActive,
+                    IsDeleted = Source.IsDeleted
+            WHEN NOT MATCHED THEN
+                INSERT (Id, TipoVencimientoId, FechaVencimiento, PeriodicidadDias, CreatedAt, CreatedBy, IsActive, IsDeleted)
+                VALUES (Source.Id, Source.TipoVencimientoId, Source.FechaVencimiento, Source.PeriodicidadDias, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted);
         """
         count = 0
         for item in datos:
@@ -262,20 +288,25 @@ class DestinoRepository:
         return count
 
     def insertar_sub_indicador_evidencias(self, datos: List[SubIndicadorEvidencia]) -> int:
-        """Inserta en Evidencia.SubIndicadorEvidencias"""
+        """Inserta o Actualiza en Evidencia.SubIndicadorEvidencias"""
         query = """
-            INSERT INTO Evidencia.SubIndicadorEvidencias (
-                Id,
-                SubIndicadorId,
-                EvidenciaId,
-                FechaVencimientoSubIndicadorEvidenciaId,
-                TipoEvaluacionId,
-                FechaVenciento,
-                CreatedAt,
-                CreatedBy,
-                IsActive,
-                IsDeleted
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            MERGE Evidencia.SubIndicadorEvidencias AS Target
+            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)) AS Source (Id, SubIndicadorId, EvidenciaId, FechaVencimientoSubIndicadorEvidenciaId, TipoEvaluacionId, FechaVenciento, CreatedAt, CreatedBy, IsActive, IsDeleted)
+            ON (Target.Id = Source.Id)
+            WHEN MATCHED THEN
+                UPDATE SET
+                    SubIndicadorId = Source.SubIndicadorId,
+                    EvidenciaId = Source.EvidenciaId,
+                    FechaVencimientoSubIndicadorEvidenciaId = Source.FechaVencimientoSubIndicadorEvidenciaId,
+                    TipoEvaluacionId = Source.TipoEvaluacionId,
+                    FechaVenciento = Source.FechaVenciento,
+                    UpdatedAt = GETDATE(),
+                    UpdatedBy = 'MigrationScript_Update',
+                    IsActive = Source.IsActive,
+                    IsDeleted = Source.IsDeleted
+            WHEN NOT MATCHED THEN
+                INSERT (Id, SubIndicadorId, EvidenciaId, FechaVencimientoSubIndicadorEvidenciaId, TipoEvaluacionId, FechaVenciento, CreatedAt, CreatedBy, IsActive, IsDeleted)
+                VALUES (Source.Id, Source.SubIndicadorId, Source.EvidenciaId, Source.FechaVencimientoSubIndicadorEvidenciaId, Source.TipoEvaluacionId, Source.FechaVenciento, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted);
         """
         count = 0
         for item in datos:
@@ -300,23 +331,235 @@ class DestinoRepository:
         self.resetear_identidad('Evidencia', 'SubIndicadorEvidencias')
         return count
 
-    def asegurar_tipo_evaluacion_defecto(self):
-        """Asegura que exista TipoEvaluacion Id=1"""
-        # Check if exists
-        self.cursor.execute("SELECT COUNT(*) FROM Evidencia.TipoEvaluacion WHERE Id = 1")
-        if self.cursor.fetchone()[0] == 0:
-            query = """
-                INSERT INTO Evidencia.TipoEvaluacion (
-                    Id, Nombre, CreatedAt, CreatedBy, IsActive, IsDeleted
-                ) VALUES (1, 'Evaluación Migrada', GETDATE(), 'MigrationScript', 1, 0)
-            """
-            self.habilitar_identity_insert('Evidencia', 'TipoEvaluacion')
-            self.cursor.execute(query)
-            self.deshabilitar_identity_insert('Evidencia', 'TipoEvaluacion')
-            return True
-        return False
-    
     # ============================================================
+    # ARCHIVOS (Evidencia.Archivos)
+    # ============================================================
+
+    def insertar_archivos(self, datos: List['ArchivoDest']) -> int: # Forward ref or import if needed, but python is dynamic
+        """Inserta o Actualiza en Evidencia.Archivos (UPSERT)"""
+        # Note: CoedomId, SubIndicadorEvidenciaId, NombreOriginal, ArchivoBinario, EstadoArchivoId, RowGuid, TipoAlmacenamiento, RutaExterna
+        # are required/important fields.
+        
+        query = """
+            MERGE Evidencia.Archivos AS Target
+            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)) AS Source (
+                Id, CoedomId, SubIndicadorEvidenciaId, NombreOriginal, ArchivoBinario, EstadoArchivoId, 
+                EvidenciaId, CreatedAt, CreatedBy, UpdatedAt, UpdatedBy, IsActive, IsDeleted, 
+                RowGuid, TipoAlmacenamiento, RutaExterna
+            )
+            ON (Target.Id = Source.Id)
+            WHEN MATCHED THEN
+                UPDATE SET
+                    CoedomId = Source.CoedomId,
+                    SubIndicadorEvidenciaId = Source.SubIndicadorEvidenciaId,
+                    NombreOriginal = Source.NombreOriginal,
+                    -- Update binary only if provided, else keep existing? 
+                    -- Migration usually overwrites. Source has no binary, so we might receive empty.
+                    -- If we want to preserve existing binary in DB, we'd need check. 
+                    -- But this is full migration. Overwriting is standard.
+                    ArchivoBinario = Source.ArchivoBinario,
+                    EstadoArchivoId = Source.EstadoArchivoId,
+                    EvidenciaId = Source.EvidenciaId,
+                    UpdatedAt = GETDATE(),
+                    UpdatedBy = 'MigrationScript_Update',
+                    IsActive = Source.IsActive,
+                    IsDeleted = Source.IsDeleted,
+                    RowGuid = Source.RowGuid,
+                    TipoAlmacenamiento = Source.TipoAlmacenamiento,
+                    RutaExterna = Source.RutaExterna
+            WHEN NOT MATCHED THEN
+                INSERT (
+                    Id, CoedomId, SubIndicadorEvidenciaId, NombreOriginal, ArchivoBinario, EstadoArchivoId, 
+                    EvidenciaId, CreatedAt, CreatedBy, UpdatedAt, UpdatedBy, IsActive, IsDeleted, 
+                    RowGuid, TipoAlmacenamiento, RutaExterna
+                )
+                VALUES (
+                    Source.Id, Source.CoedomId, Source.SubIndicadorEvidenciaId, Source.NombreOriginal, Source.ArchivoBinario, Source.EstadoArchivoId,
+                    Source.EvidenciaId, Source.CreatedAt, Source.CreatedBy, Source.UpdatedAt, Source.UpdatedBy, Source.IsActive, Source.IsDeleted,
+                    Source.RowGuid, Source.TipoAlmacenamiento, Source.RutaExterna
+                );
+        """
+        if datos:
+             # Check if ANY item has CoedomId > 0
+             for d in datos:
+                 if d.CoedomId and d.CoedomId > 0:
+                     msg = f"DEBUG DESTINO: Insertar Archivo VALID DETECTED CoedomId={d.CoedomId}"
+                     print(msg)
+                     # raise Exception(msg) # Removed validation crash
+
+        count = 0
+        for item in datos:
+            self.cursor.execute(query,
+                item.Id,
+                item.CoedomId,
+                item.SubIndicadorEvidenciaId,
+                item.NombreOriginal,
+                item.ArchivoBinario,
+                item.EstadoArchivoId,
+                item.EvidenciaId,
+                item.CreatedAt,
+                item.CreatedBy,
+                item.UpdatedAt,
+                item.UpdatedBy,
+                item.IsActive,
+                item.IsDeleted,
+                item.RowGuid,
+                item.TipoAlmacenamiento,
+                item.RutaExterna
+            )
+            count += 1
+        return count
+
+    def limpiar_archivos(self) -> int:
+        self.cursor.execute("DELETE FROM Evidencia.Archivos")
+        count = self.cursor.rowcount
+        self.resetear_identidad('Evidencia', 'Archivos')
+        return count
+
+    # ============================================================
+    # PUNTUACION (Evidencia.Puntuacion)
+    # ============================================================
+
+    def insertar_puntuacion(self, datos: List[PuntuacionDest]) -> int:
+        """Inserta o Actualiza en Evidencia.Puntuacion"""
+        query = """
+            MERGE Evidencia.Puntuacion AS Target
+            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?)) AS Source (Id, ArchivoEvidenciaId, PuntuadorUsuarioId, Calificacion, CreatedAt, CreatedBy, IsActive, IsDeleted)
+            ON (Target.Id = Source.Id)
+            WHEN MATCHED THEN
+                UPDATE SET
+                    ArchivoEvidenciaId = Source.ArchivoEvidenciaId,
+                    PuntuadorUsuarioId = Source.PuntuadorUsuarioId,
+                    Calificacion = Source.Calificacion,
+                    UpdatedAt = GETDATE(),
+                    UpdatedBy = 'MigrationScript_Update',
+                    IsActive = Source.IsActive,
+                    IsDeleted = Source.IsDeleted
+            WHEN NOT MATCHED THEN
+                INSERT (Id, ArchivoEvidenciaId, PuntuadorUsuarioId, Calificacion, CreatedAt, CreatedBy, IsActive, IsDeleted)
+                VALUES (Source.Id, Source.ArchivoEvidenciaId, Source.PuntuadorUsuarioId, Source.Calificacion, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted);
+        """
+        count = 0
+        for item in datos:
+            self.cursor.execute(query,
+                item.Id,
+                item.ArchivoEvidenciaId,
+                item.PuntuadorUsuarioId,
+                item.Calificacion,
+                item.CreatedAt,
+                item.CreatedBy,
+                item.IsActive,
+                item.IsDeleted
+            )
+            count += 1
+        return count
+
+    def limpiar_puntuacion(self) -> int:
+        self.cursor.execute("DELETE FROM Evidencia.Puntuacion")
+        count = self.cursor.rowcount
+        self.resetear_identidad('Evidencia', 'Puntuacion')
+        return count
+
+    # ============================================================
+    # REVISIONES (Evidencia.RevisionEvidencias)
+    # ============================================================
+
+    def insertar_revision_evidencias(self, datos: List[RevisionEvidenciaDest]) -> int:
+        query = """
+            MERGE Evidencia.RevisionEvidencias AS Target
+            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)) AS Source (Id, ArchivoEvidenciaId, FechaRevisionConcluida, UsuarioId, EstadoDadoId, NivelRevisionEvidencia, RevisionCoedomId, CreatedAt, CreatedBy, IsActive, IsDeleted)
+            ON (Target.Id = Source.Id)
+            WHEN MATCHED THEN
+                UPDATE SET
+                    ArchivoEvidenciaId = Source.ArchivoEvidenciaId,
+                    FechaRevisionConcluida = Source.FechaRevisionConcluida,
+                    UsuarioId = Source.UsuarioId,
+                    EstadoDadoId = Source.EstadoDadoId,
+                    NivelRevisionEvidencia = Source.NivelRevisionEvidencia,
+                    RevisionCoedomId = Source.RevisionCoedomId,
+                    UpdatedAt = GETDATE(),
+                    UpdatedBy = 'MigrationScript_Update',
+                    IsActive = Source.IsActive,
+                    IsDeleted = Source.IsDeleted
+            WHEN NOT MATCHED THEN
+                INSERT (Id, ArchivoEvidenciaId, FechaRevisionConcluida, UsuarioId, EstadoDadoId, NivelRevisionEvidencia, RevisionCoedomId, CreatedAt, CreatedBy, IsActive, IsDeleted)
+                VALUES (Source.Id, Source.ArchivoEvidenciaId, Source.FechaRevisionConcluida, Source.UsuarioId, Source.EstadoDadoId, Source.NivelRevisionEvidencia, Source.RevisionCoedomId, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted);
+        """
+        count = 0
+        for item in datos:
+            self.cursor.execute(query,
+                item.Id,
+                item.ArchivoEvidenciaId,
+                item.FechaRevisionConcluida,
+                item.UsuarioId,
+                item.EstadoDadoId,
+                item.NivelRevisionEvidencia,
+                item.RevisionCoedomId,
+                item.CreatedAt,
+                item.CreatedBy,
+                item.IsActive,
+                item.IsDeleted
+            )
+            count += 1
+        return count
+
+    def limpiar_revision_evidencias(self) -> int:
+        self.cursor.execute("DELETE FROM Evidencia.RevisionEvidencias")
+        count = self.cursor.rowcount
+        self.resetear_identidad('Evidencia', 'RevisionEvidencias')
+        return count
+
+    def insertar_comentario_revision(self, datos: List[ComentarioRevisionDest]) -> int:
+        query = """
+            MERGE Evidencia.ComentarioRevisionEvidencias AS Target
+            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?)) AS Source (Id, RevisionEvidenciaId, Observaciones, UsuarioId, CreatedAt, CreatedBy, IsActive, IsDeleted)
+            ON (Target.Id = Source.Id)
+            WHEN MATCHED THEN
+                UPDATE SET
+                    RevisionEvidenciaId = Source.RevisionEvidenciaId,
+                    Observaciones = Source.Observaciones,
+                    UsuarioId = Source.UsuarioId,
+                    UpdatedAt = GETDATE(),
+                    UpdatedBy = 'MigrationScript_Update',
+                    IsActive = Source.IsActive,
+                    IsDeleted = Source.IsDeleted
+            WHEN NOT MATCHED THEN
+                INSERT (Id, RevisionEvidenciaId, Observaciones, UsuarioId, CreatedAt, CreatedBy, IsActive, IsDeleted)
+                VALUES (Source.Id, Source.RevisionEvidenciaId, Source.Observaciones, Source.UsuarioId, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted);
+        """
+        count = 0
+        for item in datos:
+            self.cursor.execute(query,
+                item.Id,
+                item.RevisionEvidenciaId,
+                item.Observaciones,
+                item.UsuarioId,
+                item.CreatedAt,
+                item.CreatedBy,
+                item.IsActive,
+                item.IsDeleted
+            )
+            count += 1
+        return count
+
+    def limpiar_comentario_revision(self) -> int:
+        self.cursor.execute("DELETE FROM Evidencia.ComentarioRevisionEvidencias")
+        count = self.cursor.rowcount
+        self.resetear_identidad('Evidencia', 'ComentarioRevisionEvidencias')
+        return count
+
+    def asegurar_tipo_evaluacion_defecto(self):
+        """Asegura que exista el TipoEvaluacion ID=1 (Automática)"""
+        # Si no existe, insertarlo
+        query = "SELECT COUNT(*) FROM Evidencia.TipoEvaluacion WHERE Id = 1"
+        self.cursor.execute(query)
+        if self.cursor.fetchone()[0] == 0:
+            self.habilitar_identity_insert('Evidencia', 'TipoEvaluacion')
+            self.cursor.execute("""
+                INSERT INTO Evidencia.TipoEvaluacion (Id, Nombre, CreatedAt, IsActive, IsDeleted)
+                VALUES (1, 'Automática', GETDATE(), 1, 0)
+            """)
+            self.deshabilitar_identity_insert('Evidencia', 'TipoEvaluacion')
     # UTILIDADES
     # ============================================================
     

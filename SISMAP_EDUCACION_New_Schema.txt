@@ -1,0 +1,863 @@
+================================================================================
+                    SISMAP_EDUCACION - DATABASE SCHEMA
+                    Referencia para Migración de BD
+                    Generado: 19/12/2025
+================================================================================
+
+================================================================================
+                              SCHEMAS
+================================================================================
+- dbo (default)
+- Auditoria
+- Bitacora
+- Cache
+- Evidencia
+- Evidencias
+- Mantenimiento
+- Noticias
+- Seguridad
+- Usuario
+- Usuarios
+
+================================================================================
+                              TABLAS
+================================================================================
+
+--------------------------------------------------------------------------------
+SCHEMA: Auditoria
+--------------------------------------------------------------------------------
+
+TABLE [Auditoria].[Estado]
+    [Id]            INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [Nombre]        NVARCHAR(MAX) NOT NULL
+    [Descripcion]   NVARCHAR(MAX) NOT NULL
+    [CreatedAt]     DATETIME2(7) NOT NULL
+    [CreatedBy]     NVARCHAR(MAX) NULL
+    [UpdatedAt]     DATETIME2(7) NULL
+    [UpdatedBy]     NVARCHAR(MAX) NULL
+    [IsActive]      BIT NOT NULL
+    [IsDeleted]     BIT NOT NULL
+
+TABLE [Auditoria].[Ticket]
+    [Id]                    INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [RevisionEvidenciaId]   INT NOT NULL
+    [AuditoriaEstadoId]     INT NOT NULL
+    [Observaciones]         NVARCHAR(MAX) NOT NULL
+    [ArchivoId]             INT NULL
+    [CreatedAt]             DATETIME2(7) NOT NULL
+    [CreatedBy]             NVARCHAR(MAX) NULL
+    [UpdatedAt]             DATETIME2(7) NULL
+    [UpdatedBy]             NVARCHAR(MAX) NULL
+    [IsActive]              BIT NOT NULL
+    [IsDeleted]             BIT NOT NULL
+
+--------------------------------------------------------------------------------
+SCHEMA: Bitacora
+--------------------------------------------------------------------------------
+
+TABLE [Bitacora].[Bitacora]
+    [Id]            INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [Entidad]       NVARCHAR(MAX) NOT NULL
+    [Cuerpo]        NVARCHAR(MAX) NOT NULL
+    [Accion]        NVARCHAR(MAX) NOT NULL
+    [Fecha]         DATETIME2(7) NOT NULL
+    [CreatedAt]     DATETIME2(7) NOT NULL
+    [CreatedBy]     NVARCHAR(MAX) NULL
+    [UpdatedAt]     DATETIME2(7) NULL
+    [UpdatedBy]     NVARCHAR(MAX) NULL
+    [IsActive]      BIT NOT NULL
+    [IsDeleted]     BIT NOT NULL
+
+TABLE [Bitacora].[RankingOrganismos]
+    [Id]                INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [RegionalCoedomId]  INT NULL
+    [DistritoCoedomId]  INT NULL
+    [CoedomId]          INT NULL
+    [PeriodoId]         INT NOT NULL
+    [Posicion]          INT NOT NULL
+    [PuntuacionTotal]   FLOAT NOT NULL
+    [FechaCalculo]      DATETIME2(7) NOT NULL
+    [CreatedAt]         DATETIME2(7) NOT NULL
+    [CreatedBy]         NVARCHAR(MAX) NULL
+    [UpdatedAt]         DATETIME2(7) NULL
+    [UpdatedBy]         NVARCHAR(MAX) NULL
+    [IsActive]          BIT NOT NULL
+    [IsDeleted]         BIT NOT NULL
+
+--------------------------------------------------------------------------------
+SCHEMA: Cache
+--------------------------------------------------------------------------------
+
+TABLE [Cache].[ConfiguracionEntidad]
+    [Id]                        BIGINT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [TipoEntidadId]             INT NOT NULL
+    [TipoEntidad]               NVARCHAR(100) NOT NULL
+    [TablaDestino]              NVARCHAR(255) NULL
+    [EntidadId]                 INT NOT NULL
+    [CoedomId]                  INT NOT NULL
+    [UsuarioConfiguracionId]    UNIQUEIDENTIFIER NULL
+    [FechaConfiguracion]        DATETIME2(7) NULL
+    [AplicaGeneral]             BIT NULL
+    [ExcepcionId]               INT NULL
+    [TipoVencimientoId]         INT NULL
+    [AplicaExcepcion]           BIT NULL
+    [FechaVencimiento]          DATE NULL
+    [TipoConfiguracion]         NVARCHAR(100) NULL
+    [AplicaFinal]               BIT NOT NULL
+    [FechaActualizacion]        DATETIME2(7) NOT NULL
+
+TABLE [Cache].[ConfiguracionEntidad_Backup]
+    (Estructura idéntica a ConfiguracionEntidad - tabla de backup)
+
+--------------------------------------------------------------------------------
+SCHEMA: Evidencia
+--------------------------------------------------------------------------------
+
+TABLE [Evidencia].[Archivos]
+    [Id]                        INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [CoedomId]                  INT NOT NULL
+    [SubIndicadorEvidenciaId]   INT NOT NULL
+    [NombreOriginal]            NVARCHAR(255) NOT NULL
+    [ArchivoBinario]            VARBINARY(MAX) NOT NULL
+    [RowGuid]                   UNIQUEIDENTIFIER NOT NULL
+    [TipoAlmacenamiento]        INT NOT NULL
+   
+    [EstadoArchivoId]           INT NOT NULL
+    [EvidenciaId]               INT NULL
+    [CreatedAt]                 DATETIME2(7) NOT NULL
+    [CreatedBy]                 NVARCHAR(MAX) NULL
+    [UpdatedAt]                 DATETIME2(7) NULL
+    [UpdatedBy]                 NVARCHAR(MAX) NULL
+    [IsActive]                  BIT NOT NULL
+    [IsDeleted]                 BIT NOT NULL
+
+TABLE [Evidencia].[ComentarioRevisionEvidencias]
+    [Id]                    INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [RevisionEvidenciaId]   INT NOT NULL
+    [Observaciones]         NVARCHAR(MAX) NOT NULL
+    [UsuarioId]             UNIQUEIDENTIFIER NOT NULL
+    [CreatedAt]             DATETIME2(7) NOT NULL
+    [CreatedBy]             NVARCHAR(MAX) NULL
+    [UpdatedAt]             DATETIME2(7) NULL
+    [UpdatedBy]             NVARCHAR(MAX) NULL
+    [IsActive]              BIT NOT NULL
+    [IsDeleted]             BIT NOT NULL
+
+TABLE [Evidencia].[Evidencias]
+    [Id]                INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [Nombre]            NVARCHAR(255) NOT NULL
+    [Descripcion]       NVARCHAR(500) NOT NULL
+    [Valor]             DECIMAL(18,2) NOT NULL
+    [PreRequisitoId]    INT NULL
+    [CreatedAt]         DATETIME2(7) NOT NULL
+    [CreatedBy]         NVARCHAR(MAX) NULL
+    [UpdatedAt]         DATETIME2(7) NULL
+    [UpdatedBy]         NVARCHAR(MAX) NULL
+    [IsActive]          BIT NOT NULL
+    [IsDeleted]         BIT NOT NULL
+    [AplicaVencimiento] BIT NOT NULL
+    [CantidadDias]      INT NULL
+    [FechaVencimiento]  DATETIME2(7) NULL
+    [Codigo]            NVARCHAR(50) NOT NULL
+
+TABLE [Evidencia].[FechaVencimientoSubIndicadorEvidencias]
+    [Id]                INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [TipoVencimientoId] INT NOT NULL
+    [FechaVencimiento]  DATETIME NOT NULL
+    [PeriodicidadDias]  INT NULL
+    [CreatedAt]         DATETIME NOT NULL
+    [CreatedBy]         NVARCHAR(MAX) NULL
+    [UpdatedAt]         DATETIME NULL
+    [UpdatedBy]         NVARCHAR(MAX) NULL
+    [IsActive]          BIT NOT NULL
+    [IsDeleted]         BIT NOT NULL
+
+TABLE [Evidencia].[PreguntaRevisiones]
+    [Id]                        INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [TextoPregunta]             NVARCHAR(255) NOT NULL
+    [EsDefault]                 BIT NOT NULL
+    [CreatedAt]                 DATETIME2(7) NOT NULL
+    [CreatedBy]                 NVARCHAR(MAX) NULL
+    [UpdatedAt]                 DATETIME2(7) NULL
+    [UpdatedBy]                 NVARCHAR(MAX) NULL
+    [IsActive]                  BIT NOT NULL
+    [IsDeleted]                 BIT NOT NULL
+    [SubIndicadorEvidenciaId]   INT NULL
+
+TABLE [Evidencia].[Puntuacion]
+    [Id]                    INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [ArchivoEvidenciaId]    INT NOT NULL
+    [PuntuadorUsuarioId]    UNIQUEIDENTIFIER NOT NULL
+    [Calificacion]          REAL NOT NULL
+    [CreatedAt]             DATETIME2(7) NOT NULL
+    [CreatedBy]             NVARCHAR(MAX) NULL
+    [UpdatedAt]             DATETIME2(7) NULL
+    [UpdatedBy]             NVARCHAR(MAX) NULL
+    [IsActive]              BIT NOT NULL
+    [IsDeleted]             BIT NOT NULL
+
+TABLE [Evidencia].[RespuestasRevisiones]
+    [Id]            INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [PreguntaId]    INT NOT NULL
+    [RevisionId]    INT NOT NULL
+    [Respuesta]     BIT NOT NULL
+    [CreatedAt]     DATETIME2(7) NOT NULL
+    [CreatedBy]     NVARCHAR(MAX) NULL
+    [UpdatedAt]     DATETIME2(7) NULL
+    [UpdatedBy]     NVARCHAR(MAX) NULL
+    [IsActive]      BIT NOT NULL
+    [IsDeleted]     BIT NOT NULL
+
+TABLE [Evidencia].[RevisionEvidencias]
+    [Id]                        INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [ArchivoEvidenciaId]        INT NOT NULL
+    [FechaRevisionConcluida]    DATETIME NULL
+    [UsuarioId]                 UNIQUEIDENTIFIER NOT NULL
+    [CreatedAt]                 DATETIME2(7) NOT NULL
+    [CreatedBy]                 NVARCHAR(MAX) NULL
+    [UpdatedAt]                 DATETIME2(7) NULL
+    [UpdatedBy]                 NVARCHAR(MAX) NULL
+    [IsActive]                  BIT NOT NULL
+    [IsDeleted]                 BIT NOT NULL
+    [EstadoDadoId]              INT NOT NULL
+    [NivelRevisionEvidencia]    INT NOT NULL
+    [RevisionCoedomId]          INT NOT NULL
+
+TABLE [Evidencia].[SubIndicadorEvidencias]
+    [Id]                                        INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [SubIndicadorId]                            INT NOT NULL
+    [EvidenciaId]                               INT NOT NULL
+    [CreatedAt]                                 DATETIME2(7) NOT NULL
+    [CreatedBy]                                 NVARCHAR(MAX) NULL
+    [UpdatedAt]                                 DATETIME2(7) NULL
+    [UpdatedBy]                                 NVARCHAR(MAX) NULL
+    [IsActive]                                  BIT NOT NULL
+    [IsDeleted]                                 BIT NOT NULL
+    [FechaVenciento]                            DATETIME NOT NULL
+    [FechaVencimientoSubIndicadorEvidenciaId]   INT NULL
+    [TipoEvaluacionId]                          INT NOT NULL
+
+TABLE [Evidencia].[TipoEvaluacion]
+    [Id]            INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [Nombre]        NVARCHAR(50) NOT NULL
+    [CreatedAt]     DATETIME2(7) NOT NULL
+    [CreatedBy]     NVARCHAR(MAX) NULL
+    [UpdatedAt]     DATETIME2(7) NULL
+    [UpdatedBy]     NVARCHAR(MAX) NULL
+    [IsActive]      BIT NOT NULL
+    [IsDeleted]     BIT NOT NULL
+
+--------------------------------------------------------------------------------
+SCHEMA: Mantenimiento
+--------------------------------------------------------------------------------
+
+TABLE [Mantenimiento].[Cargo]
+    [Id]            INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [Nombre]        NVARCHAR(100) NOT NULL
+    [Descripcion]   NVARCHAR(MAX) NOT NULL
+    [CreatedAt]     DATETIME2(7) NOT NULL
+    [CreatedBy]     NVARCHAR(MAX) NULL
+    [UpdatedAt]     DATETIME2(7) NULL
+    [UpdatedBy]     NVARCHAR(MAX) NULL
+    [IsActive]      BIT NOT NULL
+    [IsDeleted]     BIT NOT NULL
+
+TABLE [Mantenimiento].[ConfiguracionGeneral]
+    [Id]                        INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [TipoEntidadId]             INT NOT NULL
+    [EntidadId]                 INT NOT NULL
+    [Aplica]                    BIT NOT NULL
+    [FechaVencimiento]          DATETIME2(7) NULL
+    [FechaExtension]            DATETIME2(7) NULL
+    [UsuarioConfiguracionId]    UNIQUEIDENTIFIER NOT NULL
+    [FechaConfiguracion]        DATETIME2(7) NOT NULL
+    [CreatedAt]                 DATETIME2(7) NOT NULL
+    [CreatedBy]                 NVARCHAR(MAX) NULL
+    [UpdatedAt]                 DATETIME2(7) NULL
+    [UpdatedBy]                 NVARCHAR(MAX) NULL
+    [IsActive]                  BIT NOT NULL
+    [IsDeleted]                 BIT NOT NULL
+
+TABLE [Mantenimiento].[ConfiguracionOrganismoExcepcion]
+    [Id]                        INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [CoedomId]                  INT NOT NULL
+    [TipoEntidadId]             INT NOT NULL
+    [EntidadId]                 INT NOT NULL
+    [Aplica]                    BIT NOT NULL
+    [FechaVencimiento]          DATETIME2(7) NULL
+    [FechaExtension]            DATETIME2(7) NULL
+    [UsuarioConfiguracionId]    UNIQUEIDENTIFIER NOT NULL
+    [FechaConfiguracion]        DATETIME2(7) NOT NULL
+    [TipoVencimientoId]         INT NOT NULL
+    [CreatedAt]                 DATETIME2(7) NOT NULL
+    [CreatedBy]                 NVARCHAR(MAX) NULL
+    [UpdatedAt]                 DATETIME2(7) NULL
+    [UpdatedBy]                 NVARCHAR(MAX) NULL
+    [IsActive]                  BIT NOT NULL
+    [IsDeleted]                 BIT NOT NULL
+
+TABLE [Mantenimiento].[CorreosEnviados]
+    [Id]            INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [Destinatario]  NVARCHAR(255) NOT NULL
+    [Asunto]        NVARCHAR(500) NOT NULL
+    [ContenidoHtml] NVARCHAR(MAX) NOT NULL
+    [FechaEnvio]    DATETIME2(7) NOT NULL
+    [Exitoso]       BIT NOT NULL
+    [Error]         NVARCHAR(1000) NULL
+    [CreatedAt]     DATETIME2(7) NOT NULL
+    [CreatedBy]     NVARCHAR(MAX) NULL
+    [UpdatedAt]     DATETIME2(7) NULL
+    [UpdatedBy]     NVARCHAR(MAX) NULL
+    [IsActive]      BIT NOT NULL
+    [IsDeleted]     BIT NOT NULL
+
+TABLE [Mantenimiento].[EstadoArchivos]
+    [Id]            INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [Nombre]        NVARCHAR(MAX) NOT NULL
+    [Descripcion]   NVARCHAR(MAX) NOT NULL
+    [CreatedAt]     DATETIME2(7) NOT NULL
+    [CreatedBy]     NVARCHAR(MAX) NULL
+    [UpdatedAt]     DATETIME2(7) NULL
+    [UpdatedBy]     NVARCHAR(MAX) NULL
+    [IsActive]      BIT NOT NULL
+    [IsDeleted]     BIT NOT NULL
+
+TABLE [Mantenimiento].[EstadoSolicitudUsuarioHistorico]
+    [Id]                    INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [SolicitudUsuarioId]    NVARCHAR(450) NOT NULL
+    [EstadoSolicitudId]     INT NOT NULL
+    [UsuarioGestionId]      UNIQUEIDENTIFIER NOT NULL
+    [CreatedAt]             DATETIME2(7) NOT NULL
+    [CreatedBy]             NVARCHAR(MAX) NULL
+    [UpdatedAt]             DATETIME2(7) NULL
+    [UpdatedBy]             NVARCHAR(MAX) NULL
+    [IsActive]              BIT NOT NULL
+    [IsDeleted]             BIT NOT NULL
+
+TABLE [Mantenimiento].[Indicadores]
+    [Id]                INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [Codigo]            NVARCHAR(255) NOT NULL
+    [Nombre]            NVARCHAR(500) NOT NULL
+    [Descripcion]       NVARCHAR(MAX) NOT NULL
+    [TipoIndicadorId]   INT NOT NULL
+    [Peso]              DECIMAL(18,2) NOT NULL
+    [CreatedAt]         DATETIME2(7) NOT NULL
+    [CreatedBy]         NVARCHAR(MAX) NULL
+    [UpdatedAt]         DATETIME2(7) NULL
+    [UpdatedBy]         NVARCHAR(MAX) NULL
+    [IsActive]          BIT NOT NULL
+    [IsDeleted]         BIT NOT NULL
+
+TABLE [Mantenimiento].[Notificaciones]
+    [Id]            INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [Titulo]        NVARCHAR(200) NOT NULL
+    [Mensaje]       NVARCHAR(MAX) NOT NULL
+    [Tipo]          INT NOT NULL
+    [Estilo]        INT NOT NULL
+    [FechaInicio]   DATETIME2(7) NOT NULL
+    [FechaFin]      DATETIME2(7) NULL
+    [Activa]        BIT NOT NULL
+    [CreatedAt]     DATETIME2(7) NOT NULL
+    [CreatedBy]     NVARCHAR(MAX) NULL
+    [UpdatedAt]     DATETIME2(7) NULL
+    [UpdatedBy]     NVARCHAR(MAX) NULL
+    [IsActive]      BIT NOT NULL
+    [IsDeleted]     BIT NOT NULL
+
+TABLE [Mantenimiento].[NotificacionesUsuarios]
+    [Id]                    INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [NotificacionId]        INT NOT NULL
+    [UsuarioId]             UNIQUEIDENTIFIER NOT NULL
+    [FechaVisualizacion]    DATETIME2(7) NOT NULL
+    [CreatedAt]             DATETIME2(7) NOT NULL
+    [CreatedBy]             NVARCHAR(MAX) NULL
+    [UpdatedAt]             DATETIME2(7) NULL
+    [UpdatedBy]             NVARCHAR(MAX) NULL
+    [IsActive]              BIT NOT NULL
+    [IsDeleted]             BIT NOT NULL
+
+TABLE [Mantenimiento].[Periodo]
+    [Id]            INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [Codigo]        NVARCHAR(20) NOT NULL
+    [Nombre]        NVARCHAR(500) NOT NULL
+    [Descripcion]   NVARCHAR(500) NULL
+    [FechaInicio]   DATETIME2(7) NOT NULL
+    [FechaFin]      DATETIME2(7) NOT NULL
+    [CreatedAt]     DATETIME2(7) NOT NULL
+    [CreatedBy]     NVARCHAR(MAX) NULL
+    [UpdatedAt]     DATETIME2(7) NULL
+    [UpdatedBy]     NVARCHAR(MAX) NULL
+    [IsActive]      BIT NOT NULL
+    [IsDeleted]     BIT NOT NULL
+
+TABLE [Mantenimiento].[PreRequisitos]
+    [Id]            INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [Nombre]        NVARCHAR(200) NOT NULL
+    [Descripcion]   NVARCHAR(500) NULL
+    [CreatedAt]     DATETIME2(7) NOT NULL
+    [CreatedBy]     NVARCHAR(MAX) NULL
+    [UpdatedAt]     DATETIME2(7) NULL
+    [UpdatedBy]     NVARCHAR(MAX) NULL
+    [IsActive]      BIT NOT NULL
+    [IsDeleted]     BIT NOT NULL
+
+TABLE [Mantenimiento].[Rol]
+    [Id]            INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [Nombre]        NVARCHAR(100) NOT NULL
+    [CreatedAt]     DATETIME2(7) NOT NULL
+    [CreatedBy]     NVARCHAR(MAX) NULL
+    [UpdatedAt]     DATETIME2(7) NULL
+    [UpdatedBy]     NVARCHAR(MAX) NULL
+    [IsActive]      BIT NOT NULL
+    [IsDeleted]     BIT NOT NULL
+
+TABLE [Mantenimiento].[SubIndicadores]
+    [Id]            INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [IndicadorId]   INT NOT NULL
+    [Codigo]        NVARCHAR(255) NOT NULL
+    [Nombre]        NVARCHAR(1000) NOT NULL
+    [Descripcion]   NVARCHAR(1000) NOT NULL
+    [Peso]          DECIMAL(18,2) NOT NULL
+    [CreatedAt]     DATETIME2(7) NOT NULL
+    [CreatedBy]     NVARCHAR(MAX) NULL
+    [UpdatedAt]     DATETIME2(7) NULL
+    [UpdatedBy]     NVARCHAR(MAX) NULL
+    [IsActive]      BIT NOT NULL
+    [IsDeleted]     BIT NOT NULL
+
+TABLE [Mantenimiento].[SubIndicadorRequisitos]
+    [Id]                INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [SubIndicadorId]    INT NOT NULL
+    [PreRequisitoId]    INT NOT NULL
+    [CreatedAt]         DATETIME2(7) NOT NULL
+    [CreatedBy]         NVARCHAR(MAX) NULL
+    [UpdatedAt]         DATETIME2(7) NULL
+    [UpdatedBy]         NVARCHAR(MAX) NULL
+    [IsActive]          BIT NOT NULL
+    [IsDeleted]         BIT NOT NULL
+
+TABLE [Mantenimiento].[TipoEntidad]
+    [Id]            INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [Nombre]        NVARCHAR(255) NOT NULL
+    [TablaDestino]  NVARCHAR(255) NOT NULL
+    [CreatedAt]     DATETIME2(7) NOT NULL
+    [CreatedBy]     NVARCHAR(MAX) NULL
+    [UpdatedAt]     DATETIME2(7) NULL
+    [UpdatedBy]     NVARCHAR(MAX) NULL
+    [IsActive]      BIT NOT NULL
+    [IsDeleted]     BIT NOT NULL
+
+TABLE [Mantenimiento].[TiposIndicador]
+    [Id]            INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [Nombre]        NVARCHAR(255) NOT NULL
+    [Descripcion]   NVARCHAR(1000) NOT NULL
+    [CreatedAt]     DATETIME2(7) NOT NULL
+    [CreatedBy]     NVARCHAR(MAX) NULL
+    [UpdatedAt]     DATETIME2(7) NULL
+    [UpdatedBy]     NVARCHAR(MAX) NULL
+    [IsActive]      BIT NOT NULL
+    [IsDeleted]     BIT NOT NULL
+
+TABLE [Mantenimiento].[TipoVencimiento]
+    [Id]            INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [Nombre]        NVARCHAR(255) NOT NULL
+    [Descripcion]   NVARCHAR(255) NOT NULL
+    [CreatedAt]     DATETIME2(7) NOT NULL
+    [CreatedBy]     NVARCHAR(MAX) NULL
+    [UpdatedAt]     DATETIME2(7) NULL
+    [UpdatedBy]     NVARCHAR(MAX) NULL
+    [IsActive]      BIT NOT NULL
+    [IsDeleted]     BIT NOT NULL
+
+--------------------------------------------------------------------------------
+SCHEMA: Noticias
+--------------------------------------------------------------------------------
+
+TABLE [Noticias].[ArchivosNoticias]
+    [Id]                INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [NoticiaId]         INT NOT NULL
+    [NombreOriginal]    NVARCHAR(255) NOT NULL
+    [TipoContenido]     NVARCHAR(255) NULL
+    [Extension]         NVARCHAR(10) NULL
+    [Tamano]            BIGINT NOT NULL
+    [ArchivoBinario]    VARBINARY(MAX) NOT NULL
+    [RowGuid]           UNIQUEIDENTIFIER NOT NULL
+    [EsPublico]         BIT NOT NULL
+    [CreatedAt]         DATETIME2(7) NOT NULL
+    [CreatedBy]         NVARCHAR(MAX) NULL
+    [UpdatedAt]         DATETIME2(7) NULL
+    [UpdatedBy]         NVARCHAR(MAX) NULL
+    [IsActive]          BIT NOT NULL
+    [IsDeleted]         BIT NOT NULL
+
+TABLE [Noticias].[Noticia]
+    [Id]            INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [Titulo]        NVARCHAR(250) NOT NULL
+    [Descripcion]   NVARCHAR(500) NULL
+    [TipoNoticiaId] INT NOT NULL
+    [EsDestacada]   BIT NOT NULL
+    [Publicado]     BIT NOT NULL
+    [VisiblePublico] BIT NOT NULL
+    [CreatedAt]     DATETIME2(7) NOT NULL
+    [CreatedBy]     NVARCHAR(MAX) NULL
+    [UpdatedAt]     DATETIME2(7) NULL
+    [UpdatedBy]     NVARCHAR(MAX) NULL
+    [IsActive]      BIT NOT NULL
+    [IsDeleted]     BIT NOT NULL
+
+TABLE [Noticias].[TiposNoticias]
+    [Id]            INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [Nombre]        NVARCHAR(150) NOT NULL
+    [Descripcion]   NVARCHAR(1000) NULL
+    [CreatedAt]     DATETIME2(7) NOT NULL
+    [CreatedBy]     NVARCHAR(MAX) NULL
+    [UpdatedAt]     DATETIME2(7) NULL
+    [UpdatedBy]     NVARCHAR(MAX) NULL
+    [IsActive]      BIT NOT NULL
+    [IsDeleted]     BIT NOT NULL
+
+--------------------------------------------------------------------------------
+SCHEMA: Seguridad
+--------------------------------------------------------------------------------
+
+TABLE [Seguridad].[LoginSesiones]
+    [Id]            UNIQUEIDENTIFIER NOT NULL  PRIMARY KEY
+    [UsuarioId]     UNIQUEIDENTIFIER NULL
+    [Correo]        NVARCHAR(256) NULL
+    [CoedomId]      INT NULL
+    [RolId]         INT NULL
+    [Exitoso]       BIT NOT NULL
+    [MotivoFallo]   NVARCHAR(MAX) NULL
+    [Ip]            NVARCHAR(64) NULL
+    [UserAgent]     NVARCHAR(1024) NULL
+    [Plataforma]    NVARCHAR(64) NULL
+    [Navegador]     NVARCHAR(128) NULL
+    [Dispositivo]   NVARCHAR(128) NULL
+    [SesionId]      NVARCHAR(100) NULL
+    [JwtId]         NVARCHAR(1000) NULL
+    [AccessExpira]  DATETIMEOFFSET(7) NULL
+    [RefreshExpira] DATETIMEOFFSET(7) NULL
+    [CreatedAt]     DATETIME2(7) NOT NULL
+    [CreatedBy]     NVARCHAR(MAX) NULL
+    [UpdatedAt]     DATETIME2(7) NULL
+    [UpdatedBy]     NVARCHAR(MAX) NULL
+    [IsActive]      BIT NOT NULL
+    [IsDeleted]     BIT NOT NULL
+
+--------------------------------------------------------------------------------
+SCHEMA: Usuario
+--------------------------------------------------------------------------------
+
+TABLE [Usuario].[AsignacionUsuario]
+    [Id]            INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [TipoEntidadId] INT NOT NULL
+    [EntidadId]     INT NOT NULL
+    [UsuarioId]     UNIQUEIDENTIFIER NOT NULL
+    [CreatedAt]     DATETIME2(7) NOT NULL
+    [CreatedBy]     NVARCHAR(MAX) NULL
+    [UpdatedAt]     DATETIME2(7) NULL
+    [UpdatedBy]     NVARCHAR(MAX) NULL
+    [IsActive]      BIT NOT NULL
+    [IsDeleted]     BIT NOT NULL
+
+TABLE [Usuario].[EstadoSolicitud]
+    [Id]            INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [Nombre]        NVARCHAR(100) NOT NULL
+    [Descripcion]   NVARCHAR(250) NOT NULL
+    [CreatedAt]     DATETIME2(7) NOT NULL
+    [CreatedBy]     NVARCHAR(MAX) NULL
+    [UpdatedAt]     DATETIME2(7) NULL
+    [UpdatedBy]     NVARCHAR(MAX) NULL
+    [IsActive]      BIT NOT NULL
+    [IsDeleted]     BIT NOT NULL
+
+TABLE [Usuario].[SolicitudUsuarios]
+    [Id]                NVARCHAR(450) NOT NULL  PRIMARY KEY
+    [Nombre]            NVARCHAR(255) NOT NULL
+    [Apellido]          NVARCHAR(255) NOT NULL
+    [Genero]            INT NOT NULL
+    [Telefono]          NVARCHAR(50) NOT NULL
+    [Direccion]         NVARCHAR(255) NOT NULL
+    [Correo]            NVARCHAR(255) NOT NULL
+    [CargoId]           INT NOT NULL
+    [RolId]             INT NOT NULL
+    [CoedomId]          INT NOT NULL
+    [EstadoSolicitudId] INT NOT NULL
+    [FechaSolicitud]    DATETIME2(7) NOT NULL
+    [UsuarioGestionId]  UNIQUEIDENTIFIER NOT NULL
+    [CreatedAt]         DATETIME2(7) NOT NULL
+    [CreatedBy]         NVARCHAR(MAX) NULL
+    [UpdatedAt]         DATETIME2(7) NULL
+    [UpdatedBy]         NVARCHAR(MAX) NULL
+    [IsActive]          BIT NOT NULL
+    [IsDeleted]         BIT NOT NULL
+
+TABLE [Usuario].[UsuarioClaves]
+    [Id]            NVARCHAR(450) NOT NULL  PRIMARY KEY
+    [ClaveHasheada] NVARCHAR(MAX) NOT NULL
+    [CambioClave]   BIT NOT NULL
+    [CreatedAt]     DATETIME2(7) NOT NULL
+    [CreatedBy]     NVARCHAR(MAX) NULL
+    [UpdatedAt]     DATETIME2(7) NULL
+    [UpdatedBy]     NVARCHAR(MAX) NULL
+    [IsActive]      BIT NOT NULL
+    [IsDeleted]     BIT NOT NULL
+
+TABLE [Usuario].[UsuarioOrganismoExcepcion]
+    [Id]            INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [UserId]        UNIQUEIDENTIFIER NOT NULL
+    [CoedomId]      INT NOT NULL
+    [CreatedAt]     DATETIME2(7) NOT NULL
+    [CreatedBy]     NVARCHAR(MAX) NULL
+    [UpdatedAt]     DATETIME2(7) NULL
+    [UpdatedBy]     NVARCHAR(MAX) NULL
+    [IsActive]      BIT NOT NULL
+    [IsDeleted]     BIT NOT NULL
+
+TABLE [Usuario].[Usuarios]
+    [Id]            UNIQUEIDENTIFIER NOT NULL  PRIMARY KEY
+    [Nombre]        NVARCHAR(255) NOT NULL
+    [Apellido]      NVARCHAR(255) NOT NULL
+    [Genero]        INT NOT NULL
+    [Telefono]      NVARCHAR(50) NOT NULL
+    [Direccion]     NVARCHAR(255) NOT NULL
+    [Correo]        NVARCHAR(255) NOT NULL
+    [ClaveId]       NVARCHAR(450) NOT NULL
+    [CargoId]       INT NOT NULL
+    [RolId]         INT NOT NULL
+    [CoedomId]      INT NOT NULL
+    [CreatedAt]     DATETIME2(7) NOT NULL
+    [CreatedBy]     NVARCHAR(MAX) NULL
+    [UpdatedAt]     DATETIME2(7) NULL
+    [UpdatedBy]     NVARCHAR(MAX) NULL
+    [IsActive]      BIT NOT NULL
+    [IsDeleted]     BIT NOT NULL
+
+--------------------------------------------------------------------------------
+SCHEMA: dbo (Tablas auxiliares)
+--------------------------------------------------------------------------------
+
+TABLE [dbo].[__EFMigrationsHistory]
+    [MigrationId]       NVARCHAR(150) NOT NULL  PRIMARY KEY
+    [ProductVersion]    NVARCHAR(32) NOT NULL
+
+TABLE [dbo].[Archivos_SE]
+    [Id]                        INT IDENTITY(1,1) NOT NULL  PRIMARY KEY
+    [CoedomId]                  INT NOT NULL
+    [SubIndicadorEvidenciaId]   INT NOT NULL
+    [NombreOriginal]            NVARCHAR(255) NOT NULL
+    [RowGuid]                   UNIQUEIDENTIFIER NOT NULL
+    [EstadoArchivoId]           INT NOT NULL
+    [EvidenciaId]               INT NULL
+    [CreatedAt]                 DATETIME2(7) NOT NULL
+    [CreatedBy]                 NVARCHAR(MAX) NULL
+    [UpdatedAt]                 DATETIME2(7) NULL
+    [UpdatedBy]                 NVARCHAR(MAX) NULL
+    [IsActive]                  BIT NOT NULL
+    [IsDeleted]                 BIT NOT NULL
+    [DocumentoID]               UNIQUEIDENTIFIER ROWGUIDCOL NOT NULL
+    [ArchivoBinario]            VARBINARY(MAX) FILESTREAM NULL
+
+TABLE [dbo].[Datos]
+    [DatosOrganismoID]  INT IDENTITY(1,1) NOT NULL
+    [OrganismoID]       INT NULL
+    [Codigo]            NVARCHAR(250) NULL
+    [Provincia]         NVARCHAR(250) NULL
+    [Municipio]         NVARCHAR(250) NULL
+    [Distrito]          NVARCHAR(250) NULL
+    [Seccion]           NVARCHAR(250) NULL
+    [Estudiantes]       INT NULL
+
+TABLE [dbo].[SigerdCoedom]
+    [REGIONAL]          NVARCHAR(255) NULL
+    [DISTRITO]          NVARCHAR(255) NULL
+    [CODIGO_MINERD]     NVARCHAR(255) NULL
+    [CODIGO_COEDOM]     FLOAT NULL
+    [REGIONAL1]         NVARCHAR(255) NULL
+    [DISTRITO1]         NVARCHAR(255) NULL
+    [CENTRO]            NVARCHAR(255) NULL
+
+
+================================================================================
+                         FOREIGN KEYS (RELACIONES)
+================================================================================
+
+-- SCHEMA: Auditoria
+FK_Ticket_Archivos_ArchivoId: [Auditoria].[Ticket].[ArchivoId] -> [Evidencia].[Archivos].[Id]
+FK_Ticket_RevisionEvidencias_RevisionEvidenciaId: [Auditoria].[Ticket].[RevisionEvidenciaId] -> [Evidencia].[RevisionEvidencias].[Id]
+FK_Ticket_Estado_AuditoriaEstadoId: [Auditoria].[Ticket].[AuditoriaEstadoId] -> [Auditoria].[Estado].[Id]
+
+-- SCHEMA: Bitacora
+FK_RankingOrganismos_Periodo: [Bitacora].[RankingOrganismos].[PeriodoId] -> [Mantenimiento].[Periodo].[Id]
+
+-- SCHEMA: Evidencia
+FK_Archivos_EstadoArchivos_EstadoArchivoId: [Evidencia].[Archivos].[EstadoArchivoId] -> [Mantenimiento].[EstadoArchivos].[Id]
+FK_Archivos_Evidencias_EvidenciaId: [Evidencia].[Archivos].[EvidenciaId] -> [Evidencia].[Evidencias].[Id]
+FK_Archivos_SubIndicadorEvidencias_SubIndicadorEvidenciaId: [Evidencia].[Archivos].[SubIndicadorEvidenciaId] -> [Evidencia].[SubIndicadorEvidencias].[Id]
+FK_ComentarioRevisionEvidencias_RevisionEvidencias_RevisionEvidenciaId: [Evidencia].[ComentarioRevisionEvidencias].[RevisionEvidenciaId] -> [Evidencia].[RevisionEvidencias].[Id]
+FK_ComentarioRevisionEvidencias_Usuarios_UsuarioId: [Evidencia].[ComentarioRevisionEvidencias].[UsuarioId] -> [Usuario].[Usuarios].[Id]
+FK_Evidencias_Evidencias_PreRequisitoId: [Evidencia].[Evidencias].[PreRequisitoId] -> [Evidencia].[Evidencias].[Id]
+FK_FechaVencimientoSubIndicadorEvidencias_TipoVencimientos: [Evidencia].[FechaVencimientoSubIndicadorEvidencias].[TipoVencimientoId] -> [Mantenimiento].[TipoVencimiento].[Id]
+FK_PreguntaRevisiones_SubIndicadorEvidencias_SubIndicadorEvidenciaId: [Evidencia].[PreguntaRevisiones].[SubIndicadorEvidenciaId] -> [Evidencia].[SubIndicadorEvidencias].[Id]
+FK_Puntuacion_Archivos_ArchivoEvidenciaId: [Evidencia].[Puntuacion].[ArchivoEvidenciaId] -> [Evidencia].[Archivos].[Id]
+FK_Puntuacion_Usuarios_PuntuadorUsuarioId: [Evidencia].[Puntuacion].[PuntuadorUsuarioId] -> [Usuario].[Usuarios].[Id]
+FK_RespuestasRevisiones_PreguntaRevisiones_PreguntaId: [Evidencia].[RespuestasRevisiones].[PreguntaId] -> [Evidencia].[PreguntaRevisiones].[Id]
+FK_RespuestasRevisiones_RevisionEvidencias_RevisionId: [Evidencia].[RespuestasRevisiones].[RevisionId] -> [Evidencia].[RevisionEvidencias].[Id]
+FK_RevisionEvidencias_Archivos_ArchivoEvidenciaId: [Evidencia].[RevisionEvidencias].[ArchivoEvidenciaId] -> [Evidencia].[Archivos].[Id]
+FK_SubIndicadorEvidencias_Evidencias_EvidenciaId: [Evidencia].[SubIndicadorEvidencias].[EvidenciaId] -> [Evidencia].[Evidencias].[Id]
+FK_SubIndicadorEvidencias_FechaVencimientoSubIndicadorEvidencias: [Evidencia].[SubIndicadorEvidencias].[FechaVencimientoSubIndicadorEvidenciaId] -> [Evidencia].[FechaVencimientoSubIndicadorEvidencias].[Id]
+FK_SubIndicadorEvidencias_SubIndicadores_SubIndicadorId: [Evidencia].[SubIndicadorEvidencias].[SubIndicadorId] -> [Mantenimiento].[SubIndicadores].[Id]
+FK_SubIndicadorEvidencias_TipoEvaluacion_TipoEvaluacionId: [Evidencia].[SubIndicadorEvidencias].[TipoEvaluacionId] -> [Evidencia].[TipoEvaluacion].[Id]
+
+-- SCHEMA: Mantenimiento
+FK_ConfiguracionGeneral_TipoEntidad_TipoEntidadId: [Mantenimiento].[ConfiguracionGeneral].[TipoEntidadId] -> [Mantenimiento].[TipoEntidad].[Id]
+FK_ConfiguracionGeneral_Usuarios_UsuarioConfiguracionId: [Mantenimiento].[ConfiguracionGeneral].[UsuarioConfiguracionId] -> [Usuario].[Usuarios].[Id]
+FK_ConfiguracionOrganismoExcepcion_TipoEntidad_TipoEntidadId: [Mantenimiento].[ConfiguracionOrganismoExcepcion].[TipoEntidadId] -> [Mantenimiento].[TipoEntidad].[Id]
+FK_ConfiguracionOrganismoExcepcion_TipoVencimiento_TipoVencimientoId: [Mantenimiento].[ConfiguracionOrganismoExcepcion].[TipoVencimientoId] -> [Mantenimiento].[TipoVencimiento].[Id]
+FK_ConfiguracionOrganismoExcepcion_Usuarios_UsuarioConfiguracionId: [Mantenimiento].[ConfiguracionOrganismoExcepcion].[UsuarioConfiguracionId] -> [Usuario].[Usuarios].[Id]
+FK_EstadoSolicitudUsuarioHistorico_EstadoSolicitud_EstadoSolicitudId: [Mantenimiento].[EstadoSolicitudUsuarioHistorico].[EstadoSolicitudId] -> [Usuario].[EstadoSolicitud].[Id]
+FK_EstadoSolicitudUsuarioHistorico_SolicitudUsuarios_SolicitudUsuarioId: [Mantenimiento].[EstadoSolicitudUsuarioHistorico].[SolicitudUsuarioId] -> [Usuario].[SolicitudUsuarios].[Id]
+FK_EstadoSolicitudUsuarioHistorico_Usuarios_UsuarioGestionId: [Mantenimiento].[EstadoSolicitudUsuarioHistorico].[UsuarioGestionId] -> [Usuario].[Usuarios].[Id]
+FK_Indicadores_TiposIndicador_TipoIndicadorId: [Mantenimiento].[Indicadores].[TipoIndicadorId] -> [Mantenimiento].[TiposIndicador].[Id]
+FK_NotificacionesUsuarios_Notificaciones_NotificacionId: [Mantenimiento].[NotificacionesUsuarios].[NotificacionId] -> [Mantenimiento].[Notificaciones].[Id]
+FK_SubIndicadores_Indicadores_IndicadorId: [Mantenimiento].[SubIndicadores].[IndicadorId] -> [Mantenimiento].[Indicadores].[Id]
+FK_SubIndicadorRequisitos_PreRequisitos_PreRequisitoId: [Mantenimiento].[SubIndicadorRequisitos].[PreRequisitoId] -> [Mantenimiento].[PreRequisitos].[Id]
+FK_SubIndicadorRequisitos_SubIndicadores_SubIndicadorId: [Mantenimiento].[SubIndicadorRequisitos].[SubIndicadorId] -> [Mantenimiento].[SubIndicadores].[Id]
+
+-- SCHEMA: Noticias
+FK_ArchivosNoticias_Noticia_NoticiaId: [Noticias].[ArchivosNoticias].[NoticiaId] -> [Noticias].[Noticia].[Id]
+FK_Noticia_TiposNoticias_TipoNoticiaId: [Noticias].[Noticia].[TipoNoticiaId] -> [Noticias].[TiposNoticias].[Id]
+
+-- SCHEMA: Usuario
+FK_AsignacionUsuario_TipoEntidad_TipoEntidadId: [Usuario].[AsignacionUsuario].[TipoEntidadId] -> [Mantenimiento].[TipoEntidad].[Id]
+FK_AsignacionUsuario_Usuarios_UsuarioId: [Usuario].[AsignacionUsuario].[UsuarioId] -> [Usuario].[Usuarios].[Id]
+FK_SolicitudUsuarios_Cargo_CargoId: [Usuario].[SolicitudUsuarios].[CargoId] -> [Mantenimiento].[Cargo].[Id]
+FK_SolicitudUsuarios_EstadoSolicitud_EstadoSolicitudId: [Usuario].[SolicitudUsuarios].[EstadoSolicitudId] -> [Usuario].[EstadoSolicitud].[Id]
+FK_SolicitudUsuarios_Rol_RolId: [Usuario].[SolicitudUsuarios].[RolId] -> [Mantenimiento].[Rol].[Id]
+FK_SolicitudUsuarios_Usuarios_UsuarioGestionId: [Usuario].[SolicitudUsuarios].[UsuarioGestionId] -> [Usuario].[Usuarios].[Id]
+FK_UsuarioOrganismoExcepcion_Usuarios_UserId: [Usuario].[UsuarioOrganismoExcepcion].[UserId] -> [Usuario].[Usuarios].[Id]
+FK_Usuarios_Cargo_CargoId: [Usuario].[Usuarios].[CargoId] -> [Mantenimiento].[Cargo].[Id]
+FK_Usuarios_Rol_RolId: [Usuario].[Usuarios].[RolId] -> [Mantenimiento].[Rol].[Id]
+FK_Usuarios_UsuarioClaves_ClaveId: [Usuario].[Usuarios].[ClaveId] -> [Usuario].[UsuarioClaves].[Id]
+
+
+================================================================================
+                              VISTAS
+================================================================================
+
+VIEW [dbo].[vOrganismosEducacion]
+VIEW [dbo].[vOrganismosEducacionX]
+VIEW [dbo].[vw_AvanceIndicadoresPorOrganismo]
+VIEW [dbo].[vw_AvanceIndicadorEspecifico]
+VIEW [dbo].[vw_AvanceSubIndicadores]
+VIEW [dbo].[vw_DetallePuntajePorIndicador]
+VIEW [dbo].[vw_EvidenciasConConteo]
+VIEW [dbo].[vw_JerarquiaOptimizada]
+VIEW [dbo].[vw_RankingOrganismos]
+VIEW [dbo].[vw_RankingOrganismos_V2]
+VIEW [dbo].[vw_RankingOrganismosPorSubIndicador]
+VIEW [dbo].[vw_RankingSubIndicadores]
+
+
+================================================================================
+                    RESUMEN DE TABLAS POR SCHEMA
+================================================================================
+
+Auditoria (2 tablas):
+  - Estado
+  - Ticket
+
+Bitacora (2 tablas):
+  - Bitacora
+  - RankingOrganismos
+
+Cache (2 tablas):
+  - ConfiguracionEntidad
+  - ConfiguracionEntidad_Backup
+
+Evidencia (10 tablas):
+  - Archivos
+  - ComentarioRevisionEvidencias
+  - Evidencias
+  - FechaVencimientoSubIndicadorEvidencias
+  - PreguntaRevisiones
+  - Puntuacion
+  - RespuestasRevisiones
+  - RevisionEvidencias
+  - SubIndicadorEvidencias
+  - TipoEvaluacion
+
+Mantenimiento (16 tablas):
+  - Cargo
+  - ConfiguracionGeneral
+  - ConfiguracionOrganismoExcepcion
+  - CorreosEnviados
+  - EstadoArchivos
+  - EstadoSolicitudUsuarioHistorico
+  - Indicadores
+  - Notificaciones
+  - NotificacionesUsuarios
+  - Periodo
+  - PreRequisitos
+  - Rol
+  - SubIndicadores
+  - SubIndicadorRequisitos
+  - TipoEntidad
+  - TiposIndicador
+  - TipoVencimiento
+
+Noticias (3 tablas):
+  - ArchivosNoticias
+  - Noticia
+  - TiposNoticias
+
+Seguridad (1 tabla):
+  - LoginSesiones
+
+Usuario (6 tablas):
+  - AsignacionUsuario
+  - EstadoSolicitud
+  - SolicitudUsuarios
+  - UsuarioClaves
+  - UsuarioOrganismoExcepcion
+  - Usuarios
+
+dbo (4 tablas):
+  - __EFMigrationsHistory
+  - Archivos_SE
+  - Datos
+  - SigerdCoedom
+
+TOTAL: 46 tablas + 12 vistas
+================================================================================
+
+================================================================================
+                    NOTAS PARA LA MIGRACIÓN
+================================================================================
+
+1. COLUMNAS COMUNES (Auditoría):
+   - CreatedAt, CreatedBy, UpdatedAt, UpdatedBy, IsActive, IsDeleted
+   - Presentes en casi todas las tablas (patrón de soft delete)
+
+2. TIPOS DE DATOS ESPECIALES:
+   - UNIQUEIDENTIFIER: Usado para IDs de usuarios
+   - VARBINARY(MAX): Archivos binarios
+   - FILESTREAM: Tabla Archivos_SE usa FileStream
+   - DECIMAL(18,2): Para valores monetarios/pesos
+   - DATETIME2(7): Fechas con alta precisión
+
+3. TABLAS PRINCIPALES (Core):
+   - Usuario.Usuarios (usuarios del sistema)
+   - Mantenimiento.Indicadores -> SubIndicadores (estructura jerárquica)
+   - Evidencia.Evidencias -> SubIndicadorEvidencias -> Archivos
+   - Evidencia.RevisionEvidencias -> Puntuacion
+
+4. DEPENDENCIAS EXTERNAS:
+   - CoedomId: Referencia a organismos externos (COEDOM/SIGERD)
+   - OrganismoID: En tabla SigerdCoedom y vistas
+
+5. FILESTREAM:
+   - La tabla Archivos_SE usa FILESTREAM para almacenar archivos
+   - Requiere configuración especial en SQL Server
+
+================================================================================

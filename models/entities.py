@@ -167,6 +167,101 @@ class SubIndicadorEvidencia(DictMixin):
     IsActive: bool = True
     IsDeleted: bool = False
 
+@dataclass
+class ArchivoDest(DictMixin):
+    """Evidencia.Archivos (Destino)"""
+    Id: int = None
+    CoedomId: int = None
+    SubIndicadorEvidenciaId: int = None
+    NombreOriginal: str = None
+    ArchivoBinario: bytes = None # or str/base64 depending on handler
+    EstadoArchivoId: int = None
+    EvidenciaId: int = None
+    CreatedAt: datetime = None
+    CreatedBy: str = None
+    UpdatedAt: datetime = None
+    UpdatedBy: str = None
+    IsActive: bool = True
+    IsDeleted: bool = False
+    RowGuid: str = None # UniqueIdentifier
+    TipoAlmacenamiento: int = None
+    RutaExterna: str = None
+
+# ============================================================
+# ENTIDADES PUNTUACION / REVISION (FUENTE & DESTINO)
+# ============================================================
+
+@dataclass
+class CargaEvidenciaSource(DictMixin):
+    """
+    Join de:
+    - CargaEvidencia (ce)
+    - ArchivoCargaEvidencia (ace)
+    - RepositorioDeEnvio (re)
+    """
+    CargaEvidenciaID: int
+    ArchivoCargaEvidenciaID: int
+    #RepositorioDeEnvioID: int # Removed
+    IndicadorID: int # Para filtrar
+    EvidenciaID: int = None
+    OrganismoID: int = None # Para CoedomId
+    NombreArchivo: str = None
+    Puntuacion: float = None
+    # Campos adicionales para Revision si estan aqui?
+    # Asumimos que la revision esta separada o vinculada aqui.
+
+@dataclass
+class PuntuacionDest(DictMixin):
+    """Evidencia.Puntuacion (Destino)"""
+    Id: int = None
+    ArchivoEvidenciaId: int = None
+    PuntuadorUsuarioId: str = None # Guid
+    Calificacion: float = 0.0
+    CreatedAt: datetime = None
+    CreatedBy: str = None
+    IsActive: bool = True
+    IsDeleted: bool = False
+
+@dataclass
+class RevisionSource(DictMixin):
+    """
+    Fuente para Revisiones. 
+    Nombre tabla pendiente de confirmación.
+    """
+    RevisionID: int
+    EvidenciaID: int # Vinculo
+    Comentario: str
+    UsuarioID: int # O nombre usuario
+    FechaRevision: datetime
+    EstadoRevision: str
+
+@dataclass
+class RevisionEvidenciaDest(DictMixin):
+    """Evidencia.RevisionEvidencias (Destino)"""
+    Id: int = None
+    ArchivoEvidenciaId: int = None
+    FechaRevisionConcluida: datetime = None
+    UsuarioId: str = None # Guid
+    EstadoDadoId: int = None
+    NivelRevisionEvidencia: int = None
+    RevisionCoedomId: int = None
+    CreatedAt: datetime = None
+    CreatedBy: str = None
+    IsActive: bool = True
+    IsDeleted: bool = False
+
+@dataclass
+class ComentarioRevisionDest(DictMixin):
+    """Evidencia.ComentarioRevisionEvidencias (Destino)"""
+    Id: int = None
+    RevisionEvidenciaId: int = None
+    Observaciones: str = None
+    UsuarioId: str = None
+    CreatedAt: datetime = None
+    CreatedBy: str = None
+    IsActive: bool = True
+    IsDeleted: bool = False
+
 # ============================================================
 # MAPEO DE ENTIDADES
 # ============================================================
@@ -181,4 +276,10 @@ ENTITY_MAP = {
     'EvidenciaDest': EvidenciaDest,
     'FechaVencimientoSubIndicadorEvidencia': FechaVencimientoSubIndicadorEvidencia,
     'SubIndicadorEvidencia': SubIndicadorEvidencia,
+    'ArchivoDest': ArchivoDest,
+    'CargaEvidenciaSource': CargaEvidenciaSource,
+    'PuntuacionDest': PuntuacionDest,
+    'RevisionSource': RevisionSource,
+    'RevisionEvidenciaDest': RevisionEvidenciaDest,
+    'ComentarioRevisionDest': ComentarioRevisionDest,
 }

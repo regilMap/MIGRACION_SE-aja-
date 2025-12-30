@@ -1,9 +1,10 @@
+import uuid
 from datetime import datetime
 from typing import List, Optional
 from models.entities import (
     TipoVencimiento, TiposIndicador, Indicador, SubIndicador,
     EvidenciaSource, EvidenciaDest, SubIndicadorEvidencia, FechaVencimientoSubIndicadorEvidencia,
-    Ibog  # Assuming we create a model for Source Ibog
+    Ibog, ArchivoDest, CargaEvidenciaSource, PuntuacionDest, RevisionSource, RevisionEvidenciaDest, ComentarioRevisionDest
 )
 
 class TransformationService:
@@ -17,28 +18,52 @@ class TransformationService:
     """
 
     def __init__(self):
-        pass
+        self.archivo_map = {} # Map NombreArchivo -> ArchivoDest.Id
+        self.sub_ev_map = {} # Map (IndicadorID, EvidenciaID) -> SubIndicadorEvidencia.Id
 
     def transformar_tipo_vencimiento(self, source_items: List[TipoVencimiento]) -> List[TipoVencimiento]:
         """
         Transforma TipoVencimiento.
-        Fuente: TipoVencimientoId, Nombre, Descripcion, Estado
-        Destino: Id, Nombre, Descripcion, CreatedAt...
+        IGNORA la fuente y retorna lista estática solicitada:
+        1: Automático
+        2: Manual
+        3: Fijo
         """
-        transformed = []
-        for item in source_items:
-            # Map fields
-            new_item = TipoVencimiento(
-                Id=item.TipoVencimientoId,
-                Nombre=item.Nombre,
-                Descripcion=item.Descripcion or item.Nombre, # Fallback
-                CreatedAt=datetime.now(),
+        # User requested static data:
+        # 1	Automático	Cantidad de días automático desde la fecha de puntuación, valor según la guía
+        # 2	Manual	La fecha y la puntuación son seleccionables/editables
+        # 3	Fijo	Fecha específica en el año, valor fijo o según la guía
+        
+        static_data = [
+            TipoVencimiento(
+                Id=1,
+                Nombre="Automático",
+                Descripcion="Cantidad de días automático desde la fecha de puntuación, valor según la guía",
+                CreatedAt=datetime(2025, 10, 31, 15, 33, 21),
                 CreatedBy="MigrationScript",
-                IsActive=True if item.Estado == 'Activo' else False,
+                IsActive=True,
+                IsDeleted=False
+            ),
+             TipoVencimiento(
+                Id=2,
+                Nombre="Manual",
+                Descripcion="La fecha y la puntuación son seleccionables/editables",
+                CreatedAt=datetime(2025, 10, 31, 15, 33, 21),
+                CreatedBy="MigrationScript",
+                IsActive=True,
+                IsDeleted=False
+            ),
+             TipoVencimiento(
+                Id=3,
+                Nombre="Fijo",
+                Descripcion="Fecha específica en el año, valor fijo o según la guía",
+                CreatedAt=datetime(2025, 9, 12, 9, 2, 0),
+                CreatedBy="MigrationScript",
+                IsActive=True,
                 IsDeleted=False
             )
-            transformed.append(new_item)
-        return transformed
+        ]
+        return static_data
 
     def transformar_tipo_indicador(self, source_items: List[TiposIndicador]) -> List[TiposIndicador]:
         """
@@ -124,20 +149,29 @@ class TransformationService:
             return date_val
         return None
 
-    def transformar_evidencia(self, items: List[EvidenciaSource]) -> tuple[List[EvidenciaDest], List[FechaVencimientoSubIndicadorEvidencia], List[SubIndicadorEvidencia]]:
+    def transformar_evidencia(self, items: List[EvidenciaSource]) -> tuple[List[EvidenciaDest], List[FechaVencimientoSubIndicadorEvidencia], List[SubIndicadorEvidencia], List[ArchivoDest]]:
         """
-        Transforma dbo.Evidencia en 3 tablas destino.
-        Retorna: (evidencias, fechas_vencimiento, sub_indicador_evidencias)
+        Transforma dbo.Evidencia en 4 tablas destino:
+        - Evidencia.Evidencias
+        - Evidencia.FechaVencimientoSubIndicadorEvidencias
+        - Evidencia.SubIndicadorEvidencias
+        - Evidencia.Archivos
+        
+        Retorna: (evidencias, fechas_vencimiento, sub_indicador_evidencias, archivos)
         """
         evidencias_dest = []
         fechas_dest = []
         sub_ind_evidencias_dest = []
+        archivos_dest = []
         
-        # ID tracking (assuming empty destination tables)
-        # Using Source EvidenciaID for DEST Evidencia.Id
+        # Reset maps
+        self.archivo_map = {} 
+        self.sub_ev_map = {}
         
+        # ID tracking
         fecha_id_counter = 1
         sub_ind_ev_id_counter = 1
+        archivo_id_counter = 1
         
         for item in items:
             safe_fecha = self._sanitize_date(item.FechaVencimiento)
@@ -160,14 +194,25 @@ class TransformationService:
             )
             evidencias_dest.append(evidencia)
             
-            # 2. Manejar Fecha Vencimiento (Si aplica)
+            # 2. Manejar Fecha Vencimiento
             fecha_venc_id = None
             if item.AplicaVencimiento:
                 fecha_venc_id = fecha_id_counter
+                original_tipo_id = item.TipoVencimiento
+                mapped_tipo_id = None
+                
+                # Mapping logic
+                if original_tipo_id == 1:
+                    mapped_tipo_id = 2
+                elif original_tipo_id == 2:
+                    mapped_tipo_id = 1
+                else:
+                    mapped_tipo_id = original_tipo_id
+                
                 fecha = FechaVencimientoSubIndicadorEvidencia(
                     Id=fecha_venc_id,
-                    TipoVencimientoId=item.TipoVencimiento,
-                    FechaVencimiento=safe_fecha if safe_fecha else datetime(1900, 1, 1), # Fallback if required? Let's assume NULL is ok or use 1900
+                    TipoVencimientoId=mapped_tipo_id,
+                    FechaVencimiento=safe_fecha if safe_fecha else datetime(1900, 1, 1),
                     PeriodicidadDias=int(item.CantDias) if item.CantDias and item.CantDias.isdigit() else 0,
                     CreatedAt=datetime.now(),
                     CreatedBy="MigrationScript",
@@ -177,7 +222,6 @@ class TransformationService:
                 fechas_dest.append(fecha)
                 fecha_id_counter += 1
             
-            # 3. Crear Enlace SubIndicadorEvidencia
             sub_ind_ev = SubIndicadorEvidencia(
                 Id=sub_ind_ev_id_counter,
                 SubIndicadorId=item.IndicadorID,
@@ -191,6 +235,133 @@ class TransformationService:
                 IsDeleted=False
             )
             sub_ind_evidencias_dest.append(sub_ind_ev)
+            
+            # Populate Map
+            self.sub_ev_map[(item.IndicadorID, item.EvidenciaID)] = sub_ind_ev.Id
+            
+            # 4. Crear Archivo (Si existe NombreArchivo)
+            if item.NombreArchivo:
+                archivo = ArchivoDest(
+                    Id=archivo_id_counter,
+                    CoedomId=0, # Default Global/System
+                    SubIndicadorEvidenciaId=sub_ind_ev_id_counter,
+                    NombreOriginal=item.NombreArchivo,
+                    ArchivoBinario=b'', # Empty binary
+                    EstadoArchivoId=1, # Active
+                    EvidenciaId=None, # Explicitly valid linking via SubIndicadorEvidencia typically sufficient, but table has EvidenciaId Nullable.
+                    CreatedAt=datetime.now(),
+                    CreatedBy="MigrationScript",
+                    IsActive=True,
+                    IsDeleted=False,
+                    RowGuid=uuid.uuid4(),
+                    TipoAlmacenamiento=2, # Externo (User requested 2)
+                    RutaExterna=f"https://www.sismap.gob.do/Educacion/uploads/evidencias/{item.NombreArchivo}"
+                )
+                archivos_dest.append(archivo)
+                
+                # Update Map
+                self.archivo_map[item.NombreArchivo] = archivo.Id
+                
+                archivo_id_counter += 1
+            
             sub_ind_ev_id_counter += 1
             
-        return evidencias_dest, fechas_dest, sub_ind_evidencias_dest
+        return evidencias_dest, fechas_dest, sub_ind_evidencias_dest, archivos_dest
+
+    # ============================================================
+    # PUNTUACION Y REVISIONES
+    # ============================================================
+
+    def transformar_puntuacion(self, source_items: List[CargaEvidenciaSource], start_file_id: int, puntuador_id: str = None, start_score_id: int = 1) -> tuple[List[PuntuacionDest], List[ArchivoDest]]:
+        """
+        Transforma CargaEvidencia -> Evidencia.Puntuacion AND Evidencia.Archivos
+        """
+        scores = []
+        files = []
+        file_id_counter = start_file_id
+        score_id_counter = start_score_id
+        
+        for item in source_items:
+            # 1. Create File (Upload)
+            # Find SubIndicadorEvidenciaId
+            key = (item.IndicadorID, item.EvidenciaID)
+            sub_ev_id = self.sub_ev_map.get(key)
+            
+            # If not found, we cannot correctly link the file to the requirement.
+            # Log warning or skip? For migration, skipping orphaned uploads is typical or use placeholder.
+            # Assuming data consistency, it should be found.
+            
+            row_guid = uuid.uuid4()
+            
+            archivo = ArchivoDest(
+                Id=file_id_counter,
+                CoedomId=item.OrganismoID if item.OrganismoID else 0,
+                SubIndicadorEvidenciaId=sub_ev_id if sub_ev_id else None, # Use sub_ev_id from map
+                NombreOriginal=item.NombreArchivo if item.NombreArchivo else "SinNombre.pdf",
+                ArchivoBinario=b'', 
+                EstadoArchivoId=1,
+                EvidenciaId=None,
+                CreatedAt=datetime.now(),
+                CreatedBy="MigrationScript",
+                IsActive=True,
+                IsDeleted=False,
+                RowGuid=row_guid,
+                TipoAlmacenamiento=2,
+                RutaExterna=f"https://www.sismap.gob.do/Educacion/uploads/evidencias/{item.NombreArchivo}"
+            )
+            if sub_ev_id:
+                archivo.SubIndicadorEvidenciaId = sub_ev_id
+            
+            files.append(archivo)
+            
+            # 2. Create Score
+            new_score = PuntuacionDest(
+                Id=score_id_counter, 
+                ArchivoEvidenciaId=file_id_counter, # Link to the file we just made
+                PuntuadorUsuarioId=puntuador_id, # Use injected UserID
+                Calificacion=item.Puntuacion if item.Puntuacion is not None else 0.0,
+                CreatedAt=datetime.now(),
+                CreatedBy="MigrationScript",
+                IsActive=True,
+                IsDeleted=False
+            )
+            scores.append(new_score)
+            
+            file_id_counter += 1
+            score_id_counter += 1
+            
+        return scores, files
+
+    def transformar_revision(self, source_items: List[RevisionSource]) -> tuple[List[RevisionEvidenciaDest], List[ComentarioRevisionDest]]:
+        """Transforma Revision -> RevisionEvidencias + Comentarios"""
+        revisions = []
+        comments = []
+        
+        for item in source_items:
+            rev_dest = RevisionEvidenciaDest(
+                Id=item.RevisionID,
+                ArchivoEvidenciaId=item.EvidenciaID, # Linking check needed
+                FechaRevisionConcluida=item.FechaRevision,
+                UsuarioId=None, # Map user
+                EstadoDadoId=1, # Default/Map
+                NivelRevisionEvidencia=1,
+                RevisionCoedomId=1, # Placeholder
+                CreatedAt=item.FechaRevision,
+                CreatedBy="MigrationScript",
+                IsActive=True
+            )
+            revisions.append(rev_dest)
+            
+            if item.Comentario:
+                comm_dest = ComentarioRevisionDest(
+                    Id=item.RevisionID, # Share ID or auto-inc
+                    RevisionEvidenciaId=item.RevisionID,
+                    Observaciones=item.Comentario,
+                    UsuarioId=None,
+                    CreatedAt=item.FechaRevision,
+                    CreatedBy="MigrationScript",
+                    IsActive=True
+                )
+                comments.append(comm_dest)
+                
+        return revisions, comments

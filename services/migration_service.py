@@ -8,7 +8,8 @@ from repositories.destino_repo import DestinoRepository
 from services.transformation_service import TransformationService
 from models.entities import (
     TipoVencimiento, TiposIndicador, Indicador, Ibog, SubIndicador,
-    EvidenciaSource, EvidenciaDest, SubIndicadorEvidencia, FechaVencimientoSubIndicadorEvidencia
+    EvidenciaSource, EvidenciaDest, SubIndicadorEvidencia, FechaVencimientoSubIndicadorEvidencia,
+    CargaEvidenciaSource, PuntuacionDest, RevisionSource, RevisionEvidenciaDest, ComentarioRevisionDest
 )
 from utils.logger import setup_logger, MigrationStats
 
@@ -55,7 +56,7 @@ class MigrationService:
         self.logger.info(f"Extraído: {archivo} ({len(datos)} registros)")
         return str(archivo)
 
-    def extraer_todo(self) -> Dict[str, str]:
+    def extraer_todo(self, sub_indicador_codigos: Optional[List[str]] = None) -> Dict[str, str]:
         self.logger.info("INICIANDO EXTRACCIÓN DE DATOS (FUENTE)")
         archivos = {}
         
@@ -68,12 +69,12 @@ class MigrationService:
             self.logger.error(f"Error extrayendo TipoVencimiento: {e}")
             
         # 2. TiposIndicador
-        try:
-            datos = self.fuente.obtener_tipos_indicador()
-            archivos['tipos_indicador'] = self.extraer_a_json('tipos_indicador', datos)
-            self.stats.registrar_tabla('TiposIndicador', len(datos), 0, True)
-        except Exception as e:
-            self.logger.error(f"Error extrayendo TiposIndicador: {e}")
+        # try:
+        #     datos = self.fuente.obtener_tipos_indicador()
+        #     archivos['tipos_indicador'] = self.extraer_a_json('tipos_indicador', datos)
+        #     self.stats.registrar_tabla('TiposIndicador', len(datos), 0, True)
+        # except Exception as e:
+        #     self.logger.error(f"Error extrayendo TiposIndicador: {e}")
 
         # 3. Indicadores (Desde Ibog)
         try:
@@ -91,14 +92,31 @@ class MigrationService:
         except Exception as e:
             self.logger.error(f"Error extrayendo SubIndicadores: {e}")
 
-        # 5. Evidencias
+        # 5. Evidencias (Filtrado opcional)
         try:
-            datos = self.fuente.obtener_evidencias()
+            datos = self.fuente.obtener_evidencias(sub_indicador_codigos)
             archivos['evidencias_source'] = self.extraer_a_json('evidencias_source', datos)
             self.stats.registrar_tabla('EvidenciasSource', len(datos), 0, True)
         except Exception as e:
             self.logger.error(f"Error extrayendo Evidencias: {e}")
-
+            
+        # 6. Puntuaciones (Filtrado requerido si se usa, o vacio si no hay codigos)
+        if sub_indicador_codigos:
+            try:
+                datos = self.fuente.obtener_puntuaciones(sub_indicador_codigos)
+                archivos['puntuaciones'] = self.extraer_a_json('puntuaciones', datos)
+                self.stats.registrar_tabla('Puntuaciones', len(datos), 0, True)
+            except Exception as e:
+                self.logger.error(f"Error extrayendo Puntuaciones: {e}")
+                
+            # 7. Revisiones (Filtrado requerido)
+            try:
+                datos = self.fuente.obtener_revisiones(sub_indicador_codigos)
+                archivos['revisiones'] = self.extraer_a_json('revisiones', datos)
+                self.stats.registrar_tabla('Revisiones', len(datos), 0, True)
+            except Exception as e:
+                self.logger.error(f"Error extrayendo Revisiones: {e}")
+                
         return archivos
 
     # ============================================================
@@ -115,20 +133,24 @@ class MigrationService:
             return [entity_class.from_dict(item) for item in datos]
         return [entity_class(**item) for item in datos]
 
-    def cargar_todo(self, archivos: Dict[str, str], limpiar_antes: bool = False) -> bool:
+    def cargar_todo(self, archivos: Dict[str, str], limpiar_antes: bool = False, puntuador_id: str = None) -> bool:
         self.logger.info("INICIANDO TRANSFORMACIÓN Y CARGA")
         
         try:
             if limpiar_antes:
                 self.logger.info("Limpiando tablas destino...")
                 # Order matters for foreign keys
+                self.destino.limpiar_comentario_revision()
+                self.destino.limpiar_revision_evidencias()
+                self.destino.limpiar_puntuacion()
+                self.destino.limpiar_archivos() # Clean child first
                 self.destino.limpiar_sub_indicador_evidencias()
                 self.destino.limpiar_fecha_vencimiento_evidencias()
                 self.destino.limpiar_evidencias()
                 
                 self.destino.limpiar_sub_indicadores()
                 self.destino.limpiar_indicadores()
-                self.destino.limpiar_tipos_indicador()
+                # self.destino.limpiar_tipos_indicador()
                 self.destino.limpiar_tipos_vencimiento()
             
             # ... (Previous loads remain same) ...
@@ -136,6 +158,7 @@ class MigrationService:
             # 1. TipoVencimiento
             if archivos.get('tipos_vencimiento'):
                 source_data = self.cargar_desde_json(archivos['tipos_vencimiento'], TipoVencimiento)
+                # Note: transformation service now ignores source_data content and returns static list
                 transformed_data = self.transformer.transformar_tipo_vencimiento(source_data)
                 
                 self.destino.habilitar_identity_insert('Mantenimiento', 'TipoVencimiento')
@@ -145,15 +168,15 @@ class MigrationService:
                 self.logger.info(f"TipoVencimiento: {count} insertados")
             
             # 2. TiposIndicador
-            if archivos.get('tipos_indicador'):
-                source_data = self.cargar_desde_json(archivos['tipos_indicador'], TiposIndicador)
-                transformed_data = self.transformer.transformar_tipo_indicador(source_data)
+            # if archivos.get('tipos_indicador'):
+            #     source_data = self.cargar_desde_json(archivos['tipos_indicador'], TiposIndicador)
+            #     transformed_data = self.transformer.transformar_tipo_indicador(source_data)
                 
-                self.destino.habilitar_identity_insert('Mantenimiento', 'TiposIndicador')
-                count = self.destino.insertar_tipos_indicador(transformed_data)
-                self.destino.deshabilitar_identity_insert('Mantenimiento', 'TiposIndicador')
+            #     self.destino.habilitar_identity_insert('Mantenimiento', 'TiposIndicador')
+            #     count = self.destino.insertar_tipos_indicador(transformed_data)
+            #     self.destino.deshabilitar_identity_insert('Mantenimiento', 'TiposIndicador')
                 
-                self.logger.info(f"TiposIndicador: {count} insertados")
+            #     self.logger.info(f"TiposIndicador: {count} insertados")
             
             # 3. Indicadores (De Ibog)
             if archivos.get('ibog'):
@@ -183,7 +206,7 @@ class MigrationService:
                 self.destino.asegurar_tipo_evaluacion_defecto()
                 
                 source_data = self.cargar_desde_json(archivos['evidencias_source'], EvidenciaSource)
-                evidencias, fechas, sub_evidencias = self.transformer.transformar_evidencia(source_data)
+                evidencias, fechas, sub_evidencias, archivos_dest = self.transformer.transformar_evidencia(source_data)
                 
                 # Insertar Evidencias Base (Disable FK link to self for PreRequisito)
                 self.destino.habilitar_identity_insert('Evidencia', 'Evidencias')
@@ -210,6 +233,63 @@ class MigrationService:
                 
                 self.logger.info(f"SubIndicadorEvidencias: {c3} insertadas")
 
+                # Insertar Archivos
+                self.destino.habilitar_identity_insert('Evidencia', 'Archivos')
+                c4 = self.destino.insertar_archivos(archivos_dest)
+                self.destino.deshabilitar_identity_insert('Evidencia', 'Archivos')
+                
+                self.logger.info(f"Archivos (Template): {c4} insertados")
+                
+                # Determine next file ID
+                max_id = 0
+                if archivos_dest:
+                    max_id = max(a.Id for a in archivos_dest)
+                next_file_id = max_id + 1
+
+            # 6. Puntuaciones
+            # 6. Puntuaciones (y Archivos de Usuario)
+            if archivos.get('puntuaciones'):
+                source_data = self.cargar_desde_json(archivos['puntuaciones'], CargaEvidenciaSource)
+                
+                self.logger.info(f"DEBUG: Source Data Length for Puntuaciones = {len(source_data)}")
+                if source_data:
+                    self.logger.info(f"DEBUG: Sample Source Item: {source_data[0]}")
+                
+                # Retrieve next_file_id if not set (e.g. if no ev files)
+                if 'next_file_id' not in locals():
+                    next_file_id = 1
+                    
+                scores, user_files = self.transformer.transformar_puntuacion(source_data, next_file_id, puntuador_id)
+                
+                # Insert User Files (Archivos)
+                if user_files:
+                    self.destino.habilitar_identity_insert('Evidencia', 'Archivos')
+                    c_uf = self.destino.insertar_archivos(user_files)
+                    self.destino.deshabilitar_identity_insert('Evidencia', 'Archivos')
+                    self.logger.info(f"Archivos (Usuarios): {c_uf} insertados")
+                
+                # Insert Scores
+                self.destino.habilitar_identity_insert('Evidencia', 'Puntuacion')
+                count = self.destino.insertar_puntuacion(scores)
+                self.destino.deshabilitar_identity_insert('Evidencia', 'Puntuacion')
+                
+                self.logger.info(f"Puntuaciones: {count} insertadas")
+                
+            # 7. Revisiones
+            if archivos.get('revisiones'):
+                source_data = self.cargar_desde_json(archivos['revisiones'], RevisionSource)
+                revisions, comments = self.transformer.transformar_revision(source_data)
+                
+                self.destino.habilitar_identity_insert('Evidencia', 'RevisionEvidencias')
+                c_rev = self.destino.insertar_revision_evidencias(revisions)
+                self.destino.deshabilitar_identity_insert('Evidencia', 'RevisionEvidencias')
+                
+                self.destino.habilitar_identity_insert('Evidencia', 'ComentarioRevisionEvidencias')
+                c_com = self.destino.insertar_comentario_revision(comments)
+                self.destino.deshabilitar_identity_insert('Evidencia', 'ComentarioRevisionEvidencias')
+                
+                self.logger.info(f"Revisiones: {c_rev}, Comentarios: {c_com} insertados")
+
 
             self.conn_destino.commit()
             self.logger.info("✓ MIGRACIÓN EXITOSA")
@@ -224,15 +304,15 @@ class MigrationService:
     # EJECUCIÓN
     # ============================================================
 
-    def ejecutar_migracion(self, limpiar_antes: bool = False, confirmar: bool = True) -> bool:
-        archivos = self.extraer_todo()
+    def ejecutar_migracion(self, sub_indicador_codigos: Optional[List[str]] = None, limpiar_antes: bool = False, confirmar: bool = True, puntuador_id: str = None) -> bool:
+        archivos = self.extraer_todo(sub_indicador_codigos)
         if not any(archivos.values()):
             return False
             
         if confirmar:
             input("\nPresione Enter para cargar a destino (Ctrl+C para cancelar)...")
         
-        return self.cargar_todo(archivos, limpiar_antes)
+        return self.cargar_todo(archivos, limpiar_antes, puntuador_id)
 
     def solo_extraer(self) -> Dict[str, str]:
         self.extraer_todo()

@@ -32,10 +32,10 @@ def conectar_fuente() -> Optional[pyodbc.Connection]:
             timeout=10
         )
         conn.autocommit = False
-        print(f"✓ Conexión BD FUENTE exitosa ({cfg['database']})")
+        print(f"[OK] Conexión BD FUENTE exitosa ({cfg['database']})")
         return conn
     except pyodbc.Error as e:
-        print(f"✗ Error BD FUENTE: {e}")
+        print(f"[ERROR] Error BD FUENTE: {e}")
         return None
 
 
@@ -52,8 +52,8 @@ def conectar_destino() -> Optional[pyodbc.Connection]:
             timeout=10
         )
         conn.autocommit = False
-        print(f"✓ Conexión BD DESTINO exitosa ({cfg['database']})")
+        print(f"[OK] Conexión BD DESTINO exitosa ({cfg['database']})")
         return conn
     except pyodbc.Error as e:
-        print(f"✗ Error BD DESTINO: {e}")
+        print(f"[ERROR] Error BD DESTINO: {e}")
         return None

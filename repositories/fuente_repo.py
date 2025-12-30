@@ -1,5 +1,5 @@
 from typing import List, Optional
-from models.entities import TipoVencimiento, TiposIndicador, Indicador, Ibog, SubIndicador, EvidenciaSource
+from models.entities import TipoVencimiento, TiposIndicador, Indicador, Ibog, SubIndicador, EvidenciaSource, CargaEvidenciaSource, RevisionSource
 
 
 class FuenteRepository:
@@ -181,27 +181,52 @@ class FuenteRepository:
     # EVIDENCIAS
     # ============================================================
 
-    def obtener_evidencias(self) -> List[EvidenciaSource]:
-        """Lee Evidencia de la BD fuente"""
+    def obtener_evidencias(self, sub_indicador_codigos: Optional[List[str]] = None) -> List[EvidenciaSource]:
+        """
+        Lee Evidencia de la BD fuente.
+        Opcionalmente filtra por lista de cÃ³digos de sub-indicador.
+        """
         query = """
             SELECT 
-                EvidenciaID,
-                Codigo,
-                Descipcion,
-                NombreArchivo,
-                Prerequisito,
-                IndicadorID,
-                Criterio,
-                Valor,
-                AplicaVencimiento,
-                TipoVencimiento,
-                FechaVencimiento,
-                CantDias,
-                Estado
-            FROM Evidencia
-            -- WHERE Estado = 'Activo' removed
+                e.EvidenciaID,
+                e.Codigo,
+                e.Descipcion,
+                e.NombreArchivo,
+                e.Prerequisito,
+                e.IndicadorID,
+                e.Criterio,
+                e.Valor,
+                e.AplicaVencimiento,
+                e.TipoVencimiento,
+                e.FechaVencimiento,
+                e.CantDias,
+                e.Estado
+            FROM Evidencia e
         """
-        self.cursor.execute(query)
+        
+        params = []
+        if sub_indicador_codigos:
+            # Need to join with SubIndicadores/Indicador to match code? 
+            # Evidencia.IndicadorID -> SubIndicador.IndicadorID? Or SubIndicador.Id?
+            # Assuming Evidencia.IndicadorID IS the SubIndicador FK based on SubIndicador transformation logic (Id=item.IndicadorID)
+            
+            # Use JOIN to filter
+            # But wait, Evidencia.IndicadorID seems to be the FK to SubIndicador (or Ibog?)
+            # In transforamtion_service: SubIndicador.Id = item.Id (Source ID mapped from IndicadorID in Repo)
+            # transform_sub_indicador: item.Id = row[0] (IndicadorID in source query)
+            
+            # The source query for subindicadores selects IndicadorID as the first column.
+            # So Evidencia.IndicadorID links to SubIndicadores.IndicadorID.
+            
+            query += """
+            JOIN SubIndicadores s ON e.IndicadorID = s.IndicadorID
+            WHERE s.Codigo IN ({})
+            """.format(','.join(['?'] * len(sub_indicador_codigos)))
+            params.extend(sub_indicador_codigos)
+            
+        # query += " -- WHERE Estado = 'Activo' removed"
+        
+        self.cursor.execute(query, params)
         
         return [
             EvidenciaSource(
@@ -221,3 +246,97 @@ class FuenteRepository:
             )
             for row in self.cursor.fetchall()
         ]
+
+    # ============================================================
+    # PUNTUACIONES (CargaEvidencia + Archivo + Repositorio)
+    # ============================================================
+
+    def obtener_puntuaciones(self, sub_indicador_codigos: List[str]) -> List[CargaEvidenciaSource]:
+        """
+        Obtiene puntuaciones desde el join de CargaEvidencia, ArchivoCargaEvidencia, RepositorioDeEnvio.
+        Filtra por cÃ³digos de sub-indicador.
+        """
+        if not sub_indicador_codigos:
+            return []
+
+        # Assuming Joins based on standard ID naming conventions.
+        # [VERIFY JOIN KEYS]: CargaEvidenciaID, ArchivoCargaEvidenciaID, RepositorioDeEnvioID
+        # Also assuming linkage to SubIndicador via CargaEvidencia.IndicadorID or similar.
+        
+        query = """
+            SELECT
+                ce.CargaEvidenciaID,
+                ace.ArchivoCargaEvidenciaID,
+                ce.IndicadorID,
+                ce.EvidenciaID,
+                ce.OrganismoID,
+                ace.NombreArchivo,
+                ce.ValorActual -- Score
+            FROM CargaEvidencia ce
+            JOIN ArchivoCargaEvidencia ace ON ce.CargaEvidenciaID = ace.CargaEvidenciaID
+            JOIN SubIndicadores si ON ce.IndicadorID = si.IndicadorID
+            JOIN RepositorioDeEnvio re ON ace.NombreArchivo = re.Archivo
+            WHERE si.Codigo IN ({})
+            AND ce.FechaVencimiento > '2026-01-30'
+            AND re.EstadoEnvio = 'Puntuado'
+        """.format(','.join(['?'] * len(sub_indicador_codigos)))
+        
+        self.cursor.execute(query, sub_indicador_codigos)
+        
+        return [
+            CargaEvidenciaSource(
+                CargaEvidenciaID=row[0],
+                ArchivoCargaEvidenciaID=row[1],
+                IndicadorID=row[2],
+                EvidenciaID=row[3],
+                OrganismoID=row[4],
+                NombreArchivo=row[5],
+                Puntuacion=row[6] if row[6] is not None else 0.0
+            ) 
+            for row in self.cursor.fetchall()
+        ]
+
+    # ============================================================
+    # REVISIONES
+    # ============================================================
+
+    def obtener_revisiones(self, sub_indicador_codigos: List[str]) -> List[RevisionSource]:
+        """
+        Obtiene revisiones (comentarios, validaciones).
+        [TODO: Verificar Nombre Tabla Fuente] Usando 'Revision' como placeholder.
+        """
+        if not sub_indicador_codigos:
+            return []
+
+        # Assuming Revision is linked to Evidencia or CargaEvidencia
+        query = """
+            SELECT
+                r.RevisionID,
+                r.EvidenciaID, 
+                r.Comentario,
+                r.UsuarioID,
+                r.FechaRevision,
+                r.Estado
+            FROM Revision r -- [TODO: UPDATE TABLE NAME]
+            JOIN Evidencia e ON r.EvidenciaID = e.EvidenciaID
+            JOIN SubIndicadores si ON e.IndicadorID = si.IndicadorID
+            WHERE si.Codigo IN ({})
+        """.format(','.join(['?'] * len(sub_indicador_codigos)))
+
+        try:
+            self.cursor.execute(query, sub_indicador_codigos)
+            return [
+                RevisionSource(
+                    RevisionID=row[0],
+                    EvidenciaID=row[1],
+                    Comentario=row[2],
+                    UsuarioID=row[3],
+                    FechaRevision=row[4],
+                    EstadoRevision=row[5]
+                )
+                for row in self.cursor.fetchall()
+            ]
+        except Exception as e:
+            print(f"[WARNING] No se pudo leer tabla Revision: {e}")
+            return []
+

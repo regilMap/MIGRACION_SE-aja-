@@ -204,8 +204,8 @@ class FuenteRepository:
             FROM Evidencia e
         """
         
-        params = []
-        if sub_indicador_codigos:
+        # params = []
+        # if sub_indicador_codigos:
             # Need to join with SubIndicadores/Indicador to match code? 
             # Evidencia.IndicadorID -> SubIndicador.IndicadorID? Or SubIndicador.Id?
             # Assuming Evidencia.IndicadorID IS the SubIndicador FK based on SubIndicador transformation logic (Id=item.IndicadorID)
@@ -218,15 +218,15 @@ class FuenteRepository:
             # The source query for subindicadores selects IndicadorID as the first column.
             # So Evidencia.IndicadorID links to SubIndicadores.IndicadorID.
             
-            query += """
-            JOIN SubIndicadores s ON e.IndicadorID = s.IndicadorID
-            WHERE s.Codigo IN ({})
-            """.format(','.join(['?'] * len(sub_indicador_codigos)))
-            params.extend(sub_indicador_codigos)
+            # query += """
+            # JOIN SubIndicadores s ON e.IndicadorID = s.IndicadorID
+            # WHERE s.Codigo IN ({})
+            # """.format(','.join(['?'] * len(sub_indicador_codigos)))
+            # params.extend(sub_indicador_codigos)
             
         # query += " -- WHERE Estado = 'Activo' removed"
         
-        self.cursor.execute(query, params)
+        self.cursor.execute(query)
         
         return [
             EvidenciaSource(
@@ -271,7 +271,8 @@ class FuenteRepository:
                 ce.EvidenciaID,
                 ce.OrganismoID,
                 ace.NombreArchivo,
-                ce.ValorActual -- Score
+                ce.ValorActual, -- Score
+                ace.Fecha
             FROM CargaEvidencia ce
             JOIN ArchivoCargaEvidencia ace ON ce.CargaEvidenciaID = ace.CargaEvidenciaID
             JOIN SubIndicadores si ON ce.IndicadorID = si.IndicadorID
@@ -291,7 +292,8 @@ class FuenteRepository:
                 EvidenciaID=row[3],
                 OrganismoID=row[4],
                 NombreArchivo=row[5],
-                Puntuacion=row[6] if row[6] is not None else 0.0
+                Puntuacion=row[6], # Allow None
+                FechaArchivo=row[7]
             ) 
             for row in self.cursor.fetchall()
         ]

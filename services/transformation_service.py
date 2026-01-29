@@ -175,6 +175,7 @@ class TransformationService:
         
         for item in items:
             safe_fecha = self._sanitize_date(item.FechaVencimiento)
+            current_time = datetime.now()
             
             # 1. Mapear Evidencia Base
             evidencia = EvidenciaDest(
@@ -183,7 +184,7 @@ class TransformationService:
                 Descripcion=item.Descipcion if item.Descipcion else f"Evidencia {item.Codigo}",
                 Valor=item.Valor if item.Valor else 0.0,
                 PreRequisitoId=int(item.Prerequisito) if item.Prerequisito and item.Prerequisito.isdigit() else None,
-                CreatedAt=datetime.now(),
+                CreatedAt=current_time,
                 CreatedBy="MigrationScript",
                 IsActive=item.Estado == 'Activo',
                 IsDeleted=False,
@@ -195,12 +196,16 @@ class TransformationService:
             evidencias_dest.append(evidencia)
             
             # 2. Manejar Fecha Vencimiento
-            fecha_venc_id = None
+            # Requirement: ALL SubIndicadorEvidencia must have a FechaVencimientoSubIndicadorEvidenciaId
+            fecha_venc_id = fecha_id_counter
+            
+            # Defaults for when AplicaVencimiento is False
+            mapped_tipo_id = 1
+            final_fecha = datetime(1900, 1, 1)
+            final_periodicidad = 0
+            
             if item.AplicaVencimiento:
-                fecha_venc_id = fecha_id_counter
                 original_tipo_id = item.TipoVencimiento
-                mapped_tipo_id = None
-                
                 # Mapping logic
                 if original_tipo_id == 1:
                     mapped_tipo_id = 2
@@ -209,18 +214,21 @@ class TransformationService:
                 else:
                     mapped_tipo_id = original_tipo_id
                 
-                fecha = FechaVencimientoSubIndicadorEvidencia(
-                    Id=fecha_venc_id,
-                    TipoVencimientoId=mapped_tipo_id,
-                    FechaVencimiento=safe_fecha if safe_fecha else datetime(1900, 1, 1),
-                    PeriodicidadDias=int(item.CantDias) if item.CantDias and item.CantDias.isdigit() else 0,
-                    CreatedAt=datetime.now(),
-                    CreatedBy="MigrationScript",
-                    IsActive=item.Estado == 'Activo',
-                    IsDeleted=False
-                )
-                fechas_dest.append(fecha)
-                fecha_id_counter += 1
+                final_fecha = safe_fecha if safe_fecha else datetime(1900, 1, 1)
+                final_periodicidad = int(item.CantDias) if item.CantDias and item.CantDias.isdigit() else 0
+            
+            fecha = FechaVencimientoSubIndicadorEvidencia(
+                Id=fecha_venc_id,
+                TipoVencimientoId=mapped_tipo_id,
+                FechaVencimiento=final_fecha,
+                PeriodicidadDias=final_periodicidad,
+                CreatedAt=current_time,
+                CreatedBy="MigrationScript",
+                IsActive=item.Estado == 'Activo',
+                IsDeleted=False
+            )
+            fechas_dest.append(fecha)
+            fecha_id_counter += 1
             
             sub_ind_ev = SubIndicadorEvidencia(
                 Id=sub_ind_ev_id_counter,
@@ -229,7 +237,7 @@ class TransformationService:
                 FechaVencimientoSubIndicadorEvidenciaId=fecha_venc_id,
                 TipoEvaluacionId=1,
                 FechaVenciento=safe_fecha if safe_fecha else datetime(1900, 1, 1),
-                CreatedAt=datetime.now(),
+                CreatedAt=current_time,
                 CreatedBy="MigrationScript",
                 IsActive=item.Estado == 'Activo',
                 IsDeleted=False
@@ -239,8 +247,12 @@ class TransformationService:
             # Populate Map
             self.sub_ev_map[(item.IndicadorID, item.EvidenciaID)] = sub_ind_ev.Id
             
-            # 4. Crear Archivo (Si existe NombreArchivo)
-            if item.NombreArchivo:
+            # 4. Crear Archivo (Si existe NombreArchivo y parece un archivo real)
+            # Fix: Evitar crear archivos si NombreArchivo es una descripción larga (Error de Truncation)
+            if item.NombreArchivo and len(item.NombreArchivo) < 85:
+                # Validar extensión básica o longitud razonable.
+                # Muchos registros en Fuente tienen descripciones como NombreArchivo.
+                
                 archivo = ArchivoDest(
                     Id=archivo_id_counter,
                     CoedomId=0, # Default Global/System
@@ -248,13 +260,13 @@ class TransformationService:
                     NombreOriginal=item.NombreArchivo,
                     ArchivoBinario=b'', # Empty binary
                     EstadoArchivoId=1, # Active
-                    EvidenciaId=None, # Explicitly valid linking via SubIndicadorEvidencia typically sufficient, but table has EvidenciaId Nullable.
+                    EvidenciaId=None, 
                     CreatedAt=datetime.now(),
                     CreatedBy="MigrationScript",
                     IsActive=True,
                     IsDeleted=False,
                     RowGuid=uuid.uuid4(),
-                    TipoAlmacenamiento=2, # Externo (User requested 2)
+                    TipoAlmacenamiento=2, # Externo
                     RutaExterna=f"https://www.sismap.gob.do/Educacion/uploads/evidencias/{item.NombreArchivo}"
                 )
                 archivos_dest.append(archivo)
@@ -293,15 +305,26 @@ class TransformationService:
             
             row_guid = uuid.uuid4()
             
+            # Determine Score and Status
+            current_score = item.Puntuacion
+            
+            # Logic: NULL Score -> SKIP
+            if current_score is None:
+                continue
+
+            # If here, score is not None (0 or > 0) -> Status 3 (Approved)
+            estado_archivo_id = 3 
+            
             archivo = ArchivoDest(
                 Id=file_id_counter,
                 CoedomId=item.OrganismoID if item.OrganismoID else 0,
                 SubIndicadorEvidenciaId=sub_ev_id if sub_ev_id else None, # Use sub_ev_id from map
-                NombreOriginal=item.NombreArchivo if item.NombreArchivo else "SinNombre.pdf",
+                NombreOriginal=(item.NombreArchivo[:95] + '...') if item.NombreArchivo and len(item.NombreArchivo) > 99 else (item.NombreArchivo if item.NombreArchivo else "SinNombre.pdf"),
+
                 ArchivoBinario=b'', 
-                EstadoArchivoId=1,
+                EstadoArchivoId=estado_archivo_id, 
                 EvidenciaId=None,
-                CreatedAt=datetime.now(),
+                CreatedAt=self._sanitize_date(item.FechaArchivo) if item.FechaArchivo else datetime.now(),
                 CreatedBy="MigrationScript",
                 IsActive=True,
                 IsDeleted=False,
@@ -314,18 +337,20 @@ class TransformationService:
             
             files.append(archivo)
             
-            # 2. Create Score
-            new_score = PuntuacionDest(
-                Id=score_id_counter, 
-                ArchivoEvidenciaId=file_id_counter, # Link to the file we just made
-                PuntuadorUsuarioId=puntuador_id, # Use injected UserID
-                Calificacion=item.Puntuacion if item.Puntuacion is not None else 0.0,
-                CreatedAt=datetime.now(),
-                CreatedBy="MigrationScript",
-                IsActive=True,
-                IsDeleted=False
-            )
-            scores.append(new_score)
+            # 2. Create Score (If not None - allowing 0)
+            if item.Puntuacion is not None:
+                new_score = PuntuacionDest(
+                    Id=score_id_counter, 
+                    ArchivoEvidenciaId=file_id_counter, # Link to the file we just made
+                    PuntuadorUsuarioId=puntuador_id, # Use injected UserID
+                    Calificacion=current_score,
+                    CreatedAt=self._sanitize_date(item.FechaArchivo) if item.FechaArchivo else datetime.now(),
+                    CreatedBy="MigrationScript",
+                    IsActive=True,
+                    IsDeleted=False
+                )
+                scores.append(new_score)
+                score_id_counter += 1
             
             file_id_counter += 1
             score_id_counter += 1

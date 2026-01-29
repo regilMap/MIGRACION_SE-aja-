@@ -207,6 +207,7 @@ class CargaEvidenciaSource(DictMixin):
     OrganismoID: int = None # Para CoedomId
     NombreArchivo: str = None
     Puntuacion: float = None
+    FechaArchivo: datetime = None
     # Campos adicionales para Revision si estan aqui?
     # Asumimos que la revision esta separada o vinculada aqui.
 

@@ -1,0 +1,112 @@
+
+-- =======================================================================
+-- fn_PuntajeEvidencia_Inline
+-- Modificado para usar TipoSubIndicadorId
+-- =======================================================================
+CREATE   FUNCTION [dbo].[fn_PuntajeEvidencia_Inline]()
+RETURNS TABLE
+AS
+RETURN
+(
+    WITH OrganismosActivos AS (
+        -- ? TODOS los organismos tipo Escuelas
+        SELECT DISTINCT OrganismoID AS CoedomId
+        FROM [SISMAP_EDUCACION].[dbo].[vOrganismosEducacionX]
+        WHERE Descripcion = 'Escuelas'
+    ),
+    TiposSubIndicador AS (
+        -- Identificar el tipo de indicador para cada SubIndicadorEvidencia
+        SELECT DISTINCT
+            sie.Id AS SubIndicadorEvidenciaId,
+            sie.SubIndicadorId,
+            ti.Nombre AS TipoIndicador
+        FROM Evidencia.SubIndicadorEvidencias sie
+        INNER JOIN Mantenimiento.SubIndicadores si ON si.Id = sie.SubIndicadorId
+        INNER JOIN Mantenimiento.TiposSubIndicador ti ON ti.Id = si.TipoSubIndicadorId -- ? Cambiado a TiposSubIndicador
+        WHERE sie.IsActive = 1 AND sie.IsDeleted = 0
+    ),
+    TodasLasCombinaciones AS (
+        -- ? TODOS los organismos  TODAS las SubIndicadorEvidencias
+        SELECT 
+            ti.SubIndicadorEvidenciaId,
+            ti.SubIndicadorId,
+            oa.CoedomId,
+            ti.TipoIndicador,
+            cfg.AplicaFinal
+        FROM TiposSubIndicador ti
+        CROSS JOIN OrganismosActivos oa
+        LEFT JOIN Cache.ConfiguracionEntidad cfg
+            ON cfg.TipoEntidad = 'SubIndicadorEvidencia'
+           AND cfg.EntidadId = ti.SubIndicadorEvidenciaId
+           AND cfg.CoedomId = oa.CoedomId
+        WHERE (cfg.AplicaFinal IS NULL OR cfg.AplicaFinal = 1)  -- Solo las que aplican
+    ),
+    UltimosArchivosValidos AS (
+        -- Obtener el ltimo archivo vlido por SubIndicadorEvidencia y Organismo
+        SELECT 
+            a.SubIndicadorEvidenciaId,
+            a.CoedomId,
+            a.Id AS ArchivoId,
+            a.CreatedAt,
+            ROW_NUMBER() OVER (
+                PARTITION BY a.SubIndicadorEvidenciaId, a.CoedomId 
+                ORDER BY a.CreatedAt DESC, a.Id DESC
+            ) AS rn
+        FROM Evidencia.Archivos a
+        INNER JOIN Mantenimiento.EstadoArchivos ea 
+            ON a.EstadoArchivoId = ea.Id
+        WHERE a.IsDeleted = 0 
+          AND a.IsActive = 1
+          AND ea.Nombre NOT IN ('Vencido', 'Rechazado', 'Pendiente')
+    ),
+    UltimasPuntuaciones AS (
+        -- Obtener la ltima puntuacin de cada archivo
+        SELECT 
+            ua.SubIndicadorEvidenciaId,
+            ua.CoedomId,
+            ua.ArchivoId,
+            p.Calificacion,
+            ROW_NUMBER() OVER (
+                PARTITION BY ua.SubIndicadorEvidenciaId, ua.CoedomId 
+                ORDER BY p.CreatedAt DESC, p.Id DESC
+            ) AS rnPuntuacion
+        FROM UltimosArchivosValidos ua
+        INNER JOIN Evidencia.Puntuacion p
+            ON p.ArchivoEvidenciaId = ua.ArchivoId
+           AND p.IsDeleted = 0 
+           AND p.IsActive = 1
+        WHERE ua.rn = 1  -- Solo el ltimo archivo
+    )
+    SELECT 
+        tc.SubIndicadorEvidenciaId,
+        tc.SubIndicadorId,
+        tc.CoedomId,
+        tc.TipoIndicador,
+        -- Calcular puntaje segn tipo de indicador
+        CASE 
+            -- Acumulativo: Calificacin + IncrementoAplicado
+            WHEN tc.TipoIndicador = 'Acumulativo' THEN
+                CASE 
+                    WHEN (ISNULL(up.Calificacion, 0) + ISNULL(va.IncrementoAplicado, 0)) < 0 
+                    THEN CAST(0 AS DECIMAL(5,2))
+                    ELSE CAST((ISNULL(up.Calificacion, 0) + ISNULL(va.IncrementoAplicado, 0)) AS DECIMAL(5,2))
+                END
+            
+            -- Escalonado: Solo Calificacin, SIN ajuste
+            WHEN tc.TipoIndicador = 'Escalonado' THEN
+                CAST(ISNULL(up.Calificacion, 0) AS DECIMAL(5,2))
+            
+            -- Otros tipos: Solo Calificacin
+            ELSE CAST(ISNULL(up.Calificacion, 0) AS DECIMAL(5,2))
+        END AS Puntaje
+    FROM TodasLasCombinaciones tc
+    LEFT JOIN UltimasPuntuaciones up
+        ON up.SubIndicadorEvidenciaId = tc.SubIndicadorEvidenciaId
+       AND up.CoedomId = tc.CoedomId
+       AND up.rnPuntuacion = 1
+    -- ? LEFT JOIN solo para acumulativos
+    LEFT JOIN fn_ValorAjustadoEvidencia_Inline() va
+        ON va.SubIndicadorEvidenciaId = tc.SubIndicadorEvidenciaId
+       AND va.CoedomId = tc.CoedomId
+       AND tc.TipoIndicador = 'Acumulativo'
+);

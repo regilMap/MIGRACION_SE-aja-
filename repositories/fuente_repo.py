@@ -1,5 +1,5 @@
 from typing import List, Optional
-from models.entities import TipoVencimiento, TiposIndicador, Indicador, Ibog, SubIndicador, EvidenciaSource, CargaEvidenciaSource, RevisionSource
+from models.entities import TipoVencimiento, TiposSubIndicador, Indicador, Ibog, SubIndicador, EvidenciaSource, CargaEvidenciaSource, RevisionSource
 
 
 class FuenteRepository:
@@ -48,11 +48,11 @@ class FuenteRepository:
         return self.cursor.fetchone()[0]
     
     # ============================================================
-    # TIPOS INDICADOR
+    # TIPOS SUB INDICADOR
     # ============================================================
     
-    def obtener_tipos_indicador(self) -> List[TiposIndicador]:
-        """Lee todos los TipoIndicador de la BD fuente"""
+    def obtener_tipos_sub_indicador(self) -> List[TiposSubIndicador]:
+        """Lee todos los TipoSubIndicador de la BD fuente"""
         query = """
             SELECT 
                 TipoIndicadorID,
@@ -63,7 +63,7 @@ class FuenteRepository:
         self.cursor.execute(query)
         
         return [
-            TiposIndicador(
+            TiposSubIndicador(
                 Id=row[0],
                 Nombre=row[1], # Usar Descripcion como Nombre
                 Descripcion=row[1],
@@ -74,9 +74,9 @@ class FuenteRepository:
             for row in self.cursor.fetchall()
         ]
     
-    def contar_tipos_indicador(self) -> int:
-        """Cuenta registros en TiposIndicador"""
-        self.cursor.execute("SELECT COUNT(*) FROM TiposIndicador WHERE IsDeleted = 0")
+    def contar_tipos_sub_indicador(self) -> int:
+        """Cuenta registros en TiposSubIndicador"""
+        self.cursor.execute("SELECT COUNT(*) FROM TipoIndicador")
         return self.cursor.fetchone()[0]
     
     # ============================================================
@@ -278,7 +278,6 @@ class FuenteRepository:
             JOIN SubIndicadores si ON ce.IndicadorID = si.IndicadorID
             JOIN RepositorioDeEnvio re ON ace.NombreArchivo = re.Archivo
             WHERE si.Codigo IN ({})
-            AND ce.FechaVencimiento > '2026-01-30'
             AND re.EstadoEnvio = 'Puntuado'
         """.format(','.join(['?'] * len(sub_indicador_codigos)))
         

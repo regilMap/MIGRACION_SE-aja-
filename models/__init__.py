@@ -1,6 +1,7 @@
 from .entities import (
     TipoVencimiento, 
-    TiposIndicador, 
+    TiposSubIndicador, 
     Indicador,
     ENTITY_MAP
 )
+

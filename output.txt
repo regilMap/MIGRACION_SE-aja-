@@ -1,0 +1,3 @@
+[OK] Conexión BD DESTINO exitosa (SISMAP_EDUCACION_M2)
+Success. Rows: 1629
+Row 0: (98, 3, 'Ministerio de Educación', 'Presidencia de la República', 18, 'No Aplica', None, None, None, None, None, 'Av. Máximo Gómez esq. Dr. Arístides Fiallo Cabral #10', '8096889700', None, None, None)

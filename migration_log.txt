@@ -1,0 +1,6 @@
+Error during migration:
+Traceback (most recent call last):
+  File "C:\Users\regil.batista\Desktop\MIGRACION_SE(aja)\run_migration.py", line 23, in <module>
+    cursor.execute(stmt)
+    ~~~~~~~~~~~~~~^^^^^^
+pyodbc.IntegrityError: ('23000', "[23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Violation of PRIMARY KEY constraint 'PK_UsuarioClaves'. Cannot insert duplicate key in object 'Usuario.UsuarioClaves'. The duplicate key value is (09a6a85e-8e23-46de-b9d6-be08fa527168). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement has been terminated. (3621)")

@@ -39,7 +39,7 @@ class TipoVencimiento(DictMixin):
     IsDeleted: bool = False
 
 @dataclass
-class TiposIndicador(DictMixin):
+class TiposSubIndicador(DictMixin):
     Id: int = None
     Nombre: str = None
     Descripcion: str = None
@@ -69,6 +69,7 @@ class Indicador(DictMixin):
 class SubIndicador(DictMixin):
     Id: int = None              # Dest Id / Source IndicadorID
     IndicadorId: int = None     # Dest IndicadorId / Source ibogId
+    TipoSubIndicadorId: int = None  # FK -> Mantenimiento.TiposSubIndicador
     Codigo: str = None
     Nombre: str = None
     Descripcion: str = None
@@ -269,7 +270,7 @@ class ComentarioRevisionDest(DictMixin):
 
 ENTITY_MAP = {
     'TipoVencimiento': TipoVencimiento,
-    'TiposIndicador': TiposIndicador,
+    'TiposSubIndicador': TiposSubIndicador,
     'Indicador': Indicador,
     'SubIndicador': SubIndicador,
     'Ibog': Ibog,

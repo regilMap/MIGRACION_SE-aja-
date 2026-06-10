@@ -1,0 +1,70 @@
+{
+  "sheets": [
+    "DISTRITO Y REGIONALES",
+    "EQUIPO TÉCNICO",
+    "REVISOR - TEC- DISTRITAL",
+    "REVISOR- TECNICO NACIONAL ",
+    "VEEDOR- TECNICO REGIONAL SISMAP",
+    "PUNTUADOR- COOR EJE",
+    "EQUIPO SEGUIMIENTO SISMAP EDUC"
+  ],
+  "samples": {
+    "DISTRITO Y REGIONALES": [
+      "Unnamed: 0",
+      "Unnamed: 1",
+      "Unnamed: 2",
+      "Unnamed: 3",
+      "Unnamed: 4",
+      "Unnamed: 5",
+      "Unnamed: 6"
+    ],
+    "EQUIPO TÉCNICO": [
+      "Unnamed: 0",
+      "Unnamed: 1",
+      "Unnamed: 2",
+      "Unnamed: 3",
+      "Unnamed: 4",
+      "Unnamed: 5",
+      "Unnamed: 6",
+      "Unnamed: 7",
+      "Unnamed: 8",
+      "Unnamed: 9",
+      "Unnamed: 10"
+    ],
+    "REVISOR - TEC- DISTRITAL": [
+      "Unnamed: 0",
+      "VICEMINISTERIO DE SUPERVISIÓN Y CONTROL DE LA CALIDAD DE LA EDUCACIÓN",
+      "Unnamed: 2",
+      "Unnamed: 3",
+      "Unnamed: 4",
+      "Unnamed: 5",
+      "Unnamed: 6"
+    ],
+    "REVISOR- TECNICO NACIONAL ": [
+      "Unnamed: 0",
+      "Unnamed: 1",
+      "VICEMINISTERIO DE SUPERVISIÓN Y CONTROL DE LA CALIDAD DE LA EDUCACIÓN",
+      "Unnamed: 3",
+      "Unnamed: 4",
+      "Unnamed: 5",
+      "Unnamed: 6"
+    ],
+    "VEEDOR- TECNICO REGIONAL SISMAP": [
+      "Unnamed: 0",
+      "Unnamed: 1",
+      "Unnamed: 2",
+      "Unnamed: 3"
+    ],
+    "PUNTUADOR- COOR EJE": [
+      "Unnamed: 0",
+      "VICEMINISTERIO DE SUPERVISIÓN Y CONTROL DE LA CALIDAD DE LA EDUCACIÓN",
+      "Unnamed: 2",
+      "Unnamed: 3",
+      "Unnamed: 4"
+    ],
+    "EQUIPO SEGUIMIENTO SISMAP EDUC": [
+      "VICEMINISTERIO DE SUPERVISIÓN Y CONTROL DE LA CALIDAD DE LA EDUCACIÓN",
+      "Unnamed: 1"
+    ]
+  }
+}

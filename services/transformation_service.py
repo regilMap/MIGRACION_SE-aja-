@@ -1,8 +1,9 @@
 import uuid
+import re
 from datetime import datetime
 from typing import List, Optional
 from models.entities import (
-    TipoVencimiento, TiposIndicador, Indicador, SubIndicador,
+    TipoVencimiento, TiposSubIndicador, Indicador, SubIndicador,
     EvidenciaSource, EvidenciaDest, SubIndicadorEvidencia, FechaVencimientoSubIndicadorEvidencia,
     Ibog, ArchivoDest, CargaEvidenciaSource, PuntuacionDest, RevisionSource, RevisionEvidenciaDest, ComentarioRevisionDest
 )
@@ -12,7 +13,7 @@ class TransformationService:
     Servicio para transformar datos del esquema FUENTE al esquema DESTINO.
     Mapeos principales:
     - dbo.TipoVencimiento -> Mantenimiento.TipoVencimiento
-    - dbo.TipoIndicador -> Mantenimiento.TiposIndicador
+    - dbo.TipoSubIndicador -> Mantenimiento.TiposSubIndicador
     - dbo.Ibog -> Mantenimiento.Indicadores
     - dbo.SubIndicadores -> Mantenimiento.SubIndicadores
     """
@@ -20,6 +21,82 @@ class TransformationService:
     def __init__(self):
         self.archivo_map = {} # Map NombreArchivo -> ArchivoDest.Id
         self.sub_ev_map = {} # Map (IndicadorID, EvidenciaID) -> SubIndicadorEvidencia.Id
+        self.evidencia_valor_map = {} # Map EvidenciaID -> Valor (float)
+
+    def _ajustar_puntuaciones_por_subindicador(self, items: List[CargaEvidenciaSource]):
+        # 0. Deduplicación por EvidenciaID: Quedarse con el ULTIMO archivo por CADA evidencia
+        # Agrupar por (OrganismoID, EvidenciaID)
+        evidencia_groups = {}
+        for item in items:
+            if item.Puntuacion is None: continue
+            key = (item.OrganismoID, item.EvidenciaID)
+            if key not in evidencia_groups: evidencia_groups[key] = []
+            evidencia_groups[key].append(item)
+            
+        min_date = datetime(1900, 1, 1)
+
+        for key, group in evidencia_groups.items():
+            if len(group) > 1:
+                # Ordenar descendente por FechaArchivo (Mas reciente primero)
+                group.sort(key=lambda x: (x.FechaArchivo if x.FechaArchivo else min_date), reverse=True)
+                
+                # Quedarse con el primero (mas reciente), los demas 0
+                for i in range(1, len(group)):
+                    # print(f"DEBUG_DEDUP: Zeroing Duplicate {group[i].Puntuacion} (File: {group[i].NombreArchivo})")
+                    group[i].Puntuacion = 0.0
+
+    def format_indicator_code(self, code: str) -> str:
+        if not code:
+            return ""
+        code = code.strip()
+        match = re.match(r'^([A-Za-z]+)?\s*(\d+)(?:\.(\d+))?(?:\.(\d+))?(.*)$', code)
+        if not match:
+            return code
+        
+        prefix, ind_part, sub_part, ev_part, rest = match.groups()
+        try:
+            indicator = int(ind_part)
+        except ValueError:
+            return code
+
+        if sub_part is None:
+            res = f"{indicator}"
+        else:
+            try:
+                subindicator = int(sub_part)
+                res = f"{indicator}.{subindicator:02d}"
+            except ValueError:
+                res = f"{indicator}.{sub_part}"
+                
+            if ev_part is not None:
+                res = f"{res}.{ev_part}"
+                
+        prefix_str = f"{prefix} " if prefix else ""
+        return f"{prefix_str}{res}{rest}"
+
+    def map_to_source_code(self, code: str) -> str:
+        if not code:
+            return ""
+        code = code.strip()
+        match = re.match(r'^([A-Za-z]+)?\s*(\d+)\.(\d+)(.*)$', code)
+        if not match:
+            return code
+        
+        prefix, ind_part, sub_part, rest = match.groups()
+        try:
+            indicator = int(ind_part)
+            subindicator = int(sub_part)
+        except ValueError:
+            return code
+            
+        if indicator == 5:
+            return code
+            
+        if prefix == 'Ns' and indicator == 7 and subindicator == 2:
+            return '07.2'
+            
+        prefix_str = f"{prefix} " if prefix else ""
+        return f"{prefix_str}{indicator:02d}.{subindicator}{rest}"
 
     def transformar_tipo_vencimiento(self, source_items: List[TipoVencimiento]) -> List[TipoVencimiento]:
         """
@@ -65,14 +142,14 @@ class TransformationService:
         ]
         return static_data
 
-    def transformar_tipo_indicador(self, source_items: List[TiposIndicador]) -> List[TiposIndicador]:
+    def transformar_tipo_sub_indicador(self, source_items: List[TiposSubIndicador]) -> List[TiposSubIndicador]:
         """
-        Transforma TipoIndicador.
+        Transforma TipoSubIndicador.
         Fuente y Destino son similares, solo ajustar campos de auditoría.
         """
         transformed = []
         for item in source_items:
-            new_item = TiposIndicador(
+            new_item = TiposSubIndicador(
                 Id=item.Id,
                 Nombre=item.Nombre or "Sin Nombre",
                 Descripcion=item.Descripcion or "Sin Descripcion",
@@ -109,14 +186,35 @@ class TransformationService:
         """
         Transforma dbo.SubIndicadores (Fuente) -> Mantenimiento.SubIndicadores (Destino)
         """
+        sub_indicadores_tipo_2 = {
+            "02.2", "02.3", "02.4", "02.6", "02.7", "02.8", "03.1", "03.2", "03.3", "03.5",
+            "03.6", "04.1", "04.2", "04.3", "5.01", "5.02", "5.03", "5.04", "5.05", "5.06",
+            "5.07", "5.08", "5.09", "5.10", "06.1", "06.2", "06.3", "06.4", "06.5"
+        }
+
         transformed = []
         for item in source_items:
+            # Determinar TipoSubIndicadorId
+            tipo_sub_indicador_id = 1
+            if item.Codigo and item.Codigo.strip() in sub_indicadores_tipo_2:
+                tipo_sub_indicador_id = 2
+
+            codigo_transformed = item.Codigo.strip() if item.Codigo else ""
+            if codigo_transformed == '07.2':
+                codigo_transformed = 'Ns 07.2'
+            codigo_transformed = self.format_indicator_code(codigo_transformed)
+
+            nombre_transformed = item.Descripcion.strip() if item.Descripcion else ""
+            if item.Codigo and item.Codigo.strip() == '07.2':
+                nombre_transformed = 'Porcentaje de Estudiantes Según Niveles de Desempeño en las Pruebas Nacionales (Nivel Secundario)'
+
             new_item = SubIndicador(
                 Id=item.Id, # Source ID (mapped from IndicadorID in Repo)
                 IndicadorId=item.ibogId, # Parent ID
-                Codigo=item.Codigo,
-                Nombre=item.Descripcion, # Map Desc to Nombre
-                Descripcion=item.Descripcion,
+                TipoSubIndicadorId=tipo_sub_indicador_id,
+                Codigo=codigo_transformed,
+                Nombre=nombre_transformed, # Map Desc to Nombre
+                Descripcion=nombre_transformed,
                 Peso=item.Peso,
                 CreatedAt=datetime.now(),
                 CreatedBy="MigrationScript",
@@ -167,6 +265,7 @@ class TransformationService:
         # Reset maps
         self.archivo_map = {} 
         self.sub_ev_map = {}
+        self.evidencia_valor_map = {}
         
         # ID tracking
         fecha_id_counter = 1
@@ -174,48 +273,64 @@ class TransformationService:
         archivo_id_counter = 1
         
         for item in items:
-            safe_fecha = self._sanitize_date(item.FechaVencimiento)
+            source_codigo = item.Codigo.strip() if item.Codigo else ""
+            if source_codigo == '07.2' or source_codigo.startswith('07.2.'):
+                source_codigo = 'Ns ' + source_codigo
+
+            final_valor = float(item.Valor) if item.Valor else 0.0
+            if source_codigo == '03.3.1' or item.EvidenciaID == 77:
+                final_valor = 100.0
+            
+            self.evidencia_valor_map[item.EvidenciaID] = final_valor
             current_time = datetime.now()
+            
+            # Aplicar reglas de vencimiento personalizadas
+            if source_codigo == '01.1.2':
+                # Evidencia 01.1.2 (PEC): Automático, 1825 días (5 años), fecha por defecto 1900-01-01
+                mapped_tipo_id = 1
+                final_periodicidad = 1825
+                final_fecha = datetime(1900, 1, 1)
+                aplica_venc = True
+            elif item.IndicadorID == 2 or source_codigo == '01.2' or source_codigo.startswith('01.2.'):
+                # Subindicador 01.2 (CAF): Fijo el 30 de noviembre, periodicidad 365 días
+                mapped_tipo_id = 3
+                final_periodicidad = 365
+                final_fecha = datetime(2026, 11, 30)
+                aplica_venc = True
+            else:
+                # Resto de evidencias: Fijo el 15 de agosto, periodicidad 365 días
+                mapped_tipo_id = 3
+                final_periodicidad = 365
+                final_fecha = datetime(2026, 8, 15)
+                aplica_venc = True
+
+            clean_codigo = self.format_indicator_code(source_codigo)
+            
+            # New Standardized Naming: [Code] [Name]
+            base_name = item.NombreArchivo.strip() if item.NombreArchivo else (item.Descipcion.strip() if item.Descipcion else "Evidencia")
+            new_standard_name = f"{clean_codigo} {base_name}"
             
             # 1. Mapear Evidencia Base
             evidencia = EvidenciaDest(
                 Id=item.EvidenciaID,
-                Nombre=item.Descipcion if item.Descipcion else f"Evidencia {item.Codigo}",
-                Descripcion=item.Descipcion if item.Descipcion else f"Evidencia {item.Codigo}",
-                Valor=item.Valor if item.Valor else 0.0,
+                Nombre=new_standard_name[:255], # Truncate to fit NVARCHAR(255)
+                Descripcion=new_standard_name[:500], # Truncate to fit NVARCHAR(500) just in case
+                Valor=final_valor,
                 PreRequisitoId=int(item.Prerequisito) if item.Prerequisito and item.Prerequisito.isdigit() else None,
                 CreatedAt=current_time,
                 CreatedBy="MigrationScript",
                 IsActive=item.Estado == 'Activo',
                 IsDeleted=False,
-                AplicaVencimiento=item.AplicaVencimiento,
-                CantidadDias=int(item.CantDias) if item.CantDias and item.CantDias.isdigit() else 0,
-                FechaVencimiento=safe_fecha,
-                Codigo=item.Codigo
+                AplicaVencimiento=aplica_venc,
+                CantidadDias=final_periodicidad,
+                FechaVencimiento=final_fecha,
+                Codigo=clean_codigo
             )
             evidencias_dest.append(evidencia)
             
             # 2. Manejar Fecha Vencimiento
             # Requirement: ALL SubIndicadorEvidencia must have a FechaVencimientoSubIndicadorEvidenciaId
             fecha_venc_id = fecha_id_counter
-            
-            # Defaults for when AplicaVencimiento is False
-            mapped_tipo_id = 1
-            final_fecha = datetime(1900, 1, 1)
-            final_periodicidad = 0
-            
-            if item.AplicaVencimiento:
-                original_tipo_id = item.TipoVencimiento
-                # Mapping logic
-                if original_tipo_id == 1:
-                    mapped_tipo_id = 2
-                elif original_tipo_id == 2:
-                    mapped_tipo_id = 1
-                else:
-                    mapped_tipo_id = original_tipo_id
-                
-                final_fecha = safe_fecha if safe_fecha else datetime(1900, 1, 1)
-                final_periodicidad = int(item.CantDias) if item.CantDias and item.CantDias.isdigit() else 0
             
             fecha = FechaVencimientoSubIndicadorEvidencia(
                 Id=fecha_venc_id,
@@ -236,7 +351,7 @@ class TransformationService:
                 EvidenciaId=item.EvidenciaID,
                 FechaVencimientoSubIndicadorEvidenciaId=fecha_venc_id,
                 TipoEvaluacionId=1,
-                FechaVenciento=safe_fecha if safe_fecha else datetime(1900, 1, 1),
+                FechaVenciento=final_fecha,
                 CreatedAt=current_time,
                 CreatedBy="MigrationScript",
                 IsActive=item.Estado == 'Activo',
@@ -247,34 +362,12 @@ class TransformationService:
             # Populate Map
             self.sub_ev_map[(item.IndicadorID, item.EvidenciaID)] = sub_ind_ev.Id
             
-            # 4. Crear Archivo (Si existe NombreArchivo y parece un archivo real)
-            # Fix: Evitar crear archivos si NombreArchivo es una descripción larga (Error de Truncation)
-            if item.NombreArchivo and len(item.NombreArchivo) < 85:
-                # Validar extensión básica o longitud razonable.
-                # Muchos registros en Fuente tienen descripciones como NombreArchivo.
-                
-                archivo = ArchivoDest(
-                    Id=archivo_id_counter,
-                    CoedomId=0, # Default Global/System
-                    SubIndicadorEvidenciaId=sub_ind_ev_id_counter,
-                    NombreOriginal=item.NombreArchivo,
-                    ArchivoBinario=b'', # Empty binary
-                    EstadoArchivoId=1, # Active
-                    EvidenciaId=None, 
-                    CreatedAt=datetime.now(),
-                    CreatedBy="MigrationScript",
-                    IsActive=True,
-                    IsDeleted=False,
-                    RowGuid=uuid.uuid4(),
-                    TipoAlmacenamiento=2, # Externo
-                    RutaExterna=f"https://www.sismap.gob.do/Educacion/uploads/evidencias/{item.NombreArchivo}"
-                )
-                archivos_dest.append(archivo)
-                
-                # Update Map
-                self.archivo_map[item.NombreArchivo] = archivo.Id
-                
-                archivo_id_counter += 1
+            # 4. Crear Archivo (Anteriormente se creaban Plantillas aqui)
+            # DECISION: Excluir estos archivos de la migracion.
+            # Los archivos reales vienen en 'CargaEvidencia' (transformar_puntuacion).
+            # Se elimina la logica que creaba ArchivoDest con CoedomId=0.
+            pass
+
             
             sub_ind_ev_id_counter += 1
             
@@ -284,7 +377,7 @@ class TransformationService:
     # PUNTUACION Y REVISIONES
     # ============================================================
 
-    def transformar_puntuacion(self, source_items: List[CargaEvidenciaSource], start_file_id: int, puntuador_id: str = None, start_score_id: int = 1) -> tuple[List[PuntuacionDest], List[ArchivoDest]]:
+    def transformar_puntuacion(self, source_items: List[CargaEvidenciaSource], start_file_id: int, puntuador_id: str = None, start_score_id: int = 1, existing_file_ids: Optional[set] = None) -> tuple[List[PuntuacionDest], List[ArchivoDest]]:
         """
         Transforma CargaEvidencia -> Evidencia.Puntuacion AND Evidencia.Archivos
         """
@@ -293,7 +386,24 @@ class TransformationService:
         file_id_counter = start_file_id
         score_id_counter = start_score_id
         
+        # --- Pre-procesamiento: Ajustar puntuaciones de 0 al valor total de la evidencia ---
         for item in source_items:
+            # Custom scaling rule for 03.3.1 (EvidenciaID = 77)
+            if item.EvidenciaID == 77:
+                if item.Puntuacion is not None and item.Puntuacion > 0:
+                    # Target weight is 100.0, source weight is 50.0. Scale up by 2.0
+                    item.Puntuacion = float(item.Puntuacion) * 2.0
+
+            if item.Puntuacion == 0.0 or item.Puntuacion == 0:
+                item.Puntuacion = self.evidencia_valor_map.get(item.EvidenciaID, 0.0)
+
+        # --- Pre-procesamiento: Validar limites de puntuacion ---
+        self._ajustar_puntuaciones_por_subindicador(source_items)
+        
+        for item in source_items:
+            if existing_file_ids:
+                while file_id_counter in existing_file_ids:
+                    file_id_counter += 1
             # 1. Create File (Upload)
             # Find SubIndicadorEvidenciaId
             key = (item.IndicadorID, item.EvidenciaID)

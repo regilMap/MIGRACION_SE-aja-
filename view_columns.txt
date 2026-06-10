@@ -1,0 +1,1 @@
+['OrganismoID', 'PadreOrganismoID', 'Nombre', 'NombrePadreOrganismo', 'TipoOrganismoID', 'Descripcion', 'CodigoProvincia', 'NombreProvincia', 'NombreMunicipio', 'NombreDistrito', 'NombreSeccion', 'Direccion', 'Telefono', 'Codigo_Minerd', 'REGIONAL', 'DISTRITO']

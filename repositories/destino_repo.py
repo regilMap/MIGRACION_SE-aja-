@@ -1,5 +1,5 @@
 from typing import List
-from models.entities import TipoVencimiento, TiposIndicador, Indicador, SubIndicador, EvidenciaDest, SubIndicadorEvidencia, FechaVencimientoSubIndicadorEvidencia, PuntuacionDest, RevisionEvidenciaDest, ComentarioRevisionDest
+from models.entities import TipoVencimiento, TiposSubIndicador, Indicador, SubIndicador, EvidenciaDest, SubIndicadorEvidencia, FechaVencimientoSubIndicadorEvidencia, PuntuacionDest, RevisionEvidenciaDest, ComentarioRevisionDest
 
 class DestinoRepository:
     """
@@ -58,13 +58,13 @@ class DestinoRepository:
         return count
     
     # ============================================================
-    # TIPOS INDICADOR (Mantenimiento.TiposIndicador)
+    # TIPOS SUB INDICADOR (Mantenimiento.TiposSubIndicador)
     # ============================================================
     
-    def insertar_tipos_indicador(self, datos: List[TiposIndicador]) -> int:
-        """Inserta TiposIndicador en destino"""
+    def insertar_tipos_sub_indicador(self, datos: List[TiposSubIndicador]) -> int:
+        """Inserta TiposSubIndicador en destino"""
         query = """
-            INSERT INTO Mantenimiento.TiposIndicador (
+            INSERT INTO Mantenimiento.TiposSubIndicador (
                 Id,
                 Nombre,
                 Descripcion,
@@ -89,10 +89,10 @@ class DestinoRepository:
             count += 1
         return count
     
-    def limpiar_tipos_indicador(self) -> int:
-        self.cursor.execute("DELETE FROM Mantenimiento.TiposIndicador")
+    def limpiar_tipos_sub_indicador(self) -> int:
+        self.cursor.execute("DELETE FROM Mantenimiento.TiposSubIndicador")
         count = self.cursor.rowcount
-        self.resetear_identidad('Mantenimiento', 'TiposIndicador')
+        self.resetear_identidad('Mantenimiento', 'TiposSubIndicador')
         return count
     
     # ============================================================
@@ -101,24 +101,24 @@ class DestinoRepository:
     
     def insertar_indicadores(self, datos: List[Indicador]) -> int:
         """Inserta o Actualiza Indicadores en destino (UPSERT)"""
+        # NOTA: TipoIndicadorId omitido - no existe en la BD destino actual.
         query = """
             MERGE Mantenimiento.Indicadores AS Target
-            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)) AS Source (Id, Codigo, Nombre, Descripcion, TipoIndicadorId, Peso, CreatedAt, CreatedBy, IsActive, IsDeleted)
+            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)) AS Source (Id, Codigo, Nombre, Descripcion, Peso, CreatedAt, CreatedBy, IsActive, IsDeleted)
             ON (Target.Id = Source.Id)
             WHEN MATCHED THEN
                 UPDATE SET
                     Codigo = Source.Codigo,
                     Nombre = Source.Nombre,
                     Descripcion = Source.Descripcion,
-                    TipoIndicadorId = Source.TipoIndicadorId,
                     Peso = Source.Peso,
                     UpdatedAt = GETDATE(),
                     UpdatedBy = 'MigrationScript_Update',
                     IsActive = Source.IsActive,
                     IsDeleted = Source.IsDeleted
             WHEN NOT MATCHED THEN
-                INSERT (Id, Codigo, Nombre, Descripcion, TipoIndicadorId, Peso, CreatedAt, CreatedBy, IsActive, IsDeleted)
-                VALUES (Source.Id, Source.Codigo, Source.Nombre, Source.Descripcion, Source.TipoIndicadorId, Source.Peso, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted);
+                INSERT (Id, Codigo, Nombre, Descripcion, Peso, CreatedAt, CreatedBy, IsActive, IsDeleted)
+                VALUES (Source.Id, Source.Codigo, Source.Nombre, Source.Descripcion, Source.Peso, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted);
         """
         
         count = 0
@@ -128,7 +128,6 @@ class DestinoRepository:
                 item.Codigo,
                 item.Nombre,
                 item.Descripcion,
-                item.TipoIndicadorId,
                 item.Peso,
                 item.CreatedAt,
                 item.CreatedBy,
@@ -139,9 +138,14 @@ class DestinoRepository:
         return count
     
     def limpiar_indicadores(self) -> int:
-        self.cursor.execute("DELETE FROM Mantenimiento.Indicadores")
+        self.cursor.execute("""
+            DELETE FROM Mantenimiento.Indicadores
+            WHERE Id NOT IN (
+                SELECT DISTINCT IndicadorId 
+                FROM Mantenimiento.SubIndicadores
+            )
+        """)
         count = self.cursor.rowcount
-        self.resetear_identidad('Mantenimiento', 'Indicadores')
         return count
 
     # ============================================================
@@ -152,11 +156,12 @@ class DestinoRepository:
         """Inserta o Actualiza SubIndicadores en destino (UPSERT)"""
         query = """
             MERGE Mantenimiento.SubIndicadores AS Target
-            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)) AS Source (Id, IndicadorId, Codigo, Nombre, Descripcion, Peso, CreatedAt, CreatedBy, IsActive, IsDeleted)
+            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)) AS Source (Id, IndicadorId, TipoSubIndicadorId, Codigo, Nombre, Descripcion, Peso, CreatedAt, CreatedBy, IsActive, IsDeleted)
             ON (Target.Id = Source.Id)
             WHEN MATCHED THEN
                 UPDATE SET
                     IndicadorId = Source.IndicadorId,
+                    TipoSubIndicadorId = Source.TipoSubIndicadorId,
                     Codigo = Source.Codigo,
                     Nombre = Source.Nombre,
                     Descripcion = Source.Descripcion,
@@ -166,8 +171,8 @@ class DestinoRepository:
                     IsActive = Source.IsActive,
                     IsDeleted = Source.IsDeleted
             WHEN NOT MATCHED THEN
-                INSERT (Id, IndicadorId, Codigo, Nombre, Descripcion, Peso, CreatedAt, CreatedBy, IsActive, IsDeleted)
-                VALUES (Source.Id, Source.IndicadorId, Source.Codigo, Source.Nombre, Source.Descripcion, Source.Peso, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted);
+                INSERT (Id, IndicadorId, TipoSubIndicadorId, Codigo, Nombre, Descripcion, Peso, CreatedAt, CreatedBy, IsActive, IsDeleted)
+                VALUES (Source.Id, Source.IndicadorId, Source.TipoSubIndicadorId, Source.Codigo, Source.Nombre, Source.Descripcion, Source.Peso, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted);
         """
         
         count = 0
@@ -175,6 +180,7 @@ class DestinoRepository:
             self.cursor.execute(query,
                 item.Id,
                 item.IndicadorId,
+                item.TipoSubIndicadorId,
                 item.Codigo,
                 item.Nombre,
                 item.Descripcion,
@@ -186,11 +192,17 @@ class DestinoRepository:
             )
             count += 1
         return count
+
     
     def limpiar_sub_indicadores(self) -> int:
-        self.cursor.execute("DELETE FROM Mantenimiento.SubIndicadores")
+        self.cursor.execute("""
+            DELETE FROM Mantenimiento.SubIndicadores
+            WHERE Id NOT IN (
+                SELECT DISTINCT SubIndicadorId 
+                FROM Evidencia.SubIndicadorEvidencias
+            )
+        """)
         count = self.cursor.rowcount
-        self.resetear_identidad('Mantenimiento', 'SubIndicadores')
         return count
     
     # ============================================================
@@ -242,9 +254,25 @@ class DestinoRepository:
         return count
     
     def limpiar_evidencias(self) -> int:
-        self.cursor.execute("DELETE FROM Evidencia.Evidencias")
+        self.deshabilitar_constraint('Evidencia', 'Evidencias', 'FK_Evidencias_Evidencias_PreRequisitoId')
+        self.cursor.execute("""
+            WITH KeptEvidencias AS (
+                SELECT Id, PreRequisitoId
+                FROM Evidencia.Evidencias
+                WHERE Id IN (SELECT DISTINCT EvidenciaId FROM Evidencia.SubIndicadorEvidencias)
+                   OR Id IN (SELECT DISTINCT EvidenciaId FROM Evidencia.Archivos WHERE EvidenciaId IS NOT NULL)
+                
+                UNION ALL
+                
+                SELECT e.Id, e.PreRequisitoId
+                FROM Evidencia.Evidencias e
+                INNER JOIN KeptEvidencias k ON e.Id = k.PreRequisitoId
+            )
+            DELETE FROM Evidencia.Evidencias
+            WHERE Id NOT IN (SELECT Id FROM KeptEvidencias)
+        """)
         count = self.cursor.rowcount
-        self.resetear_identidad('Evidencia', 'Evidencias')
+        self.habilitar_constraint('Evidencia', 'Evidencias', 'FK_Evidencias_Evidencias_PreRequisitoId')
         return count
 
     def insertar_fecha_vencimiento_evidencias(self, datos: List[FechaVencimientoSubIndicadorEvidencia]) -> int:
@@ -282,9 +310,14 @@ class DestinoRepository:
         return count
 
     def limpiar_fecha_vencimiento_evidencias(self) -> int:
-        self.cursor.execute("DELETE FROM Evidencia.FechaVencimientoSubIndicadorEvidencias")
+        self.cursor.execute("""
+            DELETE FROM Evidencia.FechaVencimientoSubIndicadorEvidencias
+            WHERE Id NOT IN (
+                SELECT DISTINCT FechaVencimientoSubIndicadorEvidenciaId 
+                FROM Evidencia.SubIndicadorEvidencias
+            )
+        """)
         count = self.cursor.rowcount
-        self.resetear_identidad('Evidencia', 'FechaVencimientoSubIndicadorEvidencias')
         return count
 
     def insertar_sub_indicador_evidencias(self, datos: List[SubIndicadorEvidencia]) -> int:
@@ -326,9 +359,14 @@ class DestinoRepository:
         return count
 
     def limpiar_sub_indicador_evidencias(self) -> int:
-        self.cursor.execute("DELETE FROM Evidencia.SubIndicadorEvidencias")
+        self.cursor.execute("""
+            DELETE FROM Evidencia.SubIndicadorEvidencias
+            WHERE Id NOT IN (
+                SELECT DISTINCT SubIndicadorEvidenciaId 
+                FROM Evidencia.Archivos
+            )
+        """)
         count = self.cursor.rowcount
-        self.resetear_identidad('Evidencia', 'SubIndicadorEvidencias')
         return count
 
     # ============================================================
@@ -411,10 +449,31 @@ class DestinoRepository:
         return count
 
     def limpiar_archivos(self) -> int:
-        self.cursor.execute("DELETE FROM Evidencia.Archivos")
+        self.cursor.execute("""
+            DELETE FROM Evidencia.Archivos
+            WHERE Id NOT IN (
+                SELECT DISTINCT ArchivoId 
+                FROM Mantenimiento.ConfiguracionOrganismoExcepcion 
+                WHERE ArchivoId IS NOT NULL
+            )
+            AND Id NOT IN (
+                SELECT DISTINCT ArchivoId 
+                FROM Auditoria.Ticket 
+                WHERE ArchivoId IS NOT NULL
+            )
+            AND Id NOT IN (
+                SELECT DISTINCT RevisionEvidenciaId 
+                FROM Auditoria.Ticket 
+                WHERE RevisionEvidenciaId IS NOT NULL
+            )
+        """)
         count = self.cursor.rowcount
-        self.resetear_identidad('Evidencia', 'Archivos')
         return count
+
+    def obtener_ids_archivos_existentes(self) -> set:
+        """Retorna un conjunto de todos los IDs de archivos actualmente existentes en la BD"""
+        self.cursor.execute("SELECT Id FROM Evidencia.Archivos")
+        return {row[0] for row in self.cursor.fetchall()}
 
     # ============================================================
     # PUNTUACION (Evidencia.Puntuacion)
@@ -580,6 +639,20 @@ class DestinoRepository:
     def habilitar_constraint(self, schema: str, tabla: str, constraint: str):
         full_table = f"{schema}.{tabla}"
         self.cursor.execute(f"ALTER TABLE {full_table} WITH CHECK CHECK CONSTRAINT {constraint}")
+
+    def limpiar_pregunta_revisiones(self) -> int:
+        """Elimina registros de Evidencia.PreguntaRevisiones para evitar FK conflict"""
+        self.cursor.execute("DELETE FROM Evidencia.PreguntaRevisiones")
+        count = self.cursor.rowcount
+        self.resetear_identidad('Evidencia', 'PreguntaRevisiones')
+        return count
+
+    def limpiar_respuestas_revisiones(self) -> int:
+        """Elimina registros de Evidencia.RespuestasRevisiones para evitar FK conflict"""
+        self.cursor.execute("DELETE FROM Evidencia.RespuestasRevisiones")
+        count = self.cursor.rowcount
+        self.resetear_identidad('Evidencia', 'RespuestasRevisiones')
+        return count
 
     def resetear_identidad(self, schema: str, tabla: str, seed: int = 0):
         """Resetea el contador de identidad de la tabla"""

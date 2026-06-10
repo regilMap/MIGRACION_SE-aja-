@@ -7,7 +7,7 @@ from repositories.fuente_repo import FuenteRepository
 from repositories.destino_repo import DestinoRepository
 from services.transformation_service import TransformationService
 from models.entities import (
-    TipoVencimiento, TiposIndicador, Indicador, Ibog, SubIndicador,
+    TipoVencimiento, TiposSubIndicador, Indicador, Ibog, SubIndicador,
     EvidenciaSource, EvidenciaDest, SubIndicadorEvidencia, FechaVencimientoSubIndicadorEvidencia,
     CargaEvidenciaSource, PuntuacionDest, RevisionSource, RevisionEvidenciaDest, ComentarioRevisionDest
 )
@@ -102,8 +102,9 @@ class MigrationService:
             
         # 6. Puntuaciones (Filtrado requerido si se usa, o vacio si no hay codigos)
         if sub_indicador_codigos:
+            mapped_codigos = [self.transformer.map_to_source_code(c) for c in sub_indicador_codigos]
             try:
-                datos = self.fuente.obtener_puntuaciones(sub_indicador_codigos)
+                datos = self.fuente.obtener_puntuaciones(mapped_codigos)
                 archivos['puntuaciones'] = self.extraer_a_json('puntuaciones', datos)
                 self.stats.registrar_tabla('Puntuaciones', len(datos), 0, True)
             except Exception as e:
@@ -111,7 +112,7 @@ class MigrationService:
                 
             # 7. Revisiones (Filtrado requerido)
             try:
-                datos = self.fuente.obtener_revisiones(sub_indicador_codigos)
+                datos = self.fuente.obtener_revisiones(mapped_codigos)
                 archivos['revisiones'] = self.extraer_a_json('revisiones', datos)
                 self.stats.registrar_tabla('Revisiones', len(datos), 0, True)
             except Exception as e:
@@ -140,9 +141,11 @@ class MigrationService:
             if limpiar_antes:
                 self.logger.info("Limpiando tablas destino...")
                 # Order matters for foreign keys
+                self.destino.limpiar_respuestas_revisiones() # Clean child first
                 self.destino.limpiar_comentario_revision()
                 self.destino.limpiar_revision_evidencias()
                 self.destino.limpiar_puntuacion()
+                self.destino.limpiar_pregunta_revisiones() # Clean child of SubIndicadorEvidencias
                 self.destino.limpiar_archivos() # Clean child first
                 self.destino.limpiar_sub_indicador_evidencias()
                 self.destino.limpiar_fecha_vencimiento_evidencias()
@@ -150,8 +153,11 @@ class MigrationService:
                 
                 self.destino.limpiar_sub_indicadores()
                 self.destino.limpiar_indicadores()
-                # self.destino.limpiar_tipos_indicador()
-                self.destino.limpiar_tipos_vencimiento()
+                # limpiar_tipos_vencimiento() omitido: ConfiguracionOrganismoExcepcion
+                # tiene FK a TipoVencimiento. No es necesario limpiar porque el insert usa MERGE (UPSERT).
+                # self.destino.limpiar_tipos_vencimiento()
+            
+            existing_file_ids = self.destino.obtener_ids_archivos_existentes()
             
             # ... (Previous loads remain same) ...
             
@@ -167,16 +173,16 @@ class MigrationService:
                 
                 self.logger.info(f"TipoVencimiento: {count} insertados")
             
-            # 2. TiposIndicador
-            # if archivos.get('tipos_indicador'):
-            #     source_data = self.cargar_desde_json(archivos['tipos_indicador'], TiposIndicador)
-            #     transformed_data = self.transformer.transformar_tipo_indicador(source_data)
+            # 2. TiposSubIndicador
+            # if archivos.get('tipos_sub_indicador'):
+            #     source_data = self.cargar_desde_json(archivos['tipos_sub_indicador'], TiposSubIndicador)
+            #     transformed_data = self.transformer.transformar_tipo_sub_indicador(source_data)
                 
-            #     self.destino.habilitar_identity_insert('Mantenimiento', 'TiposIndicador')
-            #     count = self.destino.insertar_tipos_indicador(transformed_data)
-            #     self.destino.deshabilitar_identity_insert('Mantenimiento', 'TiposIndicador')
+            #     self.destino.habilitar_identity_insert('Mantenimiento', 'TiposSubIndicador')
+            #     count = self.destino.insertar_tipos_sub_indicador(transformed_data)
+            #     self.destino.deshabilitar_identity_insert('Mantenimiento', 'TiposSubIndicador')
                 
-            #     self.logger.info(f"TiposIndicador: {count} insertados")
+            #     self.logger.info(f"TiposSubIndicador: {count} insertados")
             
             # 3. Indicadores (De Ibog)
             if archivos.get('ibog'):
@@ -259,7 +265,7 @@ class MigrationService:
                 if 'next_file_id' not in locals():
                     next_file_id = 1
                     
-                scores, user_files = self.transformer.transformar_puntuacion(source_data, next_file_id, puntuador_id)
+                scores, user_files = self.transformer.transformar_puntuacion(source_data, next_file_id, puntuador_id, existing_file_ids=existing_file_ids)
                 
                 # Insert User Files (Archivos)
                 if user_files:
@@ -323,7 +329,7 @@ class MigrationService:
         export_path = Path(carpeta_export)
         archivos = {
             'tipos_vencimiento': str(export_path / 'tipos_vencimiento.json'),
-            'tipos_indicador': str(export_path / 'tipos_indicador.json'),
+            'tipos_sub_indicador': str(export_path / 'tipos_sub_indicador.json'),
             'ibog': str(export_path / 'ibog.json'),
             'sub_indicadores': str(export_path / 'sub_indicadores.json'),
         }

@@ -1,0 +1,98 @@
+--- Sheet: DISTRITO Y REGIONALES ---
+   Unnamed: 0                Unnamed: 1            Unnamed: 2 Unnamed: 3                  Unnamed: 4                      Unnamed: 5   Unnamed: 6
+0         NaN    REGIONALES Y DISTRITOS                   NaN        NaN                         NaN                             NaN          NaN
+1         NaN                       NaN                   NaN        NaN                         NaN                             NaN          NaN
+2         NaN                       NaN                   NaN        NaN                         NaN                             NaN          NaN
+3         NaN        Regional Educativa    Distrito Educativo       Eje           Regional Educativa              Distrito Educativo          Eje
+4         NaN      REGIONAL 01 BARAHONA     0101 - Pedernales        NaN             REGIONAL 09 MAO                      0901 - Mao  Cibao Norte
+5         NaN  * 5 Distritos Educativos     0102 - Enriquillo        Sur  * 6 Distritos Educativos.-                0902 - Esperanza          NaN
+6         NaN           * 268 Centros.-       0103 - Barahona        NaN             * 278 Centros.-  0903 - San Ignacio De Sabaneta          NaN
+7         NaN              Director/a:          0104 - Cabral        NaN                         NaN                  0904 - Monción          NaN
+8         NaN                       NaN  0105 - Vicente Noble        NaN                         NaN            0905 - Laguna Salada          NaN
+9         NaN      REGIONAL 02 SAN JUAN     0201 - Comendador        NaN                         NaN      0906 - Villa Los Almácigos          NaN
+Columns: ['Unnamed: 0', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6']
+
+--- Sheet: EQUIPO TÉCNICO ---
+                                                                                                          Unnamed: 0             Unnamed: 1            Unnamed: 2    Unnamed: 3                      Unnamed: 4                      Unnamed: 5              Unnamed: 6           Unnamed: 7            Unnamed: 8    Unnamed: 9                        Unnamed: 10
+0                                                                                                                NaN                    NaN                   NaN           NaN                             NaN                             NaN                     NaN                  NaN                   NaN           NaN                                NaN
+1  Actualización del Equipo Técnico Docente de la Dirección de Fortalecimiento y Supervisión de la Gestión Educativa                    NaN                   NaN           NaN                             NaN                             NaN                     NaN                  NaN                   NaN           NaN                                NaN
+2                                                                                                                NaN                    NaN                   NaN           NaN                             NaN                             NaN                     NaN                  NaN                   NaN           NaN                                NaN
+3                                                                                                                No.      Nombre y apellido                 Cargo      Contacto              Dirección de Email  Regional y/o Distrito Asignado  Correspondiente al Eje     Técnico de apoyo                 Cargo      Contacto                 Dirección de Email
+4                                                                                                                  1          Tzaddi Javier  Técnico Docente Nac.  809-918-7070     tzaddi.javier@minerd.gob.do                  06- 00 La Vega       Eje Cibao Central                  NaN                   NaN           NaN                                NaN
+5                                                                                                                  2  Yokasta Noemí Cordero  Técnico Docente Nac.  809-590-1102   yokasta.cordero@minerd.gob.do  07-00 San Francisco de Macorís       Eje Cibao Central                  NaN                   NaN           NaN                                NaN
+6                                                                                                                  3         Rafelina Morel  Técnico Docente Nac.  849-862-3382    rafelina.morel@minerd.gob.do                     14-00 Nagua       Eje Cibao Central    Carlos Candelario   Coordinador Docente  809-796-8389  carlos.candelariove@minerd.gob.do
+7                                                                                                                  4       Elías Yanet Días  Técnico Docente Nac.  829-763-3126        elias.diaz@minerd.gob.do                     16-00 Cotuí       Eje Cibao Central  Rafael Polanco Díaz  Técnico Docente Nac.  829-648-6204       rafael.polanco@minerd.gob.do
+8                                                                                                                  5       Griselda Jiménez  Técnico Docente Nac.  829-891-8638  griselda.jimenez@minerd.gob.do                  08-00 Santiago         Eje Cibao Norte   Odalis Encarnación  Técnico Docente Nac.  809-860-9416   odalis.encarnacion@minerd.gob.do
+9                                                                                                                  6        Elizabeth Núñez  Técnico Docente Nac.  809-902-2119   elizabeth.nunez@minerd.gob.do                       09-00 Mao         Eje Cibao Norte                  NaN                   NaN           NaN                                NaN
+Columns: ['Unnamed: 0', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7', 'Unnamed: 8', 'Unnamed: 9', 'Unnamed: 10']
+
+--- Sheet: REVISOR - TEC- DISTRITAL ---
+  Unnamed: 0 VICEMINISTERIO DE SUPERVISIÓN Y CONTROL DE LA CALIDAD DE LA EDUCACIÓN          Unnamed: 2                       Unnamed: 3                    Unnamed: 4 Unnamed: 5           Unnamed: 6
+0        NaN    DIRECCIÓN DE FORTALECIMIENTO Y SUPERVISIÓN DE LA GESTIÓN EDUCATIVA                 NaN                              NaN                           NaN        NaN                  NaN
+1        NaN                           DIVISIÓN DE GESTIÓN DE LA CALIDAD EDUCATIVA                 NaN                              NaN                           NaN        NaN                  NaN
+2        NaN                     INICIATIVA SISMAP EDUCACION  - CENTROS EDUCATIVOS                 NaN                              NaN                           NaN        NaN                  NaN
+3        NaN                                                                   NaN                 NaN                              NaN                           NaN        NaN                  NaN
+4        NaN                                                                   NaN                 NaN                              NaN                           NaN        NaN                  NaN
+5       EJE                                                     REGIONAL EDUCATIVA  DISTRITO EDUCATIVO                TECNICO DISTRITAL                       CORREO        Eje   Responsable de Eje 
+6       Sur                                                  REGIONAL 01 BARAHONA    0101 - Pedernales               Sr. Neuris Ramírez  neuris.ramirez@minerd.gob.do        NaN                  NaN
+7        NaN                                                                   NaN     0103 - Barahona               Sra. Nina Almonte     nina.almonte@minerd.gob.do        NaN                  NaN
+8        NaN                                                                   NaN       0104 - Cabral  Sr. Esmedin Eulogio Feliz Báez    esmedin.feliz@minerd.gob.do        NaN                  NaN
+9        NaN                                                                   NaN                 NaN                              NaN                           NaN        NaN                  NaN
+Columns: ['Unnamed: 0', 'VICEMINISTERIO DE SUPERVISIÓN Y CONTROL DE LA CALIDAD DE LA EDUCACIÓN', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6']
+
+--- Sheet: REVISOR- TECNICO NACIONAL  ---
+   Unnamed: 0                Unnamed: 1 VICEMINISTERIO DE SUPERVISIÓN Y CONTROL DE LA CALIDAD DE LA EDUCACIÓN             Unnamed: 3                     Unnamed: 4                   Unnamed: 5         Unnamed: 6
+0         NaN                       NaN    DIRECCIÓN DE FORTALECIMIENTO Y SUPERVISIÓN DE LA GESTIÓN EDUCATIVA                    NaN                            NaN                          NaN                NaN
+1         NaN                       NaN                           DIVISIÓN DE GESTIÓN DE LA CALIDAD EDUCATIVA                    NaN                            NaN                          NaN                NaN
+2         NaN                       NaN                     INICIATIVA SISMAP EDUCACION  - CENTROS EDUCATIVOS                    NaN                            NaN                          NaN                NaN
+3         NaN                       NaN                                                                   NaN                    NaN                            NaN                          NaN                NaN
+4         NaN  REVISOR TECNICO NACIONAL                                                                   NaN                    NaN                            NaN                          NaN                NaN
+5         NaN                      EJES                                                      IBOG QUE TRABAJA      NOMBRE Y APELLIDO                         CORREO  REGIONAL/ DISTRITO ASIGNADO               Eje 
+6         NaN             CIBAO CENTRAL                                                            IBOG 6 Y 7          Tzaddi Javier    tzaddi.javier@minerd.gob.do                   06 La Vega  Eje Cibao Central
+7         NaN                       NaN                                                                   NaN  Yokasta Noemí Cordero  yokasta.cordero@minerd.gob.do  07 San Francisco de Macorís  Eje Cibao Central
+8         NaN                       NaN                                                                   NaN         Rafelina Morel   rafelina.morel@minerd.gob.do                    14  Nagua  Eje Cibao Central
+9         NaN                       NaN                                                                   NaN       Elías Yanet Días       elias.diaz@minerd.gob.do                    16  Cotuí  Eje Cibao Central
+Columns: ['Unnamed: 0', 'Unnamed: 1', 'VICEMINISTERIO DE SUPERVISIÓN Y CONTROL DE LA CALIDAD DE LA EDUCACIÓN', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6']
+
+--- Sheet: VEEDOR- TECNICO REGIONAL SISMAP ---
+                                                        Unnamed: 0          Unnamed: 1                                                             Unnamed: 2 Unnamed: 3
+0                                                              NaN                 NaN                                                                    NaN        NaN
+1                                                              NaN                 NaN  VICEMINISTERIO DE SUPERVISIÓN Y CONTROL DE LA CALIDAD DE LA EDUCACIÓN        NaN
+2                                                              NaN                 NaN     DIRECCIÓN DE FORTALECIMIENTO Y SUPERVISIÓN DE LA GESTIÓN EDUCATIVA        NaN
+3                                                              NaN                 NaN                            DIVISIÓN DE GESTIÓN DE LA CALIDAD EDUCATIVA        NaN
+4                                                              NaN                 NaN                       INICIATIVA SISMAP EDUCACION - CENTROS EDUCATIVOS        NaN
+5                                                              NaN                 NaN                                                                    NaN        NaN
+6                                                              NaN                 NaN                                                                    NaN        NaN
+7                                                              NaN                 NaN                                                                    NaN        NaN
+8  VEEDOR- TÉCNICO REGIONAL SISMAP  EDUCACION- CENTROS EDUCATIVOS                  NaN                                                                    NaN        NaN
+9                                                              EJE  REGIONAL EDUCATIVA                                                     NOMBRE Y APELLIDOS     CORREO
+Columns: ['Unnamed: 0', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3']
+
+--- Sheet: PUNTUADOR- COOR EJE ---
+                           Unnamed: 0 VICEMINISTERIO DE SUPERVISIÓN Y CONTROL DE LA CALIDAD DE LA EDUCACIÓN                Unnamed: 2                     Unnamed: 3   Unnamed: 4
+0                                 NaN    DIRECCIÓN DE FORTALECIMIENTO Y SUPERVISIÓN DE LA GESTIÓN EDUCATIVA                       NaN                            NaN          NaN
+1                                 NaN                           DIVISIÓN DE GESTIÓN DE LA CALIDAD EDUCATIVA                       NaN                            NaN          NaN
+2                                 NaN                      INICIATIVA SISMAPEDUCACION  - CENTROS EDUCATIVOS                       NaN                            NaN          NaN
+3                                 NaN                                                                   NaN                       NaN                            NaN          NaN
+4  PUNTUADORES -COORDINADORES DE EJES                                                                   NaN                       NaN                            NaN         IBOG
+5                                 No.                                                   Nombres y apellidos                  Función                          Correo          NaN
+6                                   1                                                        Rober Mercedes  Coord. Eje Cibao Central   rober.mercedes@minerd.gob.do  IBOG 6 Y 7 
+7                                   2                                                         Belkis García    Coord. Eje Cibao Norte    belkis.garcia@minerd.gob.do       IBOG 1
+8                                   3                                                Miguel Ángel Del Valle           Coord. Eje Este  miguel.delvalle@minerd.gob.do       IBOG 5
+9                                   4                                                       Gabriela Javier            Coord. Eje Sur  gabriela.javier@minerd.gob.do       IBOG 3
+Columns: ['Unnamed: 0', 'VICEMINISTERIO DE SUPERVISIÓN Y CONTROL DE LA CALIDAD DE LA EDUCACIÓN', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4']
+
+--- Sheet: EQUIPO SEGUIMIENTO SISMAP EDUC ---
+   VICEMINISTERIO DE SUPERVISIÓN Y CONTROL DE LA CALIDAD DE LA EDUCACIÓN                        Unnamed: 1
+0     DIRECCIÓN DE FORTALECIMIENTO Y SUPERVISIÓN DE LA GESTIÓN EDUCATIVA                               NaN
+1                            DIVISIÓN DE GESTIÓN DE LA CALIDAD EDUCATIVA                               NaN
+2                      INICIATIVA SISMAP EDUCACIÓN  - CENTROS EDUCATIVOS                               NaN
+3                                                                    NaN                               NaN
+4  EQUIPO DE SEGUIMIENTO  MINERD-  SISMAP EDUCACIÓN- CENTROS EDUCATIVOS                                NaN
+5                                                      NOMBRE Y APELLIDO                            CORREO
+6                                               Claribel De la Cruz Sosa  claribel.delacruzs@minerd.gob.do
+7                                                         Evelin Quezada      evelin.quezada@minerd.gob.do
+8                                                Leidy Regina De la Rosa      leidy.delarosa@minerd.gob.do
+9                                                          Amalfi Meriño       amalfi.merino@minerd.gob.do
+Columns: ['VICEMINISTERIO DE SUPERVISIÓN Y CONTROL DE LA CALIDAD DE LA EDUCACIÓN', 'Unnamed: 1']
+

@@ -14,7 +14,7 @@ class DatabaseConfig:
     DESTINO = {
         'driver': 'ODBC Driver 17 for SQL Server',
         'server': 'I1491S',
-        'database': 'SISMAP_EDUCACION_M',
+        'database': 'SISMAP_EDUCACION_M2',
         'uid': 'SismapEducacion_User',
         'pwd': 'SME_2025'
     }
@@ -40,7 +40,7 @@ def conectar_fuente() -> Optional[pyodbc.Connection]:
 
 
 def conectar_destino() -> Optional[pyodbc.Connection]:
-    """Conexión a BD DESTINO (SISMAP_EDUCACION_M) - SQL Auth"""
+    """Conexión a BD DESTINO (SISMAP_EDUCACION_M2) - SQL Auth"""
     cfg = DatabaseConfig.DESTINO
     try:
         conn = pyodbc.connect(

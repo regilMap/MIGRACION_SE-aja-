@@ -1,0 +1,337 @@
+{
+  "REVISOR - TEC- DISTRITAL": {
+    "cols": [
+      "Unnamed: 0",
+      "VICEMINISTERIO DE SUPERVISIÓN Y CONTROL DE LA CALIDAD DE LA EDUCACIÓN",
+      "Unnamed: 2",
+      "Unnamed: 3",
+      "Unnamed: 4",
+      "Unnamed: 5",
+      "Unnamed: 6"
+    ],
+    "rows": [
+      [
+        "",
+        "DIRECCIÓN DE FORTALECIMIENTO Y SUPERVISIÓN DE LA GESTIÓN EDUCATIVA",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "DIVISIÓN DE GESTIÓN DE LA CALIDAD EDUCATIVA",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "INICIATIVA SISMAP EDUCACION  - CENTROS EDUCATIVOS",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "EJE ",
+        "REGIONAL EDUCATIVA",
+        "DISTRITO EDUCATIVO",
+        "TECNICO DISTRITAL",
+        "CORREO ",
+        "Eje ",
+        "Responsable de Eje "
+      ],
+      [
+        "Sur ",
+        "REGIONAL 01 BARAHONA ",
+        "0101 - Pedernales",
+        "Sr. Neuris Ramírez",
+        "neuris.ramirez@minerd.gob.do",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "0103 - Barahona",
+        "Sra. Nina Almonte ",
+        "nina.almonte@minerd.gob.do",
+        "",
+        ""
+      ]
+    ]
+  },
+  "REVISOR- TECNICO NACIONAL ": {
+    "cols": [
+      "Unnamed: 0",
+      "Unnamed: 1",
+      "VICEMINISTERIO DE SUPERVISIÓN Y CONTROL DE LA CALIDAD DE LA EDUCACIÓN",
+      "Unnamed: 3",
+      "Unnamed: 4",
+      "Unnamed: 5",
+      "Unnamed: 6"
+    ],
+    "rows": [
+      [
+        "",
+        "",
+        "DIRECCIÓN DE FORTALECIMIENTO Y SUPERVISIÓN DE LA GESTIÓN EDUCATIVA",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "DIVISIÓN DE GESTIÓN DE LA CALIDAD EDUCATIVA",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "INICIATIVA SISMAP EDUCACION  - CENTROS EDUCATIVOS",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "REVISOR TECNICO NACIONAL",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "EJES",
+        "IBOG QUE TRABAJA",
+        "NOMBRE Y APELLIDO",
+        "CORREO",
+        "REGIONAL/ DISTRITO ASIGNADO",
+        "Eje "
+      ],
+      [
+        "",
+        "CIBAO CENTRAL",
+        "IBOG 6 Y 7",
+        "Tzaddi Javier",
+        "tzaddi.javier@minerd.gob.do",
+        "06 La Vega",
+        "Eje Cibao Central"
+      ],
+      [
+        "",
+        "",
+        "",
+        "Yokasta Noemí Cordero",
+        "yokasta.cordero@minerd.gob.do",
+        "07 San Francisco de Macorís",
+        "Eje Cibao Central"
+      ]
+    ]
+  },
+  "VEEDOR- TECNICO REGIONAL SISMAP": {
+    "cols": [
+      "Unnamed: 0",
+      "Unnamed: 1",
+      "Unnamed: 2",
+      "Unnamed: 3"
+    ],
+    "rows": [
+      [
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "VICEMINISTERIO DE SUPERVISIÓN Y CONTROL DE LA CALIDAD DE LA EDUCACIÓN",
+        ""
+      ],
+      [
+        "",
+        "",
+        "DIRECCIÓN DE FORTALECIMIENTO Y SUPERVISIÓN DE LA GESTIÓN EDUCATIVA",
+        ""
+      ],
+      [
+        "",
+        "",
+        "DIVISIÓN DE GESTIÓN DE LA CALIDAD EDUCATIVA",
+        ""
+      ],
+      [
+        "",
+        "",
+        "INICIATIVA SISMAP EDUCACION - CENTROS EDUCATIVOS",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        ""
+      ]
+    ]
+  },
+  "PUNTUADOR- COOR EJE": {
+    "cols": [
+      "Unnamed: 0",
+      "VICEMINISTERIO DE SUPERVISIÓN Y CONTROL DE LA CALIDAD DE LA EDUCACIÓN",
+      "Unnamed: 2",
+      "Unnamed: 3",
+      "Unnamed: 4"
+    ],
+    "rows": [
+      [
+        "",
+        "DIRECCIÓN DE FORTALECIMIENTO Y SUPERVISIÓN DE LA GESTIÓN EDUCATIVA",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "DIVISIÓN DE GESTIÓN DE LA CALIDAD EDUCATIVA",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "INICIATIVA SISMAPEDUCACION  - CENTROS EDUCATIVOS",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "PUNTUADORES -COORDINADORES DE EJES",
+        "",
+        "",
+        "",
+        "IBOG"
+      ],
+      [
+        "No.",
+        "Nombres y apellidos",
+        "Función ",
+        "Correo",
+        ""
+      ],
+      [
+        "1",
+        "Rober Mercedes",
+        "Coord. Eje Cibao Central",
+        "rober.mercedes@minerd.gob.do",
+        "IBOG 6 Y 7 "
+      ],
+      [
+        "2",
+        "Belkis García",
+        "Coord. Eje Cibao Norte",
+        "belkis.garcia@minerd.gob.do",
+        "IBOG 1"
+      ]
+    ]
+  },
+  "EQUIPO SEGUIMIENTO SISMAP EDUC": {
+    "cols": [
+      "VICEMINISTERIO DE SUPERVISIÓN Y CONTROL DE LA CALIDAD DE LA EDUCACIÓN",
+      "Unnamed: 1"
+    ],
+    "rows": [
+      [
+        "DIRECCIÓN DE FORTALECIMIENTO Y SUPERVISIÓN DE LA GESTIÓN EDUCATIVA",
+        ""
+      ],
+      [
+        "DIVISIÓN DE GESTIÓN DE LA CALIDAD EDUCATIVA",
+        ""
+      ],
+      [
+        "INICIATIVA SISMAP EDUCACIÓN  - CENTROS EDUCATIVOS",
+        ""
+      ],
+      [
+        "",
+        ""
+      ],
+      [
+        "EQUIPO DE SEGUIMIENTO  MINERD-  SISMAP EDUCACIÓN- CENTROS EDUCATIVOS ",
+        ""
+      ],
+      [
+        "NOMBRE Y APELLIDO",
+        "CORREO"
+      ],
+      [
+        "Claribel De la Cruz Sosa",
+        "claribel.delacruzs@minerd.gob.do"
+      ],
+      [
+        "Evelin Quezada",
+        "evelin.quezada@minerd.gob.do"
+      ]
+    ]
+  }
+}

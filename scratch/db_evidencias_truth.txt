@@ -1,0 +1,138 @@
+Total evidences in DB: 136
+
+Id: 108 | Code: 1.01.1 | Name: 1.01.1 Informe Anual de Monitoreo y Evaluación del Proyecto Educativo de Centro (PEC) | Val: 30.00
+Id: 107 | Code: 1.01.2 | Name: 1.01.2 Proyecto Educativo de Centro (PEC) | Val: 70.00
+Id: 5 | Code: 1.02.1 | Name: 1.02.1 Informe Implementación CAF | Val: 30.00
+Id: 4 | Code: 1.02.2 | Name: 1.02.2 Plan de Mejora CAF | Val: 20.00
+Id: 3 | Code: 1.02.3 | Name: 1.02.3 Autoevaluación  CAF | Val: 30.00
+Id: 2 | Code: 1.02.4 | Name: 1.02.4 Comité de Calidad | Val: 20.00
+Id: 7 | Code: 1.03.1 | Name: 1.03.1 Informe Semestral de Resultados del POA vinculado al PEC | Val: 30.00
+Id: 6 | Code: 1.03.2 | Name: 1.03.2 Plan Operativo Anual vinculado al PEC | Val: 70.00
+Id: 8 | Code: 1.04.1 | Name: 1.04.1 Plan Operativo Anual (POA) y Presupuesto alineado con el PEC y el Plan de Mejora derivado de la autoevaluación (Modelo CAF) | Val: 100.00
+Id: 11 | Code: 1.05.1 | Name: 1.05.1 Informe Semestral Organismos de Participación | Val: 30.00
+Id: 10 | Code: 1.05.2 | Name: 1.05.2 Plan Anual de Trabajo y Actas de reuniones de los órganos de participación Internos | Val: 20.00
+Id: 9 | Code: 1.05.3 | Name: 1.05.3 Actas Constitutivas | Val: 50.00
+Id: 14 | Code: 1.06.1 | Name: 1.06.1 Informe de ejecución durante el periodo de clase | Val: 30.00
+Id: 13 | Code: 1.06.2 | Name: 1.06.2 Plan de trabajo y Actas de reuniones | Val: 20.00
+Id: 12 | Code: 1.06.3 | Name: 1.06.3 Alianzas con organismos o instituciones externas | Val: 50.00
+Id: 111 | Code: 2.01.1 | Name: 2.01.1 Finalización del primer periodo de clases | Val: 40.00
+Id: 110 | Code: 2.01.2 | Name: 2.01.2 Informe consolidado | Val: 20.00
+Id: 109 | Code: 2.01.3 | Name: 2.01.3 Inicio del primer periodo de clases | Val: 40.00
+Id: 17 | Code: 2.02.1 | Name: 2.02.1 Más del 90% de los docentes cuentan con todos sus planes de clase | Val: 100.00
+Id: 16 | Code: 2.02.2 | Name: 2.02.2 Del 81 al 90% de los docentes cuentan con todos sus planes de clase | Val: 70.00
+Id: 15 | Code: 2.02.3 | Name: 2.02.3 Del 70 al 80% de los docentes cuentan con todos sus planes de clase | Val: 50.00
+Id: 118 | Code: 2.03.1 | Name: 2.03.1 Logrado totalmente | Val: 100.00
+Id: 119 | Code: 2.03.2 | Name: 2.03.2 Logrado parcialmente | Val: 70.00
+Id: 120 | Code: 2.03.3 | Name: 2.03.3 No logrado | Val: 50.00
+Id: 18 | Code: 2.04.1 | Name: 2.04.1 80% o más de los/as Docentes utilizan los recursos de base digital disponibles. | Val: 100.00
+Id: 20 | Code: 2.04.2 | Name: 2.04.2 Entre el 60% a 79% de los/as Docentes utilizan los recursos de base digital disponibles. | Val: 75.00
+Id: 19 | Code: 2.04.3 | Name: 2.04.3 Entre el 31% y 59% de los/as Docentes utilizan los recursos de base digital disponibles | Val: 60.00
+Id: 21 | Code: 2.04.4 | Name: 2.04.4 Hasta el 30% de los Docentes utilizan los recursos de base digital disponibles. | Val: 40.00
+Id: 121 | Code: 2.05.1 | Name: 2.05.1 Existen los grupos pedagógicos y se celebra una reunión mensual por cada grupo conforme al calendario escolar. Se dispone del informe de dichas reuniones y participan más del 95% de los docentes | Val: 40.00
+Id: 122 | Code: 2.05.2 | Name: 2.05.2 Existen los grupos pedagógicos y se celebra al menos una reunión mensual por cada grupo y se dispone del informe de dichas reuniones | Val: 60.00
+Id: 24 | Code: 2.06.1 | Name: 2.06.1 Informe trimestral de Acompañamiento de los Docentes con un % de implementación de las acciones superior al 90% | Val: 100.00
+Id: 23 | Code: 2.06.2 | Name: 2.06.2 Informe trimestral de Acompañamiento de los Docentes con un % de implementación de las acciones superior al 70%. | Val: 80.00
+Id: 22 | Code: 2.06.3 | Name: 2.06.3 Plan de Acompañamiento sustentado en un diagnóstico y con un cronograma de implementación definido. | Val: 60.00
+Id: 81 | Code: 2.07.1 | Name: 2.07.1 Promueve actividades, dentro o fuera del aula, vinculadas en  4 o más de los ejes curriculares transversales | Val: 100.00
+Id: 80 | Code: 2.07.2 | Name: 2.07.2 Promueve actividades, dentro o fuera del aula, vinculadas al menos 2 de los ejes curriculares transversales. | Val: 60.00
+Id: 84 | Code: 2.08.1 | Name: 2.08.1 Informe semestral del plan de trabajo implementado con un % de cumplimiento por encima del 80% en relación a lo previsto. | Val: 100.00
+Id: 83 | Code: 2.08.2 | Name: 2.08.2 Informe semestral del plan de trabajo implementado. | Val: 80.00
+Id: 82 | Code: 2.08.3 | Name: 2.08.3 Plan de trabajo y cronograma de implementación de los servicios de orientación y psicología. | Val: 60.00
+Id: 28 | Code: 3.01.1 | Name: 3.01.1 Reporte del Registro de Estudiantes 98% al 100% | Val: 100.00
+Id: 27 | Code: 3.01.2 | Name: 3.01.2 Reporte del Registro de Estudiantes entre 91% y 97% | Val: 70.00
+Id: 1 | Code: 3.01.3 | Name: 3.01.3 Reporte del Registro de Estudiantes - 90% | Val: 50.00
+Id: 72 | Code: 3.02.1 | Name: 3.02.1 Informe de Ejecución del POA más del 80% | Val: 100.00
+Id: 70 | Code: 3.02.2 | Name: 3.02.2 Informe de Ejecución del POA Entre 60% y 79% | Val: 70.00
+Id: 32 | Code: 3.02.3 | Name: 3.02.3 Informe de Ejecución del POA Entre 30% y 59% | Val: 50.00
+Id: 77 | Code: 3.03.1 | Name: 3.03.1 De un 80% - 100% ejecutadas las actividades de mantenimiento preventivo y/o reparaciones menores | Val: 100.00
+Id: 76 | Code: 3.03.2 | Name: 3.03.2 De un 60% - 79% ejecutadas las actividades de mantenimiento preventivo o reparaciones menores | Val: 20.00
+Id: 75 | Code: 3.03.3 | Name: 3.03.3 Diagnóstico de necesidades elaborado a principios de cada trimestre en base a una lista de chequeo | Val: 50.00
+Id: 89 | Code: 3.04.1 | Name: 3.04.1 Informe de Implementación del Plan Escolar de Gestión Ambiental y de Riesgo | Val: 10.00
+Id: 88 | Code: 3.04.2 | Name: 3.04.2 Primer y segundo informe trimestral durante el año escolar del proceso de implementación del Plan Escolar de Gestión Ambiental y de Riesgo | Val: 10.00
+Id: 87 | Code: 3.04.3 | Name: 3.04.3 Primer informe trimestral durante el año escolar del proceso de implementación del Plan Escolar de Gestión Ambiental y de Riesgo | Val: 20.00
+Id: 86 | Code: 3.04.4 | Name: 3.04.4 Plan Escolar de Gestión Ambiental y de Riesgo definido, actualizado por el Centro Educativo al inicio del año escolar e incorporando la detección de necesidades | Val: 20.00
+Id: 85 | Code: 3.04.5 | Name: 3.04.5 Comité de Seguridad y Salud en el Trabajo | Val: 40.00
+Id: 92 | Code: 3.05.1 | Name: 3.05.1 71% o más de cumplimiento de los estándares del Programa de Alimentación Escolar en el Centro Educativo | Val: 100.00
+Id: 91 | Code: 3.05.2 | Name: 3.05.2 Entre el 60% al 70% de cumplimiento de los estándares del Programa de Alimentación Escolar en el Centro Educativo | Val: 70.00
+Id: 90 | Code: 3.05.3 | Name: 3.05.3 Entre el 40% y el 60% de cumplimiento de los estándares del Programa de Alimentación Escolar en el Centro Educativo | Val: 50.00
+Id: 98 | Code: 3.06.1 | Name: 3.06.1 Informe  de asistencia de los Docentes 8 o más docentes hasta 4 ausencias | Val: 100.00
+Id: 97 | Code: 3.06.2 | Name: 3.06.2 Informe  de asistencia de los Docentes 7 docentes Hasta 2 ausencias | Val: 100.00
+Id: 93 | Code: 3.06.3 | Name: 3.06.3 Informe  de asistencia de los Docentes 8 o más docentes de 4 a 7 ausencias | Val: 79.00
+Id: 96 | Code: 3.06.4 | Name: 3.06.4 Informe  de asistencia de los Docentes 7 docentes de 2 a 4 ausencias | Val: 79.00
+Id: 95 | Code: 3.06.5 | Name: 3.06.5 Informe  de asistencia de los Docentes  8 o mas docentes +  de 7 ausencias | Val: 59.00
+Id: 94 | Code: 3.06.6 | Name: 3.06.6 Informe  de asistencia de los Docentes 7 docentes + de 4 ausencias | Val: 59.00
+Id: 123 | Code: 4.01.1 | Name: 4.01.1 Puntuación vinculada a la mejora de la cultura y clima organizacional | Val: 100.00
+Id: 124 | Code: 4.01.2 | Name: 4.01.2 Implementación de las acciones | Val: 70.00
+Id: 125 | Code: 4.01.3 | Name: 4.01.3 Acciones de mejora | Val: 20.00
+Id: 126 | Code: 4.01.4 | Name: 4.01.4 Informe de encuesta de clima | Val: 15.00
+Id: 127 | Code: 4.01.5 | Name: 4.01.5 Capacitación | Val: 15.00
+Id: 128 | Code: 4.02.1 | Name: 4.02.1 Puntuación vinculada a la mejora de la cultura y clima escolar | Val: 100.00
+Id: 129 | Code: 4.02.2 | Name: 4.02.2 Implementación de las acciones | Val: 70.00
+Id: 130 | Code: 4.02.3 | Name: 4.02.3 Acciones de mejora del clima escolar | Val: 50.00
+Id: 131 | Code: 4.02.4 | Name: 4.02.4 Aplicación e informe de encuesta de clima | Val: 30.00
+Id: 132 | Code: 4.03.1 | Name: 4.03.1 Índice de Satisfacción de los grupos de interés con el desempeño general del Centro Educativo por encima de 71 puntos | Val: 100.00
+Id: 133 | Code: 4.03.2 | Name: 4.03.2 Índice de Satisfacción de los grupos de interés con el desempeño general del Centro Educativo entre 51 y 70 puntos | Val: 70.00
+Id: 134 | Code: 4.03.3 | Name: 4.03.3 ndice de Satisfacción de los grupos de interés con el desempeño general del Centro Educativo entre 31 y 50 puntos | Val: 30.00
+Id: 26 | Code: 5.01.1 | Name: 5.01.1 Acuerdo de Desempeño  Vinculado | Val: 100.00
+Id: 25 | Code: 5.01.2 | Name: 5.01.2 Acuerdo de Desempeño No Vinculado | Val: 60.00
+Id: 60 | Code: 5.02.1 | Name: 5.02.1 Más del 80% del Personal Docente en Aula | Val: 100.00
+Id: 59 | Code: 5.02.2 | Name: 5.02.2 Entre el 50 y el 80% del Personal Docente en Aula | Val: 50.00
+Id: 62 | Code: 5.03.1 | Name: 5.03.1 Más del 80% del Personal Docente en Función Administrativo - Pedagógica | Val: 100.00
+Id: 61 | Code: 5.03.2 | Name: 5.03.2 Entre el 50% y el 80% del Personal Docente en Función Administrativo - Pedagógica | Val: 50.00
+Id: 66 | Code: 5.04.1 | Name: 5.04.1 Más del 80% del Personal Administrativo | Val: 100.00
+Id: 64 | Code: 5.04.2 | Name: 5.04.2 Entre el 50% y 80% del Personal Administrativo | Val: 50.00
+Id: 69 | Code: 5.05.1 | Name: 5.05.1 Más del 80% del Personal de Apoyo | Val: 100.00
+Id: 67 | Code: 5.05.2 | Name: 5.05.2 Entre el 50% y el 80% del Personal de Apoyo | Val: 50.00
+Id: 79 | Code: 5.06.1 | Name: 5.06.1 Evaluación de Desempeño Vinculado | Val: 100.00
+Id: 78 | Code: 5.06.2 | Name: 5.06.2 Evaluación de Desempeño No Vinculado | Val: 60.00
+Id: 100 | Code: 5.07.1 | Name: 5.07.1 Más del 80% del Personal Docente en Aula | Val: 100.00
+Id: 99 | Code: 5.07.2 | Name: 5.07.2 Entre el 50% y el 80% del Personal Docente en Aula | Val: 60.00
+Id: 102 | Code: 5.08.1 | Name: 5.08.1 Más del 80% del personal docente en funciones administrativo - pedagógica del Centro Educativo con acuerdos de Desempeño Evaluados | Val: 100.00
+Id: 101 | Code: 5.08.2 | Name: 5.08.2 Entre el 50% y el 80% del Personal Docente en funciones Administrativo - Pedagógica con Acuerdos de Desempeño Evaluados en relación al universo de Acuerdos de Desempeño del Personal Docente en funciones Administrativo - Pedagógica existente en el C | Val: 60.00
+Id: 104 | Code: 5.09.1 | Name: 5.09.1 Más del 80% del Personal Administrativo | Val: 100.00
+Id: 103 | Code: 5.09.2 | Name: 5.09.2 Entre el 50% y el 80% del Personal Administrativo | Val: 60.00
+Id: 106 | Code: 5.10.1 | Name: 5.10.1 Más del 80% del Personal de Apoyo | Val: 100.00
+Id: 105 | Code: 5.10.2 | Name: 5.10.2 Entre el 50% y el 80% del Personal de Apoyo | Val: 60.00
+Id: 30 | Code: 6.01.1 | Name: 6.01.1 Encima del 75% de los días lectivos del mes y acciones concretas para mejorar la asistencia escolar | Val: 100.00
+Id: 29 | Code: 6.01.2 | Name: 6.01.2 Entre el 50% y 75% de los días lectivos del mes | Val: 60.00
+Id: 114 | Code: 6.02.1 | Name: 6.02.1 De 96% a 100% días trabajados según calendario escolar | Val: 100.00
+Id: 113 | Code: 6.02.2 | Name: 6.02.2 De 90% a 95% días trabajados según calendario escolar | Val: 70.00
+Id: 112 | Code: 6.02.3 | Name: 6.02.3 Entre el 85% y el 90% días trabajados según calendario escolar. | Val: 50.00
+Id: 117 | Code: 6.03.1 | Name: 6.03.1 Más del 95 % de los docentes con su carga horaria | Val: 100.00
+Id: 116 | Code: 6.03.2 | Name: 6.03.2 Entre el 61% y el 95% de los docentes con su carga horaria | Val: 70.00
+Id: 115 | Code: 6.03.3 | Name: 6.03.3 Menos del 60% de los docentes sin su carga horaria | Val: 50.00
+Id: 74 | Code: 6.04.1 | Name: 6.04.1 Tasa de Promoción Más del 90% | Val: 100.00
+Id: 73 | Code: 6.04.2 | Name: 6.04.2 Tasa de PromociónDel 85% al 90% | Val: 70.00
+Id: 71 | Code: 6.04.3 | Name: 6.04.3 Tasa de Promoción Con menos del 85% | Val: 30.00
+Id: 68 | Code: 6.05.1 | Name: 6.05.1 Tasa de Reprobados Con menos del 4.5% | Val: 100.00
+Id: 65 | Code: 6.05.2 | Name: 6.05.2 Tasa de Repitencia deDel 4.5% al 6 % | Val: 70.00
+Id: 63 | Code: 6.05.3 | Name: 6.05.3 Tasa de Repitencia Con más del 6% | Val: 30.00
+Id: 135 | Code: 8.01.1 | Name: 8.01.1 Valor del Índice de Contribución del Centro al Desarrollo de la Comunidad donde está Situado | Val: 100.00
+Id: 136 | Code: 9.01.1 | Name: 9.01.1 Valor del Índice de Contribución del Centro al Logro de las Metas Educativas Nacionales | Val: 100.00
+Id: 58 | Code: Np 7.01.1 | Name: Np 7.01.1 Estudiantes Más del 61% | Val: 10.00
+Id: 57 | Code: Np 7.01.2 | Name: Np 7.01.2 Estudiantes Del 51% al 60% | Val: 10.00
+Id: 56 | Code: Np 7.01.3 | Name: Np 7.01.3 Estudiantes  Del 36% al 50% | Val: 5.00
+Id: 55 | Code: Np 7.01.4 | Name: Np 7.01.4 Estudiantes Del 31% al 35% | Val: 5.00
+Id: 54 | Code: Np 7.01.5 | Name: Np 7.01.5 Estudiantes  Del 26% al 30% | Val: 10.00
+Id: 53 | Code: Np 7.01.6 | Name: Np 7.01.6 Estudiantes Del 16% al 25% | Val: 10.00
+Id: 52 | Code: Np 7.01.7 | Name: Np 7.01.7 Estudiantes Del 11% al 15% | Val: 20.00
+Id: 51 | Code: Np 7.01.8 | Name: Np 7.01.8 Estudiantes Del 6% al 10% | Val: 10.00
+Id: 31 | Code: Np 7.01.9 | Name: Np 7.01.9 Estudiantes con desempeño satisfactorio en las Pruebas  Diagnósticas Del 1% al 5%. | Val: 20.00
+Id: 50 | Code: Ns 7.01.1 | Name: Ns 7.01.1 Estudiantes Más del 41% | Val: 10.00
+Id: 49 | Code: Ns 7.01.2 | Name: Ns 7.01.2 Estudiantes Del 26% al 30% | Val: 10.00
+Id: 48 | Code: Ns 7.01.3 | Name: Ns 7.01.3 Estudiantes Del 26% al 30% | Val: 5.00
+Id: 47 | Code: Ns 7.01.4 | Name: Ns 7.01.4 Estudiantes Del 22% al 25% | Val: 5.00
+Id: 46 | Code: Ns 7.01.5 | Name: Ns 7.01.5 Estudiantes Del 19% al 21% | Val: 10.00
+Id: 45 | Code: Ns 7.01.6 | Name: Ns 7.01.6 Estudiantes Del 16% al 18% | Val: 10.00
+Id: 44 | Code: Ns 7.01.7 | Name: Ns 7.01.7 Estudiantes  Del 13% al 15% | Val: 20.00
+Id: 43 | Code: Ns 7.01.8 | Name: Ns 7.01.8 Estudiantes con desempeño satisfactorio en las Pruebas Diagnósticas. Del 10% al 12% | Val: 10.00
+Id: 42 | Code: Ns 7.01.9 | Name: Ns 7.01.9 Estudiantes con desempeño satisfactorio en las Pruebas Diagnósticas.  Por debajo del 10% | Val: 20.00
+Id: 41 | Code: Ns 7.02.1 | Name: Ns 7.02.1 Estudiantes Más del 41% | Val: 10.00
+Id: 40 | Code: Ns 7.02.2 | Name: Ns 7.02.2 Estudiantes Del 31% al 40% | Val: 10.00
+Id: 39 | Code: Ns 7.02.3 | Name: Ns 7.02.3 Estudiantes Del 26% al 30% | Val: 5.00
+Id: 38 | Code: Ns 7.02.4 | Name: Ns 7.02.4 Estudiantes Del 22% al 25% | Val: 5.00
+Id: 37 | Code: Ns 7.02.5 | Name: Ns 7.02.5 Estudiantes Del 19% al 21% | Val: 10.00
+Id: 36 | Code: Ns 7.02.6 | Name: Ns 7.02.6 Estudiantes Del 16% al 18% | Val: 10.00
+Id: 35 | Code: Ns 7.02.7 | Name: Ns 7.02.7 Estudiantes Del 13% al 15% | Val: 20.00
+Id: 34 | Code: Ns 7.02.8 | Name: Ns 7.02.8 Estudiantes Del 10% al 12% | Val: 10.00
+Id: 33 | Code: Ns 7.02.9 | Name: Ns 7.02.9 Estudiantes Por debajo del 10% | Val: 20.00

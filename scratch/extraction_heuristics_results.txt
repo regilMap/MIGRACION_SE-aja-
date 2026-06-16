@@ -1,0 +1,823 @@
+Extracted 63 tables.
+
+=================================================================
+PAGE 20 | Subindicador: 1.01 - 1.01. Formulación de Proyecto Educativo de Centro (PEC) Orientado a Resultados
+=================================================================
+Ámbito: IBOG PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL, PEDAGÓGICA Y
+Indicador: IBOG 1. Gestión estratégica y cultura de calidad
+  Evidencia 1: 
+    Raw: ''
+      Criterio 1: Se evidencia el Proyecto Educativo de Centro (PEC)
+      Criterio 2: 1. Describe el contexto interno y externo
+      Criterio 3: 2. Contiene misión, visión y valores institucionales
+      Criterio 4: 3. Presenta propuesta de implementación curricular
+      Criterio 5: 4. Marco estratégico (define: objetivo, indicador, metas)
+      Criterio 6: 5. Marco operativo (Establece metas claras y medibles)
+      Criterio 7: El Proyecto Educativo de Centro (PEC) incluye los 5 aspectos establecidos anteriormente mencionados.
+  Evidencia 2: Informe Anual de Monitoreo y
+    Raw: 'Informe Anual de Monitoreo y'
+      Criterio 1: Da seguimiento a los objetivos del Proyecto Educativo de Centro (PEC)
+  Evidencia 3: Evaluación del Proyecto
+    Raw: 'Evaluación del Proyecto'
+  Evidencia 4: Educativo de Centro (PEC) (Evidencia subida: Junio de cada año escolar)
+    Raw: 'Educativo de Centro (PEC)\n(Evidencia subida: Junio de cada\naño escolar)'
+      Criterio 1: Identifica implementación, avances, dificultades e incluye acciones de mejoras
+
+=================================================================
+PAGE 21 | Subindicador: 1.01 - 1.01. Formulación de Proyecto Educativo de Centro (PEC) Orientado a Resultados
+=================================================================
+Ámbito: IBOG PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL, PEDAGÓGICA Y
+Indicador: IBOG 1. Gestión estratégica y cultura de calidad
+  Evidencia 1: ▪ 100. Informe Implementación CAF (+100 Puntos). Centro Educativo ha remitido informe de implementación del Plan de Mejora a un 80% de acciones implementadas. (Comité de Calidad + Autoevaluación + Plan de Mejora + Informe)
+    Raw: '▪ 100. Informe Implementación CAF (+100 Puntos). Centro Educativo ha remitido informe de implementación del Plan de Mejora a un 80% de acciones implementadas. (Comité de Calidad + Autoevaluación + Plan de Mejora + Informe)'
+  Evidencia 2: ▪ 70. Plan de Mejora CAF (+70 Puntos). Centro Educativo ha elaborado y remitido el último plan de mejora del año vigente antes del 30/08. (Comité de Calidad + Autoevaluación + Plan de Mejora)
+    Raw: '▪ 70. Plan de Mejora CAF (+70 Puntos). Centro Educativo ha elaborado y remitido el último plan de mejora del año vigente antes del 30/08. (Comité de Calidad + Autoevaluación + Plan de Mejora)'
+
+=================================================================
+PAGE 22 | Subindicador: 1.01 - 1.01. Formulación de Proyecto Educativo de Centro (PEC) Orientado a Resultados
+=================================================================
+Ámbito: IBOG PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL, PEDAGÓGICA Y
+Indicador: IBOG 1. Gestión estratégica y cultura de calidad
+  Evidencia 1: 100. Puntuación vinculada a calidad y resultados: ▪ Satisfactorio (+50 Puntos). Se cumple una de las siguientes combinaciones con todos sus atributos: ○ El resultado del Informe de Autoevaluación CAF del año vigente es al menos 300 puntos y su índice de desempeño SISMAP Educación – Centros Educativos es mayor a 85 en la puntuación vigente. ○ El resultado del Informe de Autoevaluación CAF del año vigente es al menos un 10% superior a la previa, al menos tenga 250 puntos y su índice de desempeño SISMAP Educación - Centros Educativos es mayor a 80 en la puntuación vigente.
+    Raw: '100. Puntuación vinculada a calidad y resultados: ▪ Satisfactorio (+50 Puntos). Se cumple una de las siguientes combinaciones con todos sus atributos: ○ El resultado del Informe de Autoevaluación CAF del año vigente es al menos 300 puntos y su índice de desempeño SISMAP Educación – Centros Educativos es mayor a 85 en la puntuación vigente. ○ El resultado del Informe de Autoevaluación CAF del año vigente es al menos un 10% superior a la previa, al menos tenga 250 puntos y su índice de desempeño SISMAP Educación - Centros Educativos es mayor a 80 en la puntuación vigente.'
+
+=================================================================
+PAGE 24 | Subindicador: 1.01 - 1.01. Formulación de Proyecto Educativo de Centro (PEC) Orientado a Resultados
+=================================================================
+Ámbito: IBOG PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL, PEDAGÓGICA Y
+Indicador: IBOG 1. Gestión estratégica y cultura de calidad
+  Evidencia 1: ▪ Intermedio (+30 Puntos). Se cumple las 3 condiciones individuales: El resultado del Informe de Autoevaluación CAF del año vigente es al menos un 5% superior a la previa, tiene al menos 200 puntos en el Informe CAF y su índice de desempeño SISMAP Educación – Centros Educativos es superior a 80 en la puntuación vigente. ▪ Inicial: (+20 Puntos). Se cumple alguna de las 3 condiciones individuales: ○ El resultado del Informe de Autoevaluación CAF del año vigente es al menos un 5% superior a la previa. ○ Al menos tiene 150 puntos en la puntuación CAF. ○ El índice de desempeño SISMAP Educación - Centros Educativos es superior a 70 y se ha remitido el Informe CAF. 50. Puntuación vinculada a la implementación del CAF: ▪ Informe Implementación CAF (+10 Puntos). Centro Educativo ha remitido informe de implementación del Plan de Mejora a un 80% de acciones implementadas ▪ Plan de Mejora CAF (+10 Puntos). Centro Educativo ha elaborado y remitido el último plan de mejora del año vigente antes del 30/08. ▪ Autoevaluación CAF (+10 Puntos). Centro Educativo ha realizado la última autoevaluación CAF vigente y la remite junto el Informe de Autoevaluación CAF antes del 30/06. ▪ 20. Comité de Calidad (prerrequisito). Centro Educativo ha conformado el Comité Institucional de Calidad y lo ha remitido a través de una comunicación firmada y sellada a la máxima autoridad del MAP. Dicho Comité ha sido entrenado y capacitado en la aplicación del modelo CAF y en la elaboración de autoevaluaciones institucionales.
+    Raw: '▪ Intermedio (+30 Puntos). Se cumple las 3 condiciones individuales: El resultado del Informe de Autoevaluación CAF del año vigente es al menos un 5% superior a la previa, tiene al menos 200 puntos en el Informe CAF y su índice de desempeño SISMAP Educación – Centros Educativos es superior a 80 en la puntuación vigente. ▪ Inicial: (+20 Puntos). Se cumple alguna de las 3 condiciones individuales: ○ El resultado del Informe de Autoevaluación CAF del año vigente es al menos un 5% superior a la previa. ○ Al menos tiene 150 puntos en la puntuación CAF. ○ El índice de desempeño SISMAP Educación - Centros Educativos es superior a 70 y se ha remitido el Informe CAF. 50. Puntuación vinculada a la implementación del CAF: ▪ Informe Implementación CAF (+10 Puntos). Centro Educativo ha remitido informe de implementación del Plan de Mejora a un 80% de acciones implementadas ▪ Plan de Mejora CAF (+10 Puntos). Centro Educativo ha elaborado y remitido el último plan de mejora del año vigente antes del 30/08. ▪ Autoevaluación CAF (+10 Puntos). Centro Educativo ha realizado la última autoevaluación CAF vigente y la remite junto el Informe de Autoevaluación CAF antes del 30/06. ▪ 20. Comité de Calidad (prerrequisito). Centro Educativo ha conformado el Comité Institucional de Calidad y lo ha remitido a través de una comunicación firmada y sellada a la máxima autoridad del MAP. Dicho Comité ha sido entrenado y capacitado en la aplicación del modelo CAF y en la elaboración de autoevaluaciones institucionales.'
+
+=================================================================
+PAGE 25 | Subindicador: 1.02 - 1.02. Implementación del Marco Común de Evaluación
+=================================================================
+Ámbito: IBOG PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL, PEDAGÓGICA Y ADMINISTRATIVA DEL CENTRO EDUCATIVO
+Indicador: IBOG 1. Gestión estratégica y cultura de calidad
+  Evidencia 1: Informe de Autoevaluación CAF
+    Raw: 'Informe de Autoevaluación CAF'
+  Evidencia 2: Comunicación de conformación del Comité de Calidad
+    Raw: 'Comunicación de conformación del Comité de Calidad'
+      Criterio 1: El documento está firmado y sellado por la autoridad del centro
+      Criterio 2: Identifica a los miembros del comité
+  Evidencia 3: Plan de Mejora
+    Raw: 'Plan de Mejora'
+      Criterio 1: Deriva de la autoevaluación Marco Común de Evaluación (CAF)
+      Criterio 2: Se basa en áreas de mejora identificadas
+      Criterio 3: Define acciones de mejora
+      Criterio 4: Define responsables
+      Criterio 5: Define plazos de ejecución
+      Criterio 6: Define medios de verificación.
+
+=================================================================
+PAGE 27 | Subindicador: 1.03 - 1.03. Plan de Mejora de la Gestión (PMG) derivado de la autoevaluación Marco Común de Evaluación (CAF) y vinculado al PEC
+=================================================================
+Ámbito: PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL,
+Indicador: IBOG 1. Gestión estratégica y cultura de calidad
+  Evidencia 1: Incluye actividades
+    Raw: 'Incluye actividades'
+  Evidencia 2: Define responsables
+    Raw: 'Define responsables'
+  Evidencia 3: Define tiempo de ejecución
+    Raw: 'Define tiempo de ejecución'
+  Evidencia 4: Define medios de verificación
+    Raw: 'Define medios de verificación'
+  Evidencia 5: Presenta resultados de ejecución
+    Raw: 'Presenta resultados de ejecución'
+  Evidencia 6: Da seguimiento a las actividades
+    Raw: 'Da seguimiento a las actividades'
+
+=================================================================
+PAGE 27 | Subindicador: 1.03 - 1.03. Plan de Mejora de la Gestión (PMG) derivado de la autoevaluación Marco Común de Evaluación (CAF) y vinculado al PEC
+=================================================================
+Ámbito: PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL,
+Indicador: IBOG 1. Gestión estratégica y cultura de calidad
+  Evidencia 1: ▪ 100. Plan Operativo Anual (POA) y Presupuesto alineado con el PEC y el Plan de Mejora derivado de la autoevaluación (Modelo CAF).
+    Raw: '▪ 100. Plan Operativo Anual (POA) y Presupuesto alineado con el PEC y el Plan de Mejora derivado de la autoevaluación (Modelo CAF).'
+  Evidencia 2: ▪ 70. Reporte generado del Sistema de Planificación ▪ 60. Acta de Aprobación del POA
+    Raw: '▪ 70. Reporte generado del Sistema de Planificación ▪ 60. Acta de Aprobación del POA'
+  Evidencia 3: ▪ 0. Sin Plan Operativo Anual (POA) y Presupuesto remitido.
+    Raw: '▪ 0. Sin Plan Operativo Anual (POA) y Presupuesto remitido.'
+
+=================================================================
+PAGE 28 | Subindicador: 1.04 - 1.04. Plan Operativo Anual (POA) y Presupuesto
+=================================================================
+Ámbito: PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL,
+Indicador: IBOG 1. Gestión estratégica y cultura de calidad
+  Evidencia 1: Presupuesto del centro educativo (Evidencia subida en septiembre de cada año escolar)
+    Raw: 'Presupuesto del centro educativo\n(Evidencia subida en septiembre de cada\naño escolar)'
+      Criterio 1: Cuenta con una validación positiva para la implementación
+
+=================================================================
+PAGE 28 | Subindicador: 1.04 - 1.04. Plan Operativo Anual (POA) y Presupuesto
+=================================================================
+Ámbito: PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL,
+Indicador: IBOG 1. Gestión estratégica y cultura de calidad
+  Evidencia 1: Nota: Gestionar información en la dirección de Planificación, unidad que envía al centro
+    Raw: 'Nota: Gestionar información en la dirección de Planificación, unidad que envía al centro'
+
+=================================================================
+PAGE 29 | Subindicador: 1.05 - 1.05. Funcionamiento de los organismos internos de participación
+=================================================================
+Ámbito: PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL, PEDAGÓGICA Y ADMINISTRATIVA DEL CENTRO EDUCATIVO
+Indicador: IBOG 1. Gestión estratégica y cultura de calidad
+  Evidencia 1: 
+    Raw: ''
+      Criterio 1: La Asociación de Padres, Madres y Amigos de la Escuela (APMAE) dispone de Plan Anual de Trabajo
+      Criterio 2: El Comité de Padres dispone de Plan Anual de Trabajo
+      Criterio 3: La Escuela de Padres dispone de Plan Anual de Trabajo
+      Criterio 4: El Comité o Consejo de Curso de Estudiantes dispone de Plan Anual de Trabajo
+      Criterio 5: El Consejo Estudiantil dispone de Plan Anual de Trabajo
+      Criterio 6: La Junta de Centro Educativo realiza reuniones periódicas
+      Criterio 7: La Asociación de Padres, Madres y Amigos de la Escuela (APMAE) realiza reuniones periódicas
+      Criterio 8: El Comité de Padres realiza reuniones periódicas
+      Criterio 9: La Escuela de Padres realiza reuniones periódicas
+      Criterio 10: El Comité o Consejo de Curso de Estudiantes realiza reuniones periódicas
+      Criterio 11: El Consejo Estudiantil realiza reuniones periódicas
+      Criterio 12: Se describen las acciones de la Junta de Centro Educativo
+      Criterio 13: Se describen las acciones de la APMAE
+      Criterio 14: Se describen las acciones del Comité de Padres
+      Criterio 15: Se describen las acciones de la Escuela de Padres
+      Criterio 16: Se describen las acciones del Comité o Consejo de Curso de
+      Criterio 17: Estudiantes
+      Criterio 18: Se describen las acciones del Consejo Estudiantil
+
+=================================================================
+PAGE 30 | Subindicador: 1.05 - 1.05. Funcionamiento de los organismos internos de participación
+=================================================================
+Ámbito: PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL, PEDAGÓGICA Y ADMINISTRATIVA DEL CENTRO EDUCATIVO
+Indicador: IBOG 1. Gestión estratégica y cultura de calidad
+  Evidencia 1: ▪ 100. Informe de ejecución durante el periodo de clase sobre las acciones impulsadas en el marco de dichas alianzas.
+    Raw: '▪ 100. Informe de ejecución durante el periodo de clase sobre las acciones impulsadas en el marco de dichas alianzas.'
+  Evidencia 2: ▪ 70. Plan de trabajo y actas de reuniones
+    Raw: '▪ 70. Plan de trabajo y actas de reuniones'
+  Evidencia 3: ▪ 50. Existen alianzas con organismos o instituciones externas.
+    Raw: '▪ 50. Existen alianzas con organismos o instituciones externas.'
+
+=================================================================
+PAGE 30 | Subindicador: 1.06 - 1.06. Gestión de alianzas externas
+=================================================================
+Ámbito: PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL,
+Indicador: IBOG 1. Gestión estratégica y cultura de calidad
+  Evidencia 1: 
+    Raw: ''
+      Criterio 1: El plan de trabajo identifica las instituciones aliadas involucradas y define acciones conjuntas a desarrollar
+
+=================================================================
+PAGE 31 | Subindicador: 1.06 - 1.06. Gestión de alianzas externas
+=================================================================
+Ámbito: PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL,
+Indicador: IBOG 1. Gestión estratégica y cultura de calidad
+  Evidencia 1: ▪ 100. Se realiza evaluación de seguimiento interno al finalizar el 1er periodo de clase (mes de junio). ▪ 90. Se realiza la evaluación del seguimiento interno a la finalización del mes de marzo. ▪ 80. Se realiza la evaluación del seguimiento interno a la finalización del mes de diciembre.
+    Raw: '▪ 100. Se realiza evaluación de seguimiento interno al finalizar el 1er periodo de clase (mes de junio). ▪ 90. Se realiza la evaluación del seguimiento interno a la finalización del mes de marzo. ▪ 80. Se realiza la evaluación del seguimiento interno a la finalización del mes de diciembre.'
+  Evidencia 2: ▪ 60. Se elabora el informe consolidado de la evaluación diagnóstica interna al inicio del primer periodo de clases.
+    Raw: '▪ 60. Se elabora el informe consolidado de la evaluación diagnóstica interna al inicio del primer periodo de clases.'
+  Evidencia 3: ▪ 40. Se realiza la evaluación al inicio primer período escolar (septiembre). ▪ 0. Sin avances en el proceso.
+    Raw: '▪ 40. Se realiza la evaluación al inicio primer período escolar (septiembre). ▪ 0. Sin avances en el proceso.'
+
+=================================================================
+PAGE 32 | Subindicador: 2.01 - 2.01. Monitoreo interno, inicial y de medio término del
+=================================================================
+Ámbito: PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL,
+Indicador: IBOG 2. Gestión pedagógica
+  Evidencia 1: Informe consolidado de la evaluación diagnóstica (Evidencia subida en octubre de cada año escolar)
+    Raw: 'Informe consolidado de la evaluación\ndiagnóstica\n(Evidencia subida en octubre de cada año\nescolar)'
+      Criterio 1: El consolidado responde a la evaluación diagnóstica del nivel o ciclo correspondiente el consolidado se identifican el logro de los estudiantes
+      Criterio 2: Orienta la toma de decisiones pedagógicas.
+  Evidencia 2: Instrumento consolidado resultado de la evaluación del seguimiento interno (Evidencia subida al finalizar mes de diciembre de cada año escolar)
+    Raw: 'Instrumento consolidado resultado de la\nevaluación del seguimiento interno\n(Evidencia subida al finalizar mes de\ndiciembre de cada año escolar)'
+      Criterio 1: Se realizó evaluación de seguimiento interno a la finalización del mes de diciembre
+      Criterio 2: Las evaluaciones diagnósticas responden al nivel o ciclo correspondiente
+      Criterio 3: Los registros identifican niveles de logro de los estudiantes
+      Criterio 4: Se realizó evaluación de seguimiento interno a la finalización del mes de marzo.
+      Criterio 5: Las evaluaciones diagnósticas responden al nivel o ciclo correspondiente
+      Criterio 6: Los registros identifican niveles de logro de los estudiantes
+      Criterio 7: Se realizó evaluación de seguimiento interno al finalizar el
+      Criterio 8: 1er período de clase (mes de junio).
+      Criterio 9: Las evaluaciones diagnósticas responden al nivel o ciclo correspondiente
+      Criterio 10: Los registros identifican niveles de logro de los estudiantes
+
+=================================================================
+PAGE 33 | Subindicador: 2.01 - 2.01. Monitoreo interno, inicial y de medio término del
+=================================================================
+Ámbito: PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL,
+Indicador: IBOG 2. Gestión pedagógica
+  Evidencia 1: ▪ 100. Más del 90% de los docentes cuentan con todos sus planes de clase.
+    Raw: '▪ 100. Más del 90% de los docentes cuentan con todos sus planes de clase.'
+  Evidencia 2: ▪ 70. Del 70 al 90% de los docentes cuentan con todos sus planes de clase.
+    Raw: '▪ 70. Del 70 al 90% de los docentes cuentan con todos sus planes de clase.'
+  Evidencia 3: ▪ 50. Del 60 al 69% de los docentes cuentan con todos sus planes de clase. ▪ 0. Menos del 60% de los docentes cuentan con todos sus planes de clase.
+    Raw: '▪ 50. Del 60 al 69% de los docentes cuentan con todos sus planes de clase. ▪ 0. Menos del 60% de los docentes cuentan con todos sus planes de clase.'
+
+=================================================================
+PAGE 35 | Subindicador: 2.03 - 2.03. Contenidos mediadores
+=================================================================
+Ámbito: PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL,
+Indicador: IBOG 2. Gestión pedagógica
+  Evidencia 1: ▪ 100. 71% o más de los y las docentes utilizan los recursos de base digital disponibles.
+    Raw: '▪ 100. 71% o más de los y las docentes utilizan los recursos de base digital disponibles.'
+  Evidencia 2: ▪ 75. Entre el 60% a 70% de los y las docentes utilizan los recursos de base digital disponibles. ▪ 60. Entre el 31% y 59% de los y las docentes utilizan los recursos de base digital disponibles.
+    Raw: '▪ 75. Entre el 60% a 70% de los y las docentes utilizan los recursos de base digital disponibles. ▪ 60. Entre el 31% y 59% de los y las docentes utilizan los recursos de base digital disponibles.'
+  Evidencia 3: ▪ 40. Hasta el 30% de los docentes utilizan los recursos de base digital disponibles. ▪ 0. Sin evidencia de utilización de los recursos de base digital disponibles.
+    Raw: '▪ 40. Hasta el 30% de los docentes utilizan los recursos de base digital disponibles. ▪ 0. Sin evidencia de utilización de los recursos de base digital disponibles.'
+
+=================================================================
+PAGE 36 | Subindicador: 2.05 - 2.05. Grupos pedagógicos
+=================================================================
+Ámbito: PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL, PEDAGÓGICA Y ADMINISTRATIVA DEL CENTRO EDUCATIVO
+Indicador: IBOG 2. Gestión pedagógica
+  Evidencia 1: ▪ 100. En el Centro Educativo se elabora trimestralmente el Informe de Acompañamiento de los Docentes con un % de implementación de las acciones superior al 90%. (noviembre, marzo y junio) ▪ 80. En el Centro Educativo se elabora trimestralmente el Informe de Acompañamiento de los Docentes con un % de implementación de las acciones superior al 70% (noviembre)
+    Raw: '▪ 100. En el Centro Educativo se elabora trimestralmente el Informe de Acompañamiento de los Docentes con un % de implementación de las acciones superior al 90%. (noviembre, marzo y junio) ▪ 80. En el Centro Educativo se elabora trimestralmente el Informe de Acompañamiento de los Docentes con un % de implementación de las acciones superior al 70% (noviembre)'
+
+=================================================================
+PAGE 39 | Subindicador: 2.07 - 2.07. Ejes curriculares transversales
+=================================================================
+Ámbito: PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL, PEDAGÓGICA Y
+Indicador: IBOG 2. Gestión pedagógica
+  Evidencia 1: ▪ 100. En el Centro Educativo se elabora el informe del plan de trabajo implementado con un % de cumplimiento por encima del 80% en relación a lo previsto, correspondiente al periodo de clase. ▪ 80. En el Centro Educativo se elabora el informe del plan de trabajo implementado correspondiente al periodo de clase, con un cumplimiento de hasta un 80%.
+    Raw: '▪ 100. En el Centro Educativo se elabora el informe del plan de trabajo implementado con un % de cumplimiento por encima del 80% en relación a lo previsto, correspondiente al periodo de clase. ▪ 80. En el Centro Educativo se elabora el informe del plan de trabajo implementado correspondiente al periodo de clase, con un cumplimiento de hasta un 80%.'
+  Evidencia 2: ▪ 60. En el Centro Educativo se dispone de plan de trabajo para la implementación de los servicios de orientación y psicología.
+    Raw: '▪ 60. En el Centro Educativo se dispone de plan de trabajo para la implementación de los servicios de orientación y psicología.'
+  Evidencia 3: ▪ 0. En el Centro Educativo no se cuenta con servicios de orientación y psicología.
+    Raw: '▪ 0. En el Centro Educativo no se cuenta con servicios de orientación y psicología.'
+
+=================================================================
+PAGE 40 | Subindicador: 2.08 - 2.08. Cantidad de acciones puntuales de orientación y
+=================================================================
+Ámbito: PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL,
+Indicador: IBOG 2. Gestión pedagógica
+  Evidencia 1: 
+    Raw: ''
+      Criterio 1: Se elabora el informe del plan de trabajo correspondiente al período de clase
+      Criterio 2: Evidencia un cumplimiento superior al 80 % de las acciones planificadas
+
+=================================================================
+PAGE 40 | Subindicador: 2.08 - 2.08. Cantidad de acciones puntuales de orientación y
+=================================================================
+Ámbito: PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL,
+Indicador: IBOG 2. Gestión pedagógica
+  Evidencia 1: Descripción
+    Raw: 'Descripción'
+  Evidencia 2: El Centro Educativo evidencia procesos efectivos de inclusión, con identificación oportuna, apoyos implementados, participación activa del estudiante y seguimiento sistemático de su progreso.
+    Raw: 'El Centro Educativo evidencia procesos efectivos de inclusión, con identificación oportuna, apoyos implementados, participación activa del estudiante y seguimiento sistemático de su progreso.'
+  Evidencia 3: El Centro Educativo identifica estudiantes con discapacidad y/o altas capacidades, dispone de acciones de apoyo y realiza seguimiento parcial a su proceso de inclusión.
+    Raw: 'El Centro Educativo identifica estudiantes con discapacidad y/o altas capacidades, dispone de acciones de apoyo y realiza seguimiento parcial a su proceso de inclusión.'
+  Evidencia 4: El Centro Educativo Registra formalmente en la APP Dirección de Educación Especial estudiantes con discapacidad y/o altas capacidades y ejecuta
+    Raw: 'El Centro Educativo Registra formalmente en la APP Dirección de Educación Especial estudiantes con discapacidad y/o altas capacidades y ejecuta'
+
+=================================================================
+PAGE 41 | Subindicador: 2.08 - 2.08. Cantidad de acciones puntuales de orientación y
+=================================================================
+Ámbito: PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL,
+Indicador: IBOG 2. Gestión pedagógica
+  Evidencia 1: acciones aisladas de inclusión, sin seguimiento sistemático.
+    Raw: 'acciones aisladas de inclusión, sin seguimiento sistemático.'
+  Evidencia 2: El Centro Educativo identifica estudiantes con discapacidad y/o altas capacidades, pero no evidencia apoyos ni acciones sostenidas de inclusión.
+    Raw: 'El Centro Educativo identifica estudiantes con discapacidad y/o altas capacidades, pero no evidencia apoyos ni acciones sostenidas de inclusión.'
+  Evidencia 3: El Centro Educativo no presenta evidencias de identificación, apoyo ni seguimiento a estudiantes con discapacidad y/o altas capacidades.
+    Raw: 'El Centro Educativo no presenta evidencias de identificación, apoyo ni seguimiento a estudiantes con discapacidad y/o altas capacidades.'
+
+=================================================================
+PAGE 42 | Subindicador: 3.01 - 3.01. Actualización oportuna del registro de
+=================================================================
+Ámbito: PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL,
+Indicador: IBOG 3. Gestión administrativa y financiera
+  Evidencia 1: Registro de los estudiantes extraído del Sistema de Información para la Gestión Escolar (SIGERD). Firmada y sellada por el Centro Educativo. (Evidencia subida conforme lineamiento del SIGERD) (Mensual a verificar)
+    Raw: 'Registro de los estudiantes extraído del Sistema de Información para la Gestión Escolar (SIGERD). Firmada y sellada por el Centro Educativo. (Evidencia subida conforme lineamiento del SIGERD) (Mensual a verificar)'
+
+=================================================================
+PAGE 43 | Subindicador: 3.02 - 3.02. Ejecución trimestral de los recursos de
+=================================================================
+Ámbito: PRIMER ÁMBITO. GESTIÓN
+Indicador: IBOG 3. Gestión administrativa y financiera
+  Evidencia 1: 
+    Raw: ''
+      Criterio 1: Ejecución de más del 80% de los recursos de descentralización y autogestión recibidos contemplados en el Plan Operativo Anual (POA)
+      Criterio 2: Ejecución del 60% y 79% de los recursos de descentralización y autogestión recibidos contemplados en el Plan Operativo Anual (POA)
+      Criterio 3: Ejecución del 30 y el 59% de los recursos de descentralización y autogestión recibidos contemplados en el Plan Operativo Anual (POA)
+      Criterio 4: Ejecución de menos del 30% de los recursos de descentralización y autogestión recibidos contemplados en el Plan Operativo Anual (POA)
+
+=================================================================
+PAGE 44 | Subindicador: 3.03 - 3.03. Condición de la infraestructura y
+=================================================================
+Ámbito: PRIMER ÁMBITO. GESTIÓN
+Indicador: IBOG 3. Gestión administrativa y
+  Evidencia 1: Lista de chequeo mantenimiento preventivo y/o reparaciones menores. Conforme a lo establecido en el acápite “características planta física del sistema de gestión escolar SIGERD” (Evidencia subida- septiembre de cada año escolar)
+    Raw: 'Lista de chequeo mantenimiento preventivo y/o reparaciones menores. Conforme a lo establecido en el acápite “características planta física del sistema de gestión escolar SIGERD” (Evidencia subida- septiembre de cada año escolar)'
+  Evidencia 2: Informe de ejecución de mantenimiento y reparaciones (Evidencia subida-noviembre de cada año escolar)
+    Raw: 'Informe de ejecución de mantenimiento y reparaciones (Evidencia subida-noviembre de cada año escolar)'
+
+=================================================================
+PAGE 45 | Subindicador: 3.03 - 3.03. Condición de la infraestructura y
+=================================================================
+Ámbito: PRIMER ÁMBITO. GESTIÓN
+Indicador: IBOG 3. Gestión administrativa y
+  Evidencia 1: Objetivo
+    Raw: 'Objetivo'
+  Evidencia 2: Logrado
+    Raw: 'Logrado'
+  Evidencia 3: Cierto
+    Raw: 'Cierto'
+  Evidencia 4: Avance
+    Raw: 'Avance'
+  Evidencia 5: Poco
+    Raw: 'Poco'
+  Evidencia 6: Avance
+    Raw: 'Avance'
+
+=================================================================
+PAGE 46 | Subindicador: 3.04 - 3.04. Plan Escolar de Gestión Ambiental y de Riesgo
+=================================================================
+Ámbito: PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL,
+Indicador: IBOG 3. Gestión administrativa y financiera
+  Evidencia 1: Plan Escolar de Gestión Ambiental y de Riesgo (Evidencia subida en septiembre de cada año escolar)
+    Raw: 'Plan Escolar de Gestión Ambiental y de Riesgo (Evidencia subida en septiembre de cada año escolar)'
+      Criterio 1: Cuenta con un Plan Escolar de Gestión Ambiental y de Riesgo elaborado.
+      Criterio 2: Identifica riesgos ambientales y situaciones de vulnerabilidad del centro educativo.
+      Criterio 3: Enlista acciones de prevención, mitigación y respuesta ante riesgos.
+  Evidencia 2: Informes de gestión ambiental y de riesgo (Evidencia subida en: noviembre-febrero- junio de cada año escolar)
+    Raw: 'Informes de gestión ambiental y de riesgo (Evidencia subida en: noviembre-febrero- junio de cada año escolar)'
+  Evidencia 3: Comité de Seguridad y Salud en el Trabajo (Evidencia subida en septiembre de cada año escolar)
+    Raw: 'Comité de Seguridad y Salud en el Trabajo (Evidencia subida en septiembre de cada año escolar)'
+      Criterio 1: Cuenta con un Comité de Seguridad y Salud en el Trabajo
+      Criterio 2: El comité está formalmente constituido mediante acta o documento oficial.
+
+=================================================================
+PAGE 47 | Subindicador: 3.04 - 3.04. Plan Escolar de Gestión Ambiental y de Riesgo
+=================================================================
+Ámbito: PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL,
+Indicador: IBOG 3. Gestión administrativa y financiera
+  Evidencia 1: Objetivo
+    Raw: 'Objetivo'
+      Criterio 1: ▪ 100. 71% o más de cumplimiento de los estándares del Programa de Alimentación Escolar en el Centro Educativo.
+  Evidencia 2: Logrado
+    Raw: 'Logrado'
+  Evidencia 3: Cierto
+    Raw: 'Cierto'
+      Criterio 1: ▪ 70. Entre el 61% al 70% de cumplimiento de los estándares del Programa de Alimentación Escolar en el Centro Educativo.
+  Evidencia 4: Avance
+    Raw: 'Avance'
+  Evidencia 5: Poco
+    Raw: 'Poco'
+      Criterio 1: ▪ 50. Entre el 40% y el 60% de cumplimiento de los estándares del Programa de Alimentación Escolar en el Centro Educativo. ▪ 0. Menos del 40% de cumplimiento de los estándares del Programa de Alimentación Escolar en el Centro Educativo.
+  Evidencia 6: Avance
+    Raw: 'Avance'
+
+=================================================================
+PAGE 48 | Subindicador: 3.06 - 3.06. Tasa de asistencia de los docentes
+=================================================================
+Ámbito: PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL,
+Indicador: IBOG 3. Gestión administrativa y financiera
+  Evidencia 1: Registro de asistencia docente
+    Raw: 'Registro de asistencia docente'
+      Criterio 1: Centros educativos con ocho o más docentes: Hasta cuatro ausencias
+      Criterio 2: Centros educativos con hasta siete docentes: Hasta dos ausencias
+      Criterio 3: Centros educativos con ocho o más docentes: De cuatro a siete ausencias
+      Criterio 4: Centros educativos con hasta siete docentes: De dos a cuatro ausencias
+      Criterio 5: Centros educativos con ocho o más docentes: Más de siete ausencias
+      Criterio 6: Centros educativos con hasta siete docentes: Más de cuatro ausencias
+
+=================================================================
+PAGE 48 | Subindicador: 3.06 - 3.06. Tasa de asistencia de los docentes
+=================================================================
+Ámbito: PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL,
+Indicador: IBOG 3. Gestión administrativa y financiera
+  Evidencia 1: Nota: Verificar en el SIGERD un acápite de registro de asistencia. Docente y la plataforma SIR
+    Raw: 'Nota: Verificar en el SIGERD un acápite de registro de asistencia. Docente y\nla plataforma SIR'
+      Criterio 1: ASAG con Rafael
+
+=================================================================
+PAGE 50 | Subindicador: 3.06 - 3.06. Tasa de asistencia de los docentes
+=================================================================
+Ámbito: PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL,
+Indicador: IBOG 3. Gestión administrativa y financiera
+  Evidencia 1: 
+    Raw: ''
+      Criterio 1: ▪ 100. Puntuación vinculada a la mejora de la cultura y clima escolar. El Índice de Valoración del Clima Escolar es de 80 o más puntos al final de cada periodo de medición.
+  Evidencia 2: Objetivo
+    Raw: 'Objetivo'
+  Evidencia 3: Logrado
+    Raw: 'Logrado'
+      Criterio 1: ▪ 70. Implementación de las acciones. El centro implementa las acciones de mejora vinculadas a la cultura y clima escolar.
+  Evidencia 4: Cierto
+    Raw: 'Cierto'
+  Evidencia 5: Avance
+    Raw: 'Avance'
+
+=================================================================
+PAGE 51 | Subindicador: 3.06 - 3.06. Tasa de asistencia de los docentes
+=================================================================
+Ámbito: PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL,
+Indicador: IBOG 3. Gestión administrativa y financiera
+  Evidencia 1: 
+    Raw: ''
+      Criterio 1: ▪ 100. Índice de Satisfacción de los grupos de interés con el desempeño general del Centro Educativo por encima de 71%.
+  Evidencia 2: Objetivo
+    Raw: 'Objetivo'
+  Evidencia 3: Logrado
+    Raw: 'Logrado'
+  Evidencia 4: Cierto
+    Raw: 'Cierto'
+      Criterio 1: ▪ 70. Índice de Satisfacción de los grupos de interés con el desempeño general del Centro Educativo entre 51% y 70%.
+  Evidencia 5: Avance
+    Raw: 'Avance'
+
+=================================================================
+PAGE 52 | Subindicador: 3.06 - 3.06. Tasa de asistencia de los docentes
+=================================================================
+Ámbito: PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL,
+Indicador: IBOG 3. Gestión administrativa y financiera
+  Evidencia 1: 
+    Raw: ''
+      Criterio 1: ▪ 30. Índice de Satisfacción de los grupos de interés con el desempeño general del Centro Educativo entre 31% y 50%. ▪ 0. Sin levantamiento del Índice de Satisfacción de los grupos de interés o con el desempeño general del Centro Educativo con valores inferior a 30%.
+  Evidencia 2: Poco
+    Raw: 'Poco'
+  Evidencia 3: Avance Nota: Gestionar con el MAP los medios de verificación. Nota: Gestionar con el MAP los medios de verificación.
+    Raw: 'Avance\nNota: Gestionar con el MAP los medios de verificación.\nNota: Gestionar con el MAP los medios de verificación.'
+
+=================================================================
+PAGE 54 | Subindicador: 3.06 - 3.06. Tasa de asistencia de los docentes
+=================================================================
+Ámbito: PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL,
+Indicador: IBOG 3. Gestión administrativa y financiera
+  Evidencia 1: 
+    Raw: ''
+      Criterio 1: ▪ 100. Acuerdo de Desempeño del Director o Directora del Centro Educativo elaborado y vinculado a las metas de los Planes Operativos Anuales del Centro Educativo y los compromisos del mismo en el logro de las metas previstas en la producción sustantiva del MINERD.
+  Evidencia 2: Objetivo
+    Raw: 'Objetivo'
+  Evidencia 3: Logrado
+    Raw: 'Logrado'
+      Criterio 1: ▪ 60. Acuerdo de Desempeño del Director o Directora del Centro Educativo elaborado, pero NO vinculado a las metas de los Planes Operativos Anuales del Centro Educativo y/o los compromisos del mismo en el logro de las metas previstas en la producción sustantiva del MINERD.
+  Evidencia 4: Cierto
+    Raw: 'Cierto'
+  Evidencia 5: Avance
+    Raw: 'Avance'
+  Evidencia 6: Poco
+    Raw: 'Poco'
+      Criterio 1: ▪ 0. Sin acuerdo de desempeño vigente para el Director o Directora del Centro Educativo.
+  Evidencia 7: Avance
+    Raw: 'Avance'
+
+=================================================================
+PAGE 54 | Subindicador: 5.01 - 5.01. Acuerdo de desempeño del Director o
+=================================================================
+Ámbito: SEGUNDO ÁMBITO. LIDERAZGO Y
+Indicador: IBOG 5. Gestión del rendimiento y desarrollo
+  Evidencia 1: Acuerdo de desempeño del Director o Directora del Centro Educativo con la firma del Director Distrital y del Centro Educativo. (Evidencia subida en septiembre- octubre de cada año escolar)
+    Raw: 'Acuerdo de desempeño del Director o Directora del Centro Educativo con la firma del Director Distrital y del Centro Educativo. (Evidencia subida en septiembre- octubre de cada año escolar)'
+
+=================================================================
+PAGE 55 | Subindicador: 5.01 - 5.01. Acuerdo de desempeño del Director o
+=================================================================
+Ámbito: SEGUNDO ÁMBITO. LIDERAZGO Y
+Indicador: IBOG 5. Gestión del rendimiento y desarrollo
+  Evidencia 1: Objetivo
+    Raw: 'Objetivo'
+  Evidencia 2: Logrado
+    Raw: 'Logrado'
+  Evidencia 3: Cierto
+    Raw: 'Cierto'
+  Evidencia 4: Avance
+    Raw: 'Avance'
+  Evidencia 5: Poco
+    Raw: 'Poco'
+  Evidencia 6: Avance
+    Raw: 'Avance'
+
+=================================================================
+PAGE 55 | Subindicador: 5.02 - 5.02. Acuerdo de desempeño del personal
+=================================================================
+Ámbito: SEGUNDO ÁMBITO. LIDERAZGO Y
+Indicador: IBOG 5. Gestión del rendimiento y
+  Evidencia 1: Acuerdos de Desempeño del personal docente de aula (plantilla relación de docentes y acuerdos de desempeño de cada docente debidamente firmado y sellado) (Evidencia subida en agosto-septiembre de cada año escolar)
+    Raw: 'Acuerdos de Desempeño del personal docente de aula (plantilla relación de docentes y acuerdos de desempeño de cada docente debidamente firmado y sellado) (Evidencia subida en agosto-septiembre de cada año escolar)'
+
+=================================================================
+PAGE 56 | Subindicador: 5.02 - 5.02. Acuerdo de desempeño del personal
+=================================================================
+Ámbito: SEGUNDO ÁMBITO. LIDERAZGO Y
+Indicador: IBOG 5. Gestión del rendimiento y
+  Evidencia 1: Objetivo
+    Raw: 'Objetivo'
+  Evidencia 2: Logrado
+    Raw: 'Logrado'
+  Evidencia 3: Cierto
+    Raw: 'Cierto'
+  Evidencia 4: Avance
+    Raw: 'Avance'
+  Evidencia 5: Poco
+    Raw: 'Poco'
+  Evidencia 6: Avance
+    Raw: 'Avance'
+
+=================================================================
+PAGE 57 | Subindicador: 5.03 - 5.03. Acuerdo de desempeño personal docente
+=================================================================
+Ámbito: SEGUNDO ÁMBITO. LIDERAZGO Y DESEMPEÑO
+Indicador: IBOG 5. Gestión del rendimiento y desarrollo
+  Evidencia 1: Acuerdos de Desempeño del personal docente en función administrativo-pedagógica (plantilla relación de docentes y acuerdos de desempeño de cada docente debidamente firmado y sellado) (Evidencia subida en agosto-septiembre de cada año escolar)
+    Raw: 'Acuerdos de Desempeño del personal docente en función administrativo-pedagógica (plantilla relación de docentes y acuerdos de desempeño de cada docente debidamente firmado y sellado) (Evidencia subida en agosto-septiembre de cada año escolar)'
+
+=================================================================
+PAGE 57 | Subindicador: 5.03 - 5.03. Acuerdo de desempeño personal docente
+=================================================================
+Ámbito: SEGUNDO ÁMBITO. LIDERAZGO Y DESEMPEÑO
+Indicador: IBOG 5. Gestión del rendimiento y desarrollo
+  Evidencia 1: Cierto
+    Raw: 'Cierto'
+  Evidencia 2: Avance
+    Raw: 'Avance'
+
+=================================================================
+PAGE 58 | Subindicador: 5.03 - 5.03. Acuerdo de desempeño personal docente
+=================================================================
+Ámbito: SEGUNDO ÁMBITO. LIDERAZGO Y DESEMPEÑO
+Indicador: IBOG 5. Gestión del rendimiento y desarrollo
+  Evidencia 1: Poco
+    Raw: 'Poco'
+  Evidencia 2: Avance
+    Raw: 'Avance'
+
+=================================================================
+PAGE 58 | Subindicador: 5.04 - 5.04. Acuerdo de desempeño del personal
+=================================================================
+Ámbito: SEGUNDO ÁMBITO. LIDERAZGO Y
+Indicador: IBOG 5. Gestión del rendimiento y desarrollo
+  Evidencia 1: Acuerdos de Desempeño del personal administrativo (plantilla relación de personal administrativo y acuerdos de desempeño debidamente firmado y sellado) (Evidencia subida en agosto-septiembre de cada año escolar)
+    Raw: 'Acuerdos de Desempeño del personal administrativo (plantilla relación de personal administrativo y acuerdos de desempeño debidamente firmado y sellado) (Evidencia subida en agosto-septiembre de cada año escolar)'
+
+=================================================================
+PAGE 59 | Subindicador: 5.04 - 5.04. Acuerdo de desempeño del personal
+=================================================================
+Ámbito: SEGUNDO ÁMBITO. LIDERAZGO Y
+Indicador: IBOG 5. Gestión del rendimiento y desarrollo
+  Evidencia 1: Objetivo
+    Raw: 'Objetivo'
+  Evidencia 2: Logrado
+    Raw: 'Logrado'
+  Evidencia 3: Cierto
+    Raw: 'Cierto'
+  Evidencia 4: Avance
+    Raw: 'Avance'
+  Evidencia 5: Poco
+    Raw: 'Poco'
+  Evidencia 6: Avance
+    Raw: 'Avance'
+
+=================================================================
+PAGE 59 | Subindicador: 5.05 - 5.05. Acuerdo de desempeño del personal
+=================================================================
+Ámbito: SEGUNDO ÁMBITO. LIDERAZGO Y
+Indicador: IBOG 5. Gestión del rendimiento y
+  Evidencia 1: Acuerdos de desempeño del personal de apoyo (plantilla relación de personal de apoyo y acuerdos de desempeño debidamente firmado y sellado) (Evidencia subida en agosto-septiembre de cada año escolar)
+    Raw: 'Acuerdos de desempeño del personal de apoyo (plantilla relación de personal de apoyo y acuerdos de desempeño debidamente firmado y sellado) (Evidencia subida en agosto-septiembre de cada año escolar)'
+
+=================================================================
+PAGE 60 | Subindicador: 5.05 - 5.05. Acuerdo de desempeño del personal
+=================================================================
+Ámbito: SEGUNDO ÁMBITO. LIDERAZGO Y
+Indicador: IBOG 5. Gestión del rendimiento y
+  Evidencia 1: Objetivo
+    Raw: 'Objetivo'
+  Evidencia 2: Logrado
+    Raw: 'Logrado'
+  Evidencia 3: Cierto
+    Raw: 'Cierto'
+  Evidencia 4: Avance
+    Raw: 'Avance'
+  Evidencia 5: Poco
+    Raw: 'Poco'
+  Evidencia 6: Avance
+    Raw: 'Avance'
+
+=================================================================
+PAGE 60 | Subindicador: 5.06 - 5.06. Evaluación de desempeño del Director o
+=================================================================
+Ámbito: SEGUNDO ÁMBITO. LIDERAZGO Y
+Indicador: IBOG 5. Gestión del rendimiento y desarrollo
+  Evidencia 1: Instrumento de evaluación del desempeño del Director o Directora del centro educativo
+    Raw: 'Instrumento de evaluación del desempeño del Director o Directora del centro educativo'
+
+=================================================================
+PAGE 61 | Subindicador: 5.06 - 5.06. Evaluación de desempeño del Director o
+=================================================================
+Ámbito: SEGUNDO ÁMBITO. LIDERAZGO Y
+Indicador: IBOG 5. Gestión del rendimiento y desarrollo
+  Evidencia 1: firmada por la dirección distrital y el director/a del Centro Educativo (Evidencia subida en mayo de cada año escolar)
+    Raw: 'firmada por la dirección distrital y el director/a del Centro Educativo (Evidencia subida en mayo de cada año escolar)'
+
+=================================================================
+PAGE 61 | Subindicador: 5.06 - 5.06. Evaluación de desempeño del Director o
+=================================================================
+Ámbito: SEGUNDO ÁMBITO. LIDERAZGO Y
+Indicador: IBOG 5. Gestión del rendimiento y desarrollo
+  Evidencia 1: Objetivo
+    Raw: 'Objetivo'
+  Evidencia 2: Logrado
+    Raw: 'Logrado'
+  Evidencia 3: Cierto
+    Raw: 'Cierto'
+  Evidencia 4: Avance
+    Raw: 'Avance'
+  Evidencia 5: Poco
+    Raw: 'Poco'
+  Evidencia 6: Avance
+    Raw: 'Avance'
+
+=================================================================
+PAGE 63 | Subindicador: 5.08 - 5.08. Evaluación de desempeño del personal
+=================================================================
+Ámbito: SEGUNDO ÁMBITO. LIDERAZGO Y
+Indicador: IBOG 5. Gestión del rendimiento y desarrollo
+  Evidencia 1: Evaluación de Desempeño del personal docente en función administrativo-pedagógica (plantilla relación de docentes-administrativo pedagógico y evaluación de desempeño de cada docente debidamente firmado y sellado) (Evidencia subida en mayo de cada año escolar)
+    Raw: 'Evaluación de Desempeño del personal docente en función administrativo-pedagógica (plantilla relación de docentes-administrativo pedagógico y evaluación de desempeño de cada docente debidamente firmado y sellado) (Evidencia subida en mayo de cada año escolar)'
+
+=================================================================
+PAGE 64 | Subindicador: 5.08 - 5.08. Evaluación de desempeño del personal
+=================================================================
+Ámbito: SEGUNDO ÁMBITO. LIDERAZGO Y
+Indicador: IBOG 5. Gestión del rendimiento y desarrollo
+  Evidencia 1: Objetivo
+    Raw: 'Objetivo'
+  Evidencia 2: Logrado
+    Raw: 'Logrado'
+  Evidencia 3: Cierto
+    Raw: 'Cierto'
+  Evidencia 4: Avance
+    Raw: 'Avance'
+  Evidencia 5: Poco
+    Raw: 'Poco'
+  Evidencia 6: Avance
+    Raw: 'Avance'
+
+=================================================================
+PAGE 65 | Subindicador: 5.09 - 5.09. Evaluación de desempeño del
+=================================================================
+Ámbito: SEGUNDO ÁMBITO. LIDERAZGO Y
+Indicador: IBOG 5. Gestión del rendimiento y
+  Evidencia 1: Evaluación de Desempeño del personal administrativo (plantilla relación de personal administrativo y evaluación de desempeño debidamente firmado y sellado) (Evidencia subida en mayo de cada año escolar)
+    Raw: 'Evaluación de Desempeño del personal administrativo (plantilla relación de personal administrativo y evaluación de desempeño debidamente firmado y sellado) (Evidencia subida en mayo de cada año escolar)'
+
+=================================================================
+PAGE 65 | Subindicador: 5.09 - 5.09. Evaluación de desempeño del
+=================================================================
+Ámbito: SEGUNDO ÁMBITO. LIDERAZGO Y
+Indicador: IBOG 5. Gestión del rendimiento y
+  Evidencia 1: Objetivo
+    Raw: 'Objetivo'
+  Evidencia 2: Logrado
+    Raw: 'Logrado'
+  Evidencia 3: Cierto
+    Raw: 'Cierto'
+  Evidencia 4: Avance
+    Raw: 'Avance'
+
+=================================================================
+PAGE 66 | Subindicador: 5.10 - 5.10. Evaluación de desempeño del personal
+=================================================================
+Ámbito: SEGUNDO ÁMBITO. LIDERAZGO Y
+Indicador: IBOG 5. Gestión del rendimiento y desarrollo
+  Evidencia 1: Evaluación de desempeño del personal de apoyo (plantilla relación de personal de apoyo y evaluación de desempeño debidamente firmado y sellado) (Evidencia subida en mayo de cada año escolar)
+    Raw: 'Evaluación de desempeño del personal de apoyo (plantilla relación de personal de apoyo y evaluación de desempeño debidamente firmado y sellado) (Evidencia subida en mayo de cada año escolar)'
+      Criterio 1: Plantillas de relación del personal de apoyo y Evaluación de los acuerdos de Desempeño debidamente firmado y sellado
+      Criterio 2: Más del 80% del personal de apoyo Centro Educativo con Evaluación de los acuerdos de Desempeño debidamente firmado y sellado
+      Criterio 3: Entre el 50% y el 80% del personal de apoyo Centro Educativo con evaluación de los acuerdos de Desempeño debidamente firmado y sellado
+      Criterio 4: Menos del 50% del personal de apoyo con Evaluación de los acuerdos de Desempeño debidamente firmado y sellado
+
+=================================================================
+PAGE 67 | Subindicador: 5.10 - 5.10. Evaluación de desempeño del personal
+=================================================================
+Ámbito: SEGUNDO ÁMBITO. LIDERAZGO Y
+Indicador: IBOG 5. Gestión del rendimiento y desarrollo
+  Evidencia 1: 
+    Raw: ''
+      Criterio 1: Objetivo
+      Criterio 2: Logrado
+      Criterio 3: Cierto
+      Criterio 4: Avance
+      Criterio 5: Poco
+      Criterio 6: Avance
+
+=================================================================
+PAGE 67 | Subindicador: 5.10 - 6.01. Registro diario y uso de la tasa de asistencia escolar
+=================================================================
+Ámbito: TERCER ÁMBITO: LOS Y LAS ESTUDIANTES COMO
+Indicador: IBOG 6. Eficiencia interna en los centros educativos
+  Evidencia 1: IBOG
+    Raw: 'IBOG'
+  Evidencia 2: Indicador
+    Raw: 'Indicador'
+      Criterio 1: IBOG 6. Eficiencia interna en los centros educativos
+  Evidencia 3: Sub Indicador
+    Raw: 'Sub Indicador'
+      Criterio 1: 6.01. Registro diario y uso de la tasa de asistencia escolar
+
+=================================================================
+PAGE 68 | Subindicador: 6.01 - 6.01. Registro diario y uso de la tasa de asistencia escolar
+=================================================================
+Ámbito: TERCER ÁMBITO: LOS Y LAS ESTUDIANTES COMO
+Indicador: IBOG 6. Eficiencia interna en los centros educativos
+  Evidencia 1: Reporte de la asistencia diaria de las y los estudiantes del centro educativo
+    Raw: 'Reporte de la asistencia diaria de las y los estudiantes del centro educativo'
+      Criterio 1: Existe registro diario de asistencia de los estudiantes
+      Criterio 2: El centro reporta de forma diaria por encima del 90% de los días lectivos del mes
+      Criterio 3: El centro reporta de forma diaria entre el 76% y 89% de los días lectivos del mes
+      Criterio 4: El centro reporta de forma diaria entre el 50% y 75% de los días lectivos del mes
+      Criterio 5: El centro reporta de forma diaria menos del 50% de los días lectivos del mes
+
+=================================================================
+PAGE 69 | Subindicador: 6.02 - 6.02. Tasa mensual de cumplimiento del calendario
+=================================================================
+Ámbito: TERCER ÁMBITO: LOS Y LAS ESTUDIANTES
+Indicador: IBOG 6. Eficiencia interna en los centros educativos
+  Evidencia 1: Evidencia de 96% a 100% días trabajados en el Centro Educativo según calendario escolar
+    Raw: 'Evidencia de 96% a 100% días trabajados en el Centro Educativo según calendario escolar'
+  Evidencia 2: Evidencia de 90% a 95% días trabajados en el Centro Educativo según calendario escolar
+    Raw: 'Evidencia de 90% a 95% días trabajados en el Centro Educativo según calendario escolar'
+  Evidencia 3: Evidencia de entre el 85% y el 90% días trabajados en el Centro Educativo según calendario escolar
+    Raw: 'Evidencia de entre el 85% y el 90% días trabajados en el Centro Educativo según calendario escolar'
+
+=================================================================
+PAGE 69 | Subindicador: 6.02 - 6.02. Tasa mensual de cumplimiento del calendario
+=================================================================
+Ámbito: TERCER ÁMBITO: LOS Y LAS ESTUDIANTES
+Indicador: IBOG 6. Eficiencia interna en los centros educativos
+  Evidencia 1: ▪ 100. Más del 95% de los docentes con su carga horaria individualizada e integrada en el horario general del Centro Educativo.
+    Raw: '▪ 100. Más del 95% de los docentes con su carga horaria individualizada e integrada en el horario general del Centro Educativo.'
+  Evidencia 2: ▪ 70. Entre el 60% y el 95% de los docentes con su carga horaria individualizada e integrada en el horario general del Centro Educativo.
+    Raw: '▪ 70. Entre el 60% y el 95% de los docentes con su carga horaria individualizada e integrada en el horario general del Centro Educativo.'
+  Evidencia 3: ▪ 50. Menos del 60% de los docentes con su carga horaria individualizada e integrada en el horario general del Centro Educativo.
+    Raw: '▪ 50. Menos del 60% de los docentes con su carga horaria individualizada e integrada en el horario general del Centro Educativo.'
+
+=================================================================
+PAGE 69 | Subindicador: 6.03 - 6.03. Asignación de la carga horaria de cada docente
+=================================================================
+Ámbito: TERCER ÁMBITO: LOS Y LAS ESTUDIANTES COMO
+Indicador: IBOG 6. Eficiencia interna en los centros educativos
+  Evidencia 1: Horario escolar del personal docente (relación de docente y la carga horaria de cada uno) (Evidencia subida en septiembre de cada año escolar)
+    Raw: 'Horario escolar del personal docente (relación de docente y la carga horaria de cada uno) (Evidencia subida en septiembre de cada año escolar)'
+      Criterio 1: Más del 95% de los docentes cuenta con su carga horaria individualizada e integrada en el horario general del Centro.
+      Criterio 2: Entre el 60% y el 95% de los docentes con su carga horaria individualizada e integrada en el horario general del Centro
+      Criterio 3: Menos del 60% de los docentes sin su carga horaria individualizada e integrada en el horario general del Centro
+
+=================================================================
+PAGE 70 | Subindicador: 6.03 - 6.03. Asignación de la carga horaria de cada docente
+=================================================================
+Ámbito: TERCER ÁMBITO: LOS Y LAS ESTUDIANTES COMO
+Indicador: IBOG 6. Eficiencia interna en los centros educativos
+  Evidencia 1: Objetivo
+    Raw: 'Objetivo'
+      Criterio 1: ▪ 100. Más del 90% de Tasa de Promoción.
+  Evidencia 2: Logrado
+    Raw: 'Logrado'
+  Evidencia 3: Cierto
+    Raw: 'Cierto'
+      Criterio 1: ▪ 70. Del 85% al 90% de Tasa de Promoción.
+  Evidencia 4: Avance
+    Raw: 'Avance'
+  Evidencia 5: Poco
+    Raw: 'Poco'
+      Criterio 1: ▪ 30. Con menos del 85% de Tasa de Promoción.
+  Evidencia 6: Avance
+    Raw: 'Avance'
+
+=================================================================
+PAGE 70 | Subindicador: 6.04 - 6.04. Tasa global anual de promoción
+=================================================================
+Ámbito: TERCER ÁMBITO: LOS Y LAS ESTUDIANTES COMO
+Indicador: IBOG 6. Eficiencia interna en los centros
+  Evidencia 1: Matriz de registro de promoción estudiantil (Evidencia subida en junio de cada año escolar)
+    Raw: 'Matriz de registro de promoción estudiantil (Evidencia subida en junio de cada año escolar)'
+      Criterio 1: Matriz con reporte consolidado de la tasa global anual de promoción
+      Criterio 2: Evidencia de más del 90% de Tasa de Promoción
+      Criterio 3: Evidencia del 85% al 90% de Tasa de Promoción
+      Criterio 4: Evidencia con menos del 85% de Tasa de Promoción
+
+=================================================================
+PAGE 72 | Subindicador: 6.05 - 6.05. Tasa global anual de reprobados
+=================================================================
+Ámbito: TERCER ÁMBITO: LOS Y LAS ESTUDIANTES COMO OBJETO DE ACTUACIÓN DEL CENTRO EDUCATIVO
+Indicador: IBOG 6. Eficiencia interna en los centros educativos
+  Evidencia 1: Matriz de registro de reprobación estudiantil (Evidencia subida en junio de cada año escolar)
+    Raw: 'Matriz de registro de reprobación estudiantil (Evidencia subida en junio de cada año escolar)'
+      Criterio 1: Matriz de reporte consolidado de la tasa global anual de reprobados
+      Criterio 2: Evidencia de menos del 4.5% de tasa de reprobados
+      Criterio 3: Evidencia del 4.5% al 6% de tasa de reprobados
+      Criterio 4: Evidencia con más del 6% de tasa de reprobados
+
+=================================================================
+PAGE 73 | Subindicador: 7.01 - 7.01. Porcentaje de estudiantes según niveles de
+=================================================================
+Ámbito: TERCER ÁMBITO: LOS Y LAS ESTUDIANTES
+Indicador: IBOG 7. Resultados en el aprendizaje de las y los
+  Evidencia 1: Matriz de relación de cantidad de estudiante con los resultados de evaluaciones diagnósticas realizadas desde la Dirección General de Evaluación. (Evidencia subida conforme la fecha de aplicación de pruebas diagnosticas aplicadas desde la Dirección general de Evaluación).
+    Raw: 'Matriz de relación de cantidad de estudiante con los resultados de evaluaciones diagnósticas realizadas desde la Dirección General de Evaluación. (Evidencia subida conforme la fecha de aplicación de pruebas diagnosticas aplicadas desde la Dirección general de Evaluación).'
+
+=================================================================
+PAGE 74 | Subindicador: 7.02 - 7.02. Porcentaje de estudiantes según niveles de
+=================================================================
+Ámbito: TERCER ÁMBITO: LOS Y LAS ESTUDIANTES COMO
+Indicador: IBOG 7. Resultados en el aprendizaje de las y los
+  Evidencia 1: Resultados oficiales según niveles de desempeño en las Pruebas Nacionales (Evidencia subida en julio de cada año escolar)
+    Raw: 'Resultados oficiales según niveles de desempeño en las Pruebas Nacionales (Evidencia subida en julio de cada año escolar)'
+

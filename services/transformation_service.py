@@ -285,10 +285,11 @@ class TransformationService:
             current_time = datetime.now()
             
             # Aplicar reglas de vencimiento personalizadas
+            # Aplicar reglas de vencimiento personalizadas
             if source_codigo == '01.1.2':
-                # Evidencia 01.1.2 (PEC): Automático, 1825 días (5 años), fecha por defecto 1900-01-01
-                mapped_tipo_id = 1
-                final_periodicidad = 1825
+                # Evidencia 01.1.2 (PEC): Manual (Tipo 2), sin periodicidad
+                mapped_tipo_id = 2
+                final_periodicidad = None
                 final_fecha = datetime(1900, 1, 1)
                 aplica_venc = True
             elif item.IndicadorID == 2 or source_codigo == '01.2' or source_codigo.startswith('01.2.'):
@@ -350,7 +351,7 @@ class TransformationService:
                 SubIndicadorId=item.IndicadorID,
                 EvidenciaId=item.EvidenciaID,
                 FechaVencimientoSubIndicadorEvidenciaId=fecha_venc_id,
-                TipoEvaluacionId=1,
+                TipoEvaluacionId=2, # Automática (Id = 2)
                 FechaVenciento=final_fecha,
                 CreatedAt=current_time,
                 CreatedBy="MigrationScript",

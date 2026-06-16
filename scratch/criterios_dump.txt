@@ -1,0 +1,384 @@
+﻿Total rows: 259
+
+
+--- EvidenciaID=107 | Cod=1.01.2 | SubInd=1.01 | Proyecto Educativo de Centro (PEC)
+  [Se evidencia el Proyecto Educativo de Centro (PEC)]
+  [1. Describe el contexto interno y externo]
+  [2. Contiene misi¾n, visi¾n y valores institucionales]
+  [3. Presenta propuesta de implementaci¾n curricular]
+  [4. Marco estratÚgico (define: objetivo, indicador, metas)]
+  [5. Marco operativo (Establece metas claras y medibles)]
+  [El Proyecto Educativo de Centro (PEC) incluye los 5 aspectos establecidos anteriormente mencionados.]
+
+--- EvidenciaID=108 | Cod=1.01.1 | SubInd=1.01 | Informe Anual de Monitoreo y Evaluaci¾n del Proyecto Educativo de Centro (PEC)
+  [Da seguimiento a los objetivos del Proyecto Educativo de Centro (PEC)]
+  [Identifica implementaci¾n, avances, dificultades e incluye acciones de mejoras]
+
+--- EvidenciaID=3 | Cod=1.02.3 | SubInd=1.02 | Autoevaluaci¾n  CAF
+  [El informe estß completo]
+  [Identifica fortalezas]
+  [Identifica ßreas de mejora]
+
+--- EvidenciaID=2 | Cod=1.02.4 | SubInd=1.02 | ComitÚ de Calidad
+  [Corresponde al perÝodo vigente El comitÚ estß formalmente constituido]
+  [El documento estß firmado y sellado por la autoridad del centro]
+  [Identifica a los miembros del comitÚ]
+
+--- EvidenciaID=4 | Cod=1.02.2 | SubInd=1.02 | Plan de Mejora CAF
+  [Deriva de la autoevaluaci¾n Marco Com·n de Evaluaci¾n (CAF)]
+  [Se basa en ßreas de mejora identificadas]
+  [Define acciones de mejora]
+  [Define responsables]
+  [Define plazos de ejecuci¾n]
+  [Define medios de verificaci¾n.]
+
+--- EvidenciaID=6 | Cod=1.03.2 | SubInd=1.03 | Plan Operativo Anual vinculado al PEC
+  [Deriva de la autoevaluaci¾n Marco Com·n de Evaluaci¾n (CAF)]
+  [Estß vinculado al Proyecto Educativo de Centro (PEC)]
+  [Incluye lÝneas de acci¾n]
+  [Incluye actividades]
+  [Define responsables]
+  [Define tiempo de ejecuci¾n]
+  [Define medios de verificaci¾n]
+
+--- EvidenciaID=7 | Cod=1.03.1 | SubInd=1.03 | Informe Semestral de Resultados del POA vinculado al PEC
+  [Presenta resultados de ejecuci¾n]
+  [Da seguimiento a las actividades]
+
+--- EvidenciaID=8 | Cod=1.04.1 | SubInd=1.04 | Plan Operativo Anual (POA) y Presupuesto alineado con el PEC y el Plan de Mejora derivado de la autoevaluaci¾n (Modelo CAF)
+  [Cuenta con Plan Operativo Anual (POA)]
+  [Estß alineado al Proyecto Educativo de Centro (PEC)]
+  [Incluye acciones del Plan de Mejora del Marco Com·n de Evaluaci¾n (CAF).]
+  [Cuenta con Presupuesto remitido.]
+  [El presupuesto respalda el Plan Operativo Anual (POA)]
+  [Cuenta con una validaci¾n positiva para la]
+  [implementaci¾n]
+  [Nota: Gestionar informaci¾n en la direcci¾n de Planificaci¾n, unidad que envÝa al centro]
+
+--- EvidenciaID=9 | Cod=1.05.3 | SubInd=1.05 | Actas Constitutivas
+  [Cuenta con Junta de Centro Educativo formalmente constituida.]
+  [Cuenta con APMAE formalmente constituida.]
+  [Cuenta con ComitÚ de Padres formalmente constituido.]
+  [Cuenta con Escuela de Padres formalmente constituida.]
+  [Cuenta con ComitÚ o Consejo de Curso de Estudiantes formalmente constituido]
+  [Cuenta con Consejo Estudiantil formalmente constituido]
+  [Las actas constitutivas estßn debidamente firmadas.]
+  [Las actas constitutivas se encuentran vigentes.]
+
+--- EvidenciaID=11 | Cod=1.05.1 | SubInd=1.05 | Informe Semestral Organismos de Participaci¾n
+  [La Junta de Centro Educativo dispone de Plan Anual de Trabajo]
+  [La Asociaci¾n de Padres, Madres y Amigos de la Escuela (APMAE)]
+  [dispone de Plan Anual de Trabajo]
+  [El ComitÚ de Padres dispone de Plan Anual de Trabajo]
+  [La Escuela de Padres dispone de Plan Anual de Trabajo]
+  [El ComitÚ o Consejo de Curso de Estudiantes dispone de Plan Anual]
+  [de Trabajo]
+  [El Consejo Estudiantil dispone de Plan Anual de Trabajo]
+  [La Junta de Centro Educativo realiza reuniones peri¾dicas]
+  [La Asociaci¾n de Padres, Madres y Amigos de la Escuela (APMAE)]
+  [realiza reuniones peri¾dicas]
+  [El ComitÚ de Padres realiza reuniones peri¾dicas]
+  [La Escuela de Padres realiza reuniones peri¾dicas La Escuela de Padres realiza reuniones peri¾dicas]
+  [El ComitÚ o Consejo de Curso de Estudiantes realiza reuniones]
+  [peri¾dicas]
+  [El Consejo Estudiantil realiza reuniones peri¾dicas]
+  [Se describen las acciones de la Junta de Centro Educativo]
+  [Se describen las acciones de la APMAE]
+  [Se describen las acciones del ComitÚ de Padres]
+  [Se describen las acciones de la Escuela de Padres]
+  [Se describen las acciones del ComitÚ o Consejo de Curso de]
+  [Estudiantes]
+  [Se describen las acciones del Consejo Estudiantil]
+
+--- EvidenciaID=12 | Cod=1.06.3 | SubInd=1.06 | Alianzas con organismos o instituciones externas
+  [Cuenta con alianzas externas formalmente establecidas identificando las instituciones u organismos aliados documentadas mediante cartas, convenios o acuerdos]
+
+--- EvidenciaID=13 | Cod=1.06.2 | SubInd=1.06 | Plan de trabajo y Actas de reuniones
+  [El plan de trabajo identifica las instituciones aliadas]
+  [involucradas y define acciones conjuntas a desarrollar]
+  [Actas de reuniones con aliados externos con registro de acuerdos y compromisos asumidos]
+
+--- EvidenciaID=14 | Cod=1.06.1 | SubInd=1.06 | Informe de ejecuci¾n durante el periodo de clase
+  [Existe informe de ejecuci¾n de las alianzas externas presentado las evidencias de las acciones desarrolladas.]
+
+--- EvidenciaID=111 | Cod=2.01.1 | SubInd=2.01 | Finalizaci¾n del primer periodo de clases
+  [Instrumento consolidado con el registro de aplicaci¾n de evaluaciones diagn¾sticas al inicio del perÝodo escolar]
+  [Los registros identifican niveles de logro de los estudiantes]
+
+--- EvidenciaID=110 | Cod=2.01.2 | SubInd=2.01 | Informe consolidado
+  [El consolidado responde a la evaluaci¾n diagn¾stica del nivel o]
+  [ciclo correspondiente el consolidado se identifican el logro de]
+  [los estudiantes]
+  [Orienta la toma de decisiones pedag¾gicas.]
+
+--- EvidenciaID=111 | Cod=2.01.1 | SubInd=2.01 | Finalizaci¾n del primer periodo de clases
+  [Se realiz¾ evaluaci¾n de seguimiento interno a la finalizaci¾n]
+  [del mes de diciembre]
+  [Las evaluaciones diagn¾sticas responden al nivel o ciclo]
+  [correspondiente]
+  [Los registros identifican niveles de logro de los estudiantes]
+  [Se realiz¾ evaluaci¾n de seguimiento interno a la finalizaci¾n]
+  [del mes de marzo.]
+  [Las evaluaciones diagn¾sticas responden al nivel o ciclo correspondiente Las evaluaciones diagn¾sticas responden al nivel o ciclo]
+  [correspondiente]
+  [Los registros identifican niveles de logro de los estudiantes]
+  [Se realiz¾ evaluaci¾n de seguimiento interno al finalizar el]
+  [1er perÝodo de clase (mes de junio).]
+  [Las evaluaciones diagn¾sticas responden al nivel o ciclo]
+  [correspondiente]
+  [Los registros identifican niveles de logro de los estudiantes]
+
+--- EvidenciaID=17 | Cod=2.02.1 | SubInd=2.02 | Mßs del 90% de los docentes cuentan con todos sus planes de clase
+  [Mßs del 90% de los docentes cuentan con todos sus planes de clase]
+  [Del 81 al 90% de los docentes cuentan con todos sus planes de clase.]
+  [Del 70 al 80% de los docentes cuentan con todos sus planes de clase]
+  [Menos del 70% de los docentes cuentan con todos sus planes de clase.]
+
+--- EvidenciaID=118 | Cod=2.03.1 | SubInd=2.03 | Logrado totalmente
+  [Informe de los contenidos mediadores realizados en el 4to perÝodo. (junio)]
+
+--- EvidenciaID=119 | Cod=2.03.2 | SubInd=2.03 | Logrado parcialmente
+  [Informe de los contenidos mediadores realizados en el 3er perÝodo. En el caso de CE Inicial este serÝa 100%. (abril)]
+  [Informe de los contenidos mediadores realizados en el segundo perÝodo. (febrero)]
+
+--- EvidenciaID=120 | Cod=2.03.3 | SubInd=2.03 | No logrado
+  [Informe de los contenidos mediadores realizados en el primer perÝodo. (noviembre)]
+
+--- EvidenciaID=18 | Cod=2.04.1 | SubInd=2.04 | 80% o mßs de los/as Docentes utilizan los recursos de base digital disponibles.
+  [Relaci¾n de docentes y el cßlculo en porcentajes de los docentes que utilizan los recursos de base digital disponibles.]
+
+--- EvidenciaID=121 | Cod=2.05.1 | SubInd=2.05 | Existen los grupos pedag¾gicos y se celebra una reuni¾n mensual por cada grupo conforme al calendario escolar. Se dispone del informe de dichas reuniones y participan mßs del 95% de los docentes
+  [Cada grupo pedag¾gico realiza una reuni¾n mensual conforme al calendario escolar]
+  [La participaci¾n docente en las reuniones de los grupos pedag¾gicos es superior al 90% de los docentes]
+
+--- EvidenciaID=22 | Cod=2.06.3 | SubInd=2.06 | Plan de Acompa±amiento sustentado en un diagn¾stico y con un cronograma de implementaci¾n definido.
+  [Dispone de un Plan de Acompa±amiento Docente.]
+  [El Plan de Acompa±amiento estß sustentado en un diagn¾stico]
+  [Muestra un cronograma de implementaci¾n]
+  [Cuenta con informes trimestrales de acompa±amiento]
+
+--- EvidenciaID=24 | Cod=2.06.1 | SubInd=2.06 | Informe trimestral de Acompa±amiento de los Docentes con un % de implementaci¾n de las acciones superior al 90%
+  [El Informe de Acompa±amiento de los Docentes refleja un % de implementaci¾n de las acciones superior al 90%.]
+
+--- EvidenciaID=23 | Cod=2.06.2 | SubInd=2.06 | Informe trimestral de Acompa±amiento de los Docentes con un % de implementaci¾n de las acciones superior al 70%.
+  [El Informe de Acompa±amiento de los Docentes con un % de implementaci¾n de las acciones superior al 70%.]
+
+--- EvidenciaID=80 | Cod=2.07.2 | SubInd=2.07 | Promueve actividades, dentro o fuera del aula, vinculadas al menos 2 de los ejes curriculares transversales.
+  [Evidencia el desarrollo de actividades vinculadas en 4 o mßs de los ejes curriculares transversales. Salud y Bienestar (gesti¾n de riesgo), Desarrollo Sostenible (educaci¾n ambiental), Desarrollo Personal y Profesional (formaci¾n en planificaci¾n y presupuesto), Alfabetizaci¾n Imprescindible, CiudadanÝa y Convivencia (educaci¾n sin violencia y nueva masculinidad, educaci¾n vial).]
+  [Evidencia el desarrollo de actividades vinculadas en 2 o mßs de los ejes curriculares transversales. Salud y Bienestar (gesti¾n de riesgo), Desarrollo Sostenible (educaci¾n ambiental), Desarrollo Personal y Profesional (formaci¾n en planificaci¾n y presupuesto), Alfabetizaci¾n Imprescindible, CiudadanÝa y Convivencia (educaci¾n sin violencia y nueva masculinidad, educaci¾n vial).]
+  [El centro no muestra evidencias dentro o fuera del aula de actividades vinculadas a los ejes curriculares transversales.]
+
+--- EvidenciaID=82 | Cod=2.08.3 | SubInd=2.08 | Plan de trabajo y cronograma de implementaci¾n de los servicios de orientaci¾n y psicologÝa.
+  [Dispone de un plan de trabajo definido]
+  [El plan de trabajo incluye un cronograma de implementaci¾n]
+
+--- EvidenciaID=83 | Cod=2.08.2 | SubInd=2.08 | Informe semestral del plan de trabajo implementado.
+  [Se elabora el informe del plan de trabajo correspondiente]
+
+--- EvidenciaID=82 | Cod=2.08.3 | SubInd=2.08 | Plan de trabajo y cronograma de implementaci¾n de los servicios de orientaci¾n y psicologÝa.
+  [al perÝodo de clase]
+  [Evidencia un cumplimiento superior al 80 % de las]
+  [acciones planificadas]
+  [Nota: Pendiente establecer fecha de carga de evidencia Orientaci¾n y PsicologÝa]
+
+--- EvidenciaID=28 | Cod=3.01.1 | SubInd=3.01 | Reporte del Registro de Estudiantes 98% al 100%
+  [Del 98% al 100% de la data de estudiantes actualizada extraÝda del Sistema de Informaci¾n para la Gesti¾n Escolar (SIGERD) firmada y sellada por el Centro Educativo con periodicidad mensual.]
+  [Del 91% al 97% de la data de estudiantes actualizada extraÝda del Sistema de Informaci¾n para la Gesti¾n Escolar (SIGERD) firmada y sellada por el Centro Educativo con periodicidad mensual.]
+  [Del 80% al 90% de la data de estudiantes actualizada extraÝda del Sistema de Informaci¾n para la Gesti¾n Escolar (SIGERD) firmada y sellada por el Centro Educativo con periodicidad mensual.]
+  [Menos del 80% de la data de estudiantes actualizada extraÝda del Sistema de Informaci¾n para la Gesti¾n Escolar (SIGERD) firmada y sellada por el Centro Educativo con periodicidad mensual.]
+
+--- EvidenciaID=72 | Cod=3.02.1 | SubInd=3.02 | Informe de Ejecuci¾n del POA mßs del 80%
+  [El Plan Operativo Anual (POA) incluye acciones financiadas con recursos de descentralizaci¾n y autogesti¾n y define montos asignados para las acciones planificadas]
+  [Ejecuci¾n de mßs del 80% de los recursos de]
+  [descentralizaci¾n y autogesti¾n recibidos]
+  [contemplados en el Plan Operativo Anual (POA)]
+  [Ejecuci¾n del 60% y 79% de los recursos de]
+  [descentralizaci¾n y autogesti¾n recibidos]
+  [contemplados en el Plan Operativo Anual (POA)]
+  [Ejecuci¾n del 30 y el 59% de los recursos de]
+  [descentralizaci¾n y autogesti¾n recibidos]
+  [contemplados en el Plan Operativo Anual (POA)]
+  [Ejecuci¾n de menos del 30% de los recursos de]
+  [descentralizaci¾n y autogesti¾n recibidos]
+  [contemplados en el Plan Operativo Anual (POA)]
+
+--- EvidenciaID=77 | Cod=3.03.1 | SubInd=3.03 | De un 80% - 100% ejecutadas las actividades de mantenimiento preventivo y/o reparaciones menores
+  [Cuenta con una lista de chequeo de mantenimiento preventivo y/o reparaciones menores.]
+
+--- EvidenciaID=75 | Cod=3.03.3 | SubInd=3.03 | Diagn¾stico de necesidades elaborado a principios de cada trimestre en base a una lista de chequeo
+  [Cuenta con diagn¾stico de necesidades elaborado a principios de cada trimestre en base a una lista de chequeo.]
+
+--- EvidenciaID=77 | Cod=3.03.1 | SubInd=3.03 | De un 80% - 100% ejecutadas las actividades de mantenimiento preventivo y/o reparaciones menores
+  [Evidencia actividades de mantenimiento preventivo y/o reparaciones menores]
+  [De un 80% - 100% ejecutadas las actividades de mantenimiento preventivo y/o reparaciones menores.]
+
+--- EvidenciaID=89 | Cod=3.04.1 | SubInd=3.04 | Informe de Implementaci¾n del Plan Escolar de Gesti¾n Ambiental y de Riesgo
+  [Cuenta con un Plan Escolar de Gesti¾n Ambiental y de Riesgo elaborado.]
+  [Identifica riesgos ambientales y situaciones de vulnerabilidad del centro educativo.]
+  [Enlista acciones de prevenci¾n, mitigaci¾n y respuesta ante riesgos.]
+  [Existe informe final del proceso de implementaci¾n del]
+  [Plan]
+  [Existe informe Primer y segundo trimestre del proceso]
+  [de implementaci¾n del Plan]
+  [Existe Primer informe trimestral del proceso de]
+  [implementaci¾n del Plan]
+  [Evidencian las acciones y seguimiento a las acciones]
+  [implementadas conforme al plan]
+
+--- EvidenciaID=85 | Cod=3.04.5 | SubInd=3.04 | ComitÚ de Seguridad y Salud en el Trabajo
+  [Cuenta con un ComitÚ de Seguridad y Salud en el Trabajo]
+
+--- EvidenciaID=89 | Cod=3.04.1 | SubInd=3.04 | Informe de Implementaci¾n del Plan Escolar de Gesti¾n Ambiental y de Riesgo
+  [El comitÚ estß formalmente constituido mediante acta o documento oficial.]
+
+--- EvidenciaID=92 | Cod=3.05.1 | SubInd=3.05 | 71% o mßs de cumplimiento de los estßndares del Programa de Alimentaci¾n Escolar en el Centro Educativo
+  [71% o mßs de cumplimiento de los estßndares del Programa de Alimentaci¾n Escolar en el Centro Educativo.]
+
+--- EvidenciaID=91 | Cod=3.05.2 | SubInd=3.05 | Entre el 60% al 70% de cumplimiento de los estßndares del Programa de Alimentaci¾n Escolar en el Centro Educativo
+  [Entre el 60% al 70% de cumplimiento de los estßndares del Programa de Alimentaci¾n Escolar en el Centro Educativo.]
+
+--- EvidenciaID=90 | Cod=3.05.3 | SubInd=3.05 | Entre el 40% y el 60% de cumplimiento de los estßndares del Programa de Alimentaci¾n Escolar en el Centro Educativo
+  [Entre el 40% y el 60% de cumplimiento de los estßndares del Programa de Alimentaci¾n Escolar en el Centro Educativo.]
+  [Menos del 40% de cumplimiento de los estßndares del Programa de Alimentaci¾n Escolar en el Centro Educativo.]
+
+--- EvidenciaID=92 | Cod=3.05.1 | SubInd=3.05 | 71% o mßs de cumplimiento de los estßndares del Programa de Alimentaci¾n Escolar en el Centro Educativo
+  [Nota: Pendiente lista de verificaci¾n del desempe±o de la gesti¾n de los estßndares]
+  [del Programa de Alimentaci¾n Escolar (PAE) y su procedencia.]
+
+--- EvidenciaID=98 | Cod=3.06.1 | SubInd=3.06 | Informe  de asistencia de los Docentes 8 o mßs docentes hasta 4 ausencias
+  [Centros educativos con ocho o mßs docentes: Hasta cuatro ausencias]
+
+--- EvidenciaID=95 | Cod=3.06.5 | SubInd=3.06 | Informe  de asistencia de los Docentes  8 o mas docentes +  de 7 ausencias
+  [Centros educativos con hasta siete docentes: Hasta dos ausencias]
+  [Centros educativos con ocho o mßs docentes: De cuatro a siete ausencias]
+  [Centros educativos con hasta siete docentes: De dos a cuatro ausencias]
+  [Centros educativos con ocho o mßs docentes: Mßs de siete ausencias]
+  [Centros educativos con hasta siete docentes: Mßs de cuatro ausencias]
+  [Nota: Verificar en el SIGERD un acßpite de registro de asistencia. Docente y]
+  [ASAG con Rafael]
+
+--- EvidenciaID=26 | Cod=5.01.1 | SubInd=5.01 | Acuerdo de Desempe±o  Vinculado
+  [Plantilla de acuerdos de desempe±o vinculados a las metas de los Planes Operativos Anuales del Centro Educativo, firmado y sellado por las partes correspondientes]
+
+--- EvidenciaID=25 | Cod=5.01.2 | SubInd=5.01 | Acuerdo de Desempe±o No Vinculado
+  [Existen Acuerdos elaborados, pero NO vinculado a las metas de los Planes Operativos Anuales]
+
+--- EvidenciaID=60 | Cod=5.02.1 | SubInd=5.02 | Mßs del 80% del Personal Docente en Aula
+  [Plantillas de relaci¾n de docentes y Acuerdos de Desempe±o del personal docente de aula debidamente firmado y sellado]
+  [Mßs del 80% del personal docente en aula del Centro Educativo cuenta con Acuerdos de Desempe±o debidamente firmado y sellado]
+
+--- EvidenciaID=59 | Cod=5.02.2 | SubInd=5.02 | Entre el 50 y el 80% del Personal Docente en Aula
+  [Entre el 50% y el 80% del personal docente en aula del Centro Educativo cuenta con]
+
+--- EvidenciaID=62 | Cod=5.03.1 | SubInd=5.03 | Mßs del 80% del Personal Docente en Funci¾n Administrativo - Pedag¾gica
+  [Plantillas de relaci¾n de docentes en funci¾n administrativo-pedag¾gica y Acuerdos de Desempe±o debidamente firmado y sellado]
+  [Mßs del 80% del personal docente en funci¾n administrativo-pedag¾gica del Centro Educativo cuenta con Acuerdos de Desempe±o debidamente firmado y sellado]
+
+--- EvidenciaID=61 | Cod=5.03.2 | SubInd=5.03 | Entre el 50% y el 80% del Personal Docente en Funci¾n Administrativo - Pedag¾gica
+  [Entre el 50% y el 80% del personal docente en funci¾n administrativo-pedag¾gica del Centro Educativo cuenta con Acuerdos de Desempe±o debidamente firmado y sellado]
+  [Menos del 50% del personal docente en funci¾n administrativo-pedag¾gica del Centro Educativo con cuenta Acuerdos de Desempe±o debidamente firmado y sellado]
+
+--- EvidenciaID=66 | Cod=5.04.1 | SubInd=5.04 | Mßs del 80% del Personal Administrativo
+  [Plantillas de relaci¾n del personal administrativo y Acuerdos de Desempe±o debidamente firmado y sellado]
+  [Mßs del 80% del personal administrativo del Centro Educativo cuenta con Acuerdos de Desempe±o debidamente firmado y sellado]
+
+--- EvidenciaID=64 | Cod=5.04.2 | SubInd=5.04 | Entre el 50% y 80% del Personal Administrativo
+  [Entre el 50% y el 80% del personal administrativo del Centro Educativo cuenta con Acuerdos de Desempe±o debidamente firmado y sellado]
+  [Menos del 50% del personal administrativo del Centro Educativo cuenta con Acuerdos de Desempe±o debidamente firmado y sellado]
+
+--- EvidenciaID=69 | Cod=5.05.1 | SubInd=5.05 | Mßs del 80% del Personal de Apoyo
+  [Plantillas de relaci¾n del personal de apoyo y Acuerdos de Desempe±o debidamente firmado y sellado]
+  [Mßs del 80% del personal de apoyo del Centro Educativo con Acuerdos de Desempe±o debidamente firmado y sellado]
+
+--- EvidenciaID=67 | Cod=5.05.2 | SubInd=5.05 | Entre el 50% y el 80% del Personal de Apoyo
+  [Entre el 50% y el 80% del personal de apoyo del Centro Educativo con Acuerdos de Desempe±o debidamente firmado y sellado]
+
+--- EvidenciaID=79 | Cod=5.06.1 | SubInd=5.06 | Evaluaci¾n de Desempe±o Vinculado
+  [Instrumento de evaluaci¾n del desempe±o del Director o Directora del Centro Educativo debidamente firmado y sellado]
+  [Evaluaci¾n de los acuerdos del Desempe±o realizado vinculada a las metas del Plan Operativo Anual del Centro Educativo]
+
+--- EvidenciaID=78 | Cod=5.06.2 | SubInd=5.06 | Evaluaci¾n de Desempe±o No Vinculado
+  [Evaluaci¾n de los acuerdos del Desempe±o realizado, pero NO vinculado a las metas del Plan Operativo Anual del Centro Educativo]
+
+--- EvidenciaID=100 | Cod=5.07.1 | SubInd=5.07 | Mßs del 80% del Personal Docente en Aula
+  [Plantillas de relaci¾n de docentes de aula y Evaluaci¾n de los acuerdos de Desempe±o debidamente firmado y sellado]
+  [Mßs del 80% del personal docente en aula del Centro Educativo cuenta con Evaluaci¾n de los acuerdos de Desempe±o debidamente firmado y sellado]
+
+--- EvidenciaID=99 | Cod=5.07.2 | SubInd=5.07 | Entre el 50% y el 80% del Personal Docente en Aula
+  [Entre el 50% y el 80% del personal docente en aula del Centro Educativo cuenta con Evaluaci¾n de los acuerdos de Desempe±o debidamente firmado y sellado]
+  [Menos del 50% del personal docente en aula del Centro Educativo con cuenta con Evaluaci¾n de los acuerdos de Desempe±o debidamente firmado y sellado]
+
+--- EvidenciaID=102 | Cod=5.08.1 | SubInd=5.08 | Mßs del 80% del personal docente en funciones administrativo - pedag¾gica del Centro Educativo con acuerdos de Desempe±o Evaluados
+  [Plantillas de relaci¾n de docentes en funci¾n administrativo-pedag¾gica y Evaluaci¾n de los acuerdos de Desempe±o debidamente firmado y sellado]
+  [Mßs del 80% del personal docente en funci¾n administrativo-pedag¾gica en aula del Centro Educativo cuenta con Evaluaci¾n de los acuerdos de Desempe±o debidamente firmado y sellado]
+
+--- EvidenciaID=101 | Cod=5.08.2 | SubInd=5.08 | Entre el 50% y el 80% del Personal Docente en funciones Administrativo - Pedag¾gica con Acuerdos de Desempe±o Evaluados en relaci¾n al universo de Acuerdos de Desempe±o del Personal Docente en funciones Administrativo - Pedag¾gica existente en el C
+  [Entre el 50% y el 80% del personal docente en funci¾n administrativo-pedag¾gica en aula del Centro Educativo cuenta con Evaluaci¾n de los acuerdos de Desempe±o debidamente firmado y sellado]
+
+--- EvidenciaID=104 | Cod=5.09.1 | SubInd=5.09 | Mßs del 80% del Personal Administrativo
+  [Plantillas de relaci¾n del personal administrativo y Evaluaci¾n de los acuerdos de Desempe±o debidamente firmado y sellado]
+  [Mßs del 80% del personal administrativo del Centro Educativo cuenta con Evaluaci¾n de los acuerdos de Desempe±o debidamente firmado y sellado]
+
+--- EvidenciaID=103 | Cod=5.09.2 | SubInd=5.09 | Entre el 50% y el 80% del Personal Administrativo
+  [Entre el 50% y el 80% del personal administrativo del Centro Educativo cuenta con Evaluaci¾n de los acuerdos de Desempe±o debidamente firmado y sellado]
+  [Menos del 50% del personal administrativo del Centro Educativo cuenta con Evaluaci¾n d de los acuerdos e Desempe±o debidamente firmado y sellado]
+
+--- EvidenciaID=106 | Cod=5.10.1 | SubInd=5.10 | Mßs del 80% del Personal de Apoyo
+  [Plantillas de relaci¾n del personal de apoyo y Evaluaci¾n de los acuerdos de Desempe±o debidamente firmado y sellado]
+  [Mßs del 80% del personal de apoyo Centro Educativo con Evaluaci¾n de los acuerdos de Desempe±o debidamente firmado y sellado]
+
+--- EvidenciaID=105 | Cod=5.10.2 | SubInd=5.10 | Entre el 50% y el 80% del Personal de Apoyo
+  [Entre el 50% y el 80% del personal de apoyo Centro Educativo con evaluaci¾n de los acuerdos de Desempe±o debidamente firmado y sellado]
+  [Menos del 50% del personal de apoyo con Evaluaci¾n de los acuerdos de Desempe±o debidamente firmado y sellado]
+
+--- EvidenciaID=30 | Cod=6.01.1 | SubInd=6.01 | Encima del 75% de los dÝas lectivos del mes y acciones concretas para mejorar la asistencia escolar
+  [Existe registro diario de asistencia de los estudiantes]
+  [El centro reporta de forma diaria por encima del 90% de los dÝas lectivos del mes]
+  [El centro reporta de forma diaria entre el 76% y 89% de los dÝas lectivos del mes]
+  [El centro reporta de forma diaria entre el 50% y 75% de los dÝas lectivos del mes]
+  [El centro reporta de forma diaria menos del 50% de los dÝas lectivos del mes]
+
+--- EvidenciaID=113 | Cod=6.02.2 | SubInd=6.02 | De 90% a 95% dÝas trabajados seg·n calendario escolar
+  [Matriz de registro mensual del cumplimiento del calendario escolar]
+
+--- EvidenciaID=117 | Cod=6.03.1 | SubInd=6.03 | Mßs del 95 % de los docentes con su carga horaria
+  [Mßs del 95% de los docentes cuenta con su carga horaria individualizada e integrada en el horario general del Centro.]
+
+--- EvidenciaID=116 | Cod=6.03.2 | SubInd=6.03 | Entre el 61% y el 95% de los docentes con su carga horaria
+  [Entre el 60% y el 95% de los docentes con su carga horaria individualizada e integrada en el horario general del Centro]
+
+--- EvidenciaID=115 | Cod=6.03.3 | SubInd=6.03 | Menos del 60% de los docentes sin su carga horaria
+  [Menos del 60% de los docentes sin su carga horaria individualizada e integrada en el horario general del Centro]
+
+--- EvidenciaID=71 | Cod=6.04.3 | SubInd=6.04 | Tasa de Promoci¾n Con menos del 85%
+  [Matriz con reporte consolidado de la tasa global anual de promoci¾n]
+  [Evidencia de mßs del 90% de Tasa de Promoci¾n]
+  [Evidencia del 85% al 90% de Tasa de Promoci¾n]
+  [Evidencia con menos del 85% de Tasa de Promoci¾n]
+
+--- EvidenciaID=68 | Cod=6.05.1 | SubInd=6.05 | Tasa de Reprobados Con menos del 4.5%
+  [Matriz de reporte consolidado de la tasa global anual de reprobados]
+  [Evidencia de menos del 4.5% de tasa de reprobados]
+
+--- EvidenciaID=65 | Cod=6.05.2 | SubInd=6.05 | Tasa de Repitencia deDel 4.5% al 6 %
+  [Evidencia del 4.5% al 6% de tasa de reprobados]
+
+--- EvidenciaID=63 | Cod=6.05.3 | SubInd=6.05 | Tasa de Repitencia Con mßs del 6%
+  [Evidencia con mßs del 6% de tasa de reprobados]
+
+--- EvidenciaID=58 | Cod=Np 7.01.1 | SubInd=7.01 | Estudiantes Mßs del 61%
+  [Matriz de relaci¾n de estudiantes con desempe±o satisfactorio en las pruebas diagn¾sticas.]
+python : Traceback (most recent call last):
+En línea: 1 Carácter: 1
++ python scratch/dump_criterios.py 2>&1 | Out-File -Encoding utf8 scrat ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\regil.batista\Desktop\MIGRACION_SE(aja)\scratch\dump_criterios.py", line 16, in <module>
+    print(f"  [{criterio}]")
+    ~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u25aa' in position 7: character maps to <undefined>

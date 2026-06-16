@@ -608,15 +608,24 @@ class DestinoRepository:
         return count
 
     def asegurar_tipo_evaluacion_defecto(self):
-        """Asegura que exista el TipoEvaluacion ID=1 (Automática)"""
-        # Si no existe, insertarlo
-        query = "SELECT COUNT(*) FROM Evidencia.TipoEvaluacion WHERE Id = 1"
-        self.cursor.execute(query)
+        """Asegura que existan los Tipos de Evaluación por defecto en la BD"""
+        # Asegurar ID 1 (Manual)
+        self.cursor.execute("SELECT COUNT(*) FROM Evidencia.TipoEvaluacion WHERE Id = 1")
         if self.cursor.fetchone()[0] == 0:
             self.habilitar_identity_insert('Evidencia', 'TipoEvaluacion')
             self.cursor.execute("""
                 INSERT INTO Evidencia.TipoEvaluacion (Id, Nombre, CreatedAt, IsActive, IsDeleted)
-                VALUES (1, 'Automática', GETDATE(), 1, 0)
+                VALUES (1, 'Manual', GETDATE(), 1, 0)
+            """)
+            self.deshabilitar_identity_insert('Evidencia', 'TipoEvaluacion')
+
+        # Asegurar ID 2 (Automática)
+        self.cursor.execute("SELECT COUNT(*) FROM Evidencia.TipoEvaluacion WHERE Id = 2")
+        if self.cursor.fetchone()[0] == 0:
+            self.habilitar_identity_insert('Evidencia', 'TipoEvaluacion')
+            self.cursor.execute("""
+                INSERT INTO Evidencia.TipoEvaluacion (Id, Nombre, CreatedAt, IsActive, IsDeleted)
+                VALUES (2, 'Automática', GETDATE(), 1, 0)
             """)
             self.deshabilitar_identity_insert('Evidencia', 'TipoEvaluacion')
     # UTILIDADES
@@ -652,6 +661,17 @@ class DestinoRepository:
         self.cursor.execute("DELETE FROM Evidencia.RespuestasRevisiones")
         count = self.cursor.rowcount
         self.resetear_identidad('Evidencia', 'RespuestasRevisiones')
+        return count
+
+    def romper_dependencias_preguntas(self):
+        """Rompe la dependencia circular de GrupoPreguntaRevisiones con PreguntaRevisiones"""
+        self.cursor.execute("UPDATE Evidencia.GrupoPreguntaRevisiones SET PreguntaDependenciaId = NULL")
+
+    def limpiar_grupo_pregunta_revisiones(self) -> int:
+        """Elimina registros de Evidencia.GrupoPreguntaRevisiones"""
+        self.cursor.execute("DELETE FROM Evidencia.GrupoPreguntaRevisiones")
+        count = self.cursor.rowcount
+        self.resetear_identidad('Evidencia', 'GrupoPreguntaRevisiones')
         return count
 
     def resetear_identidad(self, schema: str, tabla: str, seed: int = 0):

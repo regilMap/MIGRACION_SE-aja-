@@ -1,0 +1,136 @@
+ID: 108 | Code: 01.1.1 | Name: Informe Anual de Monitoreo y Evaluación del Proyecto Educativo de Centro (PEC)
+ID: 107 | Code: 01.1.2 | Name: Proyecto Educativo de Centro (PEC)
+ID: 5 | Code: 01.2.1 | Name: Informe Implementación CAF
+ID: 4 | Code: 01.2.2 | Name: Plan de Mejora CAF
+ID: 3 | Code: 01.2.3 | Name: Autoevaluación  CAF 
+ID: 2 | Code: 01.2.4 | Name: Comité de Calidad
+ID: 7 | Code: 01.3.1 | Name: Informe Semestral de Resultados del POA vinculado al PEC
+ID: 6 | Code: 01.3.2 | Name: Plan Operativo Anual vinculado al PEC 
+ID: 8 | Code: 01.4.1 | Name: Plan Operativo Anual (POA) y Presupuesto alineado con el PEC y el Plan de Mejora derivado de la autoevaluación (Modelo CAF)
+ID: 11 | Code: 01.5.1 | Name: Informe Semestral Organismos de Participación
+ID: 10 | Code: 01.5.2 | Name: Plan Anual de Trabajo y Actas de reuniones de los órganos de participación Internos
+ID: 9 | Code: 01.5.3 | Name: Actas Constitutivas
+ID: 14 | Code: 01.6.1 | Name: Informe de ejecución durante el periodo de clase
+ID: 13 | Code: 01.6.2 | Name: Plan de trabajo y Actas de reuniones
+ID: 12 | Code: 01.6.3 | Name: Alianzas con organismos o instituciones externas
+ID: 111 | Code: 02.1.1 | Name: Finalización del primer periodo de clases
+ID: 110 | Code: 02.1.2 | Name: Informe consolidado
+ID: 109 | Code: 02.1.3 | Name: Inicio del primer periodo de clases
+ID: 17 | Code: 02.2.1 | Name: Más del 90% de los docentes cuentan con todos sus planes de clase
+ID: 16 | Code: 02.2.2 | Name: Del 81 al 90% de los docentes cuentan con todos sus planes de clase
+ID: 15 | Code: 02.2.3 | Name: Del 70 al 80% de los docentes cuentan con todos sus planes de clase
+ID: 118 | Code: 02.3.1 | Name:  Logrado totalmente
+ID: 119 | Code: 02.3.2 | Name: Logrado parcialmente
+ID: 120 | Code: 02.3.3 | Name: No logrado
+ID: 18 | Code: 02.4.1 | Name:  80% o más de los/as Docentes utilizan los recursos de base digital disponibles.
+ID: 20 | Code: 02.4.2 | Name: Entre el 60% a 79% de los/as Docentes utilizan los recursos de base digital disponibles.
+ID: 19 | Code: 02.4.3 | Name: Entre el 31% y 59% de los/as Docentes utilizan los recursos de base digital disponibles
+ID: 21 | Code: 02.4.4 | Name: Hasta el 30% de los Docentes utilizan los recursos de base digital disponibles.
+ID: 121 | Code: 02.5.1 | Name: Existen los grupos pedagógicos y se celebra una reunión mensual por cada grupo conforme al calendario escolar. Se dispone del informe de dichas reuniones y participan más del 95% de los docentes
+ID: 122 | Code: 02.5.2 | Name: Existen los grupos pedagógicos y se celebra al menos una reunión mensual por cada grupo y se dispone del informe de dichas reuniones
+ID: 24 | Code: 02.6.1 | Name: Informe trimestral de Acompañamiento de los Docentes con un % de implementación de las acciones superior al 90%
+ID: 23 | Code: 02.6.2 | Name: Informe trimestral de Acompañamiento de los Docentes con un % de implementación de las acciones superior al 70%.
+ID: 22 | Code: 02.6.3 | Name: Plan de Acompañamiento sustentado en un diagnóstico y con un cronograma de implementación definido.
+ID: 81 | Code: 02.7.1 | Name: Promueve actividades, dentro o fuera del aula, vinculadas en  4 o más de los ejes curriculares transversales
+ID: 80 | Code: 02.7.2 | Name: Promueve actividades, dentro o fuera del aula, vinculadas al menos 2 de los ejes curriculares transversales.
+ID: 84 | Code: 02.8.1 | Name: Informe semestral del plan de trabajo implementado con un % de cumplimiento por encima del 80% en relación a lo previsto.
+ID: 83 | Code: 02.8.2 | Name: Informe semestral del plan de trabajo implementado.
+ID: 82 | Code: 02.8.3 | Name: Plan de trabajo y cronograma de implementación de los servicios de orientación y psicología.
+ID: 28 | Code: 03.1.1 | Name: Reporte del Registro de Estudiantes 98% al 100% 
+ID: 27 | Code: 03.1.2 | Name: Reporte del Registro de Estudiantes entre 91% y 97%
+ID: 1 | Code: 03.1.3 | Name: Reporte del Registro de Estudiantes - 90%
+ID: 72 | Code: 03.2.1 | Name: Informe de Ejecución del POA más del 80% 
+ID: 70 | Code: 03.2.2 | Name: Informe de Ejecución del POA Entre 60% y 79% 
+ID: 32 | Code: 03.2.3 | Name: Informe de Ejecución del POA Entre 30% y 59% 
+ID: 77 | Code: 03.3.1 | Name: De un 80% - 100% ejecutadas las actividades de mantenimiento preventivo y/o reparaciones menores
+ID: 76 | Code: 03.3.2 | Name: De un 60% - 79% ejecutadas las actividades de mantenimiento preventivo o reparaciones menores
+ID: 75 | Code: 03.3.3 | Name: Diagnóstico de necesidades elaborado a principios de cada trimestre en base a una lista de chequeo
+ID: 89 | Code: 03.4.1 | Name: Informe de Implementación del Plan Escolar de Gestión Ambiental y de Riesgo
+ID: 88 | Code: 03.4.2 | Name: Primer y segundo informe trimestral durante el año escolar del proceso de implementación del Plan Escolar de Gestión Ambiental y de Riesgo
+ID: 87 | Code: 03.4.3 | Name: Primer informe trimestral durante el año escolar del proceso de implementación del Plan Escolar de Gestión Ambiental y de Riesgo
+ID: 86 | Code: 03.4.4 | Name: Plan Escolar de Gestión Ambiental y de Riesgo definido, actualizado por el Centro Educativo al inicio del año escolar e incorporando la detección de necesidades
+ID: 85 | Code: 03.4.5 | Name: Comité de Seguridad y Salud en el Trabajo
+ID: 92 | Code: 03.5.1 | Name: 71% o más de cumplimiento de los estándares del Programa de Alimentación Escolar en el Centro Educativo
+ID: 91 | Code: 03.5.2 | Name: Entre el 60% al 70% de cumplimiento de los estándares del Programa de Alimentación Escolar en el Centro Educativo
+ID: 90 | Code: 03.5.3 | Name: Entre el 40% y el 60% de cumplimiento de los estándares del Programa de Alimentación Escolar en el Centro Educativo
+ID: 98 | Code: 03.6.1 | Name: Informe  de asistencia de los Docentes 8 o más docentes hasta 4 ausencias
+ID: 97 | Code: 03.6.2 | Name: Informe  de asistencia de los Docentes 7 docentes Hasta 2 ausencias
+ID: 93 | Code: 03.6.3 | Name: Informe  de asistencia de los Docentes 8 o más docentes de 4 a 7 ausencias
+ID: 96 | Code: 03.6.4 | Name: Informe  de asistencia de los Docentes 7 docentes de 2 a 4 ausencias
+ID: 95 | Code: 03.6.5 | Name: Informe  de asistencia de los Docentes  8 o mas docentes +  de 7 ausencias
+ID: 94 | Code: 03.6.6 | Name: Informe  de asistencia de los Docentes 7 docentes + de 4 ausencias
+ID: 123 | Code: 04.1.1 | Name: Puntuación vinculada a la mejora de la cultura y clima organizacional
+ID: 124 | Code: 04.1.2 | Name:  Implementación de las acciones
+ID: 125 | Code: 04.1.3 | Name: Acciones de mejora
+ID: 126 | Code: 04.1.4 | Name: Informe de encuesta de clima
+ID: 127 | Code: 04.1.5 | Name: Capacitación
+ID: 128 | Code: 04.2.1 | Name: Puntuación vinculada a la mejora de la cultura y clima escolar
+ID: 129 | Code: 04.2.2 | Name: Implementación de las acciones
+ID: 130 | Code: 04.2.3 | Name: Acciones de mejora del clima escolar 
+ID: 131 | Code: 04.2.4 | Name: Aplicación e informe de encuesta de clima
+ID: 132 | Code: 04.3.1 | Name: Índice de Satisfacción de los grupos de interés con el desempeño general del Centro Educativo por encima de 71 puntos
+ID: 133 | Code: 04.3.2 | Name:  Índice de Satisfacción de los grupos de interés con el desempeño general del Centro Educativo entre 51 y 70 puntos
+ID: 134 | Code: 04.3.3 | Name: ndice de Satisfacción de los grupos de interés con el desempeño general del Centro Educativo entre 31 y 50 puntos
+ID: 26 | Code: 05.01.1 | Name: Acuerdo de Desempeño  Vinculado
+ID: 25 | Code: 05.01.2 | Name: Acuerdo de Desempeño No Vinculado
+ID: 60 | Code: 05.02.1 | Name: Más del 80% del Personal Docente en Aula 
+ID: 59 | Code: 05.02.2 | Name: Entre el 50 y el 80% del Personal Docente en Aula 
+ID: 62 | Code: 05.03.1 | Name: Más del 80% del Personal Docente en Función Administrativo - Pedagógica 
+ID: 61 | Code: 05.03.2 | Name: Entre el 50% y el 80% del Personal Docente en Función Administrativo - Pedagógica 
+ID: 66 | Code: 05.04.1 | Name: Más del 80% del Personal Administrativo 
+ID: 64 | Code: 05.04.2 | Name: Entre el 50% y 80% del Personal Administrativo 
+ID: 69 | Code: 05.05.1 | Name: Más del 80% del Personal de Apoyo 
+ID: 67 | Code: 05.05.2 | Name: Entre el 50% y el 80% del Personal de Apoyo 
+ID: 79 | Code: 05.06.1 | Name: Evaluación de Desempeño Vinculado
+ID: 78 | Code: 05.06.2 | Name: Evaluación de Desempeño No Vinculado
+ID: 100 | Code: 05.07.1 | Name: Más del 80% del Personal Docente en Aula 
+ID: 99 | Code: 05.07.2 | Name: Entre el 50% y el 80% del Personal Docente en Aula 
+ID: 102 | Code: 05.08.1 | Name: Más del 80% del personal docente en funciones administrativo - pedagógica del Centro Educativo con acuerdos de Desempeño Evaluados
+ID: 101 | Code: 05.08.2 | Name: Entre el 50% y el 80% del Personal Docente en funciones Administrativo - Pedagógica con Acuerdos de Desempeño Evaluados en relación al universo de Acuerdos de Desempeño del Personal Docente en funciones Administrativo - Pedagógica existente en el Centro Educativo.
+ID: 104 | Code: 05.09.1 | Name: Más del 80% del Personal Administrativo 
+ID: 103 | Code: 05.09.2 | Name: Entre el 50% y el 80% del Personal Administrativo
+ID: 106 | Code: 05.10.1 | Name: Más del 80% del Personal de Apoyo 
+ID: 105 | Code: 05.10.2 | Name: Entre el 50% y el 80% del Personal de Apoyo 
+ID: 30 | Code: 06.1.1 | Name: Encima del 75% de los días lectivos del mes y acciones concretas para mejorar la asistencia escolar 
+ID: 29 | Code: 06.1.2 | Name: Entre el 50% y 75% de los días lectivos del mes
+ID: 114 | Code: 06.2.1 | Name: De 96% a 100% días trabajados según calendario escolar
+ID: 113 | Code: 06.2.2 | Name: De 90% a 95% días trabajados según calendario escolar
+ID: 112 | Code: 06.2.3 | Name: Entre el 85% y el 90% días trabajados según calendario escolar.
+ID: 117 | Code: 06.3.1 | Name: Más del 95 % de los docentes con su carga horaria
+ID: 116 | Code: 06.3.2 | Name: Entre el 61% y el 95% de los docentes con su carga horaria
+ID: 115 | Code: 06.3.3 | Name: Menos del 60% de los docentes sin su carga horaria
+ID: 74 | Code: 06.4.1 | Name:  Tasa de Promoción Más del 90% 
+ID: 73 | Code: 06.4.2 | Name:  Tasa de PromociónDel 85% al 90% 
+ID: 71 | Code: 06.4.3 | Name:  Tasa de Promoción Con menos del 85% 
+ID: 68 | Code: 06.5.1 | Name:  Tasa de Reprobados Con menos del 4.5% 
+ID: 65 | Code: 06.5.2 | Name:  Tasa de Repitencia deDel 4.5% al 6 % 
+ID: 63 | Code: 06.5.3 | Name:  Tasa de Repitencia Con más del 6% 
+ID: 41 | Code: 07.2.1 | Name:  Estudiantes Más del 41%
+ID: 40 | Code: 07.2.2 | Name:  Estudiantes Del 31% al 40%
+ID: 39 | Code: 07.2.3 | Name: Estudiantes Del 26% al 30% 
+ID: 38 | Code: 07.2.4 | Name:  Estudiantes Del 22% al 25%
+ID: 37 | Code: 07.2.5 | Name:  Estudiantes Del 19% al 21%
+ID: 36 | Code: 07.2.6 | Name:  Estudiantes Del 16% al 18%
+ID: 35 | Code: 07.2.7 | Name:   Estudiantes Del 13% al 15%
+ID: 34 | Code: 07.2.8 | Name: Estudiantes Del 10% al 12%
+ID: 33 | Code: 07.2.9 | Name:  Estudiantes Por debajo del 10%
+ID: 135 | Code: 08.1.1 | Name: Valor del Índice de Contribución del Centro al Desarrollo de la Comunidad donde está Situado
+ID: 136 | Code: 09.1.1 | Name: Valor del Índice de Contribución del Centro al Logro de las Metas Educativas Nacionales
+ID: 58 | Code: Np 07.1.1 | Name: Estudiantes Más del 61% 
+ID: 57 | Code: Np 07.1.2 | Name: Estudiantes Del 51% al 60% 
+ID: 56 | Code: Np 07.1.3 | Name: Estudiantes  Del 36% al 50% 
+ID: 55 | Code: Np 07.1.4 | Name:  Estudiantes Del 31% al 35%
+ID: 54 | Code: Np 07.1.5 | Name:  Estudiantes  Del 26% al 30%
+ID: 53 | Code: Np 07.1.6 | Name: Estudiantes Del 16% al 25% 
+ID: 52 | Code: Np 07.1.7 | Name:  Estudiantes Del 11% al 15%
+ID: 51 | Code: Np 07.1.8 | Name:  Estudiantes Del 6% al 10%
+ID: 31 | Code: Np 07.1.9 | Name: Estudiantes con desempeño satisfactorio en las Pruebas  Diagnósticas Del 1% al 5%.
+ID: 50 | Code: Ns 07.1.1 | Name:  Estudiantes Más del 41%
+ID: 49 | Code: Ns 07.1.2 | Name:  Estudiantes Del 26% al 30%
+ID: 48 | Code: Ns 07.1.3 | Name:  Estudiantes Del 26% al 30%
+ID: 47 | Code: Ns 07.1.4 | Name:  Estudiantes Del 22% al 25%
+ID: 46 | Code: Ns 07.1.5 | Name:  Estudiantes Del 19% al 21%
+ID: 45 | Code: Ns 07.1.6 | Name:  Estudiantes Del 16% al 18%
+ID: 44 | Code: Ns 07.1.7 | Name: Estudiantes  Del 13% al 15% 
+ID: 43 | Code: Ns 07.1.8 | Name: Estudiantes con desempeño satisfactorio en las Pruebas Diagnósticas. Del 10% al 12%
+ID: 42 | Code: Ns 07.1.9 | Name: Estudiantes con desempeño satisfactorio en las Pruebas Diagnósticas.  Por debajo del 10% 

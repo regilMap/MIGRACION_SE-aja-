@@ -1,0 +1,3808 @@
+=================================================================
+PAGE 19
+=================================================================
+Versión 2025 
+ 
+ 
+III. 
+INDICADORES MONITOREADOS EN EL 
+SISMAP EDUCACIÓN – CENTROS 
+EDUCATIVOS 
+ 
+El SISMAP Educación - Centros Educativos ha definido indicadores para el 
+monitoreo agrupados en función de los cuatro grandes ámbitos definidos con 
+diferentes grados de valoración (0 a 100), acorde a la escala de crecimiento 
+prevista. 
+ 
+ 
+Este conjunto de indicadores monitorea la gestión estratégica y de calidad de los 
+servicios educativos, la gestión pedagógica y la gestión administrativa y financiera 
+de los centros educativos, en función de las pautas trazadas por el Ministerio de 
+Educación de la República Dominicana (MINERD). 
+ 
+ 
+Este conjunto de indicadores monitorea la capacidad de dirección del centro, 
+enfocándose en la planificación estratégica (PEC/POA), la autoevaluación 
+institucional bajo el modelo CAF, la gestión eficiente del presupuesto y el 
+fortalecimiento de los organismos de participación comunitaria, asegurando 
+que el plantel funcione de forma organizada y alineada con sus metas de calidad. 
+ 
+ 
+Este indicador monitorea el alcance de los elementos integrados en el Proyecto 
+Educativo de Centro (PEC) que debe de estar orientado a resultados, en función de 
+los siguientes aspectos: 
+1. Análisis del contexto interno y externo. 
+2. Filosofía institucional. 
+3. Propuesta de implementación curricular. 
+4. Marco estratégico (objetivo, indicador, metas). 
+5. Marco operativo (líneas de acción). 
+1.01. Formulación de Proyecto Educativo de Centro (PEC) Orientado a 
+Resultados 
+ 
+ 
+
+
+=================================================================
+PAGE 20
+=================================================================
+Versión 2025 
+ 
+ 
+Este indicador es monitoreado desde el Ministerio de Educación de la República 
+Dominicana (MINERD). 
+ 
+Objetivo 
+Logrado 
+▪ 100. Informe Anual de Monitoreo y Evaluación del 
+Proyecto Educativo de Centro (PEC). 
+Cierto 
+Avance 
+▪ 70. Proyecto Educativo de Centro (PEC) incluye los 5 aspectos 
+establecidos. 
+Poco 
+Avance 
+▪ 0. Sin Proyecto Educativo de Centro (PEC) elaborado. 
+                                         
+Evidencias requeridas y criterios de verificación 
+IBOG PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL, PEDAGÓGICA Y 
+ADMINISTRATIVA DEL CENTRO EDUCATIVO 
+ 
+ 
+Indicador  
+IBOG 1. Gestión estratégica y cultura de calidad 
+ 
+ 
+Sub Indicador 
+1.01. Formulación de Proyecto Educativo de Centro (PEC) 
+Orientado a Resultados 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+No  
+ 
+ 
+Proyecto Educativo de Centro 
+(PEC) 
+(Evidencia subida: agosto- 
+septiembre) 
+Nota para el equipo 
+programador del MAP: esta 
+evidencia vence de 3 a 5 años.  
+Se evidencia el Proyecto Educativo de Centro (PEC)  
+ 
+ 
+1. Describe el contexto interno y externo 
+ 
+ 
+2. Contiene misión, visión y valores institucionales 
+ 
+ 
+3. Presenta propuesta de implementación curricular 
+ 
+ 
+4. Marco estratégico (define: objetivo, indicador, metas) 
+ 
+ 
+5. Marco operativo (Establece metas claras y medibles) 
+ 
+ 
+El Proyecto Educativo de Centro (PEC) incluye los 5 aspectos 
+establecidos anteriormente mencionados. 
+ 
+ 
+Informe Anual de Monitoreo y 
+Evaluación del Proyecto 
+Educativo de Centro (PEC) 
+(Evidencia subida: Junio de cada 
+año escolar) 
+Da seguimiento a los objetivos del Proyecto Educativo de 
+Centro (PEC) 
+ 
+ 
+Identifica implementación, avances, dificultades e incluye 
+acciones de mejoras 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                                                                                                                                                                                                                
+ 
+
+
+=================================================================
+PAGE 21
+=================================================================
+Versión 2025 
+ 
+ 
+ 
+ 
+Este indicador monitorea en qué medida el Centro Educativo está enfocado en 
+implantar y promover una cultura de calidad en la gestión, que incida en la mejora 
+continua, en el fortalecimiento institucional y en la calidad de los servicios 
+educativos, a través de la aplicación sistemática del Marco Común de Evaluación 
+(CAF), para identificar puntos fuertes y áreas de mejora. 
+ 
+Este indicador es monitoreado por el Ministerio de Administración Pública (MAP), 
+con un esquema de crecimiento para el primer año y uno para los siguientes. 
+Para el primer año » Esquema Acumulativo 
+ 
+Objetivo 
+Logrado 
+▪ 100. Informe Implementación CAF (+100 Puntos). Centro 
+Educativo ha remitido informe de implementación del Plan de 
+Mejora a un 80% de acciones implementadas. 
+(Comité de Calidad + Autoevaluación + Plan de Mejora 
++ Informe) 
+Cierto 
+Avance 
+▪ 70. Plan de Mejora CAF (+70 Puntos). Centro Educativo ha 
+elaborado y remitido el último plan de mejora del año vigente 
+antes del 30/08. 
+(Comité de Calidad + Autoevaluación + Plan de Mejora) 
+1.02. Implementación del Marco Común de Evaluación (CAF) 
+
+
+=================================================================
+PAGE 22
+=================================================================
+Versión 2025 
+ 
+ 
+ 
+Poco 
+Avance 
+▪ 50. Autoevaluación CAF. Centro Educativo ha realizado la 
+última autoevaluación CAF vigente y la remite junto al Informe 
+de Autoevaluación CAF antes del 30/06. 
+(Comité de Calidad + Autoevaluación) 
+▪ 20. Comité de Calidad. Centro Educativo ha conformado el 
+Comité Institucional de Calidad y lo ha remitido a través de una 
+comunicación firmada y sellada a la máxima autoridad del 
+MAP. Dicho Comité ha sido entrenado y capacitado en la 
+aplicación del modelo CAF y en la elaboración de 
+autoevaluaciones institucionales. 
+A partir del segundo año y sucesivos 
+ 
+Objetivo 
+Logrado 
+    100. Puntuación vinculada a calidad y resultados: 
+▪ Satisfactorio (+50 Puntos). Se cumple una de las siguientes 
+combinaciones con todos sus atributos: 
+○ El resultado del Informe de Autoevaluación CAF del año 
+vigente es al menos 300 puntos y su índice de desempeño 
+SISMAP Educación – Centros Educativos es mayor a 85 en la 
+puntuación vigente. 
+○ El resultado del Informe de Autoevaluación CAF del año 
+vigente es al menos un 10% superior a la previa, al menos tenga 
+250 puntos y su índice de desempeño SISMAP Educación - 
+Centros Educativos es mayor a 80 en la puntuación vigente. 
+
+
+=================================================================
+PAGE 23
+=================================================================
+
+
+=================================================================
+PAGE 24
+=================================================================
+22 
+Versión 2025 
+‘ 
+ 
+ 
+ 
+ 
+Cierto 
+Avance 
+▪ Intermedio (+30 Puntos). Se cumple las 3 condiciones 
+individuales: El resultado del Informe de Autoevaluación CAF 
+del año vigente es al menos un 5% superior a la previa, tiene al 
+menos 200 puntos en el Informe CAF y su índice de desempeño 
+SISMAP Educación – Centros Educativos es superior a 80 en la 
+puntuación vigente. 
+▪ Inicial: (+20 Puntos). Se cumple alguna de las 3 condiciones 
+individuales: 
+○ El resultado del Informe de Autoevaluación CAF del año 
+vigente es al menos un 5% superior a la previa. 
+○ Al menos tiene 150 puntos en la puntuación CAF. 
+○ El índice de desempeño SISMAP Educación - Centros 
+Educativos es superior a 70 y se ha remitido el Informe CAF. 
+Poco 
+Avance 
+50. Puntuación vinculada a la implementación del CAF: 
+▪ Informe Implementación CAF (+10 Puntos). Centro Educativo 
+ha remitido informe de implementación del Plan de Mejora a un 
+80% de acciones implementadas 
+▪ Plan de Mejora CAF (+10 Puntos). Centro Educativo ha 
+elaborado y remitido el último plan de mejora del año vigente 
+antes del 30/08. 
+▪ Autoevaluación CAF (+10 Puntos). Centro Educativo ha 
+realizado la última autoevaluación CAF vigente y la remite junto el 
+Informe de Autoevaluación CAF antes del 30/06. 
+▪ 20. Comité de Calidad (prerrequisito). Centro Educativo ha 
+conformado el Comité Institucional de Calidad y lo ha remitido a 
+través de una comunicación firmada y sellada a la máxima 
+autoridad del MAP. Dicho Comité ha sido entrenado y 
+capacitado en la aplicación del modelo CAF y en la elaboración 
+de autoevaluaciones institucionales. 
+Consideraciones 
+Desde el punto de vista de la implementación del Marco Común de Evaluación en el 
+Sector Público, se siguen las siguientes pautas:
+
+
+=================================================================
+PAGE 25
+=================================================================
+Versión 2025 
+ 
+ 
+ 
+1. El Decreto No. 211-10, que establece la obligatoriedad de la aplicación del modelo 
+CAF en el sector público define (Art. 6) que los resultados de las 
+autoevaluaciones se remitirán al MAP entre los meses de abril y junio de cada 
+año. El Plan de Mejora se elabora en base a dicha autoevaluación. 
+2. Con el objeto de avanzar en la estandarización y previsibilidad de las fechas de 
+vigencia, el “Plan de Mejora”, tendrá en lo adelante vigencia hasta el 31 de 
+diciembre del año siguiente a su elaboración, pero deberá remitirse antes del 30 
+de agosto del año correspondiente, con el objetivo de que los recursos que 
+requiera su ejecución puedan ser incluidos en el presupuesto del Centro 
+Educativo y su implementación se realice a la par con el Plan Operativo Anual 
+(POA) que inicia en enero de cada año. 
+3. Los Comités de Calidad tendrán vencimiento al momento de cambios de gestión 
+y al momento en el que cambie alguno de sus integrantes. Es obligación del 
+Centro Educativo remitir al MAP dichos ajustes mediante comunicación. 
+4. Las puntuaciones de las autoevaluaciones a las que hace referencia el indicador 
+pudieran ser actualizadas anualmente mediante circular del MAP. 
+5. En base a lo anterior, el indicador se construye con 3 etapas de crecimiento: 
+preparación - implementación del modelo - vinculación con resultados 
+institucionales del Centro Educativo. 
+6. Nota: El equipo del MAP realizará ajustes a este indicador 
+Evidencias requeridas y criterios de verificación 
+IBOG PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL, PEDAGÓGICA Y 
+ADMINISTRATIVA DEL CENTRO EDUCATIVO 
+Indicador  
+IBOG 1. Gestión estratégica y cultura de calidad 
+Sub Indicador 
+1.02. Implementación del Marco Común de Evaluación 
+(CAF) 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si  
+No  
+ 
+Informe de Autoevaluación CAF 
+El informe está completo 
+ 
+ 
+Identifica fortalezas 
+ 
+ 
+Identifica áreas de mejora 
+ 
+ 
+Comunicación de conformación del Comité de Calidad 
+Corresponde al período vigente 
+El comité está formalmente constituido 
+ 
+ 
+El documento está firmado y sellado por la autoridad del centro 
+ 
+ 
+Identifica a los miembros del comité 
+ 
+ 
+ 
+ 
+ 
+Plan de Mejora 
+Deriva de la autoevaluación Marco Común de Evaluación (CAF) 
+ 
+ 
+Se basa en áreas de mejora identificadas 
+ 
+ 
+Define acciones de mejora 
+ 
+ 
+Define responsables 
+ 
+ 
+Define plazos de ejecución 
+ 
+ 
+Define medios de verificación. 
+ 
+ 
+
+
+=================================================================
+PAGE 26
+=================================================================
+ 
+Versión 2025 
+ 
+ 
+ 
+ 
+Este indicador monitorea el alcance de los elementos integrados en el Plan de 
+Mejora de la Gestión derivado de la Autoevaluación (Modelo CAF), su vinculación 
+con los objetivos estratégicos y líneas de acción del Proyecto Educativo de Centro 
+(PEC) y su inclusión en el Plan Operativo Anual con la siguiente información: 
+ 
+1. Líneas de acción del PEC. 
+2. Actividades. 
+3. Tiempo. 
+4. Responsable. 
+5. Medio de verificación. 
+Este indicador es monitoreado desde el Ministerio de Educación de la 
+República Dominicana (MINERD). 
+ 
+Objetivo 
+Logrado 
+▪ 100. Informe Semestral de Resultados del Plan Operativo Anual 
+vinculado al PEC. 
+Cierto 
+Avance 
+▪ 70. Plan Operativo Anual vinculado al PEC presenta los 5 
+aspectos establecidos. 
+Poco 
+Avance 
+▪ 0. Sin Plan Operativo Anual de Mejora del PEC elaborado. 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG  
+PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL, 
+PEDAGÓGICA Y ADMINISTRATIVA DEL CENTRO 
+EDUCATIVO 
+Indicador  
+IBOG 1. Gestión estratégica y cultura de calidad 
+Sub Indicador 
+1.03. Plan de Mejora de la Gestión (PMG) 
+derivado de la autoevaluación Marco Común 
+de Evaluación (CAF) y vinculado al PEC 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si  No  
+Plan Operativo Anual (POA) derivado de la 
+Autoevaluación Marco Común de Evaluación 
+(CAF). 
+(Evidencia subida en el primer trimestre del año 
+escolar)  
+Deriva de la autoevaluación Marco Común de 
+Evaluación (CAF) 
+ 
+ 
+Está vinculado al Proyecto Educativo de Centro 
+(PEC) 
+ 
+ 
+Incluye líneas de acción 
+ 
+ 
+1.03. Plan de Mejora de la Gestión (PMG) derivado de la Autoevaluación 
+(Modelo CAF) y vinculado al Proyecto Educativo de Centro (PEC) 
+
+
+=================================================================
+PAGE 27
+=================================================================
+Versión 2025 
+ 
+ 
+Incluye actividades 
+ 
+ 
+Define responsables 
+ 
+ 
+Define tiempo de ejecución 
+ 
+ 
+Define medios de verificación 
+ 
+ 
+Informe Semestral de Resultados del Plan Operativo 
+Anual (POA vinculado al Proyecto Educativo de Centro 
+(PEC) (Evidencia subida en febrero y agosto de cada año 
+escolar) 
+Presenta resultados de ejecución 
+ 
+ 
+Da seguimiento a las actividades 
+ 
+ 
+ 
+ 
+ 
+Este indicador monitorea la definición del Plan Operativo Anual (POA) y 
+Presupuesto alineado con el Proyecto Educativo de Centro (PEC) y el Plan de Mejora 
+derivado de la autoevaluación (Modelo CAF). 
+Este indicador es monitoreado desde el Ministerio de Educación de la 
+República Dominicana (MINERD). 
+ 
+Objetivo 
+Logrado 
+▪ 100. Plan Operativo Anual (POA) y Presupuesto alineado con 
+el PEC y el Plan de Mejora derivado de la autoevaluación 
+(Modelo CAF). 
+Cierto 
+Avance 
+▪ 70. Reporte generado del Sistema de Planificación 
+▪ 60. Acta de Aprobación del POA 
+Poco 
+Avance 
+▪ 0. Sin Plan Operativo Anual (POA) y Presupuesto remitido. 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG  
+PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL, 
+PEDAGÓGICA Y ADMINISTRATIVA DEL CENTRO 
+EDUCATIVO 
+Indicador  
+IBOG 1. Gestión estratégica y cultura de calidad 
+Sub Indicador 
+1.04. Plan Operativo Anual (POA) y Presupuesto 
+alineados al Proyecto Educativo de Centro (PEC) 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+No 
+Plan Operativo Anual (POA) 
+ (Evidencia subida en septiembre de cada 
+año escolar) 
+Cuenta con Plan Operativo Anual (POA)  
+ 
+ 
+Está alineado al Proyecto Educativo de Centro (PEC) 
+ 
+ 
+Incluye acciones del Plan de Mejora del Marco Común 
+de Evaluación (CAF). 
+ 
+ 
+Cuenta con Presupuesto remitido. 
+ 
+ 
+1.04. Plan Operativo Anual (POA) y Presupuesto 
+
+
+=================================================================
+PAGE 28
+=================================================================
+ 
+Versión 2025 
+ 
+ 
+Presupuesto del centro educativo 
+(Evidencia subida en septiembre de cada 
+año escolar) 
+El presupuesto respalda el Plan Operativo Anual (POA) 
+ 
+ 
+Reporte generado del Sistema de 
+planificación  
+ 
+ 
+ 
+ 
+ 
+ 
+Acta de aprobación del POA 
+Cuenta con una validación positiva para la 
+implementación  
+ 
+ 
+ 
+ 
+ 
+ 
+Nota:  Gestionar información en la dirección de Planificación, unidad que envía al centro 
+el reporte y la aprobación del POA. 
+ 
+ 
+ 
+ 
+Este indicador monitorea la constitución y el funcionamiento de los órganos de 
+participación internos del Centro Educativo, entre los que se encuentran: 
+ 
+1. Junta de Centro Educativo. 
+2. Asociaciones de Padres, Madres y Amigos de la Escuela (APMAE). 
+3. Comité de Padres. 
+4. Escuela de Padres. 
+5. Comité o Consejo de Curso de Estudiantes. 
+6. Consejo Estudiantil. 
+Este indicador es monitoreado desde el Ministerio de Educación de la 
+República Dominicana (MINERD). 
+ 
+Objetivo 
+Logrado 
+▪ 100. Informe de la operatividad y funcionalidad de los 
+organismos internos de participación.  
+▪ 80. Incluye las Actas de reuniones. 
+Cierto 
+Avance 
+▪ 70. Plan anual de trabajo 
+Poco 
+Avance 
+▪ 50. Actas constitutivas de los organismos de participación internos 
+(Junta de Centro Educativo; Asociaciones de Padres, Madres y 
+Amigos de la Escuela (APMAE); Comité de Padres; Consejo 
+Estudiantil). 
+ 
+1.05. Funcionamiento de los Organismos Internos de Participación 
+
+
+=================================================================
+PAGE 29
+=================================================================
+Versión 2025 
+ 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG  
+PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL, 
+PEDAGÓGICA Y ADMINISTRATIVA DEL CENTRO 
+EDUCATIVO 
+ 
+Indicador  
+IBOG 1. Gestión estratégica y cultura de calidad 
+ 
+Sub Indicador 
+1.05. Funcionamiento de los organismos internos de participación 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+No 
+ 
+Actas constitutivas  
+(Evidencia subida en octubre de cada año 
+escolar) 
+Cuenta con Junta de Centro Educativo formalmente constituida. 
+ 
+ 
+Cuenta con APMAE formalmente constituida. 
+ 
+ 
+Cuenta con Comité de Padres formalmente constituido. 
+ 
+ 
+Cuenta con Escuela de Padres formalmente constituida. 
+ 
+ 
+Cuenta con Comité o Consejo de Curso de Estudiantes formalmente 
+constituido  
+ 
+ 
+Cuenta con Consejo Estudiantil formalmente constituido  
+ 
+ 
+Las actas constitutivas están debidamente firmadas. 
+ 
+ 
+Las actas constitutivas se encuentran vigentes. 
+ 
+ 
+Plan Anual de Trabajo 
+ (Evidencia subida en noviembre de cada 
+año escolar) 
+La Junta de Centro Educativo dispone de Plan Anual de Trabajo  
+ 
+ 
+La Asociación de Padres, Madres y Amigos de la Escuela (APMAE) 
+dispone de Plan Anual de Trabajo  
+ 
+ 
+El Comité de Padres dispone de Plan Anual de Trabajo  
+ 
+ 
+La Escuela de Padres dispone de Plan Anual de Trabajo  
+ 
+ 
+El Comité o Consejo de Curso de Estudiantes dispone de Plan Anual 
+de Trabajo  
+ 
+ 
+El Consejo Estudiantil dispone de Plan Anual de Trabajo  
+ 
+ 
+Actas de reuniones 
+ (Evidencia subida según el desarrollo de 
+las reuniones durante el año escolar) 
+La Junta de Centro Educativo realiza reuniones periódicas  
+ 
+ 
+La Asociación de Padres, Madres y Amigos de la Escuela (APMAE) 
+realiza reuniones periódicas  
+ 
+ 
+El Comité de Padres realiza reuniones periódicas  
+ 
+ 
+La Escuela de Padres realiza reuniones periódicas  
+ 
+ 
+El Comité o Consejo de Curso de Estudiantes realiza reuniones 
+periódicas  
+ 
+ 
+El Consejo Estudiantil realiza reuniones periódicas  
+ 
+ 
+Informes 
+ (Evidencia subida en junio de cada año 
+escolar) 
+Se describen las acciones de la Junta de Centro Educativo 
+ 
+ 
+Se describen las acciones de la APMAE 
+ 
+ 
+Se describen las acciones del Comité de Padres 
+ 
+ 
+Se describen las acciones de la Escuela de Padres 
+ 
+ 
+Se describen las acciones del Comité o Consejo de Curso de 
+Estudiantes 
+ 
+ 
+Se describen las acciones del Consejo Estudiantil  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+=================================================================
+PAGE 30
+=================================================================
+ 
+Versión 2025 
+ 
+ 
+ 
+ 
+Este indicador monitorea la constitución de alianzas externas vinculadas al 
+funcionamiento y operatividad del Centro Educativo, entre las que se pueden 
+encontrar las juntas de vecinos, clubes, iglesias, instituciones gubernamentales, 
+empresas privadas, incluyendo los programas de vinculación propios de la 
+modalidad de técnico profesional, entre otras. 
+Este indicador es monitoreado desde el Ministerio de Educación de la República 
+Dominicana (MINERD). 
+ 
+ 
+Objetivo 
+Logrado 
+▪ 100. Informe de ejecución durante el periodo de clase sobre las 
+acciones impulsadas en el marco de dichas alianzas. 
+Cierto 
+Avance 
+▪ 70. Plan de trabajo y actas de reuniones  
+Poco 
+Avance 
+▪ 50. Existen alianzas con organismos o instituciones 
+externas. 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG  
+PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL, 
+PEDAGÓGICA Y ADMINISTRATIVA DEL CENTRO 
+EDUCATIVO 
+ 
+Indicador  
+IBOG 1. Gestión estratégica y cultura de calidad 
+ 
+Sub Indicador 
+1.06. Gestión de alianzas externas 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+No 
+Documentos de alianzas con organismos o 
+instituciones externas. 
+ (Evidencia subida según la conformación de los 
+acuerdos durante el año escolar) 
+Cuenta con alianzas externas formalmente establecidas 
+identificando las instituciones u organismos aliados 
+documentadas mediante cartas, convenios o acuerdos 
+ 
+ 
+Plan de trabajo con aliados y actas de reuniones 
+(Evidencia subida a partir de la generación de los 
+acuerdos durante el año escolar) 
+El plan de trabajo identifica las instituciones aliadas 
+involucradas y define acciones conjuntas a desarrollar 
+ 
+ 
+Actas de reuniones con aliados externos con registro de 
+acuerdos y compromisos asumidos 
+ 
+ 
+Informe de ejecución de alianzas 
+ (Evidencia subida junio de cada año escolar) 
+Existe informe de ejecución de las alianzas externas 
+presentado las evidencias de las acciones desarrolladas.  
+ 
+ 
+ 
+ 
+1.06. Gestión de alianzas externas 
+
+
+=================================================================
+PAGE 31
+=================================================================
+Versión 2025 
+ 
+ 
+ 
+ 
+Este conjunto de indicadores monitorea la aplicación del currículo en el Centro 
+Educativo, el proceso de acompañamiento de los y las docentes, el uso de 
+tecnologías en la enseñanza y aprendizaje, así como los servicios de orientación y 
+atención psicológica a los estudiantes, incluyendo los lineamientos de educación 
+inclusiva. 
+Este conjunto de indicadores es monitoreado desde el Ministerio de Educación 
+de la República Dominicana (MINERD). 
+ 
+ 
+Este indicador se realiza al inicio de cada período lectivo para reconocer los 
+saberes, aprendizajes previos, competencias y experiencias que él o la estudiante 
+posee en relación a los aprendizajes por lograr en base a lo dispuesto en la Ordenanza 
+No. 04-2023 Art. 8 Literal A. 
+ 
+Objetivo 
+Logrado 
+▪ 100. Se realiza evaluación de seguimiento interno al 
+finalizar el 1er periodo de clase (mes de junio). 
+▪ 90. Se realiza la evaluación del seguimiento interno a la 
+finalización del mes de marzo. 
+▪ 80. Se realiza la evaluación del seguimiento interno a la 
+finalización del mes de diciembre. 
+Cierto 
+Avance 
+▪ 60. Se elabora el informe consolidado de la evaluación 
+diagnóstica interna al inicio del primer periodo de clases. 
+Poco 
+Avance 
+▪ 40. Se realiza la evaluación al inicio primer período escolar 
+(septiembre). 
+▪ 0. Sin avances en el proceso. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2.01. Monitoreo interno, inicial y de medio término del aprendizaje de los niños 
+y niñas del Nivel Primario y Educación de Jóvenes y Adultos 
+
+
+=================================================================
+PAGE 32
+=================================================================
+ 
+Versión 2025 
+ 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG  
+PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL, 
+PEDAGÓGICA Y  
+ADMINISTRATIVA DEL CENTRO EDUCATIVO 
+ 
+Indicador  
+IBOG 2. Gestión pedagógica 
+ 
+Sub Indicador 
+2.01. Monitoreo interno, inicial y de medio término del 
+aprendizaje en el nivel primario 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+No 
+Instrumento consolidado resultado de la 
+evaluación diagnóstica 
+ (Evidencia subida en septiembre de cada 
+año escolar) 
+Instrumento consolidado con el registro de aplicación de 
+evaluaciones diagnósticas al inicio del período escolar 
+ 
+ 
+Los registros identifican niveles de logro de los estudiantes 
+ 
+ 
+Informe consolidado de la evaluación 
+diagnóstica 
+ (Evidencia subida en octubre de cada año 
+escolar) 
+El consolidado responde a la evaluación diagnóstica del nivel o 
+ciclo correspondiente el consolidado se identifican el logro de 
+los estudiantes 
+ 
+ 
+Orienta la toma de decisiones pedagógicas. 
+ 
+ 
+Instrumento consolidado resultado de la 
+evaluación del seguimiento interno 
+(Evidencia subida al finalizar mes de 
+diciembre de cada año escolar) 
+Se realizó evaluación de seguimiento interno a la finalización 
+del mes de diciembre 
+ 
+ 
+Las evaluaciones diagnósticas responden al nivel o ciclo 
+correspondiente 
+ 
+ 
+Los registros identifican niveles de logro de los estudiantes 
+ 
+ 
+Instrumento consolidado resultado de 
+(Evidencia subida al finalizar mes de 
+marzo de cada año escolar) 
+Se realizó evaluación de seguimiento interno a la finalización 
+del mes de marzo. 
+ 
+ 
+Las evaluaciones diagnósticas responden al nivel o ciclo 
+correspondiente 
+ 
+ 
+Los registros identifican niveles de logro de los estudiantes 
+ 
+ 
+Instrumento consolidado resultado de la 
+evaluación del seguimiento interno 
+(Evidencia subida al finalizar mes de junio 
+de cada año escolar) 
+ 
+Se realizó evaluación de seguimiento interno al finalizar el 
+1er período de clase (mes de junio). 
+ 
+ 
+Las evaluaciones diagnósticas responden al nivel o ciclo 
+correspondiente 
+ 
+ 
+Los registros identifican niveles de logro de los estudiantes 
+ 
+ 
+ 
+ 
+ 
+ 
+Este indicador mide la elaboración del Plan Anual de Clase, por unidad de 
+aprendizaje y el plan diario, según grado, nivel y área curricular, de acuerdo a lo 
+siguiente: 
+ 
+1. Nivel Inicial: Unidad Didáctica, Centro de Interés y por proyectos. 
+2. Nivel Primario-Adultos: Unidad de Aprendizaje, Ejes temáticos y Proyectos 
+3. Nivel Secundaria: Plan Anual (Secuencia Curriculares), Plan de Unidad 
+(Secuencia didáctica-planificación diaria) y Plan de Encuentro (Proyectos). 
+4. Técnico Profesional: Planificación Modular, por resultados de aprendizajes, 
+Planes de Clase Diario o por Actividad 
+2.02. Plan anual de clase, según grado, nivel y área curricular 
+
+
+=================================================================
+PAGE 33
+=================================================================
+Versión 2025 
+ 
+ 
+ 
+ 
+Objetivo 
+Logrado 
+▪ 100. Más del 90% de los docentes cuentan con todos sus planes 
+de clase. 
+Cierto 
+Avance 
+▪ 70. Del 70 al 90% de los docentes cuentan con todos sus planes 
+de clase. 
+Poco 
+Avance 
+▪ 50. Del 60 al 69% de los docentes cuentan con todos sus planes 
+de clase. 
+▪ 0. Menos del 60% de los docentes cuentan con todos sus planes 
+de clase. 
+ 
+Cada Centro subirá al SISMAP una matriz aprobada por el Equipo de Gestión, 
+sellada y firmada por el director, contentiva de que cuenta con cada uno de los 
+planes descritos en la guía y el cálculo de los porcentajes de cumplimiento. Esta 
+matriz deberá elaborarse por nivel y registrará Nombre del docente y las columnas 
+con cada tipo y/o estrategia de planificación, así como el porcentaje general de 
+cumplimiento. 
+Evidencias requeridas y criterios de verificación 
+IBOG  
+PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL, 
+PEDAGÓGICA Y ADMINISTRATIVA DEL 
+CENTRO EDUCATIVO 
+ 
+Indicador  
+IBOG 2. Gestión pedagógica 
+ 
+Sub Indicador 
+2.02. Plan anual de clase por grado, nivel y área 
+curricular 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+No 
+Planes anuales de Clase, por unidad de 
+aprendizaje y el plan diario, según grado, 
+nivel y área curricular  
+(Evidencia subida en septiembre de cada 
+año escolar) 
+Más del 90% de los docentes cuentan con todos sus 
+planes de clase 
+ 
+ 
+Del 81 al 90% de los docentes cuentan con todos sus 
+planes de clase. 
+ 
+ 
+Del 70 al 80% de los docentes cuentan con todos sus 
+planes de clase 
+ 
+ 
+Menos del 70% de los docentes cuentan con todos sus 
+planes de clase. 
+ 
+ 
+ 
+ 
+Este indicador monitorea el desarrollo de los contenidos mediadores contemplados en 
+el currículo, según grado de cada nivel y área curricular. 
+Es monitoreado a la finalización de cada período de clase mediante un informe 
+2.03. Contenidos Mediadores 
+
+
+=================================================================
+PAGE 34
+=================================================================
+ 
+Versión 2025 
+ 
+ 
+elaborado por cada Centro Educativo al finalizar dicho período: Noviembre, 
+febrero, abril y junio. 
+ 
+Objetivo 
+Logrado 
+▪ 100. Informe de los contenidos mediadores realizados en el 4to 
+período. (junio) 
+▪ 80. Informe de los contenidos mediadores realizados en el 3er 
+período. En el caso de CE Inicial este sería 100%. (abril) 
+Cierto 
+Avance 
+▪ 70. Informe de los contenidos mediadores realizados en el 
+segundo período. (febrero) 
+▪ 50. Informe de los contenidos mediadores realizados en el 
+primer período. (noviembre) 
+Poco 
+Avance 
+▪ 0 No se evidencia Informe de los contenidos mediadores 
+realizados en el primer período 
+ 
+ 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG  
+PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL, 
+PEDAGÓGICA Y ADMINISTRATIVA DEL CENTRO 
+EDUCATIVO 
+ 
+Indicador  
+IBOG 2. Gestión pedagógica 
+ 
+Sub Indicador 
+2.03. Contenidos mediadores  
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+No 
+ 
+ 
+Informe de los contenidos 
+mediadores (Evidencia subida en: 
+noviembre-febrero-abril-junio de 
+cada año escolar) 
+Informe de los contenidos mediadores realizados en el 4to período. (junio) 
+80. Informe de los contenidos mediadores realizados en el 3er período. En 
+el caso de CE Inicial este sería 100%. (abril) 
+ 
+ 
+ 
+ 
+Informe de los contenidos mediadores realizados en el segundo período. 
+(febrero) 
+ 
+ 
+50. Informe de los contenidos mediadores realizados en el primer período. 
+(noviembre) 
+ 
+ 
+ 
+ 
+ 
+Este indicador monitorea la utilización (tipo y cantidad) de recursos didácticos sobre 
+base digital (TIC) en el proceso de enseñanza-aprendizaje. 
+ 
+2.04. Recursos Didácticos sobre Base Digital (TIC) 
+
+
+=================================================================
+PAGE 35
+=================================================================
+Versión 2025 
+ 
+ 
+En el caso de la modalidad técnico profesional se incluye talleres y laboratorios, así 
+como equipamientos, recursos y materiales. 
+ 
+El documento a subir sería una matriz con el nombre del docente, tipo de recursos 
+TIC disponible (equipos, software, laboratorio) y el porcentaje general de utilización. 
+Revisado y aprobado por el Equipo de Gestión, firmado y sellado por el Director. 
+ 
+Objetivo 
+Logrado 
+▪ 100. 71% o más de los y las docentes utilizan los recursos de base 
+digital disponibles. 
+Cierto 
+Avance 
+▪ 75. Entre el 60% a 70% de los y las docentes utilizan los recursos 
+de base digital disponibles. 
+▪ 60. Entre el 31% y 59% de los y las docentes utilizan los recursos 
+de base digital disponibles. 
+Poco 
+Avance 
+▪ 40. Hasta el 30% de los docentes utilizan los recursos de base 
+digital disponibles. 
+▪ 0. Sin evidencia de utilización de los recursos de base digital 
+disponibles. 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG  
+PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL, 
+PEDAGÓGICA Y 
+ADMINISTRATIVA DEL CENTRO EDUCATIVO 
+ 
+Indicador  
+IBOG 2. Gestión pedagógica 
+ 
+Sub Indicador 
+2.04. Recursos didácticos sobre base digital (TIC) 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+No 
+Planes de clases 
+Matriz. 
+ (Evidencia subida en septiembre 
+de cada año escolar) 
+Relación de docentes y el cálculo en porcentajes de los docentes 
+que utilizan los recursos de base digital disponibles.   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Este indicador monitorea la cantidad y tipología de acciones de refuerzo de las 
+competencias de los docentes y sus estrategias didácticas. Incluye los Centros 
+Educativos Prepara. 
+ 
+2.05. Grupos Pedagógicos y Microcentros 
+
+
+=================================================================
+PAGE 36
+=================================================================
+ 
+Versión 2025 
+ 
+ 
+Objetivo 
+Logrado 
+▪ 100. Se realizan Grupos Pedagógicos y se celebra al menos una (1) 
+reunión mensual por cada grupo, se dispone de informes y 
+participa más del 90% de los docentes. 
+Cierto 
+Avance 
+▪ 60. Se realizan Grupos Pedagógicos y se celebra al menos una (1) 
+reunión trimestral con el 90% de los integrantes. Informe 
+trimestral del Centro Educativo. 
+Poco 
+Avance 
+▪ 0. No se cuenta con Grupo Pedagógicos o no se reporta 
+actividad relevante. 
+ 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG  
+PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL, 
+PEDAGÓGICA Y  
+ADMINISTRATIVA DEL CENTRO EDUCATIVO 
+ 
+Indicador  
+IBOG 2. Gestión pedagógica 
+ 
+Sub Indicador 
+2.05. Grupos pedagógicos 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+No 
+ 
+Informe de los grupos pedagógicos 
+Lista de asistencia  
+(Evidencia subida cada mes durante el 
+año escolar) 
+Cada grupo pedagógico realiza una reunión mensual 
+conforme al calendario escolar 
+ 
+ 
+La participación docente en las reuniones de los grupos 
+pedagógicos es superior al 90% de los docentes 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Este indicador monitorea la cantidad y tipo de acciones puestas en marcha para el 
+acompañamiento a los y las docentes con miras al fortalecimiento de su desarrollo 
+profesional y la mejora de la enseñanza. 
+ 
+Objetivo 
+Logrado 
+▪ 100. En el Centro Educativo se elabora trimestralmente el Informe 
+de Acompañamiento de los Docentes con un % de 
+implementación de las acciones superior al 90%. (noviembre, 
+marzo y junio) 
+▪ 80. En el Centro Educativo se elabora trimestralmente el Informe 
+de Acompañamiento de los Docentes con un % de 
+implementación de las acciones superior al 70% (noviembre) 
+2.06. Acciones de acompañamiento a los docentes 
+
+
+=================================================================
+PAGE 37
+=================================================================
+Versión 2025 
+ 
+ 
+Cierto 
+Avance 
+▪ 60. En el Centro Educativo se dispone de un Plan de 
+Acompañamiento sustentado en un diagnóstico y con un 
+cronograma de implementación definido. (septiembre) 
+Poco 
+Avance 
+▪ 0. En el Centro Educativo no se cuenta con un Plan de 
+Acompañamiento. 
+ 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG  
+PRIMER ÁMBITO. GESTIÓN 
+INSTITUCIONAL, PEDAGÓGICA Y  
+ADMINISTRATIVA DEL CENTRO 
+EDUCATIVO 
+ 
+Indicador  
+IBOG 2. Gestión pedagógica 
+ 
+Sub Indicador 
+2.06. Acciones de acompañamiento a los 
+docentes 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+No 
+Plan de acompañamiento 
+ (Evidencia subida en septiembre de cada año 
+escolar) 
+ 
+Dispone de un Plan de Acompañamiento Docente. 
+ 
+ 
+El Plan de Acompañamiento está sustentado en un 
+diagnóstico 
+ 
+ 
+Muestra un cronograma de implementación 
+ 
+ 
+Informes de acompañamiento docente 
+(Evidencia subida en: noviembre-marzo-junio 
+de cada año escolar) 
+Cuenta con informes trimestrales de 
+acompañamiento  
+ 
+ 
+El Informe de Acompañamiento de los Docentes 
+refleja un % de implementación de las acciones 
+superior al 90%. 
+ 
+ 
+El Informe de Acompañamiento de los Docentes 
+con un % de implementación de las acciones 
+superior al 70%. 
+ 
+ 
+ 
+ 
+ 
+ 
+Este indicador monitorea el desarrollo de actividades internas y externas asociadas 
+con los Ejes Curriculares Transversales: Salud y Bienestar (gestión de riesgo), 
+Desarrollo Sostenible (educación ambiental), Desarrollo Personal y Profesional 
+(formación en planificación y presupuesto), Alfabetización Imprescindible, 
+Ciudadanía y Convivencia (educación sin violencia y nueva masculinidad, 
+educación vial). 
+ 
+2.07. Ejes curriculares transversales 
+
+
+=================================================================
+PAGE 38
+=================================================================
+ 
+Versión 2025 
+ 
+ 
+Objetivo 
+Logrado 
+▪ 100. En el Centro Educativo se promueve actividades, 
+dentro o fuera del aula, vinculadas en 4 o más de los ejes 
+curriculares transversales. 
+Cierto 
+Avance 
+▪ 60. En el Centro Educativo se promueve actividades, 
+dentro o fuera del aula, vinculadas al menos en 2 de los 
+ejes curriculares transversales. 
+Poco 
+Avance 
+▪ 0. En el Centro Educativo no se muestra evidencias 
+dentro o fuera del aula vinculadas a los ejes curriculares 
+transversales. 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG  
+PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL, PEDAGÓGICA Y  
+ADMINISTRATIVA DEL CENTRO EDUCATIVO 
+ 
+Indicador  
+IBOG 2. Gestión pedagógica 
+ 
+Sub Indicador 
+2.07. Ejes curriculares transversales 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+No 
+Registros de actividades 
+pedagógicas vinculadas a los 
+ejes transversales 
+(planificación, ejecución, 
+resultados)  
+(Evidencia subida conforma a 
+la realización de las 
+actividades durante el año 
+escolar) 
+Evidencia el desarrollo de actividades vinculadas en 4 o más de los ejes 
+curriculares transversales.  Salud y Bienestar (gestión de riesgo), Desarrollo 
+Sostenible (educación ambiental), Desarrollo Personal y Profesional (formación 
+en planificación y presupuesto), Alfabetización Imprescindible, Ciudadanía y 
+Convivencia (educación sin violencia y nueva masculinidad, educación vial). 
+ 
+ 
+Evidencia el desarrollo de actividades vinculadas en 2 o más de los ejes 
+curriculares transversales.  Salud y Bienestar (gestión de riesgo), Desarrollo 
+Sostenible (educación ambiental), Desarrollo Personal y Profesional (formación 
+en planificación y presupuesto), Alfabetización Imprescindible, Ciudadanía y 
+Convivencia (educación sin violencia y nueva masculinidad, educación vial).  
+ 
+ 
+El centro no muestra evidencias dentro o fuera del aula de actividades 
+vinculadas a los ejes curriculares transversales. 
+ 
+ 
+ 
+
+
+=================================================================
+PAGE 39
+=================================================================
+Versión 2025 
+ 
+ 
+ 
+ 
+Este indicador monitorea el funcionamiento de los servicios del área de orientación y 
+psicología contentivo de los siguientes ámbitos: 
+ 
+1. Psicoemocional de la comunidad educativa (estudiantes, docentes y 
+administrativos) 
+2. Apoyo psicopedagógico a estudiantes 
+3. Prevención de riesgo psicosocial 
+4. Liderazgo y participación estudiantil 
+5. Orientación vocacional 
+6. Apoyo a las familias 
+ 
+NOTA: Se excluyen los centros educativos del Subsistema de Educación de 
+Jóvenes y Adultos. 
+ 
+La escala de crecimiento para este indicador es la siguiente: 
+ 
+Objetivo 
+Logrado 
+▪ 100. En el Centro Educativo se elabora el informe del plan de 
+trabajo implementado con un % de cumplimiento por encima del 
+80% en relación a lo previsto, correspondiente al periodo de clase. 
+▪ 80. En el Centro Educativo se elabora el informe del plan de 
+trabajo implementado correspondiente al periodo de clase, con 
+un cumplimiento de hasta un 80%. 
+Cierto 
+Avance 
+▪ 60. En el Centro Educativo se dispone de plan de trabajo para la 
+implementación de los servicios de orientación y psicología. 
+Poco 
+Avance 
+▪ 0. En el Centro Educativo no se cuenta con servicios de 
+orientación y psicología. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2.08. Cantidad de acciones puntuales de orientación y psicología prestadas 
+
+
+=================================================================
+PAGE 40
+=================================================================
+Versión 2025 
+ 
+ 
+ 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG  
+PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL, 
+PEDAGÓGICA Y  
+ADMINISTRATIVA DEL CENTRO EDUCATIVO 
+ 
+Indicador  
+IBOG 2. Gestión pedagógica 
+ 
+Sub Indicador 
+2.08. Cantidad de acciones puntuales de orientación y 
+psicología prestadas 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+´No 
+Plan de trabajo del área de 
+orientación y psicología 
+ 
+ 
+ 
+Dispone de un plan de trabajo definido  
+ 
+ 
+El plan de trabajo incluye un cronograma de 
+implementación 
+ 
+ 
+Informes de orientación y psicología 
+Se elabora el informe del plan de trabajo correspondiente 
+al período de clase 
+ 
+ 
+Evidencia un cumplimiento superior al 80 % de las 
+acciones planificadas 
+ 
+ 
+Nota: Pendiente establecer fecha de carga de evidencia Orientación y Psicología  
+ 
+Indicador mejorado 
+Este indicador monitorea la respuesta inclusiva a estudiantes con discapacidad y/o 
+altas capacidades, valorando su identificación oportuna, participación en el aula, 
+apoyos requeridos, seguimiento individualizado y permanencia en el sistema 
+educativo, conforme a la Ordenanza 05-2024. 
+ 
+Nivel de Avance 
+Valor 
+Descripción 
+Objetivo 
+Logrado 
+100 
+El Centro Educativo evidencia procesos efectivos 
+de inclusión, con identificación oportuna, apoyos 
+implementados, participación activa del estudiante 
+y seguimiento sistemático de su progreso. 
+Cierto 
+Avance 
+70 
+El Centro Educativo identifica estudiantes con 
+discapacidad y/o altas capacidades, dispone de 
+acciones de apoyo y realiza seguimiento parcial a 
+su proceso de inclusión. 
+Poco 
+Avance 
+50 
+El Centro Educativo Registra formalmente en la 
+APP Dirección de Educación Especial estudiantes 
+con discapacidad y/o altas capacidades y ejecuta 
+2.09. Respuesta educativa inclusiva a estudiantes con discapacidad y/o altas 
+capacidades. 
+
+
+=================================================================
+PAGE 41
+=================================================================
+Versión 2025 
+ 
+ 
+acciones aisladas de inclusión, sin seguimiento 
+sistemático. 
+20 
+El Centro Educativo identifica estudiantes con 
+discapacidad y/o altas capacidades, pero no 
+evidencia apoyos ni acciones sostenidas de 
+inclusión. 
+0 
+El Centro Educativo no presenta evidencias de 
+identificación, apoyo ni seguimiento a estudiantes 
+con discapacidad y/o altas capacidades. 
+Nota: Pendiente establecer fecha de carga de evidencia Educación Especial  
+ 
+ 
+Este conjunto de indicadores monitorea la gestión administrativa y financiera de los 
+centros educativos abordando el registro oportuno de las y los estudiantes, el uso de 
+los recursos, las condiciones de la infraestructura, el plan escolar de gestión ambiental 
+y de riesgo, la gestión del programa de alimentación escolar y la asistencia de los 
+docentes. 
+El Monitoreo de este conjunto de indicadores es realizado por el Ministerio de 
+Educación de la República Dominicana (MINERD). 
+ 
+Este indicador monitorea la actualización oportuna por parte del Centro Educativo 
+del Registro de los Estudiantes en el Sistema de Información para la Gestión Escolar 
+(SIGERD). 
+La escala de crecimiento para este indicador es la siguiente: 
+Objetivo 
+Logrado 
+▪ 100. Del 98% al 100% de la data de estudiantes actualizada en el 
+SIGERD con periodicidad mensual. 
+Cierto 
+Avance 
+▪ 70. Del 91% al 97% de la data de estudiantes actualizada en el 
+SIGERD con periodicidad mensual. 
+IBOG 3. Gestión administrativa y financiera 
+3.01. Actualización Oportuna del Registro de las y los Estudiantes en el Sistema 
+de Información para la Gestión Escolar (SIGERD) 
+
+
+=================================================================
+PAGE 42
+=================================================================
+Versión 2025 
+ 
+ 
+Poco 
+Avance 
+▪ 50. Del 80% al 90% de la data de estudiantes actualizada en el 
+SIGERD con periodicidad mensual. 
+▪ 0. Menos del 80% de la data de estudiantes actualizada en el 
+SIGERD con periodicidad mensual. 
+                                
+Evidencias requeridas y criterios de verificación 
+IBOG  
+PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL, 
+PEDAGÓGICA Y ADMINISTRATIVA DEL 
+CENTRO EDUCATIVO 
+ 
+Indicador  
+IBOG 3. Gestión administrativa y financiera 
+ 
+Sub Indicador 
+3.01. Actualización oportuna del registro de 
+estudiantes en el Sistema de Información para la 
+Gestión Escolar (SIGERD) 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+No 
+Registro de los estudiantes extraído del 
+Sistema de Información para la Gestión 
+Escolar (SIGERD). Firmada y sellada 
+por el Centro Educativo.  
+(Evidencia subida conforme 
+lineamiento del SIGERD) 
+(Mensual a verificar)  
+Del 98% al 100% de la data de estudiantes actualizada 
+extraída del Sistema de Información para la Gestión 
+Escolar (SIGERD) firmada y sellada por el Centro 
+Educativo con periodicidad mensual. 
+ 
+ 
+Del 91% al 97% de la data de estudiantes actualizada 
+extraída del Sistema de Información para la Gestión 
+Escolar (SIGERD) firmada y sellada por el Centro 
+Educativo con periodicidad mensual. 
+ 
+ 
+Del 80% al 90% de la data de estudiantes actualizada 
+extraída del Sistema de Información para la Gestión 
+Escolar (SIGERD) firmada y sellada por el Centro 
+Educativo con periodicidad mensual. 
+ 
+ 
+Menos del 80% de la data de estudiantes actualizada 
+extraída del Sistema de Información para la Gestión 
+Escolar (SIGERD) firmada y sellada por el Centro 
+Educativo con periodicidad mensual. 
+ 
+ 
+ 
+ 
+ 
+ 
+Este indicador analiza la ejecución trimestral de los recursos descentralizados y de 
+autogestión recibidos en base a lo previsto en el Plan Operativo Anual del Centro 
+Educativo. 
+La escala de crecimiento para este indicador es la siguiente: 
+ 
+3.02. Ejecución trimestral de los recursos de descentralización y de 
+autogestión 
+
+
+=================================================================
+PAGE 43
+=================================================================
+Versión 2025 
+ 
+ 
+Objetivo 
+Logrado 
+▪ 100. Más del 80% de la ejecución de los recursos de 
+descentralización y autogestión recibidos en base al POA del 
+Centro Educativo. 
+Cierto 
+Avance 
+▪ 70. Entre el 60% y 79% de la ejecución de los recursos de 
+descentralización y autogestión recibidos en base al POA del 
+Centro Educativo. 
+Poco 
+Avance 
+▪ 50. Entre el 30% y el 59% de la ejecución de los recursos de 
+descentralización y autogestión recibidos en base al POA del 
+Centro Educativo. 
+▪ 0. Menos del 30% de la ejecución de los recursos de 
+descentralización y autogestión recibidos en base al POA del 
+Centro Educativo 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG  
+PRIMER ÁMBITO. GESTIÓN 
+INSTITUCIONAL, PEDAGÓGICA Y 
+ADMINISTRATIVA DEL CENTRO 
+EDUCATIVO 
+ 
+Indicador  
+IBOG 3. Gestión administrativa y financiera 
+ 
+Sub Indicador 
+3.02. Ejecución trimestral de los recursos de 
+descentralización y autogestión 
+Cumple 
+Evidencia  
+Criterios de evaluación  
+Si 
+No 
+Plan Operativo Anual (POA) 
+ (Evidencia subida en septiembre de cada 
+año escolar) 
+El Plan Operativo Anual (POA) incluye acciones 
+financiadas con recursos de descentralización y 
+autogestión y define montos asignados para las 
+acciones planificadas 
+ 
+ 
+Informe trimestral de ejecución de los 
+recursos vinculados al Plan Operativo Anual 
+(POA) 
+ (Evidencia subida en: noviembre-febrero-
+junio de cada año escolar) 
+Ejecución de más del 80% de los recursos de 
+descentralización 
+y 
+autogestión 
+recibidos 
+contemplados en el Plan Operativo Anual (POA) 
+ 
+ 
+Ejecución del 60% y 79% de los recursos de 
+descentralización 
+y 
+autogestión 
+recibidos 
+contemplados en el Plan Operativo Anual (POA) 
+ 
+ 
+Ejecución del 30 y el 59% de los recursos de 
+descentralización 
+y 
+autogestión 
+recibidos 
+contemplados en el Plan Operativo Anual (POA) 
+ 
+ 
+Ejecución de menos del 30% de los recursos de 
+descentralización 
+y 
+autogestión 
+recibidos 
+contemplados en el Plan Operativo Anual (POA) 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+=================================================================
+PAGE 44
+=================================================================
+Versión 2025 
+ 
+ 
+ 
+Este indicador monitorea el desempeño de la gestión del Centro Educativo respecto 
+del uso, mantenimiento del equipamiento y de la infraestructura escolar. La escala 
+de puntuación se realiza en base a una lista de chequeo definida conjuntamente con 
+las estructuras regionales del MINERD. 
+Dicha lista incluirá infraestructuras y equipamiento y sustentará el plan de 
+mantenimiento preventivo y/o reparaciones menores. 
+ 
+Objetivo 
+Logrado 
+▪ 100. De un 80% - 100% ejecutadas las actividades de 
+mantenimiento preventivo y/o reparaciones menores. 
+Cierto 
+Avance 
+▪ 70. De un 60% - 79% ejecutadas las actividades de 
+mantenimiento preventivo o reparaciones menores. 
+▪ 50. Diagnóstico de necesidades elaborado a principios de cada 
+trimestre en base a una lista de chequeo.  
+Poco 
+Avance 
+▪ 0. Sin acciones de diagnóstico de necesidades. 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG  
+PRIMER ÁMBITO. GESTIÓN 
+INSTITUCIONAL, PEDAGÓGICA Y 
+ADMINISTRATIVA DEL CENTRO 
+EDUCATIVO 
+Indicador  
+IBOG 3. Gestión administrativa y 
+financiera 
+ 
+Sub Indicador 
+3.03. Condición de la infraestructura y 
+del equipamiento escolar 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+No 
+Lista de chequeo mantenimiento preventivo y/o 
+reparaciones menores. Conforme a lo establecido en el 
+acápite “características planta física del sistema de 
+gestión escolar SIGERD” 
+(Evidencia subida- septiembre de cada año escolar) 
+Cuenta con una lista de chequeo de 
+mantenimiento 
+preventivo 
+y/o 
+reparaciones menores. 
+ 
+ 
+Cuenta con diagnóstico de necesidades 
+elaborado a principios de cada trimestre en 
+base a una lista de chequeo. 
+ 
+ 
+Evidencia actividades de mantenimiento 
+preventivo y/o reparaciones menores 
+ 
+ 
+Informe de ejecución de mantenimiento y reparaciones  
+(Evidencia subida-noviembre de cada año escolar) 
+De un 80% - 100% ejecutadas las 
+actividades de mantenimiento preventivo 
+y/o reparaciones menores. 
+ 
+ 
+3.03. Condición de la infraestructura y del equipamiento escolar 
+
+
+=================================================================
+PAGE 45
+=================================================================
+Versión 2025 
+ 
+ 
+De un 60% - 79% ejecutadas las 
+actividades de mantenimiento preventivo 
+o reparaciones menores. 
+ 
+ 
+ 
+ 
+ 
+Este indicador monitorea la definición del Plan Escolar de Gestión Ambiental y de 
+Riesgo y su implementación. 
+La escala de crecimiento para este indicador es la siguiente: 
+ 
+Objetivo 
+Logrado 
+▪ 100. Informe final durante el año escolar del proceso de 
+implementación del Plan Escolar de Gestión Ambiental y de 
+Riesgo. 
+▪ 90. Primer y segundo informe trimestral durante el año escolar 
+del proceso de implementación del Plan Escolar de Gestión 
+Ambiental y de Riesgo. 
+▪ 80. Primer informe trimestral durante el año escolar del proceso 
+de implementación del Plan Escolar de Gestión Ambiental y de 
+Riesgo. 
+Cierto 
+Avance 
+▪ 60. Plan Escolar de Gestión Ambiental y de Riesgo definido, 
+actualizado por el Centro Educativo cada 4 años e incorpora las 
+necesidades detectadas y las regionales, nacionales y globales. 
+Poco 
+Avance 
+▪ 40. Comité de Seguridad y Salud en el Trabajo conformado y 
+capacitado en el Centro Educativo. 
+▪ 0. Sin acciones verificables vinculadas a la Gestión 
+Ambiental y de Riesgo. 
+                   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3.04. Plan Escolar de Gestión Ambiental y de Riesgo 
+
+
+=================================================================
+PAGE 46
+=================================================================
+Versión 2025 
+ 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG  
+PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL, 
+PEDAGÓGICA Y ADMINISTRATIVA DEL 
+CENTRO EDUCATIVO 
+ 
+Indicador  
+IBOG 3. Gestión administrativa y financiera 
+ 
+Sub Indicador 
+3.04. Plan Escolar de Gestión Ambiental y de Riesgo 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+No 
+Plan Escolar de Gestión Ambiental y de 
+Riesgo  
+(Evidencia subida en septiembre de cada 
+año escolar) 
+Cuenta con un Plan Escolar de Gestión Ambiental y de 
+Riesgo elaborado. 
+ 
+ 
+Identifica riesgos ambientales y situaciones de 
+vulnerabilidad del centro educativo. 
+ 
+ 
+Enlista acciones de prevención, mitigación y respuesta 
+ante riesgos. 
+ 
+ 
+Informes de gestión ambiental y de riesgo 
+(Evidencia subida en: noviembre-febrero-
+junio de cada año escolar) 
+Existe informe final del proceso de implementación del 
+Plan  
+ 
+ 
+Existe informe Primer y segundo trimestre del proceso 
+de implementación del Plan  
+ 
+ 
+Existe Primer informe trimestral del proceso de 
+implementación del Plan 
+ 
+ 
+Evidencian las acciones y seguimiento a las acciones 
+implementadas conforme al plan 
+ 
+ 
+Comité de Seguridad y Salud en el 
+Trabajo 
+ (Evidencia subida en septiembre de cada 
+año escolar) 
+Cuenta con un Comité de Seguridad y Salud en el 
+Trabajo  
+ 
+ 
+El comité está formalmente constituido mediante acta o 
+documento oficial. 
+ 
+ 
+ 
+ 
+Este indicador monitorea el desempeño de la gestión de los estándares del Programa 
+de Alimentación Escolar (PAE) dentro del Centro Educativo que incluye: 
+1. Nivel de consumo de los alimentos por parte de los estudiantes. 
+2. Seguimiento a proveedores sobre la calidad de los alimentos. 
+3. Manejo y manipulación de los alimentos a lo interno del centro en base criterios 
+que garanticen la inocuidad y calidad. 
+4. Custodia de la cadena de refrigeración de los alimentos. 
+Desde el MINERD se proveerá a los centros educativos de la correspondiente lista 
+de verificación. 
+3.05. Gestión del Programa de Alimentación Escolar (PAE) en el Centro 
+Educativo 
+
+
+=================================================================
+PAGE 47
+=================================================================
+Versión 2025 
+ 
+ 
+ 
+La escala de crecimiento para este indicador es la siguiente: 
+ 
+Objetivo 
+Logrado 
+▪ 100. 71% o más de cumplimiento de los estándares del Programa 
+de Alimentación Escolar en el Centro Educativo. 
+Cierto 
+Avance 
+▪ 70. Entre el 61% al 70% de cumplimiento de los estándares del 
+Programa de Alimentación Escolar en el Centro Educativo. 
+Poco 
+Avance 
+▪ 50. Entre el 40% y el 60% de cumplimiento de los estándares del 
+Programa de Alimentación Escolar en el Centro Educativo. 
+▪ 0. Menos del 40% de cumplimiento de los estándares del 
+Programa de Alimentación Escolar en el Centro Educativo. 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG 
+PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL, 
+PEDAGÓGICA Y ADMINISTRATIVA DEL CENTRO 
+EDUCATIVO 
+ 
+Indicador  
+IBOG 3. Gestión administrativa y financiera 
+ 
+Sub Indicador 
+3.05. Gestión del Programa de Alimentación Escolar (PAE) 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+No 
+Programa de 
+Alimentación Escolar 
+(PAE) 
+71% o más de cumplimiento de los estándares del Programa de 
+Alimentación Escolar en el Centro Educativo. 
+ 
+ 
+Entre el 60% al 70% de cumplimiento de los estándares del Programa 
+de Alimentación Escolar en el Centro Educativo. 
+ 
+ 
+Entre el 40% y el 60% de cumplimiento de los estándares del 
+Programa de Alimentación Escolar en el Centro Educativo. 
+ 
+ 
+Menos del 40% de cumplimiento de los estándares del Programa de 
+Alimentación Escolar en el Centro Educativo. 
+ 
+ 
+ 
+Nota: Pendiente lista de verificación del desempeño de la gestión de los estándares 
+del Programa de Alimentación Escolar (PAE) y su procedencia. 
+ 
+ 
+Durante el calendario escolar, este indicador monitorea la asistencia diaria de los 
+docentes al Centro Educativo. 
+La puntuación se obtendrá de forma automática con la información registrada por el 
+Centro en la plataforma de registro de asistencia escolar del MINERD. 
+ 
+ 
+ 
+3.06. Tasa de asistencia de los docentes 
+
+
+=================================================================
+PAGE 48
+=================================================================
+Versión 2025 
+ 
+ 
+Objetivo 
+Logrado 
+100. Nº de ausencias mensuales: 
+▪ Centros Educativos con ocho o más docentes: Hasta tres 
+ausencias. 
+▪ Centros Educativos con hasta siete docentes: Hasta una ausencia. 
+Cierto 
+Avance 
+70. Nº de ausencias mensuales: 
+▪ Centros educativos con ocho o más docentes: Entre cuatro a 
+siete ausencias. 
+▪ Centros educativos con hasta siete docentes: Entre dos a cuatro 
+ausencias. 
+Poco 
+Avance 
+50. Nº de ausencias mensuales: 
+▪ Centros educativos con ocho o más docentes: Más de siete 
+ausencias. 
+▪ Centros educativos con hasta siete docentes: Más de cuatro 
+ausencias 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG  
+PRIMER ÁMBITO. GESTIÓN INSTITUCIONAL, 
+PEDAGÓGICA Y ADMINISTRATIVA DEL CENTRO 
+EDUCATIVO 
+ 
+Indicador  
+IBOG 3. Gestión administrativa y financiera 
+ 
+Sub Indicador 
+3.06. Tasa de asistencia de los docentes 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+No 
+Registro de 
+asistencia docente 
+Centros educativos con ocho o más docentes: Hasta cuatro ausencias 
+ 
+ 
+Centros educativos con hasta siete docentes: Hasta dos ausencias 
+ 
+ 
+Centros educativos con ocho o más docentes: De cuatro a siete 
+ausencias 
+ 
+ 
+Centros educativos con hasta siete docentes: De dos a cuatro ausencias 
+ 
+ 
+Centros educativos con ocho o más docentes: Más de siete ausencias 
+ 
+ 
+Centros educativos con hasta siete docentes: Más de cuatro ausencias 
+ 
+ 
+ 
+Nota: Verificar en el SIGERD un acápite de registro de asistencia. Docente y 
+la plataforma SIRASAG con Rafael 
+ 
+
+
+=================================================================
+PAGE 49
+=================================================================
+Versión 2025 
+ 
+ 
+Mediante este conjunto de indicadores se monitorea los aspectos vinculados al clima 
+organizacional y escolar, así como los procesos de evaluación del desempeño del 
+personal directivo, docente, administrativo y de apoyo. 
+ 
+ 
+ 
+Este indicador monitorea la definición e implementación en los centros educativos 
+de acciones recurrentes y con periodicidad semestral vinculadas a la mejora del 
+clima organizacional, tanto para el personal administrativo como para el docente. 
+Desde el Ministerio de Administración Pública (MAP) se han definido guías e 
+instructivos orientadores para apoyar a los entes y órganos públicos en este proceso, 
+incluyendo un conjunto de acciones propuestas en función de las áreas de mejora 
+que se identifiquen mediante la encuesta de clima organizacional. 
+Se recomienda que este proceso se realice segmentando las necesidades 
+individuales de los servidores y las servidoras y que incluyan medidas para la 
+mejora de la conciliación de la vida personal, familiar y laboral. 
+Para este indicador y sobre la base de la gradualidad en la implementación, de 
+forma anual el Ministerio de Administración Pública (MAP) mediante circular 
+podrá actualizar los valores de referencia vinculados al resultado de la Encuesta de 
+Clima. 
+Este indicador es monitoreado por el Ministerio de Administración Pública 
+(MAP). 
+ 
+ 
+Objetivo 
+Logrado 
+▪ 100. Puntuación vinculada a la mejora de la cultura y clima 
+organizacional. El Índice de Valoración del Clima Organización 
+es de 80 o más puntos al final de cada período de medición. 
+Cierto 
+Avance 
+▪ 70. Implementación de las acciones. El centro implementa las 
+acciones de mejora vinculadas a la cultura y Clima 
+Organizacional. 
+ 
+4.01. Cultura del centro y clima organizacional del centro 
+
+
+=================================================================
+PAGE 50
+=================================================================
+Versión 2025 
+ 
+ 
+Poco 
+Avance 
+50. Puntuación vinculada la implementación de cultura y clima 
+organizacional (prerrequisito) 
+▪ Acciones de mejora (20 puntos). El Centro Educativo ha definido 
+acciones de mejora semestral para el clima organizacional. 
+▪ Informe de encuesta de clima. (15 puntos). El Centro Educativo 
+cuenta con encuesta de clima organizacional vigente para cada 
+semestre. 
+▪ Capacitación (15 puntos). El personal del Centro Educativo participa 
+en las acciones de capacitación impartidas para la aplicación de 
+detección del clima organizacional y en la definición de planes de 
+acción para su mejora. 
+Nota: Solicitud de las guías e instructivos generados en el MAP 
+El clima escolar, es conceptualizado desde los atributos de la cultura organizacional y 
+analizado a partir del conjunto de percepciones de los actores educativos 
+(estudiantes, docentes, directivos y padres de familia) sobre características de la 
+estructura académica, administrativa y del entorno social, que a su vez influyen en 
+el comportamiento de los actores, el compromiso con los procesos de enseñanza - 
+aprendizaje y la forma como se experimenta la vida escolar; y que favorece o dificulta 
+el desarrollo académico, social y emocional. 
+En base a lo anterior, este indicador monitorea la definición e implementación en 
+los centros educativos de acciones recurrentes y conforme al período de clase, 
+vinculadas a la mejora del clima escolar. 
+Este indicador es monitoreado desde el Ministerio de Educación de la República 
+Dominicana (MINERD). 
+ 
+Objetivo 
+Logrado 
+▪ 100. Puntuación vinculada a la mejora de la cultura y clima escolar. 
+El Índice de Valoración del Clima Escolar es de 80 o más puntos al 
+final de cada periodo de medición. 
+Cierto 
+Avance 
+▪ 70. Implementación de las acciones. El centro implementa las 
+acciones de mejora vinculadas a la cultura y clima escolar. 
+4.01. Cultura del centro y clima escolar 
+
+
+=================================================================
+PAGE 51
+=================================================================
+Versión 2025 
+ 
+ 
+Poco 
+Avance 
+▪ 50. Acciones de mejora. El Centro Educativo ha definido acciones 
+de mejora del clima escolar a partir de los resultados de la 
+encuesta. 
+▪ 30. Aplicación e informe de encuesta de clima. Centro Educativo 
+cuenta con encuesta de clima escolar en el primer trimestre del 
+año escolar. 
+ 
+Nota: Esclarecer los medios de verificación. 
+ 
+ 
+Este indicador monitorea el grado de satisfacción de los grupos de interés 
+(ciudadanía en general, comunidades y sectores del entorno en los que se encuentran 
+ubicados, padres y madres de las y los estudiantes, entre otros) con el desempeño 
+general del Centro Educativo. 
+Este indicador es monitoreado por el Ministerio de Administración Pública 
+(MAP). 
+ 
+Objetivo 
+Logrado 
+▪ 100. Índice de Satisfacción de los grupos de interés con el 
+desempeño general del Centro Educativo por encima de 71%. 
+Cierto 
+Avance 
+▪ 70. Índice de Satisfacción de los grupos de interés con el 
+desempeño general del Centro Educativo entre 51% y 70%. 
+4.03. Satisfacción y reconocimiento social 
+
+
+=================================================================
+PAGE 52
+=================================================================
+40 
+Versión 2025 
+ 
+ 
+ 
+Poco 
+Avance 
+▪ 30. Índice de Satisfacción de los grupos de interés con el 
+desempeño general del Centro Educativo entre 31% y 50%. 
+▪ 0. Sin levantamiento del Índice de Satisfacción de los 
+grupos de interés o con el desempeño general del Centro 
+Educativo con valores inferior a 30%. 
+Nota: Gestionar con el MAP los medios de verificación. 
+ 
+ 
+Este conjunto de indicadores monitorea el proceso de evaluación del desempeño de tres 
+conjuntos de servidores y servidoras públicos presentes en cada uno de los centros 
+educativos, de acuerdo con el siguiente detalle: 
+1. Director o Directora del Centro Educativo, cuyo Acuerdo de Desempeño incorpora 
+las metas del Plan Operativo Anual del Centro Educativo y los compromisos 
+del mismo en el logro de las metas previstas en la producción sustantiva del 
+MINERD. 
+2. Personal Docente en Aula, cuya evaluación del desempeño trienal se realizará 
+en base a lo dispuesto en la Ley No. 66-97 Orgánica de Educación, el resto de 
+normativa específica aplicable, y las que deriven del Plan Operativo Anual y los 
+compromisos del mismo en el logro de las metas previstas en la producción 
+sustantiva del MINERD. 
+3. Personal Administrativo y de Apoyo, cuya evaluación del desempeño 
+individual se realizará en base a lo dispuesto en la Ley No. 41-08, de Función 
+Pública y sus reglamentos, y las que deriven del Plan Operativo Anual y los 
+compromisos del mismo en el logro de las metas previstas en la producción 
+sustantiva del MINERD. 
+ 
+Todos los procesos de evaluación del desempeño son en base a resultados y 
+competencias. Desde el MAP y el MINERD se desarrollarán pautas específicas 
+para facilitar la inclusión en los acuerdos de desempeño de los compromisos POA y 
+los vinculados a la producción sustantiva del MINERD. 
+ 
+Este conjunto de indicadores es monitoreado por el Ministerio 
+de 
+Administración Pública (MAP) con el apoyo de la estructura técnica y 
+administrativa del Ministerio de Educación de la República Dominicana 
+(MINERD)
+IBOG 5. Gestión del rendimiento y desarrollo 
+
+
+=================================================================
+PAGE 53
+=================================================================
+
+
+=================================================================
+PAGE 54
+=================================================================
+Versión 2025 
+ 
+ 
+ 
+ 
+Este indicador monitorea la realización del Acuerdo de Desempeño del Director o 
+Directora de Centro Educativo en relación directa con las metas del POA/PM, 
+debidamente concertado con el Director Distrital. 
+La escala de crecimiento para este indicador es la siguiente: 
+ 
+Objetivo 
+Logrado 
+▪ 100. Acuerdo de Desempeño del Director o Directora del Centro 
+Educativo elaborado y vinculado a las metas de los Planes 
+Operativos Anuales del Centro Educativo y los compromisos 
+del mismo en el logro de las metas previstas en la producción 
+sustantiva del MINERD. 
+Cierto 
+Avance 
+▪ 60. Acuerdo de Desempeño del Director o Directora del Centro 
+Educativo elaborado, pero NO vinculado a las metas de los 
+Planes Operativos Anuales del Centro Educativo y/o los 
+compromisos del mismo en el logro de las metas previstas en la 
+producción sustantiva del MINERD. 
+Poco 
+Avance 
+▪ 0. Sin acuerdo de desempeño vigente para el Director o 
+Directora del Centro Educativo. 
+                              Evidencias requeridas y criterios de verificación 
+IBOG  
+SEGUNDO ÁMBITO. LIDERAZGO Y 
+DESEMPEÑO DEL PERSONAL 
+DIRECTIVO, DOCENTE, 
+ADMINISTRATIVO Y DE APOYO 
+ 
+Indicador  
+IBOG 5. Gestión del rendimiento y desarrollo 
+ 
+Sub Indicador 
+5.01. Acuerdo de desempeño del Director o 
+Directora del Centro Educativo 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+No 
+Acuerdo de desempeño del Director o Directora 
+del Centro Educativo con la firma del Director 
+Distrital y del Centro Educativo. 
+ (Evidencia subida en septiembre- octubre de 
+cada año escolar) 
+Plantilla de acuerdos de desempeño vinculados a 
+las metas de los Planes Operativos Anuales del 
+Centro Educativo, firmado y sellado por las partes 
+correspondientes  
+ 
+ 
+Existen Acuerdos elaborados, pero NO vinculado 
+a las metas de los Planes Operativos Anuales 
+ 
+ 
+ 
+ 
+ 
+ 
+5.01. Acuerdo de Desempeño - Director o Directora del Centro 
+
+
+=================================================================
+PAGE 55
+=================================================================
+Versión 2025 
+ 
+ 
+ 
+Este indicador monitorea los Acuerdos de Desempeño del personal docente en aula 
+en relación directa con su Plan Anual de Aula, su desarrollo profesional y 
+compromiso con todas las actividades impulsadas por el centro, debidamente 
+concertado con el Director y/o Coordinador Docente. 
+La escala de crecimiento para este indicador es la siguiente: 
+ 
+Objetivo 
+Logrado 
+▪ 100. Más del 80% del personal docente en aula del Centro 
+Educativo con Acuerdos de Desempeño realizados para cada año 
+en curso en relación al universo de personal docente en aula 
+existente en el Centro Educativo. 
+Cierto 
+Avance 
+▪ 60. Entre el 50% y el 80% del personal docente en aula del 
+Centro Educativo con Acuerdos de Desempeño realizados para 
+cada año en curso en relación al universo de personal docente en 
+aula existente en el Centro Educativo. 
+Poco 
+Avance 
+▪ 0: Menos del 50% del personal docente en aula del Centro 
+Educativo con Acuerdos de Desempeño realizados para cada año 
+en curso en relación al universo de personal docente en aula 
+existente en el Centro Educativo. 
+ 
+                      Evidencias requeridas y criterios de verificación 
+IBOG  
+SEGUNDO ÁMBITO. LIDERAZGO Y 
+DESEMPEÑO DEL PERSONAL 
+DIRECTIVO, DOCENTE, 
+ADMINISTRATIVO Y DE APOYO 
+ 
+Indicador  
+IBOG 5. Gestión del rendimiento y 
+desarrollo 
+ 
+Sub Indicador 
+5.02. Acuerdo de desempeño del personal 
+docente de aula 
+Cumple 
+Evidencia  
+Criterios de verificación  
+Si 
+No 
+Acuerdos de Desempeño del personal docente de aula 
+(plantilla relación de docentes y acuerdos de 
+desempeño de cada docente debidamente firmado y 
+sellado) 
+ (Evidencia subida en agosto-septiembre de cada año 
+escolar)  
+Plantillas de relación de docentes y Acuerdos 
+de Desempeño del personal docente de aula 
+debidamente firmado y sellado 
+ 
+ 
+Más del 80% del personal docente en aula 
+del Centro Educativo cuenta con Acuerdos de 
+Desempeño debidamente firmado y sellado 
+ 
+ 
+Entre el 50% y el 80% del personal docente 
+en aula del Centro Educativo cuenta con 
+ 
+ 
+5.02. Acuerdo de Desempeño - Personal docente de aula 
+
+
+=================================================================
+PAGE 56
+=================================================================
+Versión 2025 
+ 
+ 
+Acuerdos de Desempeño debidamente 
+firmado y sellado 
+Menos del 50% del personal docente en aula 
+del Centro Educativo con cuenta Acuerdos de 
+Desempeño debidamente firmado y sellado 
+ 
+ 
+ 
+Este indicador monitorea los Acuerdos de Desempeño del personal docente en 
+función administrativo - pedagógica, en relación directa con su desarrollo 
+profesional y el compromiso con todas las actividades impulsadas por el centro, 
+debidamente concertado con el Director. 
+La escala de crecimiento para este indicador es la siguiente: 
+ 
+Objetivo 
+Logrado 
+▪ 100. Más del 80% del personal docente en función 
+administrativo - pedagógica del Centro Educativo con Acuerdos 
+de Desempeño realizados para el año en curso en relación al 
+universo del personal docente en función administrativa - 
+pedagógica existente en el Centro Educativo. 
+Cierto 
+Avance 
+▪ 60. Entre el 50% y el 80% del personal docente en función 
+administrativo - pedagógica del Centro Educativo con Acuerdos 
+de Desempeño realizados para el año en curso en relación al 
+universo del personal docente en función Administrativa - 
+Pedagógica existente en el Centro Educativo. 
+Poco 
+Avance 
+▪ 0. Menos del 50% del personal docente en función 
+administrativo - pedagógica del Centro Educativo con Acuerdos 
+de Desempeño realizados para el año en curso en relación al 
+universo del personal docente en función administrativa - 
+pedagógica existente en el Centro Educativo. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5.03. Acuerdo de Desempeño – Personal docente en función administrativo - 
+pedagógica 
+
+
+=================================================================
+PAGE 57
+=================================================================
+Versión 2025 
+ 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG  
+SEGUNDO ÁMBITO. LIDERAZGO Y DESEMPEÑO 
+DEL PERSONAL DIRECTIVO, DOCENTE, 
+ADMINISTRATIVO Y DE APOYO 
+Indicador  
+IBOG 5. Gestión del rendimiento y desarrollo 
+ 
+Sub Indicador 
+5.03. Acuerdo de desempeño personal docente 
+en función administrativo-pedagógica 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+No 
+Acuerdos de Desempeño del personal docente en 
+función administrativo-pedagógica (plantilla 
+relación de docentes y acuerdos de desempeño de 
+cada docente debidamente firmado y sellado)  
+(Evidencia subida en agosto-septiembre de cada 
+año escolar) 
+ 
+Plantillas de relación de docentes en función 
+administrativo-pedagógica y Acuerdos de 
+Desempeño debidamente firmado y sellado 
+ 
+ 
+Más del 80% del personal docente en función 
+administrativo-pedagógica  del Centro Educativo 
+cuenta con Acuerdos de Desempeño 
+debidamente firmado y sellado 
+ 
+ 
+Entre el 50% y el 80% del personal docente en 
+función administrativo-pedagógica del Centro 
+Educativo cuenta con Acuerdos de Desempeño 
+debidamente firmado y sellado 
+ 
+ 
+Menos del 50% del personal docente en función 
+administrativo-pedagógica del Centro Educativo 
+con cuenta Acuerdos de Desempeño 
+debidamente firmado y sellado 
+ 
+ 
+ 
+Este indicador monitorea los Acuerdos de Desempeño del personal administrativo del 
+centro, debidamente concertado con el Director y el equipo de gestión. 
+La escala de crecimiento para este indicador es la siguiente:
+ 
+ 
+ 
+ 100. Más del 80% del personal administrativo del Centro 
+Educativo con Acuerdos de Desempeño realizados para el año 
+en curso en relación al universo del personal administrativo 
+existente en el Centro Educativo. 
+Cierto 
+Avance 
+▪ 60. Entre el 50% y 80% del personal administrativo del Centro 
+Educativo con Acuerdos de Desempeño realizados para el año en 
+curso en relación al universo del personal administrativo existente 
+en el Centro Educativo. 
+5.04. Acuerdo de Desempeño - Personal administrativo 
+
+
+=================================================================
+PAGE 58
+=================================================================
+Versión 2025 
+ 
+ 
+Poco 
+Avance 
+▪ 0. Menos del 50% del personal administrativo del Centro 
+Educativo con Acuerdos de Desempeño realizados para el año 
+en curso en relación al universo del personal administrativo 
+existente en el Centro Educativo. 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG  
+SEGUNDO ÁMBITO. LIDERAZGO Y 
+DESEMPEÑO DEL PERSONAL 
+DIRECTIVO, DOCENTE, 
+ADMINISTRATIVO Y DE APOYO 
+ 
+Indicador  
+IBOG 5. Gestión del rendimiento y 
+desarrollo 
+ 
+Sub Indicador 
+5.04. Acuerdo de desempeño del personal 
+administrativo 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+No 
+Acuerdos de Desempeño del personal administrativo 
+(plantilla relación de personal administrativo y 
+acuerdos de desempeño debidamente firmado y 
+sellado) 
+ (Evidencia subida en agosto-septiembre de cada 
+año escolar) 
+ 
+Plantillas de relación del personal 
+administrativo y Acuerdos de Desempeño 
+debidamente firmado y sellado 
+ 
+ 
+Más del 80% del personal administrativo del 
+Centro Educativo cuenta con Acuerdos de 
+Desempeño debidamente firmado y sellado 
+ 
+ 
+Entre el 50% y el 80% del personal 
+administrativo del Centro Educativo cuenta 
+con Acuerdos de Desempeño debidamente 
+firmado y sellado 
+ 
+ 
+Menos del 50% del personal administrativo 
+del Centro Educativo cuenta con Acuerdos 
+de Desempeño debidamente firmado y 
+sellado 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+=================================================================
+PAGE 59
+=================================================================
+Versión 2025 
+ 
+ 
+ 
+ 
+Este indicador monitorea los Acuerdos de Desempeño del personal de apoyo del 
+centro debidamente concertado con el Director y el equipo de gestión. 
+La escala de crecimiento para este indicador es la siguiente: 
+ 
+Objetivo 
+Logrado 
+▪ 100. Más del 80% del personal de apoyo del Centro Educativo 
+con Acuerdos de Desempeño realizados para el año en curso en 
+relación al universo de personal de apoyo existente en el Centro 
+Educativo. 
+Cierto 
+Avance 
+▪ 60. Entre el 50% y el 80% del personal de apoyo del Centro 
+Educativo con Acuerdos de Desempeño realizados para el año en 
+curso en relación al universo de personal de apoyo existente en el 
+Centro Educativo. 
+Poco 
+Avance 
+▪ 0. Menos del 80% del personal de apoyo del Centro Educativo 
+con Acuerdos de Desempeño realizados para el año en curso en 
+relación al universo de personal apoyo existente en el Centro 
+Educativo. 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG  
+SEGUNDO ÁMBITO. LIDERAZGO Y 
+DESEMPEÑO DEL PERSONAL 
+DIRECTIVO, DOCENTE, 
+ADMINISTRATIVO Y DE APOYO 
+ 
+Indicador  
+IBOG 5. Gestión del rendimiento y 
+desarrollo 
+ 
+Sub Indicador 
+5.05. Acuerdo de desempeño del personal 
+de apoyo 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+No 
+Acuerdos de desempeño del personal de apoyo 
+(plantilla relación de personal de apoyo y acuerdos 
+de desempeño debidamente firmado y sellado) 
+(Evidencia subida en agosto-septiembre de cada 
+año escolar) 
+ 
+ 
+Plantillas de relación del personal de apoyo y 
+Acuerdos de Desempeño debidamente 
+firmado y sellado 
+ 
+ 
+Más del 80% del personal de apoyo del 
+Centro Educativo con Acuerdos de 
+Desempeño debidamente firmado y sellado 
+ 
+ 
+Entre el 50% y el 80% del personal de apoyo 
+del Centro Educativo con Acuerdos de 
+Desempeño debidamente firmado y sellado 
+ 
+ 
+5.05. Acuerdo de Desempeño - Personal de apoyo 
+
+
+=================================================================
+PAGE 60
+=================================================================
+Versión 2025 
+ 
+ 
+Menos del 80% del personal de apoyo del 
+Centro Educativo con Acuerdos de 
+Desempeño debidamente firmado y sellado 
+ 
+ 
+ 
+  
+Este indicador monitorea la Evaluación del Desempeño del Director o Directora del 
+Centro Educativo en relación directa con las metas del POA/PM, debidamente 
+concertado con el Director Distrital. 
+La escala de crecimiento para este indicador es la siguiente: 
+ 
+Objetivo 
+Logrado 
+▪ 100: Evaluación del Desempeño del Director o Directora del 
+Centro Educativo realizada y vinculada a las metas del Plan 
+Operativo Anual del Centro Educativo y los compromisos del 
+mismo en el logro de las metas previstas en la producción 
+sustantiva del MINERD. 
+Cierto 
+Avance 
+▪ 60. Evaluación del Desempeño del Director o Directora del 
+Centro Educativo realizada, pero NO vinculado a las metas del 
+Plan Operativo Anual del Centro Educativo y/o los 
+compromisos del mismo en el logro de las metas previstas en la 
+producción sustantiva del MINERD. 
+Poco 
+Avance 
+▪ 0. Sin Evaluación de Desempeño realizada para el Director o 
+Directora del Centro Educativo. 
+ 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG  
+SEGUNDO ÁMBITO. LIDERAZGO Y 
+DESEMPEÑO DEL PERSONAL DIRECTIVO, 
+DOCENTE, ADMINISTRATIVO Y DE APOYO 
+ 
+Indicador  
+IBOG 5. Gestión del rendimiento y desarrollo 
+ 
+Sub Indicador 
+5.06. Evaluación de desempeño del Director o 
+Directora del Centro Educativo 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+No 
+Instrumento de evaluación del desempeño del 
+Director o Directora del centro educativo 
+Instrumento de evaluación del desempeño del 
+Director o Directora del Centro Educativo 
+debidamente firmado y sellado 
+ 
+ 
+5.06. Evaluación de Desempeño - Director o Directora del Centro Educativo 
+
+
+=================================================================
+PAGE 61
+=================================================================
+Versión 2025 
+ 
+ 
+firmada por la dirección distrital y el director/a 
+del Centro Educativo 
+ (Evidencia subida en mayo de cada año 
+escolar) 
+Evaluación de los acuerdos del Desempeño 
+realizado vinculada a las metas del Plan Operativo 
+Anual del Centro Educativo 
+ 
+ 
+Evaluación de los acuerdos del Desempeño 
+realizado, pero NO vinculado a las metas del Plan 
+Operativo Anual del Centro Educativo 
+ 
+ 
+ 
+Este indicador monitorea la Evaluación del Desempeño del personal docente de aula 
+en relación directa con su Plan Anual de Aula, su desarrollo profesional y 
+compromiso con todas las actividades impulsadas por el Centro, debidamente 
+concertado con el Director y/o Coordinador Docente. 
+La escala de crecimiento para este indicador es la siguiente: 
+ 
+Objetivo 
+Logrado 
+▪ 100. Más del 80% del personal docente en aula del Centro 
+Educativo con Acuerdos de Desempeño Evaluados en relación 
+al universo de Acuerdos de Desempeño del personal docente en 
+aula existente en el Centro Educativo. 
+Cierto 
+Avance 
+▪ 60. Entre el 50% y el 80% del personal docente en aula del 
+Centro Educativo con Acuerdos de Desempeño Evaluados en 
+relación al universo de Acuerdos de Desempeño del personal 
+docente en aula existente en el Centro Educativo. 
+Poco 
+Avance 
+▪ 0. Menos del 50% del personal docente en aula del Centro 
+Educativo con Acuerdos de Desempeño Evaluados en relación 
+al universo de Acuerdos de Desempeño del personal docente en 
+aula existente en el Centro Educativo. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5.07. Evaluación de Desempeño - Personal docente de aula 
+
+
+=================================================================
+PAGE 62
+=================================================================
+Versión 2025 
+ 
+ 
+ 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG  
+SEGUNDO ÁMBITO. LIDERAZGO Y 
+DESEMPEÑO DEL PERSONAL DIRECTIVO, 
+DOCENTE, ADMINISTRATIVO Y DE APOYO 
+ 
+Indicador  
+IBOG 5. Gestión del rendimiento y desarrollo 
+ 
+Sub Indicador 
+5.07. Evaluación de desempeño del personal 
+docente de aula 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+No 
+Evaluación de Desempeño del personal docente 
+de aula (plantilla relación de docente de aula y 
+evaluación de desempeño de cada docente 
+debidamente firmado y sellado)  
+(Evidencia subida en mayo de cada año 
+escolar) 
+ 
+Plantillas de relación de docentes de aula y 
+Evaluación de los acuerdos de Desempeño 
+debidamente firmado y sellado 
+ 
+ 
+Más del 80% del personal docente en aula del Centro 
+Educativo cuenta con Evaluación de los acuerdos de 
+Desempeño debidamente firmado y sellado 
+ 
+ 
+Entre el 50% y el 80% del personal docente en aula 
+del Centro Educativo cuenta con Evaluación de los 
+acuerdos de Desempeño debidamente firmado y 
+sellado 
+ 
+ 
+Menos del 50% del personal docente en aula del 
+Centro Educativo con cuenta con Evaluación de los 
+acuerdos de Desempeño debidamente firmado y 
+sellado 
+ 
+ 
+ 
+ 
+Este indicador monitorea la Evaluación del Desempeño del Personal Docente en 
+función administrativo - pedagógica en el Centro Educativo, debidamente 
+concertado con el Director. 
+La escala de crecimiento para este indicador es la siguiente: 
+ 
+Objetivo 
+Logrado 
+▪ 100. Más del 80% del personal docente en funciones 
+administrativo - pedagógica del Centro Educativo 
+con 
+acuerdos de Desempeño Evaluados en relación al universo de 
+Acuerdos de Desempeño del personal docente en funciones 
+administrativo - pedagógica existente en el Centro Educativo. 
+5.08. Evaluación de Desempeño - Personal docente en función 
+administrativo - pedagógica 
+
+
+=================================================================
+PAGE 63
+=================================================================
+Versión 2025 
+ 
+ 
+Cierto 
+Avance 
+▪ 60. Entre el 50% y el 80% del personal docente en funciones 
+administrativo - pedagógica con Acuerdos de Desempeño 
+Evaluados en relación al universo de Acuerdos de Desempeño 
+del personal docente en funciones administrativo - pedagógica 
+existente en el Centro Educativo. 
+Poco 
+Avance 
+▪ 0. Menos del 50% del personal docente en funciones 
+administrativo - pedagógica con Acuerdos de Desempeño 
+Evaluados en relación al universo de Acuerdos de Desempeño 
+del personal docente en funciones administrativo - pedagógica 
+existente en el Centro Educativo. 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG  
+SEGUNDO ÁMBITO. LIDERAZGO Y 
+DESEMPEÑO DEL PERSONAL DIRECTIVO, 
+DOCENTE, ADMINISTRATIVO Y DE 
+APOYO 
+ 
+Indicador  
+IBOG 5. Gestión del rendimiento y desarrollo 
+ 
+Sub Indicador 
+5.08. Evaluación de desempeño del personal 
+docente en función administrativo-pedagógica 
+Cumpl
+e 
+Evidencia  
+Criterios de verificación 
+SI 
+No 
+Evaluación de Desempeño del personal docente 
+en función administrativo-pedagógica (plantilla 
+relación de docentes-administrativo pedagógico 
+y evaluación de desempeño de cada docente 
+debidamente firmado y sellado) 
+(Evidencia subida en mayo de cada año 
+escolar) 
+ 
+Plantillas de relación de docentes en función 
+administrativo-pedagógica y Evaluación de los 
+acuerdos de Desempeño debidamente firmado y 
+sellado 
+ 
+ 
+Más del 80% del personal docente en función 
+administrativo-pedagógica en aula del Centro 
+Educativo cuenta con Evaluación de los acuerdos 
+de Desempeño debidamente firmado y sellado 
+ 
+ 
+Entre el 50% y el 80% del personal docente en 
+función administrativo-pedagógica en aula del 
+Centro Educativo cuenta con Evaluación de los 
+acuerdos de Desempeño debidamente firmado y 
+sellado 
+ 
+ 
+
+
+=================================================================
+PAGE 64
+=================================================================
+Versión 2025 
+ 
+ 
+Menos del 50% del personal docente en función 
+administrativo-pedagógica en aula del Centro 
+Educativo cuenta con Evaluación de los acuerdos 
+de Desempeño debidamente firmado y sellado 
+ 
+ 
+ 
+Este indicador monitorea la Evaluación del Desempeño del Personal Administrativo 
+del Centro Educativo, debidamente concertado con el Director y el equipo de 
+gestión. 
+La escala de crecimiento para este indicador es la siguiente: 
+ 
+Objetivo 
+Logrado 
+▪ 100. Más del 80% del personal administrativo del Centro 
+Educativo con Acuerdos de Desempeño Evaluados en relación 
+al universo de Acuerdos de Desempeño del personal 
+administrativo existente en el Centro Educativo. 
+Cierto 
+Avance 
+▪ 60. Entre el 50% y el 80% del personal docente en funciones 
+administrativo - pedagógica con Acuerdos de Desempeño 
+Evaluados en relación al universo de Acuerdos de Desempeño 
+del personal docente en funciones administrativo - pedagógica 
+existente en el Centro Educativo. 
+Poco 
+Avance 
+▪ 0. Menos del 50% del personal administrativo con Acuerdos de 
+Desempeño evaluados en relación al universo de Acuerdos de 
+Desempeño del personal docente en funciones administrativo - 
+pedagógica existente en el Centro Educativo. 
+ 
+ 
+ 
+ 
+5.09. Evaluación de Desempeño - Personal administrativo 
+
+
+=================================================================
+PAGE 65
+=================================================================
+Versión 2025 
+ 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG  
+SEGUNDO ÁMBITO. LIDERAZGO Y 
+DESEMPEÑO DEL PERSONAL 
+DIRECTIVO, DOCENTE, 
+ADMINISTRATIVO Y DE APOYO 
+ 
+Indicador  
+IBOG 5. Gestión del rendimiento y 
+desarrollo 
+ 
+Sub Indicador 
+5.09. Evaluación de desempeño del 
+personal administrativo 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+No 
+Evaluación de Desempeño del personal 
+administrativo (plantilla relación de personal 
+administrativo y evaluación de desempeño 
+debidamente firmado y sellado) 
+ (Evidencia subida en mayo de cada año escolar) 
+ 
+Plantillas de relación del personal 
+administrativo y Evaluación de los acuerdos 
+de Desempeño debidamente firmado y 
+sellado 
+ 
+ 
+Más del 80% del personal administrativo del 
+Centro Educativo cuenta con Evaluación de 
+los acuerdos de Desempeño debidamente 
+firmado y sellado 
+ 
+ 
+Entre el 50% y el 80% del personal 
+administrativo del Centro Educativo cuenta 
+con Evaluación de los acuerdos de 
+Desempeño debidamente firmado y sellado 
+ 
+ 
+Menos del 50% del personal administrativo 
+del Centro Educativo cuenta con Evaluación 
+d de los acuerdos e Desempeño debidamente 
+firmado y sellado 
+ 
+ 
+ 
+Este indicador monitorea la Evaluación del Desempeño del personal de apoyo del 
+Centro Educativo, debidamente concertado con el Director y el equipo de gestión. 
+La escala de crecimiento para este indicador es la siguiente: 
+ 
+Objetivo 
+Logrado 
+▪ 100. Más del 80% del personal de apoyo Centro Educativo con 
+Acuerdos de Desempeño Evaluados en relación al universo de 
+Acuerdos de Desempeño del personal de apoyo existente en el 
+Centro Educativo. 
+Cierto 
+Avance 
+▪ 60. Entre el 50% y el 80% del personal de apoyo Centro 
+Educativo con Acuerdos de Desempeño Evaluados en relación 
+al universo de Acuerdos de Desempeño del personal de apoyo 
+existente en el Centro Educativo. 
+5.10. Evaluación de Desempeño - Personal de apoyo 
+
+
+=================================================================
+PAGE 66
+=================================================================
+Versión 2025 
+ 
+ 
+Poco 
+Avance 
+▪ 0. Menos del 50% del personal de apoyo con Acuerdos de 
+Desempeño Evaluados en relación al universo de Acuerdos de 
+Desempeño del personal de apoyo existente en el Centro 
+Educativo. 
+Evidencias requeridas y criterios de verificación 
+ 
+ 
+Este conjunto de indicadores monitorea los procesos vinculados a la eficiencia 
+interna del Centro Educativo y los resultados del aprendizaje en las y los estudiantes. 
+ 
+ 
+IBOG  
+SEGUNDO ÁMBITO. LIDERAZGO Y 
+DESEMPEÑO DEL PERSONAL 
+DIRECTIVO, DOCENTE, 
+ADMINISTRATIVO Y DE APOYO 
+ 
+Indicador  
+IBOG 5. Gestión del rendimiento y desarrollo 
+ 
+Sub Indicador 
+5.10. Evaluación de desempeño del personal 
+de apoyo 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+No 
+Evaluación de desempeño del personal de apoyo 
+(plantilla relación de personal de apoyo y 
+evaluación de desempeño debidamente firmado y 
+sellado) (Evidencia subida en mayo de cada año 
+escolar) 
+ 
+Plantillas de relación del personal de apoyo y 
+Evaluación de los acuerdos de Desempeño 
+debidamente firmado y sellado 
+ 
+ 
+ 
+Más del 80% del personal de apoyo Centro 
+Educativo con Evaluación de los acuerdos de 
+Desempeño debidamente firmado y sellado 
+ 
+ 
+Entre el 50% y el 80% del personal de apoyo 
+Centro Educativo con evaluación de los 
+acuerdos de Desempeño debidamente firmado y 
+sellado 
+ 
+ 
+Menos del 50% del personal de apoyo con 
+Evaluación de los acuerdos de Desempeño 
+debidamente firmado y sellado 
+ 
+ 
+ 
+
+
+=================================================================
+PAGE 67
+=================================================================
+Versión 2025 
+ 
+ 
+ 
+Este conjunto de indicadores monitorea un conjunto de variables vinculadas a la 
+asistencia escolar, el calendario escolar y la promoción o reprobación de las y los 
+estudiantes. 
+El Monitoreo de este conjunto de indicadores es realizado por el Ministerio de 
+Educación de la República Dominicana (MINERD). 
+ 
+Este indicador monitorea el reporte de la asistencia diaria de las y los estudiantes del 
+centro y toma acciones si hay desviaciones en relación a la tasa promedio de 
+asistencia escolar esperada (95%). 
+La escala de crecimiento para este indicador es la siguiente: 
+ 
+Objetivo 
+Logrado 
+▪ 100. El centro reporta de forma diaria por encima del 90% de los 
+días lectivos del mes. 
+Cierto 
+Avance 
+▪ 60. El centro reporta de forma diaria entre el 76% y 89% de los días 
+lectivos del mes y pone en marcha acciones concretas para 
+mejorar la asistencia escolar en caso de su tasa de asistencia así lo 
+requiera. 
+Poco 
+Avance 
+▪ 50. El centro reporta de forma diaria entre el 50% y 75% de los días 
+lectivos del mes y pone en marcha acciones concretas para 
+mejorar la asistencia escolar en caso de su tasa de asistencia así lo 
+requiera. 
+▪ 0. El centro reporta de forma diaria menos del 50% de los días 
+lectivos del mes. 
+                                               NOTA:  Ver este indicador con Rafael. Identificar plantilla o instrumento resumen 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG  
+TERCER ÁMBITO: LOS Y LAS ESTUDIANTES COMO 
+OBJETO DE ACTUACIÓN DEL CENTRO EDUCATIVO 
+ 
+Indicador  
+IBOG 6. Eficiencia interna en los centros educativos 
+ 
+Sub Indicador 
+6.01. Registro diario y uso de la tasa de asistencia escolar 
+Cumple 
+IBOG 6. Eficiencia interna en los centros educativos 
+6.01. Registro diario y uso de la tasa de asistencia escolar 
+
+
+=================================================================
+PAGE 68
+=================================================================
+Versión 2025 
+ 
+ 
+Evidencia  
+Criterios de verificación 
+Si 
+No 
+Reporte de la asistencia diaria de las 
+y los estudiantes del centro educativo 
+Existe registro diario de asistencia de los estudiantes 
+ 
+ 
+El centro reporta de forma diaria por encima del 90% de los 
+días lectivos del mes 
+ 
+ 
+El centro reporta de forma diaria entre el 76% y 89% de los 
+días lectivos del mes 
+ 
+ 
+El centro reporta de forma diaria entre el 50% y 75% de los 
+días lectivos del mes 
+ 
+ 
+El centro reporta de forma diaria menos del 50% de los días 
+lectivos del mes 
+ 
+ 
+ 
+ 
+ 
+ 
+Este indicador monitorea la cantidad de días cumplidos en el Centro Educativo 
+frente al total de días del mes establecidos en el Calendario Escolar. 
+El instrumento de recolección de la información será la Matriz de Cumplimiento 
+del Calendario Escolar elaborada para tales fines. 
+La escala de crecimiento para este indicador es la siguiente: 
+ 
+Objetivo 
+Logrado 
+▪ 100. De 96% a 100% días trabajados en el Centro Educativo según 
+calendario escolar. 
+Cierto 
+Avance 
+▪ 70. De 91% a 95% días trabajados en el Centro Educativo según 
+calendario escolar. 
+Poco 
+Avance 
+▪ 50. Entre el 85% y el 90% días trabajados en el Centro 
+Educativo según calendario escolar. 
+      
+                         Evidencias requeridas y criterios de verificación 
+IBOG  
+TERCER ÁMBITO: LOS Y LAS ESTUDIANTES 
+COMO OBJETO DE ACTUACIÓN DEL CENTRO 
+EDUCATIVO 
+ 
+Indicador  
+IBOG 6. Eficiencia interna en los centros educativos 
+ 
+Sub Indicador 
+6.02. Tasa mensual de cumplimiento del calendario 
+escolar 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+No 
+Matriz de Cumplimiento del 
+Calendario Escolar 
+Matriz de registro mensual del cumplimiento del calendario 
+escolar 
+ 
+ 
+6.02. Tasa mensual de cumplimiento del calendario escolar 
+
+
+=================================================================
+PAGE 69
+=================================================================
+Versión 2025 
+ 
+ 
+(Evidencia subida del 30 al día 5 del 
+siguiente mes durante el año escolar) 
+Evidencia de 96% a 100% días trabajados en el Centro 
+Educativo según calendario escolar 
+ 
+ 
+Evidencia de 90% a 95% días trabajados en el Centro 
+Educativo según calendario escolar 
+ 
+ 
+Evidencia de entre el 85% y el 90% días trabajados en el 
+Centro Educativo según calendario escolar 
+ 
+ 
+ 
+ 
+ 
+ 
+Este indicador monitorea la presentación y seguimiento de la carga horaria definida 
+para cada docente al inicio de cada período del año escolar, de acuerdo a la siguiente 
+escala de crecimiento. 
+ 
+Objetivo 
+Logrado 
+▪ 100. Más del 95% de los docentes con su carga horaria 
+individualizada e integrada en el horario general del Centro 
+Educativo. 
+Cierto 
+Avance 
+▪ 70. Entre el 60% y el 95% de los docentes con su carga horaria 
+individualizada e integrada en el horario general del Centro 
+Educativo. 
+Poco 
+Avance 
+▪ 50. Menos del 60% de los docentes con su carga horaria 
+individualizada e integrada en el horario general del Centro 
+Educativo. 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG  
+TERCER ÁMBITO: LOS Y LAS ESTUDIANTES COMO 
+OBJETO DE ACTUACIÓN DEL CENTRO EDUCATIVO 
+Indicador  
+IBOG 6. Eficiencia interna en los centros educativos 
+ 
+Sub Indicador 
+6.03. Asignación de la carga horaria de cada docente 
+ 
+Evidencia  
+Criterios de verificación  
+Si  No  
+ 
+Horario escolar del personal docente 
+(relación de docente y la carga horaria de 
+cada uno)  
+(Evidencia subida en septiembre de cada 
+año escolar) 
+Más del 95% de los docentes cuenta con su carga horaria 
+individualizada e integrada en el horario general del 
+Centro. 
+ 
+ 
+Entre el 60% y el 95% de los docentes con su carga 
+horaria individualizada e integrada en el horario general 
+del Centro 
+ 
+ 
+Menos del 60% de los docentes sin su carga horaria 
+individualizada e integrada en el horario general del 
+Centro 
+ 
+ 
+ 
+6.03. Asignación de la carga horaria de cada docente 
+
+
+=================================================================
+PAGE 70
+=================================================================
+Versión 2025 
+ 
+ 
+ 
+ 
+ 
+ 
+Este indicador monitorea el porcentaje anual de estudiantes promovidos 
+entre el total de estudiantes inscritos. 
+La escala de crecimiento para este indicador es la siguiente: 
+ 
+Objetivo 
+Logrado 
+▪ 100. Más del 90% de Tasa de Promoción. 
+Cierto 
+Avance 
+▪ 70. Del 85% al 90% de Tasa de Promoción. 
+Poco 
+Avance 
+▪ 30. Con menos del 85% de Tasa de Promoción. 
+ 
+ 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG  
+TERCER ÁMBITO: LOS Y LAS ESTUDIANTES COMO 
+OBJETO DE ACTUACIÓN DEL CENTRO EDUCATIVO 
+Indicador  
+IBOG 6. Eficiencia interna en los centros 
+educativos 
+ 
+Sub Indicador 
+6.04. Tasa global anual de promoción 
+Cumple 
+Evidencia  
+Criterios de verificación| 
+Si 
+No 
+ 
+Matriz de registro de promoción estudiantil 
+(Evidencia subida en junio de cada año 
+escolar) 
+Matriz con reporte consolidado de la tasa global 
+anual de promoción 
+ 
+ 
+Evidencia de más del 90% de Tasa de Promoción 
+ 
+ 
+Evidencia del 85% al 90% de Tasa de Promoción 
+ 
+ 
+Evidencia con menos del 85% de Tasa de Promoción 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+6.04. Tasa global anual de promoción 
+
+
+=================================================================
+PAGE 71
+=================================================================
+Versión 2025 
+ 
+ 
+ 
+ 
+ 
+Este indicador monitorea el porcentaje anual de estudiantes que reprueban entre el 
+total de estudiantes inscritos en cada Centro. 
+La escala de crecimiento para este indicador es la siguiente: 
+ 
+Objetivo 
+Logrado 
+▪ 100. Con menos del 4.5% de tasa de reprobados. 
+Cierto 
+Avance 
+▪ 70. Del 4.5% al 6% de tasa de reprobados. 
+Poco 
+Avance 
+▪ 30. Con más del 6% de tasa de reprobados. 
+6.05. Tasa global anual de reprobados 
+
+
+=================================================================
+PAGE 72
+=================================================================
+Versión 2025 
+ 
+ 
+ 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG  
+TERCER ÁMBITO: LOS Y LAS ESTUDIANTES COMO 
+OBJETO DE ACTUACIÓN DEL CENTRO EDUCATIVO 
+Indicador  
+IBOG 6. Eficiencia interna en los centros 
+educativos 
+ 
+Sub Indicador 
+6.05. Tasa global anual de reprobados 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+No 
+Matriz de registro de reprobación estudiantil 
+(Evidencia subida en junio de cada año 
+escolar) 
+Matriz de reporte consolidado de la tasa global 
+anual de reprobados 
+ 
+ 
+Evidencia de menos del 4.5% de tasa de 
+reprobados 
+ 
+ 
+Evidencia del 4.5% al 6% de tasa de reprobados 
+ 
+ 
+Evidencia con más del 6% de tasa de reprobados 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Este indicador se orienta a medir el desempeño de las y los estudiantes a través de 
+los resultados obtenidos en las evaluaciones diagnósticas realizadas desde la Dirección 
+General de Evaluación. 
+La puntuación en este indicador se actualizará cada vez que la prueba se aplique 
+de manera Censal. 
+El monitoreo es realizado desde el Ministerio de Educación de la República 
+Dominicana (MINERD). 
+ 
+ 
+ 
+ 
+ 
+7.01. Porcentaje de estudiantes según niveles de desempeño en las pruebas 
+diagnósticas 
+
+
+=================================================================
+PAGE 73
+=================================================================
+Versión 2025 
+ 
+ 
+Objetivo 
+Logrado 
+Estudiantes con desempeño satisfactorio en las pruebas 
+diagnósticas. 
+▪ 100. Más del 61%. 
+▪ 90. Del 51% al 60%. 
+▪ 80. Del 36% al 50%. 
+Cierto 
+Avance 
+Estudiantes con desempeño satisfactorio en las pruebas 
+diagnósticas. 
+▪ 75. Del 31% al 35%. 
+▪ 70. Del 26% al 30%. 
+▪ 60. Del 16% al 25%. 
+Poco 
+Avance 
+Estudiantes con desempeño satisfactorio en las pruebas 
+diagnósticas. 
+▪ 50. Del 11% al 15%. 
+▪ 30. Del 6% al 10%. 
+▪ 20. Del 1% al 5%. 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG 
+TERCER ÁMBITO: LOS Y LAS ESTUDIANTES 
+COMO OBJETO DE ACTUACIÓN DEL 
+CENTRO EDUCATIVO 
+ 
+Indicador  
+IBOG 7. Resultados en el aprendizaje de las y los 
+estudiantes 
+ 
+Sub Indicador 
+7.01. Porcentaje de estudiantes según niveles de 
+desempeño en las pruebas diagnósticas 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+No 
+ 
+Matriz de relación de cantidad de estudiante con los 
+resultados de evaluaciones diagnósticas realizadas desde la 
+Dirección General de Evaluación.  
+ 
+(Evidencia subida conforme la fecha de aplicación de 
+pruebas diagnosticas aplicadas desde la Dirección general 
+de Evaluación).  
+Matriz de relación de estudiantes con desempeño 
+satisfactorio en las pruebas diagnósticas. 
+ 
+ 
+Objetivo Logrado 
+ 
+ 
+100 ▪ Más del 61% 
+ 
+ 
+90 ▪ Del 51% al 60% 
+ 
+ 
+80 ▪ Del 36% al 50% 
+ 
+ 
+Cierto Avance 
+ 
+ 
+75 ▪ Del 31% al 35% 
+ 
+ 
+70 ▪ Del 26% al 30%. 
+ 
+ 
+60 ▪ Del 16% al 25% 
+ 
+ 
+Poco Avance 
+ 
+ 
+50 ▪ Del 11% al 15% 
+ 
+ 
+30 ▪ Del 6% al 10%. 
+ 
+ 
+20 ▪ Del 1% al 5%. 
+ 
+ 
+ 
+
+
+=================================================================
+PAGE 74
+=================================================================
+Versión 2025 
+ 
+ 
+ 
+ 
+Este indicador se orienta a medir el desempeño de las y los estudiantes a través de 
+los resultados obtenidos en las evaluaciones nacionales, con pruebas estandarizadas. 
+El monitoreo es realizado desde el Ministerio de Educación de la República 
+Dominicana (MINERD). 
+ 
+Objetivo 
+Logrado 
+Estudiantes con desempeño satisfactorio en las Pruebas 
+Nacionales. 
+▪ 100. Más del 41%. 
+▪ 90. Del 31% al 40%. 
+▪ 80. Del 26% al 30%. 
+Cierto 
+Avance 
+Estudiantes con desempeño satisfactorio en las Pruebas 
+Nacionales. 
+▪ 75. Del 22% al 25%. 
+▪ 70. Del 19% al 21%. 
+▪ 60, Del 16% al 18%. 
+Poco 
+Avance 
+Estudiantes con desempeño satisfactorio en las Pruebas 
+Nacionales. 
+▪ 50. Del 13% al 15%. 
+▪ 30. Del 10% al 12%. 
+▪ 20. Por debajo del 10%. 
+ 
+ 
+Evidencias requeridas y criterios de verificación 
+IBOG  
+TERCER ÁMBITO: LOS Y LAS ESTUDIANTES COMO 
+OBJETO DE ACTUACIÓN DEL CENTRO EDUCATIVO 
+Indicador  
+IBOG 7. Resultados en el aprendizaje de las y los 
+estudiantes 
+ 
+Sub Indicador 
+7.02. Porcentaje de estudiantes según niveles de 
+desempeño en las Pruebas Nacionales 
+Cumple 
+Evidencia  
+Criterios de verificación 
+Si 
+No 
+Resultados oficiales según niveles de 
+desempeño en las Pruebas Nacionales 
+ (Evidencia subida en julio de cada año 
+escolar) 
+Estudiantes con desempeño entre 21-30 puntos en las 
+Pruebas Nacionales 
+ 
+ 
+Objetivo Logrado   
+ 
+ 
+100 ▪ Más del 41% 
+ 
+ 
+90 ▪ Del 31% al 40% 
+ 
+ 
+80 ▪ Del 26% al 30% 
+ 
+ 
+Cierto Avance 
+ 
+ 
+7.02. Porcentaje de estudiantes según niveles de desempeño en las Pruebas 
+Nacionales 
+
+
+=================================================================
+PAGE 75
+=================================================================
+Versión 2025 
+ 
+ 
+75 ▪ Del 22% al 25% 
+ 
+ 
+70 ▪ Del 19% al 21% 
+ 
+ 
+60 ▪ Del 16% al 18% 
+ 
+ 
+Poco Avance 
+ 
+ 
+50 ▪ Del 13% al 15% 
+ 
+ 
+30 ▪ Del 10% al 12% 
+ 
+ 
+20 ▪ Por debajo del 10% 
+ 
+ 
+        Nota: Este indicador aplica para el Nivel Secundario.  
+ 
+ 
+Una de las principales políticas priorizadas por el Gobierno dominicano y el Plan 
+Nacional Plurianual del Sector Público 2024 -2028 es la “Reforma de la Calidad 
+Educativa” que apuesta a conseguir que la inversión anual del 4% del PIB en 
+Educación se convierta en una educación de calidad, que las y los estudiantes 
+logren aprender lo que está previsto y el Currículo y que sirva para formar a quienes 
+harán las transformaciones requeridas en la sociedad dominicana. 
+Bajo la lógica anterior, desde este ámbito se monitorea la responsabilidad social y 
+contribución de los Centros Educativos al Desarrollo Local y la participación 
+individual de cada uno de ellos en el logro del conjunto de metas MINERD 
+previstas en el marco del Sistema Nacional de Planificación, tanto las relativas al 
+cumplimiento de los compromisos PNPSP 2024 – 2028 como los establecidos en 
+su Plan Estratégico Institucional vigente. 
+Este indicador monitorea la participación desde el Centro Educativo y su articulación 
+con políticas y líneas de acción prioritarias para el Gobierno dominicano, 
+promoviendo su contribución a la dinámica social y económica del barrio o 
+comunidad en el que se encuentre. 
+ 
+» CUARTO ÁMBITO. CONTRIBUCIÓN DEL CENTRO EDUCATIVO AL 
+DESARROLLO DEL TERRITORIO Y LAS METAS EDUCATIVAS 
+NACIONALES 
+ 
+8.01. Contribución del centro al desarrollo de la comunidad donde está situado 
+
+
+=================================================================
+PAGE 76
+=================================================================
+Versión 2025 
+ 
+ 
+ 
+ 
+ 
+ 
+Este indicador será monitoreado de forma articulada por el Ministerio de 
+Educación de la República Dominicana (MINERD) y el Ministerio de 
+Economía, Planificación y Desarrollo (MEPyD). 
+La medición y asignación de puntaje al Centro a partir de los reportes de su 
+participación de las políticas priorizadas, implicará la elaboración de un Índice 
+denominado “Contribución del Centro al Desarrollo de la Comunidad donde está 
+Situado” que será desarrollado por el Ministerio de Economía, Planificación y 
+Desarrollo (MEPyD) junto al Ministerio de Educación de la República Dominicana 
+(MINERD). 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+A nivel preliminar, las eventuales temáticas que pudieran integrarse en el índice serían: 
+1. Fomento del deporte y del uso de las instalaciones deportivas y espacios 
+del centro para uso de la comunidad o barrio fuera del horario lectivo. 
+2. Promoción de la “Alimentación Saludable” en la comunidad educativa. 
+3. El impacto económico del Programa de Alimentación Escolar (PAE), 
+incluyendo el impulso a las MIPYMES Locales, la compra parte de sus 
+alimentos a productores agropecuarios locales o familiares de la comunidad. 
+4. El impulso a las acciones preventivas de salud escolar junto a la UNAP de la 
+comunidad. 
+5. La promoción de la inserción laboral y el rescate de jóvenes en situación de 
+vulnerabilidad. 
+6. La promoción de la Atención Inicial y de fomento de la lectoescritura y 
+matemáticas en edad temprana. 
+7. El impacto del programa de movilidad escolar. 
+8. Otros definidos conjuntamente por MINERD y MEPyD. 
+ 
+Objetivo 
+Logrado 
+Valor del Índice de Contribución del Centro 
+al Desarrollo de la Comunidad donde está Situado 
+Cierto 
+Avance 
+Poco 
+Avance 
+
+

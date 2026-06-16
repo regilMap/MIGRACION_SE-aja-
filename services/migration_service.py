@@ -140,12 +140,16 @@ class MigrationService:
         try:
             if limpiar_antes:
                 self.logger.info("Limpiando tablas destino...")
+                # Romper dependencia circular en tablas de preguntas
+                self.destino.romper_dependencias_preguntas()
+                
                 # Order matters for foreign keys
                 self.destino.limpiar_respuestas_revisiones() # Clean child first
                 self.destino.limpiar_comentario_revision()
                 self.destino.limpiar_revision_evidencias()
                 self.destino.limpiar_puntuacion()
                 self.destino.limpiar_pregunta_revisiones() # Clean child of SubIndicadorEvidencias
+                self.destino.limpiar_grupo_pregunta_revisiones() # Clean parent of PreguntaRevisiones
                 self.destino.limpiar_archivos() # Clean child first
                 self.destino.limpiar_sub_indicador_evidencias()
                 self.destino.limpiar_fecha_vencimiento_evidencias()

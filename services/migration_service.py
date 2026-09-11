@@ -301,6 +301,29 @@ class MigrationService:
                 self.logger.info(f"Revisiones: {c_rev}, Comentarios: {c_com} insertados")
 
 
+            # 7. Revisiones
+            if archivos.get('revisiones'):
+                source_data = self.cargar_desde_json(archivos['revisiones'], RevisionSource)
+                revisions, comments = self.transformer.transformar_revision(source_data)
+                
+                self.destino.habilitar_identity_insert('Evidencia', 'RevisionEvidencias')
+                c_rev = self.destino.insertar_revision_evidencias(revisions)
+                self.destino.deshabilitar_identity_insert('Evidencia', 'RevisionEvidencias')
+                
+                self.destino.habilitar_identity_insert('Evidencia', 'ComentarioRevisionEvidencias')
+                c_com = self.destino.insertar_comentario_revision(comments)
+                self.destino.deshabilitar_identity_insert('Evidencia', 'ComentarioRevisionEvidencias')
+                
+                self.logger.info(f"Revisiones: {c_rev}, Comentarios: {c_com} insertados")
+
+            # 8. Cargar Excepciones Automáticas basadas en Nivel de Centro (Primario / Secundario)
+            self.logger.info("Aplicando excepciones automáticas primario-secundario...")
+            self.aplicar_excepciones_automaticas()
+            
+            # 9. Reconstruir caché global de la base de datos
+            self.logger.info("Reconstruyendo caché global de la base de datos...")
+            self.reconstruir_cache()
+
             self.conn_destino.commit()
             self.logger.info("✓ MIGRACIÓN EXITOSA")
             return True
@@ -338,3 +361,240 @@ class MigrationService:
             'sub_indicadores': str(export_path / 'sub_indicadores.json'),
         }
         return self.cargar_todo(archivos, limpiar_antes)
+
+    def aplicar_excepciones_automaticas(self):
+        import os
+        import re
+        import uuid
+        import pyodbc
+        import pandas as pd
+        
+        cursor = self.conn_destino.cursor()
+        
+        # 1. Read PDF file
+        pdf_filename = "Circular Inactivación de Indicadores del SISMAP Educación.pdf"
+        if not os.path.exists(pdf_filename):
+            self.logger.error(f"No se encontró el archivo PDF '{pdf_filename}' para excepciones")
+            return
+            
+        with open(pdf_filename, 'rb') as f:
+            pdf_bytes = f.read()
+            
+        # 2. Read Excel file
+        excel_filename = "Centros modalidad  Primario - Secundario.xlsx"
+        if not os.path.exists(excel_filename):
+            self.logger.error(f"No se encontró el archivo Excel '{excel_filename}' para excepciones")
+            return
+            
+        xl = pd.ExcelFile(excel_filename)
+        code_levels = {}
+        code_names = {}
+        
+        def add_record(code, name, nivel):
+            if pd.isna(code):
+                return
+            s = str(code).strip()
+            if s.endswith('.0'):
+                s = s[:-2]
+            s = re.sub(r'\D', '', s)
+            if not s:
+                return
+            c = s.zfill(5)
+            
+            nivel_str = str(nivel).strip()
+            if nivel_str.lower() in ['nan', 'null', '']:
+                nivel_str = ''
+            name_str = str(name).strip()
+            
+            if c not in code_levels:
+                code_levels[c] = set()
+                code_names[c] = set()
+            if nivel_str:
+                code_levels[c].add(nivel_str)
+            if name_str:
+                code_names[c].add(name_str)
+
+        # Parse Matriz
+        df_matriz = xl.parse("Matriz", skiprows=6)
+        for idx, r in df_matriz.iterrows():
+            add_record(r.get('CODIGO SIGERD'), r.get('NOMBRE DE LA INSTANCIA'), r.get('NIVEL'))
+
+        # Parse Matriz (2)
+        df_m2 = xl.parse("Matriz (2)", header=None)
+        for r in range(10, len(df_m2)):
+            add_record(df_m2.iloc[r, 2], df_m2.iloc[r, 1], df_m2.iloc[r, 3])
+            add_record(df_m2.iloc[r, 7], df_m2.iloc[r, 6], df_m2.iloc[r, 8])
+
+        # Parse Verificación
+        df_ver = xl.parse("Verificación", header=None)
+        for r in range(25, len(df_ver)):
+            add_record(df_ver.iloc[r, 2], df_ver.iloc[r, 1], df_ver.iloc[r, 6])
+
+        # Parse Organizado por ejes
+        df_org = xl.parse("Organizado por ejes", header=None)
+        for r in range(11, len(df_org)):
+            add_record(df_org.iloc[r, 2], df_org.iloc[r, 1], df_org.iloc[r, 15] if df_org.shape[1] > 15 else '')
+
+        # 3. Get database mapping
+        cursor.execute("SELECT OrganismoID, Codigo_Minerd, Nombre FROM dbo.vOrganismosEducacionX")
+        db_map = {}
+        for org in cursor.fetchall():
+            s = str(org[1]).strip()
+            if s.endswith('.0'):
+                s = s[:-2]
+            s = re.sub(r'\D', '', s)
+            if s:
+                db_map[s.zfill(5)] = (org[0], org[2])
+                
+        cursor.execute("SELECT CODIGO_MINERD, CODIGO_COEDOM, CENTRO FROM dbo.SigerdCoedom")
+        sc_map = {}
+        for r in cursor.fetchall():
+            s = str(r[0]).strip()
+            if s.endswith('.0'):
+                s = s[:-2]
+            s = re.sub(r'\D', '', s)
+            if s and r[1]:
+                sc_map[s.zfill(5)] = (int(r[1]), r[2])
+
+        # Nivel categorization helper
+        def categorize_level(lvls):
+            if not lvls:
+                return 'UNKNOWN'
+            both_keywords = ['PRIMARIO - SECUNDARIO', 'PRIMARIO / SECUNDARIO', 'INICIAL / PRIMARIO / SECUNDARIO', 'INICIAL/PRIMARIA/ SECUNDARIA', 'INICIAL/PRIMARIA/SECUNDARIA']
+            for lvl in lvls:
+                lvl_u = lvl.upper()
+                if any(bk in lvl_u for bk in both_keywords):
+                    return 'BOTH'
+            has_prim = False
+            has_sec = False
+            for lvl in lvls:
+                lvl_u = lvl.upper()
+                if 'SECUNDARIO' in lvl_u or 'SECUNDARIA' in lvl_u or 'POLITÉCNICO' in lvl_u or 'POLITECNICO' in lvl_u:
+                    has_sec = True
+                if 'PRIMARIO' in lvl_u or 'PRIMARIA' in lvl_u:
+                    has_prim = True
+            if has_prim and has_sec:
+                return 'BOTH'
+            elif has_sec:
+                return 'SECUNDARIO_ONLY'
+            elif has_prim:
+                return 'PRIMARIO_ONLY'
+            return 'UNKNOWN'
+
+        # 4. Resolve centers
+        resolved_centers = []
+        for code, lvls in code_levels.items():
+            cat = categorize_level(lvls)
+            coedom_id = None
+            db_name = ""
+            if code in db_map:
+                coedom_id, db_name = db_map[code]
+            elif code in sc_map:
+                coedom_id, db_name = sc_map[code]
+                
+            if coedom_id:
+                name = list(code_names[code])[0] if code_names[code] else db_name
+                resolved_centers.append({
+                    'coedom_id': coedom_id,
+                    'nivel_cat': cat
+                })
+
+        # 5. Insert or reuse PDF file in Evidencia.Archivos
+        cursor.execute("SELECT Id FROM Evidencia.Archivos WHERE NombreOriginal = ? AND CoedomId = 25269", pdf_filename)
+        existing_file = cursor.fetchone()
+        if existing_file:
+            archivo_id = existing_file[0]
+            self.logger.info(f"Reutilizando archivo de evidencia ID: {archivo_id}")
+        else:
+            row_guid = str(uuid.uuid4())
+            insert_archivo_sql = """
+                INSERT INTO Evidencia.Archivos (
+                    CoedomId, SubIndicadorEvidenciaId, NombreOriginal, ArchivoBinario, EstadoArchivoId,
+                    EvidenciaId, CreatedAt, CreatedBy, IsActive, IsDeleted, RowGuid, TipoAlmacenamiento, RutaExterna
+                )
+                OUTPUT INSERTED.Id
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """
+            cursor.execute(
+                insert_archivo_sql,
+                25269, 20, pdf_filename, pyodbc.Binary(pdf_bytes), 3,
+                None, datetime.now(), 'migracion', True, False, row_guid, 1, None
+            )
+            archivo_id = cursor.fetchone()[0]
+            self.logger.info(f"Insertado archivo de evidencia ID: {archivo_id}")
+
+        # 6. Generate exceptions
+        exceptions_to_insert = []
+        for rc in resolved_centers:
+            coedom_id = rc['coedom_id']
+            nivel_cat = rc['nivel_cat']
+            
+            if nivel_cat == 'PRIMARIO_ONLY':
+                exceptions_to_insert.append((coedom_id, 6)) # Ns 7.02
+                exceptions_to_insert.append((coedom_id, 43)) # Ns 7.01
+            elif nivel_cat == 'SECUNDARIO_ONLY':
+                exceptions_to_insert.append((coedom_id, 5)) # Np 7.01
+
+        # 7. Insert exceptions (avoid duplicates)
+        insert_ex_sql = """
+            INSERT INTO Mantenimiento.ConfiguracionOrganismoExcepcion (
+                CoedomId, TipoEntidadId, EntidadId, Aplica, FechaVencimiento, FechaExtension,
+                UsuarioConfiguracionId, FechaConfiguracion, TipoVencimientoId, CreatedAt, CreatedBy,
+                IsActive, IsDeleted, ArchivoId
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """
+        
+        user_config_id = '4011D474-7472-4FC4-9EE0-0C9B23AF1B17'
+        now = datetime.now()
+        inserted_count = 0
+        
+        for coedom_id, sub_ind_id in exceptions_to_insert:
+            cursor.execute("""
+                SELECT COUNT(*) FROM Mantenimiento.ConfiguracionOrganismoExcepcion 
+                WHERE CoedomId = ? AND TipoEntidadId = 2 AND EntidadId = ?
+            """, coedom_id, sub_ind_id)
+            exists = cursor.fetchone()[0]
+            if exists > 0:
+                continue
+                
+            cursor.execute(
+                insert_ex_sql,
+                coedom_id,
+                2, # TipoEntidadId = 2 (SubIndicador)
+                sub_ind_id, # EntidadId = sub_ind_id
+                True, # Aplica = 1 (bit)
+                None, # FechaVencimiento = NULL
+                None, # FechaExtension = NULL
+                user_config_id,
+                now,
+                2, # TipoVencimientoId = 2 (Manual)
+                now,
+                'migracion',
+                True,
+                False,
+                archivo_id
+            )
+            inserted_count += 1
+            
+        self.logger.info(f"Se aplicaron {inserted_count} excepciones de nivel primario/secundario automáticamente.")
+
+    def reconstruir_cache(self):
+        cursor = self.conn_destino.cursor()
+        orig_autocommit = self.conn_destino.autocommit
+        self.conn_destino.autocommit = True
+        
+        try:
+            self.logger.info("Ejecutando Cache.sp_ActualizarConfiguracionEntidad...")
+            cursor.execute("EXEC Cache.sp_ActualizarConfiguracionEntidad")
+            
+            self.logger.info("Ejecutando Cache.sp_ActualizarRankingSubIndicador...")
+            cursor.execute("EXEC Cache.sp_ActualizarRankingSubIndicador")
+            
+            self.logger.info("Ejecutando Cache.sp_ActualizarRankingGlobal...")
+            cursor.execute("EXEC Cache.sp_ActualizarRankingGlobal")
+            
+            self.logger.info("Reconstrucción de caché global finalizada con éxito.")
+        except Exception as e:
+            self.logger.error(f"Error al reconstruir la caché: {e}")
+        finally:
+            self.conn_destino.autocommit = orig_autocommit

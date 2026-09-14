@@ -1,11 +1,15 @@
-from typing import List
-from models.entities import TipoVencimiento, TiposSubIndicador, Indicador, SubIndicador, EvidenciaDest, SubIndicadorEvidencia, FechaVencimientoSubIndicadorEvidencia, PuntuacionDest, RevisionEvidenciaDest, ComentarioRevisionDest
+from typing import List, Set
+from models.entities import (
+    TipoVencimiento, TiposSubIndicador, TiposEvaluacion, EstadosArchivo,
+    Indicador, SubIndicador, EvidenciaDest, SubIndicadorEvidencia,
+    FechaVencimientoSubIndicadorEvidencia, ArchivoDest, PuntuacionDest,
+    RevisionEvidenciaDest, ComentarioRevisionDest, NoticiaDest
+)
 
 class DestinoRepository:
     """
-    Repositorio para ESCRIBIR datos en la BD DESTINO (SISMAP_EDUCACION_M)
-    Esquema principal: Mantenimiento
-    Solo operaciones INSERT, DELETE
+    Repositorio para ESCRIBIR datos en la BD DESTINO (SISMAP_SEGURIDAD)
+    Esquemas principales: Seguridad, Noticias, Mantenimiento, Usuario
     """
     
     def __init__(self, conn):
@@ -13,18 +17,18 @@ class DestinoRepository:
         self.cursor = conn.cursor()
     
     # ============================================================
-    # TIPO VENCIMIENTO (Mantenimiento.TipoVencimiento)
+    # CATALOGOS EN ESQUEMA SEGURIDAD
     # ============================================================
     
     def insertar_tipos_vencimiento(self, datos: List[TipoVencimiento]) -> int:
-        """Inserta o Actualiza TipoVencimiento en destino (UPSERT)"""
-        # Using MERGE to handle existing IDs (Constraint Violation Fix)
+        """Inserta o Actualiza en Seguridad.TiposVencimiento (UPSERT)"""
         query = """
-            MERGE Mantenimiento.TipoVencimiento AS Target
-            USING (VALUES (?, ?, ?, ?, ?, ?, ?)) AS Source (Id, Nombre, Descripcion, CreatedAt, CreatedBy, IsActive, IsDeleted)
+            MERGE Seguridad.TiposVencimiento AS Target
+            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?)) AS Source (Id, Codigo, Nombre, Descripcion, CreatedAt, CreatedBy, IsActive, IsDeleted)
             ON (Target.Id = Source.Id)
             WHEN MATCHED THEN
                 UPDATE SET 
+                    Codigo = Source.Codigo,
                     Nombre = Source.Nombre,
                     Descripcion = Source.Descripcion,
                     UpdatedAt = GETDATE(),
@@ -32,14 +36,14 @@ class DestinoRepository:
                     IsActive = Source.IsActive,
                     IsDeleted = Source.IsDeleted
             WHEN NOT MATCHED THEN
-                INSERT (Id, Nombre, Descripcion, CreatedAt, CreatedBy, IsActive, IsDeleted)
-                VALUES (Source.Id, Source.Nombre, Source.Descripcion, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted);
+                INSERT (Id, Codigo, Nombre, Descripcion, CreatedAt, CreatedBy, IsActive, IsDeleted)
+                VALUES (Source.Id, Source.Codigo, Source.Nombre, Source.Descripcion, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted);
         """
-        
         count = 0
         for item in datos:
             self.cursor.execute(query, 
                 item.Id,
+                item.Codigo or f"TV-{item.Id}",
                 item.Nombre,
                 item.Descripcion,
                 item.CreatedAt,
@@ -50,35 +54,30 @@ class DestinoRepository:
             count += 1
         return count
     
-    def limpiar_tipos_vencimiento(self) -> int:
-        """Elimina todos los TipoVencimiento"""
-        self.cursor.execute("DELETE FROM Mantenimiento.TipoVencimiento")
-        count = self.cursor.rowcount
-        self.resetear_identidad('Mantenimiento', 'TipoVencimiento')
-        return count
-    
-    # ============================================================
-    # TIPOS SUB INDICADOR (Mantenimiento.TiposSubIndicador)
-    # ============================================================
-    
     def insertar_tipos_sub_indicador(self, datos: List[TiposSubIndicador]) -> int:
-        """Inserta TiposSubIndicador en destino"""
+        """Inserta o Actualiza en Seguridad.TiposSubIndicador (UPSERT)"""
         query = """
-            INSERT INTO Mantenimiento.TiposSubIndicador (
-                Id,
-                Nombre,
-                Descripcion,
-                CreatedAt,
-                CreatedBy,
-                IsActive,
-                IsDeleted
-            ) VALUES (?, ?, ?, ?, ?, ?, ?)
+            MERGE Seguridad.TiposSubIndicador AS Target
+            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?)) AS Source (Id, Codigo, Nombre, Descripcion, CreatedAt, CreatedBy, IsActive, IsDeleted)
+            ON (Target.Id = Source.Id)
+            WHEN MATCHED THEN
+                UPDATE SET 
+                    Codigo = Source.Codigo,
+                    Nombre = Source.Nombre,
+                    Descripcion = Source.Descripcion,
+                    UpdatedAt = GETDATE(),
+                    UpdatedBy = 'MigrationScript_Update',
+                    IsActive = Source.IsActive,
+                    IsDeleted = Source.IsDeleted
+            WHEN NOT MATCHED THEN
+                INSERT (Id, Codigo, Nombre, Descripcion, CreatedAt, CreatedBy, IsActive, IsDeleted)
+                VALUES (Source.Id, Source.Codigo, Source.Nombre, Source.Descripcion, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted);
         """
-        
         count = 0
         for item in datos:
             self.cursor.execute(query,
                 item.Id,
+                item.Codigo or f"TSI-{item.Id}",
                 item.Nombre,
                 item.Descripcion,
                 item.CreatedAt,
@@ -88,39 +87,102 @@ class DestinoRepository:
             )
             count += 1
         return count
-    
-    def limpiar_tipos_sub_indicador(self) -> int:
-        self.cursor.execute("DELETE FROM Mantenimiento.TiposSubIndicador")
-        count = self.cursor.rowcount
-        self.resetear_identidad('Mantenimiento', 'TiposSubIndicador')
+
+    def insertar_tipos_evaluacion(self, datos: List[TiposEvaluacion]) -> int:
+        """Inserta o Actualiza en Seguridad.TiposEvaluacion (UPSERT)"""
+        query = """
+            MERGE Seguridad.TiposEvaluacion AS Target
+            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?)) AS Source (Id, Codigo, Nombre, Descripcion, CreatedAt, CreatedBy, IsActive, IsDeleted)
+            ON (Target.Id = Source.Id)
+            WHEN MATCHED THEN
+                UPDATE SET 
+                    Codigo = Source.Codigo,
+                    Nombre = Source.Nombre,
+                    Descripcion = Source.Descripcion,
+                    UpdatedAt = GETDATE(),
+                    UpdatedBy = 'MigrationScript_Update',
+                    IsActive = Source.IsActive,
+                    IsDeleted = Source.IsDeleted
+            WHEN NOT MATCHED THEN
+                INSERT (Id, Codigo, Nombre, Descripcion, CreatedAt, CreatedBy, IsActive, IsDeleted)
+                VALUES (Source.Id, Source.Codigo, Source.Nombre, Source.Descripcion, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted);
+        """
+        count = 0
+        for item in datos:
+            self.cursor.execute(query,
+                item.Id,
+                item.Codigo or f"TE-{item.Id}",
+                item.Nombre,
+                item.Descripcion,
+                item.CreatedAt,
+                item.CreatedBy,
+                item.IsActive,
+                item.IsDeleted
+            )
+            count += 1
         return count
-    
+
+    def insertar_estados_archivo(self, datos: List[EstadosArchivo]) -> int:
+        """Inserta o Actualiza en Seguridad.EstadosArchivo (UPSERT)"""
+        query = """
+            MERGE Seguridad.EstadosArchivo AS Target
+            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?)) AS Source (Id, Codigo, Nombre, Descripcion, CreatedAt, CreatedBy, IsActive, IsDeleted)
+            ON (Target.Id = Source.Id)
+            WHEN MATCHED THEN
+                UPDATE SET 
+                    Codigo = Source.Codigo,
+                    Nombre = Source.Nombre,
+                    Descripcion = Source.Descripcion,
+                    UpdatedAt = GETDATE(),
+                    UpdatedBy = 'MigrationScript_Update',
+                    IsActive = Source.IsActive,
+                    IsDeleted = Source.IsDeleted
+            WHEN NOT MATCHED THEN
+                INSERT (Id, Codigo, Nombre, Descripcion, CreatedAt, CreatedBy, IsActive, IsDeleted)
+                VALUES (Source.Id, Source.Codigo, Source.Nombre, Source.Descripcion, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted);
+        """
+        count = 0
+        for item in datos:
+            self.cursor.execute(query,
+                item.Id,
+                item.Codigo or f"EA-{item.Id}",
+                item.Nombre,
+                item.Descripcion,
+                item.CreatedAt,
+                item.CreatedBy,
+                item.IsActive,
+                item.IsDeleted
+            )
+            count += 1
+        return count
+
     # ============================================================
-    # INDICADORES (Mantenimiento.Indicadores)
+    # INDICADORES (Seguridad.Indicadores)
     # ============================================================
     
     def insertar_indicadores(self, datos: List[Indicador]) -> int:
-        """Inserta o Actualiza Indicadores en destino (UPSERT)"""
-        # NOTA: TipoIndicadorId omitido - no existe en la BD destino actual.
+        """Inserta o Actualiza en Seguridad.Indicadores (UPSERT)"""
         query = """
-            MERGE Mantenimiento.Indicadores AS Target
-            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)) AS Source (Id, Codigo, Nombre, Descripcion, Peso, CreatedAt, CreatedBy, IsActive, IsDeleted)
+            MERGE Seguridad.Indicadores AS Target
+            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)) AS Source (
+                Id, Codigo, Nombre, Descripcion, Orden, Peso, CreatedAt, CreatedBy, IsActive, IsDeleted
+            )
             ON (Target.Id = Source.Id)
             WHEN MATCHED THEN
                 UPDATE SET
                     Codigo = Source.Codigo,
                     Nombre = Source.Nombre,
                     Descripcion = Source.Descripcion,
+                    Orden = Source.Orden,
                     Peso = Source.Peso,
                     UpdatedAt = GETDATE(),
                     UpdatedBy = 'MigrationScript_Update',
                     IsActive = Source.IsActive,
                     IsDeleted = Source.IsDeleted
             WHEN NOT MATCHED THEN
-                INSERT (Id, Codigo, Nombre, Descripcion, Peso, CreatedAt, CreatedBy, IsActive, IsDeleted)
-                VALUES (Source.Id, Source.Codigo, Source.Nombre, Source.Descripcion, Source.Peso, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted);
+                INSERT (Id, Codigo, Nombre, Descripcion, Orden, Peso, CreatedAt, CreatedBy, IsActive, IsDeleted)
+                VALUES (Source.Id, Source.Codigo, Source.Nombre, Source.Descripcion, Source.Orden, Source.Peso, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted);
         """
-        
         count = 0
         for item in datos:
             self.cursor.execute(query,
@@ -128,6 +190,7 @@ class DestinoRepository:
                 item.Codigo,
                 item.Nombre,
                 item.Descripcion,
+                item.Orden or item.Id,
                 item.Peso,
                 item.CreatedAt,
                 item.CreatedBy,
@@ -136,55 +199,58 @@ class DestinoRepository:
             )
             count += 1
         return count
-    
-    def limpiar_indicadores(self) -> int:
-        self.cursor.execute("""
-            DELETE FROM Mantenimiento.Indicadores
-            WHERE Id NOT IN (
-                SELECT DISTINCT IndicadorId 
-                FROM Mantenimiento.SubIndicadores
-            )
-        """)
-        count = self.cursor.rowcount
-        return count
 
     # ============================================================
-    # SUB INDICADORES (Mantenimiento.SubIndicadores)
+    # SUB INDICADORES (Seguridad.SubIndicadores)
     # ============================================================
     
     def insertar_sub_indicadores(self, datos: List[SubIndicador]) -> int:
-        """Inserta o Actualiza SubIndicadores en destino (UPSERT)"""
+        """Inserta o Actualiza en Seguridad.SubIndicadores (UPSERT)"""
         query = """
-            MERGE Mantenimiento.SubIndicadores AS Target
-            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)) AS Source (Id, IndicadorId, TipoSubIndicadorId, Codigo, Nombre, Descripcion, Peso, CreatedAt, CreatedBy, IsActive, IsDeleted)
+            MERGE Seguridad.SubIndicadores AS Target
+            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)) AS Source (
+                Id, IndicadorId, TipoSubIndicadorId, TipoVencimientoId, Codigo, Nombre, Descripcion, 
+                Orden, Peso, UnidadResponsable, CreatedAt, CreatedBy, IsActive, IsDeleted
+            )
             ON (Target.Id = Source.Id)
             WHEN MATCHED THEN
                 UPDATE SET
                     IndicadorId = Source.IndicadorId,
                     TipoSubIndicadorId = Source.TipoSubIndicadorId,
+                    TipoVencimientoId = Source.TipoVencimientoId,
                     Codigo = Source.Codigo,
                     Nombre = Source.Nombre,
                     Descripcion = Source.Descripcion,
+                    Orden = Source.Orden,
                     Peso = Source.Peso,
+                    UnidadResponsable = Source.UnidadResponsable,
                     UpdatedAt = GETDATE(),
                     UpdatedBy = 'MigrationScript_Update',
                     IsActive = Source.IsActive,
                     IsDeleted = Source.IsDeleted
             WHEN NOT MATCHED THEN
-                INSERT (Id, IndicadorId, TipoSubIndicadorId, Codigo, Nombre, Descripcion, Peso, CreatedAt, CreatedBy, IsActive, IsDeleted)
-                VALUES (Source.Id, Source.IndicadorId, Source.TipoSubIndicadorId, Source.Codigo, Source.Nombre, Source.Descripcion, Source.Peso, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted);
+                INSERT (
+                    Id, IndicadorId, TipoSubIndicadorId, TipoVencimientoId, Codigo, Nombre, Descripcion, 
+                    Orden, Peso, UnidadResponsable, CreatedAt, CreatedBy, IsActive, IsDeleted
+                )
+                VALUES (
+                    Source.Id, Source.IndicadorId, Source.TipoSubIndicadorId, Source.TipoVencimientoId, Source.Codigo, Source.Nombre, Source.Descripcion, 
+                    Source.Orden, Source.Peso, Source.UnidadResponsable, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted
+                );
         """
-        
         count = 0
         for item in datos:
             self.cursor.execute(query,
                 item.Id,
                 item.IndicadorId,
                 item.TipoSubIndicadorId,
+                item.TipoVencimientoId,
                 item.Codigo,
                 item.Nombre,
                 item.Descripcion,
+                item.Orden or item.Id,
                 item.Peso,
+                item.UnidadResponsable,
                 item.CreatedAt,
                 item.CreatedBy,
                 item.IsActive,
@@ -193,93 +259,70 @@ class DestinoRepository:
             count += 1
         return count
 
-    
-    def limpiar_sub_indicadores(self) -> int:
-        self.cursor.execute("""
-            DELETE FROM Mantenimiento.SubIndicadores
-            WHERE Id NOT IN (
-                SELECT DISTINCT SubIndicadorId 
-                FROM Evidencia.SubIndicadorEvidencias
-            )
-        """)
-        count = self.cursor.rowcount
-        return count
-    
     # ============================================================
-    # EVIDENCIAS (Evidencia Schema)
+    # EVIDENCIAS (Seguridad.Evidencias)
     # ============================================================
 
     def insertar_evidencias(self, datos: List[EvidenciaDest]) -> int:
-        """Inserta o Actualiza en Evidencia.Evidencias (UPSERT)"""
+        """Inserta o Actualiza en Seguridad.Evidencias (UPSERT)"""
         query = """
-            MERGE Evidencia.Evidencias AS Target
-            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)) AS Source (Id, Nombre, Descripcion, Valor, PreRequisitoId, CreatedAt, CreatedBy, IsActive, IsDeleted, AplicaVencimiento, CantidadDias, FechaVencimiento, Codigo)
+            MERGE Seguridad.Evidencias AS Target
+            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)) AS Source (
+                Id, Codigo, Nombre, Descripcion, Valor, AplicaVencimiento, CantidadDias, 
+                FechaVencimiento, PreRequisitoId, CreatedAt, CreatedBy, IsActive, IsDeleted
+            )
             ON (Target.Id = Source.Id)
             WHEN MATCHED THEN
                 UPDATE SET
+                    Codigo = Source.Codigo,
                     Nombre = Source.Nombre,
                     Descripcion = Source.Descripcion,
                     Valor = Source.Valor,
+                    AplicaVencimiento = Source.AplicaVencimiento,
+                    CantidadDias = Source.CantidadDias,
+                    FechaVencimiento = Source.FechaVencimiento,
                     PreRequisitoId = Source.PreRequisitoId,
                     UpdatedAt = GETDATE(),
                     UpdatedBy = 'MigrationScript_Update',
                     IsActive = Source.IsActive,
-                    IsDeleted = Source.IsDeleted,
-                    AplicaVencimiento = Source.AplicaVencimiento,
-                    CantidadDias = Source.CantidadDias,
-                    FechaVencimiento = Source.FechaVencimiento,
-                    Codigo = Source.Codigo
+                    IsDeleted = Source.IsDeleted
             WHEN NOT MATCHED THEN
-                INSERT (Id, Nombre, Descripcion, Valor, PreRequisitoId, CreatedAt, CreatedBy, IsActive, IsDeleted, AplicaVencimiento, CantidadDias, FechaVencimiento, Codigo)
-                VALUES (Source.Id, Source.Nombre, Source.Descripcion, Source.Valor, Source.PreRequisitoId, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted, Source.AplicaVencimiento, Source.CantidadDias, Source.FechaVencimiento, Source.Codigo);
+                INSERT (
+                    Id, Codigo, Nombre, Descripcion, Valor, AplicaVencimiento, CantidadDias, 
+                    FechaVencimiento, PreRequisitoId, CreatedAt, CreatedBy, IsActive, IsDeleted
+                )
+                VALUES (
+                    Source.Id, Source.Codigo, Source.Nombre, Source.Descripcion, Source.Valor, Source.AplicaVencimiento, Source.CantidadDias, 
+                    Source.FechaVencimiento, Source.PreRequisitoId, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted
+                );
         """
         count = 0
         for item in datos:
             self.cursor.execute(query,
                 item.Id,
+                item.Codigo,
                 item.Nombre,
                 item.Descripcion,
                 item.Valor,
+                item.AplicaVencimiento,
+                item.CantidadDias,
+                item.FechaVencimiento,
                 item.PreRequisitoId,
                 item.CreatedAt,
                 item.CreatedBy,
                 item.IsActive,
-                item.IsDeleted,
-                item.AplicaVencimiento,
-                item.CantidadDias,
-                item.FechaVencimiento,
-                item.Codigo
+                item.IsDeleted
             )
             count += 1
         return count
-    
-    def limpiar_evidencias(self) -> int:
-        self.deshabilitar_constraint('Evidencia', 'Evidencias', 'FK_Evidencias_Evidencias_PreRequisitoId')
-        self.cursor.execute("""
-            WITH KeptEvidencias AS (
-                SELECT Id, PreRequisitoId
-                FROM Evidencia.Evidencias
-                WHERE Id IN (SELECT DISTINCT EvidenciaId FROM Evidencia.SubIndicadorEvidencias)
-                   OR Id IN (SELECT DISTINCT EvidenciaId FROM Evidencia.Archivos WHERE EvidenciaId IS NOT NULL)
-                
-                UNION ALL
-                
-                SELECT e.Id, e.PreRequisitoId
-                FROM Evidencia.Evidencias e
-                INNER JOIN KeptEvidencias k ON e.Id = k.PreRequisitoId
-            )
-            DELETE FROM Evidencia.Evidencias
-            WHERE Id NOT IN (SELECT Id FROM KeptEvidencias)
-        """)
-        count = self.cursor.rowcount
-        self.habilitar_constraint('Evidencia', 'Evidencias', 'FK_Evidencias_Evidencias_PreRequisitoId')
-        return count
 
     def insertar_fecha_vencimiento_evidencias(self, datos: List[FechaVencimientoSubIndicadorEvidencia]) -> int:
-        """Inserta o Actualiza en Evidencia.FechaVencimientoSubIndicadorEvidencias"""
+        """Inserta o Actualiza en Seguridad.FechasVencimientoSubIndicadorEvidencia"""
         query = """
-            MERGE Evidencia.FechaVencimientoSubIndicadorEvidencias AS Target
-            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?)) AS Source (Id, TipoVencimientoId, FechaVencimiento, PeriodicidadDias, CreatedAt, CreatedBy, IsActive, IsDeleted)
+            MERGE Seguridad.FechasVencimientoSubIndicadorEvidencia AS Target
+            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?)) AS Source (
+                Id, TipoVencimientoId, FechaVencimiento, PeriodicidadDias, CreatedAt, CreatedBy, IsActive, IsDeleted
+            )
             ON (Target.Id = Source.Id)
             WHEN MATCHED THEN
                 UPDATE SET
@@ -309,37 +352,35 @@ class DestinoRepository:
             count += 1
         return count
 
-    def limpiar_fecha_vencimiento_evidencias(self) -> int:
-        self.cursor.execute("""
-            DELETE FROM Evidencia.FechaVencimientoSubIndicadorEvidencias
-            WHERE Id NOT IN (
-                SELECT DISTINCT FechaVencimientoSubIndicadorEvidenciaId 
-                FROM Evidencia.SubIndicadorEvidencias
-            )
-        """)
-        count = self.cursor.rowcount
-        return count
-
     def insertar_sub_indicador_evidencias(self, datos: List[SubIndicadorEvidencia]) -> int:
-        """Inserta o Actualiza en Evidencia.SubIndicadorEvidencias"""
+        """Inserta o Actualiza en Seguridad.SubIndicadorEvidencias"""
         query = """
-            MERGE Evidencia.SubIndicadorEvidencias AS Target
-            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)) AS Source (Id, SubIndicadorId, EvidenciaId, FechaVencimientoSubIndicadorEvidenciaId, TipoEvaluacionId, FechaVenciento, CreatedAt, CreatedBy, IsActive, IsDeleted)
+            MERGE Seguridad.SubIndicadorEvidencias AS Target
+            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)) AS Source (
+                Id, SubIndicadorId, EvidenciaId, FechaVenciento, TipoEvaluacionId, 
+                FechaVencimientoSubIndicadorEvidenciaId, CreatedAt, CreatedBy, IsActive, IsDeleted
+            )
             ON (Target.Id = Source.Id)
             WHEN MATCHED THEN
                 UPDATE SET
                     SubIndicadorId = Source.SubIndicadorId,
                     EvidenciaId = Source.EvidenciaId,
-                    FechaVencimientoSubIndicadorEvidenciaId = Source.FechaVencimientoSubIndicadorEvidenciaId,
-                    TipoEvaluacionId = Source.TipoEvaluacionId,
                     FechaVenciento = Source.FechaVenciento,
+                    TipoEvaluacionId = Source.TipoEvaluacionId,
+                    FechaVencimientoSubIndicadorEvidenciaId = Source.FechaVencimientoSubIndicadorEvidenciaId,
                     UpdatedAt = GETDATE(),
                     UpdatedBy = 'MigrationScript_Update',
                     IsActive = Source.IsActive,
                     IsDeleted = Source.IsDeleted
             WHEN NOT MATCHED THEN
-                INSERT (Id, SubIndicadorId, EvidenciaId, FechaVencimientoSubIndicadorEvidenciaId, TipoEvaluacionId, FechaVenciento, CreatedAt, CreatedBy, IsActive, IsDeleted)
-                VALUES (Source.Id, Source.SubIndicadorId, Source.EvidenciaId, Source.FechaVencimientoSubIndicadorEvidenciaId, Source.TipoEvaluacionId, Source.FechaVenciento, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted);
+                INSERT (
+                    Id, SubIndicadorId, EvidenciaId, FechaVenciento, TipoEvaluacionId, 
+                    FechaVencimientoSubIndicadorEvidenciaId, CreatedAt, CreatedBy, IsActive, IsDeleted
+                )
+                VALUES (
+                    Source.Id, Source.SubIndicadorId, Source.EvidenciaId, Source.FechaVenciento, Source.TipoEvaluacionId, 
+                    Source.FechaVencimientoSubIndicadorEvidenciaId, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted
+                );
         """
         count = 0
         for item in datos:
@@ -347,9 +388,9 @@ class DestinoRepository:
                 item.Id,
                 item.SubIndicadorId,
                 item.EvidenciaId,
-                item.FechaVencimientoSubIndicadorEvidenciaId,
-                item.TipoEvaluacionId,
                 item.FechaVenciento,
+                item.TipoEvaluacionId,
+                item.FechaVencimientoSubIndicadorEvidenciaId,
                 item.CreatedAt,
                 item.CreatedBy,
                 item.IsActive,
@@ -358,32 +399,18 @@ class DestinoRepository:
             count += 1
         return count
 
-    def limpiar_sub_indicador_evidencias(self) -> int:
-        self.cursor.execute("""
-            DELETE FROM Evidencia.SubIndicadorEvidencias
-            WHERE Id NOT IN (
-                SELECT DISTINCT SubIndicadorEvidenciaId 
-                FROM Evidencia.Archivos
-            )
-        """)
-        count = self.cursor.rowcount
-        return count
-
     # ============================================================
-    # ARCHIVOS (Evidencia.Archivos)
+    # ARCHIVOS (Seguridad.Archivos)
     # ============================================================
 
-    def insertar_archivos(self, datos: List['ArchivoDest']) -> int: # Forward ref or import if needed, but python is dynamic
-        """Inserta o Actualiza en Evidencia.Archivos (UPSERT)"""
-        # Note: CoedomId, SubIndicadorEvidenciaId, NombreOriginal, ArchivoBinario, EstadoArchivoId, RowGuid, TipoAlmacenamiento, RutaExterna
-        # are required/important fields.
-        
+    def insertar_archivos(self, datos: List[ArchivoDest]) -> int:
+        """Inserta o Actualiza en Seguridad.Archivos (UPSERT)"""
         query = """
-            MERGE Evidencia.Archivos AS Target
-            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)) AS Source (
-                Id, CoedomId, SubIndicadorEvidenciaId, NombreOriginal, ArchivoBinario, EstadoArchivoId, 
-                EvidenciaId, CreatedAt, CreatedBy, UpdatedAt, UpdatedBy, IsActive, IsDeleted, 
-                RowGuid, TipoAlmacenamiento, RutaExterna
+            MERGE Seguridad.Archivos AS Target
+            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)) AS Source (
+                Id, CoedomId, SubIndicadorEvidenciaId, NombreOriginal, ArchivoBinario, RowGuid, 
+                EstadoArchivoId, TipoAlmacenamiento, RutaExterna, CreatedAt, CreatedBy, 
+                UpdatedAt, UpdatedBy, IsActive, IsDeleted
             )
             ON (Target.Id = Source.Id)
             WHEN MATCHED THEN
@@ -391,112 +418,86 @@ class DestinoRepository:
                     CoedomId = Source.CoedomId,
                     SubIndicadorEvidenciaId = Source.SubIndicadorEvidenciaId,
                     NombreOriginal = Source.NombreOriginal,
-                    -- Update binary only if provided, else keep existing? 
-                    -- Migration usually overwrites. Source has no binary, so we might receive empty.
-                    -- If we want to preserve existing binary in DB, we'd need check. 
-                    -- But this is full migration. Overwriting is standard.
                     ArchivoBinario = Source.ArchivoBinario,
+                    RowGuid = Source.RowGuid,
                     EstadoArchivoId = Source.EstadoArchivoId,
-                    EvidenciaId = Source.EvidenciaId,
+                    TipoAlmacenamiento = Source.TipoAlmacenamiento,
+                    RutaExterna = Source.RutaExterna,
                     UpdatedAt = GETDATE(),
                     UpdatedBy = 'MigrationScript_Update',
                     IsActive = Source.IsActive,
-                    IsDeleted = Source.IsDeleted,
-                    RowGuid = Source.RowGuid,
-                    TipoAlmacenamiento = Source.TipoAlmacenamiento,
-                    RutaExterna = Source.RutaExterna
+                    IsDeleted = Source.IsDeleted
             WHEN NOT MATCHED THEN
                 INSERT (
-                    Id, CoedomId, SubIndicadorEvidenciaId, NombreOriginal, ArchivoBinario, EstadoArchivoId, 
-                    EvidenciaId, CreatedAt, CreatedBy, UpdatedAt, UpdatedBy, IsActive, IsDeleted, 
-                    RowGuid, TipoAlmacenamiento, RutaExterna
+                    Id, CoedomId, SubIndicadorEvidenciaId, NombreOriginal, ArchivoBinario, RowGuid, 
+                    EstadoArchivoId, TipoAlmacenamiento, RutaExterna, CreatedAt, CreatedBy, 
+                    UpdatedAt, UpdatedBy, IsActive, IsDeleted
                 )
                 VALUES (
-                    Source.Id, Source.CoedomId, Source.SubIndicadorEvidenciaId, Source.NombreOriginal, Source.ArchivoBinario, Source.EstadoArchivoId,
-                    Source.EvidenciaId, Source.CreatedAt, Source.CreatedBy, Source.UpdatedAt, Source.UpdatedBy, Source.IsActive, Source.IsDeleted,
-                    Source.RowGuid, Source.TipoAlmacenamiento, Source.RutaExterna
+                    Source.Id, Source.CoedomId, Source.SubIndicadorEvidenciaId, Source.NombreOriginal, Source.ArchivoBinario, Source.RowGuid, 
+                    Source.EstadoArchivoId, Source.TipoAlmacenamiento, Source.RutaExterna, Source.CreatedAt, Source.CreatedBy, 
+                    Source.UpdatedAt, Source.UpdatedBy, Source.IsActive, Source.IsDeleted
                 );
         """
-        if datos:
-             # Check if ANY item has CoedomId > 0
-             for d in datos:
-                 if d.CoedomId and d.CoedomId > 0:
-                     msg = f"DEBUG DESTINO: Insertar Archivo VALID DETECTED CoedomId={d.CoedomId}"
-                     print(msg)
-                     # raise Exception(msg) # Removed validation crash
-
         count = 0
         for item in datos:
             self.cursor.execute(query,
                 item.Id,
-                item.CoedomId,
+                item.CoedomId or 0,
                 item.SubIndicadorEvidenciaId,
                 item.NombreOriginal,
                 item.ArchivoBinario,
-                item.EstadoArchivoId,
-                item.EvidenciaId,
+                item.RowGuid,
+                item.EstadoArchivoId or 1,
+                item.TipoAlmacenamiento or 1,
+                item.RutaExterna,
                 item.CreatedAt,
                 item.CreatedBy,
                 item.UpdatedAt,
                 item.UpdatedBy,
                 item.IsActive,
-                item.IsDeleted,
-                item.RowGuid,
-                item.TipoAlmacenamiento,
-                item.RutaExterna
+                item.IsDeleted
             )
             count += 1
         return count
 
-    def limpiar_archivos(self) -> int:
-        self.cursor.execute("""
-            DELETE FROM Evidencia.Archivos
-            WHERE Id NOT IN (
-                SELECT DISTINCT ArchivoId 
-                FROM Mantenimiento.ConfiguracionOrganismoExcepcion 
-                WHERE ArchivoId IS NOT NULL
-            )
-            AND Id NOT IN (
-                SELECT DISTINCT ArchivoId 
-                FROM Auditoria.Ticket 
-                WHERE ArchivoId IS NOT NULL
-            )
-            AND Id NOT IN (
-                SELECT DISTINCT RevisionEvidenciaId 
-                FROM Auditoria.Ticket 
-                WHERE RevisionEvidenciaId IS NOT NULL
-            )
-        """)
-        count = self.cursor.rowcount
-        return count
-
-    def obtener_ids_archivos_existentes(self) -> set:
+    def obtener_ids_archivos_existentes(self) -> Set[int]:
         """Retorna un conjunto de todos los IDs de archivos actualmente existentes en la BD"""
-        self.cursor.execute("SELECT Id FROM Evidencia.Archivos")
+        self.cursor.execute("SELECT Id FROM Seguridad.Archivos")
         return {row[0] for row in self.cursor.fetchall()}
 
     # ============================================================
-    # PUNTUACION (Evidencia.Puntuacion)
+    # PUNTUACIONES (Seguridad.Puntuaciones)
     # ============================================================
 
     def insertar_puntuacion(self, datos: List[PuntuacionDest]) -> int:
-        """Inserta o Actualiza en Evidencia.Puntuacion"""
+        """Inserta o Actualiza en Seguridad.Puntuaciones"""
         query = """
-            MERGE Evidencia.Puntuacion AS Target
-            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?)) AS Source (Id, ArchivoEvidenciaId, PuntuadorUsuarioId, Calificacion, CreatedAt, CreatedBy, IsActive, IsDeleted)
+            MERGE Seguridad.Puntuaciones AS Target
+            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)) AS Source (
+                Id, ArchivoEvidenciaId, PuntuadorUsuarioId, Calificacion, Observacion, 
+                CreatedAt, CreatedBy, IsActive, IsDeleted
+            )
             ON (Target.Id = Source.Id)
             WHEN MATCHED THEN
                 UPDATE SET
                     ArchivoEvidenciaId = Source.ArchivoEvidenciaId,
                     PuntuadorUsuarioId = Source.PuntuadorUsuarioId,
                     Calificacion = Source.Calificacion,
+                    Observacion = Source.Observacion,
                     UpdatedAt = GETDATE(),
                     UpdatedBy = 'MigrationScript_Update',
                     IsActive = Source.IsActive,
                     IsDeleted = Source.IsDeleted
             WHEN NOT MATCHED THEN
-                INSERT (Id, ArchivoEvidenciaId, PuntuadorUsuarioId, Calificacion, CreatedAt, CreatedBy, IsActive, IsDeleted)
-                VALUES (Source.Id, Source.ArchivoEvidenciaId, Source.PuntuadorUsuarioId, Source.Calificacion, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted);
+                INSERT (
+                    Id, ArchivoEvidenciaId, PuntuadorUsuarioId, Calificacion, Observacion, 
+                    CreatedAt, CreatedBy, IsActive, IsDeleted
+                )
+                VALUES (
+                    Source.Id, Source.ArchivoEvidenciaId, Source.PuntuadorUsuarioId, Source.Calificacion, Source.Observacion, 
+                    Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted
+                );
         """
         count = 0
         for item in datos:
@@ -505,6 +506,7 @@ class DestinoRepository:
                 item.ArchivoEvidenciaId,
                 item.PuntuadorUsuarioId,
                 item.Calificacion,
+                item.Observacion,
                 item.CreatedAt,
                 item.CreatedBy,
                 item.IsActive,
@@ -513,36 +515,40 @@ class DestinoRepository:
             count += 1
         return count
 
-    def limpiar_puntuacion(self) -> int:
-        self.cursor.execute("DELETE FROM Evidencia.Puntuacion")
-        count = self.cursor.rowcount
-        self.resetear_identidad('Evidencia', 'Puntuacion')
-        return count
-
     # ============================================================
-    # REVISIONES (Evidencia.RevisionEvidencias)
+    # REVISIONES (Seguridad.RevisionesEvidencia)
     # ============================================================
 
     def insertar_revision_evidencias(self, datos: List[RevisionEvidenciaDest]) -> int:
+        """Inserta o Actualiza en Seguridad.RevisionesEvidencia"""
         query = """
-            MERGE Evidencia.RevisionEvidencias AS Target
-            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)) AS Source (Id, ArchivoEvidenciaId, FechaRevisionConcluida, UsuarioId, EstadoDadoId, NivelRevisionEvidencia, RevisionCoedomId, CreatedAt, CreatedBy, IsActive, IsDeleted)
+            MERGE Seguridad.RevisionesEvidencia AS Target
+            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)) AS Source (
+                Id, ArchivoEvidenciaId, FechaRevisionConcluida, UsuarioId, RevisionCoedomId, 
+                EstadoDadoId, NivelRevisionEvidencia, CreatedAt, CreatedBy, IsActive, IsDeleted
+            )
             ON (Target.Id = Source.Id)
             WHEN MATCHED THEN
                 UPDATE SET
                     ArchivoEvidenciaId = Source.ArchivoEvidenciaId,
                     FechaRevisionConcluida = Source.FechaRevisionConcluida,
                     UsuarioId = Source.UsuarioId,
+                    RevisionCoedomId = Source.RevisionCoedomId,
                     EstadoDadoId = Source.EstadoDadoId,
                     NivelRevisionEvidencia = Source.NivelRevisionEvidencia,
-                    RevisionCoedomId = Source.RevisionCoedomId,
                     UpdatedAt = GETDATE(),
                     UpdatedBy = 'MigrationScript_Update',
                     IsActive = Source.IsActive,
                     IsDeleted = Source.IsDeleted
             WHEN NOT MATCHED THEN
-                INSERT (Id, ArchivoEvidenciaId, FechaRevisionConcluida, UsuarioId, EstadoDadoId, NivelRevisionEvidencia, RevisionCoedomId, CreatedAt, CreatedBy, IsActive, IsDeleted)
-                VALUES (Source.Id, Source.ArchivoEvidenciaId, Source.FechaRevisionConcluida, Source.UsuarioId, Source.EstadoDadoId, Source.NivelRevisionEvidencia, Source.RevisionCoedomId, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted);
+                INSERT (
+                    Id, ArchivoEvidenciaId, FechaRevisionConcluida, UsuarioId, RevisionCoedomId, 
+                    EstadoDadoId, NivelRevisionEvidencia, CreatedAt, CreatedBy, IsActive, IsDeleted
+                )
+                VALUES (
+                    Source.Id, Source.ArchivoEvidenciaId, Source.FechaRevisionConcluida, Source.UsuarioId, Source.RevisionCoedomId, 
+                    Source.EstadoDadoId, Source.NivelRevisionEvidencia, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted
+                );
         """
         count = 0
         for item in datos:
@@ -551,9 +557,9 @@ class DestinoRepository:
                 item.ArchivoEvidenciaId,
                 item.FechaRevisionConcluida,
                 item.UsuarioId,
-                item.EstadoDadoId,
-                item.NivelRevisionEvidencia,
-                item.RevisionCoedomId,
+                item.RevisionCoedomId or 1,
+                item.EstadoDadoId or 1,
+                item.NivelRevisionEvidencia or 1,
                 item.CreatedAt,
                 item.CreatedBy,
                 item.IsActive,
@@ -562,37 +568,34 @@ class DestinoRepository:
             count += 1
         return count
 
-    def limpiar_revision_evidencias(self) -> int:
-        self.cursor.execute("DELETE FROM Evidencia.RevisionEvidencias")
-        count = self.cursor.rowcount
-        self.resetear_identidad('Evidencia', 'RevisionEvidencias')
-        return count
-
     def insertar_comentario_revision(self, datos: List[ComentarioRevisionDest]) -> int:
+        """Inserta o Actualiza en Seguridad.ComentariosRevisionEvidencia"""
         query = """
-            MERGE Evidencia.ComentarioRevisionEvidencias AS Target
-            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?)) AS Source (Id, RevisionEvidenciaId, Observaciones, UsuarioId, CreatedAt, CreatedBy, IsActive, IsDeleted)
+            MERGE Seguridad.ComentariosRevisionEvidencia AS Target
+            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?)) AS Source (
+                Id, RevisionEvidenciaId, UsuarioId, Observaciones, CreatedAt, CreatedBy, IsActive, IsDeleted
+            )
             ON (Target.Id = Source.Id)
             WHEN MATCHED THEN
                 UPDATE SET
                     RevisionEvidenciaId = Source.RevisionEvidenciaId,
-                    Observaciones = Source.Observaciones,
                     UsuarioId = Source.UsuarioId,
+                    Observaciones = Source.Observaciones,
                     UpdatedAt = GETDATE(),
                     UpdatedBy = 'MigrationScript_Update',
                     IsActive = Source.IsActive,
                     IsDeleted = Source.IsDeleted
             WHEN NOT MATCHED THEN
-                INSERT (Id, RevisionEvidenciaId, Observaciones, UsuarioId, CreatedAt, CreatedBy, IsActive, IsDeleted)
-                VALUES (Source.Id, Source.RevisionEvidenciaId, Source.Observaciones, Source.UsuarioId, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted);
+                INSERT (Id, RevisionEvidenciaId, UsuarioId, Observaciones, CreatedAt, CreatedBy, IsActive, IsDeleted)
+                VALUES (Source.Id, Source.RevisionEvidenciaId, Source.UsuarioId, Source.Observaciones, Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted);
         """
         count = 0
         for item in datos:
             self.cursor.execute(query,
                 item.Id,
                 item.RevisionEvidenciaId,
-                item.Observaciones,
                 item.UsuarioId,
+                item.Observaciones,
                 item.CreatedAt,
                 item.CreatedBy,
                 item.IsActive,
@@ -601,84 +604,262 @@ class DestinoRepository:
             count += 1
         return count
 
-    def limpiar_comentario_revision(self) -> int:
-        self.cursor.execute("DELETE FROM Evidencia.ComentarioRevisionEvidencias")
-        count = self.cursor.rowcount
-        self.resetear_identidad('Evidencia', 'ComentarioRevisionEvidencias')
+    # ============================================================
+    # NOTICIAS (Noticias.Noticia)
+    # ============================================================
+
+    def insertar_noticias(self, datos: List[NoticiaDest]) -> int:
+        """Inserta o Actualiza en Noticias.Noticia"""
+        query = """
+            MERGE Noticias.Noticia AS Target
+            USING (VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)) AS Source (
+                Id, Titulo, Descripcion, TipoNoticiaId, EsDestacada, Publicado, VisiblePublico, 
+                CreatedAt, CreatedBy, IsActive, IsDeleted
+            )
+            ON (Target.Id = Source.Id)
+            WHEN MATCHED THEN
+                UPDATE SET
+                    Titulo = Source.Titulo,
+                    Descripcion = Source.Descripcion,
+                    TipoNoticiaId = Source.TipoNoticiaId,
+                    EsDestacada = Source.EsDestacada,
+                    Publicado = Source.Publicado,
+                    VisiblePublico = Source.VisiblePublico,
+                    UpdatedAt = GETDATE(),
+                    UpdatedBy = 'MigrationScript_Update',
+                    IsActive = Source.IsActive,
+                    IsDeleted = Source.IsDeleted
+            WHEN NOT MATCHED THEN
+                INSERT (
+                    Id, Titulo, Descripcion, TipoNoticiaId, EsDestacada, Publicado, VisiblePublico, 
+                    CreatedAt, CreatedBy, IsActive, IsDeleted
+                )
+                VALUES (
+                    Source.Id, Source.Titulo, Source.Descripcion, Source.TipoNoticiaId, Source.EsDestacada, Source.Publicado, Source.VisiblePublico, 
+                    Source.CreatedAt, Source.CreatedBy, Source.IsActive, Source.IsDeleted
+                );
+        """
+        count = 0
+        for item in datos:
+            self.cursor.execute(query,
+                item.Id,
+                item.Titulo,
+                item.Descripcion,
+                item.TipoNoticiaId,
+                item.EsDestacada,
+                item.Publicado,
+                item.VisiblePublico,
+                item.CreatedAt,
+                item.CreatedBy,
+                item.IsActive,
+                item.IsDeleted
+            )
+            count += 1
         return count
 
-    def asegurar_tipo_evaluacion_defecto(self):
-        """Asegura que existan los Tipos de Evaluación por defecto en la BD"""
-        # Asegurar ID 1 (Manual)
-        self.cursor.execute("SELECT COUNT(*) FROM Evidencia.TipoEvaluacion WHERE Id = 1")
-        if self.cursor.fetchone()[0] == 0:
-            self.habilitar_identity_insert('Evidencia', 'TipoEvaluacion')
-            self.cursor.execute("""
-                INSERT INTO Evidencia.TipoEvaluacion (Id, Nombre, CreatedAt, IsActive, IsDeleted)
-                VALUES (1, 'Manual', GETDATE(), 1, 0)
-            """)
-            self.deshabilitar_identity_insert('Evidencia', 'TipoEvaluacion')
+    # ============================================================
+    # LIMPIEZA / RESET DE TABLAS EN BD DESTINO
+    # ============================================================
 
-        # Asegurar ID 2 (Automática)
-        self.cursor.execute("SELECT COUNT(*) FROM Evidencia.TipoEvaluacion WHERE Id = 2")
+    def limpiar_bitacora_historicos(self) -> int:
+        """Limpia tablas históricas de Bitacora para evitar conflictos de FK al reiniciar datos"""
+        count = 0
+        try:
+            self.cursor.execute("DELETE FROM Bitacora.RankingEvidenciasHistorico")
+            count += self.cursor.rowcount
+            self.cursor.execute("DELETE FROM Bitacora.RankingSubIndicadoresHistorico")
+            count += self.cursor.rowcount
+            self.cursor.execute("DELETE FROM Bitacora.RankingIndicadoresHistorico")
+            count += self.cursor.rowcount
+            self.cursor.execute("DELETE FROM Bitacora.RankingOrganismosHistorico")
+            count += self.cursor.rowcount
+            self.resetear_identidad('Bitacora', 'RankingEvidenciasHistorico')
+            self.resetear_identidad('Bitacora', 'RankingSubIndicadoresHistorico')
+            self.resetear_identidad('Bitacora', 'RankingIndicadoresHistorico')
+            self.resetear_identidad('Bitacora', 'RankingOrganismosHistorico')
+        except Exception as e:
+            print(f"Aviso al limpiar Bitacora: {e}")
+        return count
+
+    def limpiar_auditoria_tickets(self) -> int:
+        """Limpia Auditoria.Ticket para evitar conflictos de FK"""
+        count = 0
+        try:
+            self.cursor.execute("DELETE FROM Auditoria.Ticket")
+            count = self.cursor.rowcount
+            self.resetear_identidad('Auditoria', 'Ticket')
+        except Exception as e:
+            print(f"Aviso al limpiar Auditoria: {e}")
+        return count
+
+    def limpiar_respuestas_revision(self) -> int:
+        self.cursor.execute("DELETE FROM Seguridad.RespuestasRevision")
+        count = self.cursor.rowcount
+        self.resetear_identidad('Seguridad', 'RespuestasRevision')
+        return count
+
+    def limpiar_preguntas_revision(self) -> int:
+        self.cursor.execute("DELETE FROM Seguridad.PreguntasRevision")
+        count = self.cursor.rowcount
+        self.resetear_identidad('Seguridad', 'PreguntasRevision')
+        return count
+
+    def limpiar_comentario_revision(self) -> int:
+        self.cursor.execute("DELETE FROM Seguridad.ComentariosRevisionEvidencia")
+        count = self.cursor.rowcount
+        self.resetear_identidad('Seguridad', 'ComentariosRevisionEvidencia')
+        return count
+
+    def limpiar_revision_evidencias(self) -> int:
+        self.cursor.execute("DELETE FROM Seguridad.RevisionesEvidencia")
+        count = self.cursor.rowcount
+        self.resetear_identidad('Seguridad', 'RevisionesEvidencia')
+        return count
+
+    def limpiar_puntuacion(self) -> int:
+        self.cursor.execute("DELETE FROM Seguridad.Puntuaciones")
+        count = self.cursor.rowcount
+        self.resetear_identidad('Seguridad', 'Puntuaciones')
+        return count
+
+    def limpiar_archivos(self) -> int:
+        self.cursor.execute("DELETE FROM Seguridad.Archivos")
+        count = self.cursor.rowcount
+        self.resetear_identidad('Seguridad', 'Archivos')
+        return count
+
+    def limpiar_sub_indicador_evidencias(self) -> int:
+        self.cursor.execute("DELETE FROM Seguridad.SubIndicadorEvidencias")
+        count = self.cursor.rowcount
+        self.resetear_identidad('Seguridad', 'SubIndicadorEvidencias')
+        return count
+
+    def limpiar_fecha_vencimiento_evidencias(self) -> int:
+        self.cursor.execute("DELETE FROM Seguridad.FechasVencimientoSubIndicadorEvidencia")
+        count = self.cursor.rowcount
+        self.resetear_identidad('Seguridad', 'FechasVencimientoSubIndicadorEvidencia')
+        return count
+
+    def limpiar_evidencias(self) -> int:
+        self.deshabilitar_constraint('Seguridad', 'Evidencias', 'FK_Evidencias_Evidencias_PreRequisitoId')
+        self.cursor.execute("DELETE FROM Seguridad.Evidencias")
+        count = self.cursor.rowcount
+        self.resetear_identidad('Seguridad', 'Evidencias')
+        self.habilitar_constraint('Seguridad', 'Evidencias', 'FK_Evidencias_Evidencias_PreRequisitoId')
+        return count
+
+    def limpiar_sub_indicadores(self) -> int:
+        self.cursor.execute("DELETE FROM Seguridad.SubIndicadores")
+        count = self.cursor.rowcount
+        self.resetear_identidad('Seguridad', 'SubIndicadores')
+        return count
+
+    def limpiar_indicadores(self) -> int:
+        self.cursor.execute("DELETE FROM Seguridad.Indicadores")
+        count = self.cursor.rowcount
+        self.resetear_identidad('Seguridad', 'Indicadores')
+        return count
+
+    def asegurar_catalogos_defecto(self):
+        """Asegura catálogos por defecto en Seguridad (TiposSubIndicador, TiposEvaluacion, EstadosArchivo)"""
+        # TiposSubIndicador por defecto
+        self.cursor.execute("SELECT COUNT(*) FROM Seguridad.TiposSubIndicador WHERE Id = 1")
         if self.cursor.fetchone()[0] == 0:
-            self.habilitar_identity_insert('Evidencia', 'TipoEvaluacion')
+            self.habilitar_identity_insert('Seguridad', 'TiposSubIndicador')
             self.cursor.execute("""
-                INSERT INTO Evidencia.TipoEvaluacion (Id, Nombre, CreatedAt, IsActive, IsDeleted)
-                VALUES (2, 'Automática', GETDATE(), 1, 0)
+                INSERT INTO Seguridad.TiposSubIndicador (Id, Codigo, Nombre, Descripcion, CreatedAt, IsActive, IsDeleted)
+                VALUES (1, 'TSI-01', 'General', 'SubIndicador Estándar', GETDATE(), 1, 0)
             """)
-            self.deshabilitar_identity_insert('Evidencia', 'TipoEvaluacion')
+            self.deshabilitar_identity_insert('Seguridad', 'TiposSubIndicador')
+
+        # TiposEvaluacion por defecto (1: Manual, 2: Automática)
+        self.cursor.execute("SELECT COUNT(*) FROM Seguridad.TiposEvaluacion WHERE Id = 1")
+        if self.cursor.fetchone()[0] == 0:
+            self.habilitar_identity_insert('Seguridad', 'TiposEvaluacion')
+            self.cursor.execute("""
+                INSERT INTO Seguridad.TiposEvaluacion (Id, Codigo, Nombre, Descripcion, CreatedAt, IsActive, IsDeleted)
+                VALUES (1, 'MANUAL', 'Manual', 'Evaluación manual', GETDATE(), 1, 0)
+            """)
+            self.deshabilitar_identity_insert('Seguridad', 'TiposEvaluacion')
+
+        self.cursor.execute("SELECT COUNT(*) FROM Seguridad.TiposEvaluacion WHERE Id = 2")
+        if self.cursor.fetchone()[0] == 0:
+            self.habilitar_identity_insert('Seguridad', 'TiposEvaluacion')
+            self.cursor.execute("""
+                INSERT INTO Seguridad.TiposEvaluacion (Id, Codigo, Nombre, Descripcion, CreatedAt, IsActive, IsDeleted)
+                VALUES (2, 'AUTO', 'Automática', 'Evaluación automática', GETDATE(), 1, 0)
+            """)
+            self.deshabilitar_identity_insert('Seguridad', 'TiposEvaluacion')
+
+        # EstadosArchivo por defecto (1: Cargado, 2: En Revision, 3: Aprobado)
+        estados = [
+            (1, 'CARGADO', 'Cargado', 'Archivo subido por la entidad'),
+            (2, 'EN_REVISION', 'En Revisión', 'En proceso de evaluación'),
+            (3, 'APROBADO', 'Aprobado', 'Evidencia aprobada y puntuada')
+        ]
+        for eid, cod, nom, desc in estados:
+            self.cursor.execute("SELECT COUNT(*) FROM Seguridad.EstadosArchivo WHERE Id = ?", eid)
+            if self.cursor.fetchone()[0] == 0:
+                self.habilitar_identity_insert('Seguridad', 'EstadosArchivo')
+                self.cursor.execute("""
+                    INSERT INTO Seguridad.EstadosArchivo (Id, Codigo, Nombre, Descripcion, CreatedAt, IsActive, IsDeleted)
+                    VALUES (?, ?, ?, ?, GETDATE(), 1, 0)
+                """, eid, cod, nom, desc)
+                self.deshabilitar_identity_insert('Seguridad', 'EstadosArchivo')
+
+    # ============================================================
     # UTILIDADES
     # ============================================================
     
     def habilitar_identity_insert(self, schema: str, tabla: str):
-        """Habilita inserción de IDs explícitos"""
         full_table = f"{schema}.{tabla}"
         self.cursor.execute(f"SET IDENTITY_INSERT {full_table} ON")
     
     def deshabilitar_identity_insert(self, schema: str, tabla: str):
-        """Deshabilita inserción de IDs explícitos"""
         full_table = f"{schema}.{tabla}"
         self.cursor.execute(f"SET IDENTITY_INSERT {full_table} OFF")
 
     def deshabilitar_constraint(self, schema: str, tabla: str, constraint: str):
         full_table = f"{schema}.{tabla}"
-        self.cursor.execute(f"ALTER TABLE {full_table} NOCHECK CONSTRAINT {constraint}")
+        try:
+            self.cursor.execute(f"ALTER TABLE {full_table} NOCHECK CONSTRAINT {constraint}")
+        except Exception as e:
+            print(f"Advertencia: No se pudo deshabilitar constraint {constraint} en {full_table}: {e}")
 
     def habilitar_constraint(self, schema: str, tabla: str, constraint: str):
         full_table = f"{schema}.{tabla}"
-        self.cursor.execute(f"ALTER TABLE {full_table} WITH CHECK CHECK CONSTRAINT {constraint}")
+        try:
+            self.cursor.execute(f"ALTER TABLE {full_table} WITH CHECK CHECK CONSTRAINT {constraint}")
+        except Exception as e:
+            print(f"Advertencia: No se pudo habilitar constraint {constraint} en {full_table}: {e}")
 
-    def limpiar_pregunta_revisiones(self) -> int:
-        """Elimina registros de Evidencia.PreguntaRevisiones para evitar FK conflict"""
-        self.cursor.execute("DELETE FROM Evidencia.PreguntaRevisiones")
-        count = self.cursor.rowcount
-        self.resetear_identidad('Evidencia', 'PreguntaRevisiones')
-        return count
+    def obtener_usuarios_existentes(self) -> Set[str]:
+        """Obtiene el conjunto de GUIDs de usuarios existentes en Usuario.Usuarios"""
+        try:
+            self.cursor.execute("SELECT CAST(Id AS NVARCHAR(36)) FROM Usuario.Usuarios WHERE IsDeleted = 0")
+            return {str(row[0]).upper() for row in self.cursor.fetchall() if row[0]}
+        except Exception as e:
+            print(f"Advertencia: No se pudieron leer usuarios existentes: {e}")
+            return set()
 
-    def limpiar_respuestas_revisiones(self) -> int:
-        """Elimina registros de Evidencia.RespuestasRevisiones para evitar FK conflict"""
-        self.cursor.execute("DELETE FROM Evidencia.RespuestasRevisiones")
-        count = self.cursor.rowcount
-        self.resetear_identidad('Evidencia', 'RespuestasRevisiones')
-        return count
-
-    def romper_dependencias_preguntas(self):
-        """Rompe la dependencia circular de GrupoPreguntaRevisiones con PreguntaRevisiones"""
-        self.cursor.execute("UPDATE Evidencia.GrupoPreguntaRevisiones SET PreguntaDependenciaId = NULL")
-
-    def limpiar_grupo_pregunta_revisiones(self) -> int:
-        """Elimina registros de Evidencia.GrupoPreguntaRevisiones"""
-        self.cursor.execute("DELETE FROM Evidencia.GrupoPreguntaRevisiones")
-        count = self.cursor.rowcount
-        self.resetear_identidad('Evidencia', 'GrupoPreguntaRevisiones')
-        return count
+    def obtener_primer_usuario_id(self) -> Optional[str]:
+        """Obtiene el primer GUID de usuario disponible en Usuario.Usuarios"""
+        try:
+            self.cursor.execute("SELECT TOP 1 CAST(Id AS NVARCHAR(36)) FROM Usuario.Usuarios WHERE IsActive = 1 AND IsDeleted = 0")
+            row = self.cursor.fetchone()
+            if row and row[0]:
+                return str(row[0])
+            self.cursor.execute("SELECT TOP 1 CAST(Id AS NVARCHAR(36)) FROM Usuario.Usuarios")
+            row = self.cursor.fetchone()
+            if row and row[0]:
+                return str(row[0])
+        except Exception as e:
+            print(f"Advertencia: Error al obtener usuario por defecto: {e}")
+        return None
 
     def resetear_identidad(self, schema: str, tabla: str, seed: int = 0):
-        """Resetea el contador de identidad de la tabla"""
         full_table = f"{schema}.{tabla}"
         try:
             self.cursor.execute(f"DBCC CHECKIDENT ('{full_table}', RESEED, {seed})")
         except Exception as e:
-            # Puede fallar si la tabla no tiene identity o permiso, loguear o ignorar
             print(f"Advertencia: No se pudo resetear identidad para {full_table}: {e}")

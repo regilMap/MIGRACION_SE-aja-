@@ -6,41 +6,69 @@ from typing import Optional, Any
 class DictMixin:
     def to_dict(self) -> dict:
         data = asdict(self)
-        # Convert datetime to ISO string
         for key, value in data.items():
             if isinstance(value, datetime):
                 data[key] = value.isoformat()
+            elif isinstance(value, bytes):
+                data[key] = None # Don't serialize raw bytes to json
         return data
 
     @classmethod
     def from_dict(cls, data: dict):
-        # Convert ISO string to datetime if needed
-        # This simple implementation assumes logic handles it or exact match
-        # For robustness, we could check specific fields, but standard constructors might suffice
-        # if logic passes correct types.
-        # However, JSON load returns strings.
         valid_data = {k: v for k, v in data.items() if k in cls.__annotations__}
         return cls(**valid_data)
 
 # ============================================================
-# ENTIDADES COMPARTIDAS / DESTINO (Mantenimiento Schema)
+# ENTIDADES DESTINO (Esquema Seguridad y Mantenimiento)
 # ============================================================
 
 @dataclass
 class TipoVencimiento(DictMixin):
-    TipoVencimientoId: int = None # Source
-    Id: int = None                # Destination
+    """Seguridad.TiposVencimiento"""
+    Id: int = None
+    Codigo: str = None
     Nombre: str = None
     Descripcion: str = None
-    Estado: str = None
     CreatedAt: datetime = None
     CreatedBy: str = None
+    UpdatedAt: datetime = None
+    UpdatedBy: str = None
     IsActive: bool = True
     IsDeleted: bool = False
 
 @dataclass
 class TiposSubIndicador(DictMixin):
+    """Seguridad.TiposSubIndicador"""
     Id: int = None
+    Codigo: str = None
+    Nombre: str = None
+    Descripcion: str = None
+    CreatedAt: datetime = None
+    CreatedBy: str = None
+    UpdatedAt: datetime = None
+    UpdatedBy: str = None
+    IsActive: bool = True
+    IsDeleted: bool = False
+
+@dataclass
+class TiposEvaluacion(DictMixin):
+    """Seguridad.TiposEvaluacion"""
+    Id: int = None
+    Codigo: str = None
+    Nombre: str = None
+    Descripcion: str = None
+    CreatedAt: datetime = None
+    CreatedBy: str = None
+    UpdatedAt: datetime = None
+    UpdatedBy: str = None
+    IsActive: bool = True
+    IsDeleted: bool = False
+
+@dataclass
+class EstadosArchivo(DictMixin):
+    """Seguridad.EstadosArchivo"""
+    Id: int = None
+    Codigo: str = None
     Nombre: str = None
     Descripcion: str = None
     CreatedAt: datetime = None
@@ -52,29 +80,33 @@ class TiposSubIndicador(DictMixin):
 
 @dataclass
 class Indicador(DictMixin):
+    """Seguridad.Indicadores"""
     Id: int = None
     Codigo: str = None
     Nombre: str = None
     Descripcion: str = None
-    TipoIndicadorId: int = None
+    Orden: int = 1
     Peso: float = 0.0
-    IsActive: bool = True
-    IsDeleted: bool = False
     CreatedAt: datetime = None
     CreatedBy: str = None
     UpdatedAt: datetime = None
     UpdatedBy: str = None
+    IsActive: bool = True
+    IsDeleted: bool = False
 
 @dataclass
 class SubIndicador(DictMixin):
-    Id: int = None              # Dest Id / Source IndicadorID
-    IndicadorId: int = None     # Dest IndicadorId / Source ibogId
-    TipoSubIndicadorId: int = None  # FK -> Mantenimiento.TiposSubIndicador
+    """Seguridad.SubIndicadores"""
+    Id: int = None                  # Dest Id / Source IndicadorID
+    IndicadorId: int = None         # Dest IndicadorId / Source ibogId
+    TipoSubIndicadorId: int = None  # FK -> Seguridad.TiposSubIndicador
+    TipoVencimientoId: int = None   # FK -> Seguridad.TiposVencimiento
     Codigo: str = None
     Nombre: str = None
     Descripcion: str = None
+    Orden: int = 1
     Peso: float = 0.0
-    Estado: str = None
+    UnidadResponsable: str = None
     CreatedAt: datetime = None
     CreatedBy: str = None
     UpdatedAt: datetime = None
@@ -82,19 +114,21 @@ class SubIndicador(DictMixin):
     IsActive: bool = True
     IsDeleted: bool = False
     
-    # Source specific fields (optional)
+    # Source specific fields for migration pipeline logic
     DepartamentoID: int = None
     ValorTotal: str = None
     Color: str = None
     Aplica: str = None
     ibogId: int = None
+    Estado: str = None
 
 # ============================================================
-# ENTIDADES SOLO FUENTE
+# ENTIDADES SOLO FUENTE (dbo.* en SISMAPV1DB_SG)
 # ============================================================
 
 @dataclass
 class Ibog(DictMixin):
+    """dbo.Ibog (Fuente)"""
     IbogID: int
     Codigo: str = None
     Descripcion: str = None
@@ -104,16 +138,12 @@ class Ibog(DictMixin):
     BurocraciaCero: bool = None
     Estado: str = None
 
-# ============================================================
-# ENTIDADES MIGRACIÓN EVIDENCIAS
-# ============================================================
-
 @dataclass
 class EvidenciaSource(DictMixin):
     """dbo.Evidencia (Fuente)"""
     EvidenciaID: int
     Codigo: str = None
-    Descipcion: str = None # Note typo in source schema? 'Descipcion' based on schema dump? Checking schema dump... it says 'Descipcion'.
+    Descipcion: str = None
     NombreArchivo: str = None
     Prerequisito: str = None
     IndicadorID: int = None
@@ -126,141 +156,173 @@ class EvidenciaSource(DictMixin):
     Estado: str = None
 
 @dataclass
+class CargaEvidenciaSource(DictMixin):
+    """
+    Join de: CargaEvidencia, ArchivoCargaEvidencia, RepositorioDeEnvio
+    """
+    CargaEvidenciaID: int
+    ArchivoCargaEvidenciaID: int = None
+    IndicadorID: int = None
+    EvidenciaID: int = None
+    OrganismoID: int = None
+    NombreArchivo: str = None
+    Puntuacion: float = None
+    FechaArchivo: datetime = None
+    UsuarioID: str = None
+
+@dataclass
+class RevisionSource(DictMixin):
+    """Fuente para Revisiones"""
+    RevisionID: int
+    EvidenciaID: int
+    Comentario: str = None
+    UsuarioID: str = None
+    FechaRevision: datetime = None
+    EstadoRevision: str = None
+
+@dataclass
+class NoticiaSource(DictMixin):
+    """dbo.Noticias (Fuente)"""
+    ID: int
+    Descripcion: str = None
+    Fecha: datetime = None
+    Imagen: str = None
+    Documento: str = None
+    UsuarioID: str = None
+    Estado: str = None
+
+# ============================================================
+# ENTIDADES DESTINO EVIDENCIA Y PUNTUACION (Esquema Seguridad)
+# ============================================================
+
+@dataclass
 class EvidenciaDest(DictMixin):
-    """Evidencia.Evidencias (Destino)"""
+    """Seguridad.Evidencias"""
     Id: int = None
+    Codigo: str = None
     Nombre: str = None
     Descripcion: str = None
     Valor: float = 0.0
-    PreRequisitoId: int = None
-    CreatedAt: datetime = None
-    CreatedBy: str = None
-    IsActive: bool = True
-    IsDeleted: bool = False
     AplicaVencimiento: bool = False
     CantidadDias: int = None
     FechaVencimiento: datetime = None
-    Codigo: str = None
-
-@dataclass
-class FechaVencimientoSubIndicadorEvidencia(DictMixin):
-    """Evidencia.FechaVencimientoSubIndicadorEvidencias (Destino)"""
-    Id: int = None
-    TipoVencimientoId: int = None
-    FechaVencimiento: datetime = None
-    PeriodicidadDias: int = None
-    CreatedAt: datetime = None
-    CreatedBy: str = None
-    IsActive: bool = True
-    IsDeleted: bool = False
-
-@dataclass
-class SubIndicadorEvidencia(DictMixin):
-    """Evidencia.SubIndicadorEvidencias (Destino)"""
-    Id: int = None
-    SubIndicadorId: int = None
-    EvidenciaId: int = None
-    FechaVencimientoSubIndicadorEvidenciaId: int = None # Link to the new date table
-    TipoEvaluacionId: int = 1 # Default or mapped
-    FechaVenciento: datetime = None # Redundant or required? Checking schema... 'FechaVenciento' exists.
-    CreatedAt: datetime = None
-    CreatedBy: str = None
-    IsActive: bool = True
-    IsDeleted: bool = False
-
-@dataclass
-class ArchivoDest(DictMixin):
-    """Evidencia.Archivos (Destino)"""
-    Id: int = None
-    CoedomId: int = None
-    SubIndicadorEvidenciaId: int = None
-    NombreOriginal: str = None
-    ArchivoBinario: bytes = None # or str/base64 depending on handler
-    EstadoArchivoId: int = None
-    EvidenciaId: int = None
+    PreRequisitoId: int = None
     CreatedAt: datetime = None
     CreatedBy: str = None
     UpdatedAt: datetime = None
     UpdatedBy: str = None
     IsActive: bool = True
     IsDeleted: bool = False
-    RowGuid: str = None # UniqueIdentifier
-    TipoAlmacenamiento: int = None
-    RutaExterna: str = None
-
-# ============================================================
-# ENTIDADES PUNTUACION / REVISION (FUENTE & DESTINO)
-# ============================================================
 
 @dataclass
-class CargaEvidenciaSource(DictMixin):
-    """
-    Join de:
-    - CargaEvidencia (ce)
-    - ArchivoCargaEvidencia (ace)
-    - RepositorioDeEnvio (re)
-    """
-    CargaEvidenciaID: int
-    ArchivoCargaEvidenciaID: int
-    #RepositorioDeEnvioID: int # Removed
-    IndicadorID: int # Para filtrar
-    EvidenciaID: int = None
-    OrganismoID: int = None # Para CoedomId
-    NombreArchivo: str = None
-    Puntuacion: float = None
-    FechaArchivo: datetime = None
-    # Campos adicionales para Revision si estan aqui?
-    # Asumimos que la revision esta separada o vinculada aqui.
-
-@dataclass
-class PuntuacionDest(DictMixin):
-    """Evidencia.Puntuacion (Destino)"""
+class FechaVencimientoSubIndicadorEvidencia(DictMixin):
+    """Seguridad.FechasVencimientoSubIndicadorEvidencia"""
     Id: int = None
-    ArchivoEvidenciaId: int = None
-    PuntuadorUsuarioId: str = None # Guid
-    Calificacion: float = 0.0
+    TipoVencimientoId: int = None
+    FechaVencimiento: datetime = None
+    PeriodicidadDias: int = None
     CreatedAt: datetime = None
     CreatedBy: str = None
+    UpdatedAt: datetime = None
+    UpdatedBy: str = None
     IsActive: bool = True
     IsDeleted: bool = False
 
 @dataclass
-class RevisionSource(DictMixin):
-    """
-    Fuente para Revisiones. 
-    Nombre tabla pendiente de confirmación.
-    """
-    RevisionID: int
-    EvidenciaID: int # Vinculo
-    Comentario: str
-    UsuarioID: int # O nombre usuario
-    FechaRevision: datetime
-    EstadoRevision: str
+class SubIndicadorEvidencia(DictMixin):
+    """Seguridad.SubIndicadorEvidencias"""
+    Id: int = None
+    SubIndicadorId: int = None
+    EvidenciaId: int = None
+    FechaVenciento: datetime = None
+    TipoEvaluacionId: int = 1
+    FechaVencimientoSubIndicadorEvidenciaId: int = None
+    CreatedAt: datetime = None
+    CreatedBy: str = None
+    UpdatedAt: datetime = None
+    UpdatedBy: str = None
+    IsActive: bool = True
+    IsDeleted: bool = False
+
+@dataclass
+class ArchivoDest(DictMixin):
+    """Seguridad.Archivos"""
+    Id: int = None
+    CoedomId: int = None
+    SubIndicadorEvidenciaId: int = None
+    NombreOriginal: str = None
+    ArchivoBinario: bytes = None
+    RowGuid: str = None
+    EstadoArchivoId: int = None
+    TipoAlmacenamiento: int = None
+    RutaExterna: str = None
+    CreatedAt: datetime = None
+    CreatedBy: str = None
+    UpdatedAt: datetime = None
+    UpdatedBy: str = None
+    IsActive: bool = True
+    IsDeleted: bool = False
+
+@dataclass
+class PuntuacionDest(DictMixin):
+    """Seguridad.Puntuaciones"""
+    Id: int = None
+    ArchivoEvidenciaId: int = None
+    PuntuadorUsuarioId: str = None # UniqueIdentifier (GUID)
+    Calificacion: float = 0.0
+    Observacion: str = None
+    CreatedAt: datetime = None
+    CreatedBy: str = None
+    UpdatedAt: datetime = None
+    UpdatedBy: str = None
+    IsActive: bool = True
+    IsDeleted: bool = False
 
 @dataclass
 class RevisionEvidenciaDest(DictMixin):
-    """Evidencia.RevisionEvidencias (Destino)"""
+    """Seguridad.RevisionesEvidencia"""
     Id: int = None
     ArchivoEvidenciaId: int = None
     FechaRevisionConcluida: datetime = None
-    UsuarioId: str = None # Guid
+    UsuarioId: str = None # UniqueIdentifier (GUID)
+    RevisionCoedomId: int = None
     EstadoDadoId: int = None
     NivelRevisionEvidencia: int = None
-    RevisionCoedomId: int = None
     CreatedAt: datetime = None
     CreatedBy: str = None
+    UpdatedAt: datetime = None
+    UpdatedBy: str = None
     IsActive: bool = True
     IsDeleted: bool = False
 
 @dataclass
 class ComentarioRevisionDest(DictMixin):
-    """Evidencia.ComentarioRevisionEvidencias (Destino)"""
+    """Seguridad.ComentariosRevisionEvidencia"""
     Id: int = None
     RevisionEvidenciaId: int = None
+    UsuarioId: str = None # UniqueIdentifier (GUID)
     Observaciones: str = None
-    UsuarioId: str = None
     CreatedAt: datetime = None
     CreatedBy: str = None
+    UpdatedAt: datetime = None
+    UpdatedBy: str = None
+    IsActive: bool = True
+    IsDeleted: bool = False
+
+@dataclass
+class NoticiaDest(DictMixin):
+    """Noticias.Noticia"""
+    Id: int = None
+    Titulo: str = None
+    Descripcion: str = None
+    TipoNoticiaId: int = 1
+    EsDestacada: bool = False
+    Publicado: bool = True
+    VisiblePublico: bool = True
+    CreatedAt: datetime = None
+    CreatedBy: str = None
+    UpdatedAt: datetime = None
+    UpdatedBy: str = None
     IsActive: bool = True
     IsDeleted: bool = False
 
@@ -271,6 +333,8 @@ class ComentarioRevisionDest(DictMixin):
 ENTITY_MAP = {
     'TipoVencimiento': TipoVencimiento,
     'TiposSubIndicador': TiposSubIndicador,
+    'TiposEvaluacion': TiposEvaluacion,
+    'EstadosArchivo': EstadosArchivo,
     'Indicador': Indicador,
     'SubIndicador': SubIndicador,
     'Ibog': Ibog,
@@ -284,4 +348,6 @@ ENTITY_MAP = {
     'RevisionSource': RevisionSource,
     'RevisionEvidenciaDest': RevisionEvidenciaDest,
     'ComentarioRevisionDest': ComentarioRevisionDest,
+    'NoticiaSource': NoticiaSource,
+    'NoticiaDest': NoticiaDest,
 }

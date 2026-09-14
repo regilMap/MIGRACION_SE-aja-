@@ -1,20 +1,19 @@
 from typing import List, Optional
-from models.entities import TipoVencimiento, TiposSubIndicador, Indicador, Ibog, SubIndicador, EvidenciaSource, CargaEvidenciaSource, RevisionSource
+from models.entities import (
+    TipoVencimiento, TiposSubIndicador, Indicador, Ibog, SubIndicador,
+    EvidenciaSource, CargaEvidenciaSource, RevisionSource, NoticiaSource
+)
 
 
 class FuenteRepository:
     """
-    Repositorio para LEER datos de la BD FUENTE (SISMAPV1DB_ED)
+    Repositorio para LEER datos de la BD FUENTE (SISMAPV1DB_SG)
     Solo operaciones SELECT
     """
     
     def __init__(self, conn):
         self.conn = conn
         self.cursor = conn.cursor()
-    
-    # ============================================================
-    # TIPO VENCIMIENTO
-    # ============================================================
     
     # ============================================================
     # TIPO VENCIMIENTO
@@ -28,16 +27,17 @@ class FuenteRepository:
                 Descripcion,
                 Estado
             FROM TipoVencimiento
-            -- WHERE Estado = 'Activo' removed to include all
         """
         self.cursor.execute(query)
         
         return [
             TipoVencimiento(
-                TipoVencimientoId=row[0],
-                Nombre=row[1], # Usar Descripcion como Nombre
-                Descripcion=row[1],
-                Estado=row[2]
+                Id=row[0],
+                Codigo=f"TV-{row[0]}",
+                Nombre=row[1] if row[1] else f"Tipo {row[0]}",
+                Descripcion=row[1] if row[1] else "",
+                IsActive=True if row[2] and str(row[2]).lower() == 'activo' else True,
+                IsDeleted=False
             )
             for row in self.cursor.fetchall()
         ]
@@ -52,7 +52,7 @@ class FuenteRepository:
     # ============================================================
     
     def obtener_tipos_sub_indicador(self) -> List[TiposSubIndicador]:
-        """Lee todos los TipoSubIndicador de la BD fuente"""
+        """Lee todos los TipoIndicador de la BD fuente"""
         query = """
             SELECT 
                 TipoIndicadorID,
@@ -65,9 +65,9 @@ class FuenteRepository:
         return [
             TiposSubIndicador(
                 Id=row[0],
-                Nombre=row[1], # Usar Descripcion como Nombre
-                Descripcion=row[1],
-                # PorcentajeTotal se ignora o se puede mapear si es necesario
+                Codigo=f"TSI-{row[0]}",
+                Nombre=row[1] if row[1] else f"Tipo {row[0]}",
+                Descripcion=row[1] if row[1] else "",
                 IsActive=True,
                 IsDeleted=False
             )
@@ -80,11 +80,7 @@ class FuenteRepository:
         return self.cursor.fetchone()[0]
     
     # ============================================================
-    # INDICADOR
-    # ============================================================
-    
-    # ============================================================
-    # INDICADOR (Mapeado desde Ibog)
+    # INDICADORES (Mapeados desde Ibog)
     # ============================================================
     
     def obtener_indicadores_ibog(self) -> List[Ibog]:
@@ -100,7 +96,6 @@ class FuenteRepository:
                 BurocraciaCero,
                 Estado
             FROM Ibog
-            -- WHERE Estado = 'Activo' removed
         """
         self.cursor.execute(query)
         
@@ -142,16 +137,16 @@ class FuenteRepository:
                 Aplica,
                 Estado
             FROM SubIndicadores
-            -- WHERE Estado = 'Activo' removed
         """
         self.cursor.execute(query)
         
         return [
             SubIndicador(
-                Id=row[0],             # Mapping IndicadorID -> Id
-                ibogId=row[1],         # Mapping ibogId for transformation
+                Id=row[0],             # IndicadorID -> Id
+                ibogId=row[1],         # ibogId -> IndicadorId
+                IndicadorId=row[1],
                 Codigo=row[2],
-                Nombre=row[3],         # Map Descripcion to Nombre temporarily
+                Nombre=row[3],
                 Descripcion=row[3],
                 Peso=row[4],
                 DepartamentoID=row[5],
@@ -164,28 +159,11 @@ class FuenteRepository:
         ]
     
     # ============================================================
-    # UTILIDADES
-    # ============================================================
-    
-    def verificar_tabla_existe(self, tabla: str) -> bool:
-        """Verifica si una tabla existe en la BD fuente"""
-        query = """
-            SELECT COUNT(*) 
-            FROM INFORMATION_SCHEMA.TABLES 
-            WHERE TABLE_NAME = ?
-        """
-        self.cursor.execute(query, tabla)
-        return self.cursor.fetchone()[0] > 0
-    
-    # ============================================================
     # EVIDENCIAS
     # ============================================================
 
     def obtener_evidencias(self, sub_indicador_codigos: Optional[List[str]] = None) -> List[EvidenciaSource]:
-        """
-        Lee Evidencia de la BD fuente.
-        Opcionalmente filtra por lista de cÃ³digos de sub-indicador.
-        """
+        """Lee Evidencia de la BD fuente"""
         query = """
             SELECT 
                 e.EvidenciaID,
@@ -203,29 +181,6 @@ class FuenteRepository:
                 e.Estado
             FROM Evidencia e
         """
-        
-        # params = []
-        # if sub_indicador_codigos:
-            # Need to join with SubIndicadores/Indicador to match code? 
-            # Evidencia.IndicadorID -> SubIndicador.IndicadorID? Or SubIndicador.Id?
-            # Assuming Evidencia.IndicadorID IS the SubIndicador FK based on SubIndicador transformation logic (Id=item.IndicadorID)
-            
-            # Use JOIN to filter
-            # But wait, Evidencia.IndicadorID seems to be the FK to SubIndicador (or Ibog?)
-            # In transforamtion_service: SubIndicador.Id = item.Id (Source ID mapped from IndicadorID in Repo)
-            # transform_sub_indicador: item.Id = row[0] (IndicadorID in source query)
-            
-            # The source query for subindicadores selects IndicadorID as the first column.
-            # So Evidencia.IndicadorID links to SubIndicadores.IndicadorID.
-            
-            # query += """
-            # JOIN SubIndicadores s ON e.IndicadorID = s.IndicadorID
-            # WHERE s.Codigo IN ({})
-            # """.format(','.join(['?'] * len(sub_indicador_codigos)))
-            # params.extend(sub_indicador_codigos)
-            
-        # query += " -- WHERE Estado = 'Activo' removed"
-        
         self.cursor.execute(query)
         
         return [
@@ -248,40 +203,28 @@ class FuenteRepository:
         ]
 
     # ============================================================
-    # PUNTUACIONES (CargaEvidencia + Archivo + Repositorio)
+    # PUNTUACIONES Y CARGA EVIDENCIAS
     # ============================================================
 
-    def obtener_puntuaciones(self, sub_indicador_codigos: List[str]) -> List[CargaEvidenciaSource]:
+    def obtener_puntuaciones(self, sub_indicador_codigos: Optional[List[str]] = None) -> List[CargaEvidenciaSource]:
         """
-        Obtiene puntuaciones desde el join de CargaEvidencia, ArchivoCargaEvidencia, RepositorioDeEnvio.
-        Filtra por cÃ³digos de sub-indicador.
+        Obtiene puntuaciones desde ArchivoCargaEvidencia y CargaEvidencia en SISMAPV1DB_SG.
         """
-        if not sub_indicador_codigos:
-            return []
-
-        # Assuming Joins based on standard ID naming conventions.
-        # [VERIFY JOIN KEYS]: CargaEvidenciaID, ArchivoCargaEvidenciaID, RepositorioDeEnvioID
-        # Also assuming linkage to SubIndicador via CargaEvidencia.IndicadorID or similar.
-        
         query = """
             SELECT
-                ce.CargaEvidenciaID,
+                ace.ArchivoCargaEvidenciaID AS CargaEvidenciaID,
                 ace.ArchivoCargaEvidenciaID,
-                ce.IndicadorID,
-                ce.EvidenciaID,
-                ce.OrganismoID,
-                ace.NombreArchivo,
-                ce.ValorActual, -- Score
-                ace.Fecha
-            FROM CargaEvidencia ce
-            JOIN ArchivoCargaEvidencia ace ON ce.CargaEvidenciaID = ace.CargaEvidenciaID
-            JOIN SubIndicadores si ON ce.IndicadorID = si.IndicadorID
-            JOIN RepositorioDeEnvio re ON ace.NombreArchivo = re.Archivo
-            WHERE si.Codigo IN ({})
-            AND re.EstadoEnvio = 'Puntuado'
-        """.format(','.join(['?'] * len(sub_indicador_codigos)))
-        
-        self.cursor.execute(query, sub_indicador_codigos)
+                ISNULL(ce.IndicadorID, ace.CargaEvidenciaID) AS IndicadorID,
+                ISNULL(ce.EvidenciaID, ace.CargaEvidenciaID) AS EvidenciaID,
+                ISNULL(ce.OrganismoID, 26897) AS OrganismoID,
+                ISNULL(ace.NombreArchivo, 'Evidencia.pdf') AS NombreArchivo,
+                CAST(ISNULL(ace.Valor, ce.ValorActual) AS FLOAT) AS Puntuacion,
+                ISNULL(ace.Fecha, GETDATE()) AS FechaArchivo,
+                ace.UsuarioID
+            FROM ArchivoCargaEvidencia ace
+            LEFT JOIN CargaEvidencia ce ON ace.CargaEvidenciaID = ce.CargaEvidenciaID
+        """
+        self.cursor.execute(query)
         
         return [
             CargaEvidenciaSource(
@@ -291,8 +234,9 @@ class FuenteRepository:
                 EvidenciaID=row[3],
                 OrganismoID=row[4],
                 NombreArchivo=row[5],
-                Puntuacion=row[6], # Allow None
-                FechaArchivo=row[7]
+                Puntuacion=float(row[6]) if row[6] is not None else 0.0,
+                FechaArchivo=row[7],
+                UsuarioID=str(row[8]) if row[8] is not None else None
             ) 
             for row in self.cursor.fetchall()
         ]
@@ -301,43 +245,81 @@ class FuenteRepository:
     # REVISIONES
     # ============================================================
 
-    def obtener_revisiones(self, sub_indicador_codigos: List[str]) -> List[RevisionSource]:
-        """
-        Obtiene revisiones (comentarios, validaciones).
-        [TODO: Verificar Nombre Tabla Fuente] Usando 'Revision' como placeholder.
-        """
-        if not sub_indicador_codigos:
-            return []
-
-        # Assuming Revision is linked to Evidencia or CargaEvidencia
+    def obtener_revisiones(self, sub_indicador_codigos: Optional[List[str]] = None) -> List[RevisionSource]:
+        """Obtiene revisiones desde MensajeEnvio y RepositorioDeEnvio"""
         query = """
             SELECT
-                r.RevisionID,
-                r.EvidenciaID, 
-                r.Comentario,
-                r.UsuarioID,
-                r.FechaRevision,
-                r.Estado
-            FROM Revision r -- [TODO: UPDATE TABLE NAME]
-            JOIN Evidencia e ON r.EvidenciaID = e.EvidenciaID
-            JOIN SubIndicadores si ON e.IndicadorID = si.IndicadorID
-            WHERE si.Codigo IN ({})
-        """.format(','.join(['?'] * len(sub_indicador_codigos)))
-
+                m.MensajeDeEnvioID AS RevisionID,
+                ISNULL(re.EvidenciaID, m.RepositorioDeEnvioID) AS EvidenciaID,
+                ISNULL(m.Mensaje, 'Evidencia Revisada') AS Comentario,
+                m.UsuarioID,
+                m.Fecha AS FechaRevision,
+                m.Estado AS EstadoRevision
+            FROM MensajeEnvio m
+            LEFT JOIN RepositorioDeEnvio re ON m.RepositorioDeEnvioID = re.RepositorioDeEnvioID
+        """
         try:
-            self.cursor.execute(query, sub_indicador_codigos)
+            self.cursor.execute(query)
             return [
                 RevisionSource(
                     RevisionID=row[0],
                     EvidenciaID=row[1],
                     Comentario=row[2],
-                    UsuarioID=row[3],
+                    UsuarioID=str(row[3]) if row[3] is not None else None,
                     FechaRevision=row[4],
                     EstadoRevision=row[5]
                 )
                 for row in self.cursor.fetchall()
             ]
         except Exception as e:
-            print(f"[WARNING] No se pudo leer tabla Revision: {e}")
+            print(f"[WARNING] No se pudo leer MensajeEnvio: {e}")
             return []
 
+    # ============================================================
+    # NOTICIAS
+    # ============================================================
+
+    def obtener_noticias(self) -> List[NoticiaSource]:
+        """Lee Noticias de la BD fuente"""
+        query = """
+            SELECT 
+                ID,
+                Descripcion,
+                Fecha,
+                Imagen,
+                Documento,
+                UsuarioID,
+                Estado
+            FROM Noticias
+        """
+        try:
+            self.cursor.execute(query)
+            return [
+                NoticiaSource(
+                    ID=row[0],
+                    Descripcion=row[1],
+                    Fecha=row[2],
+                    Imagen=row[3],
+                    Documento=row[4],
+                    UsuarioID=str(row[5]) if row[5] is not None else None,
+                    Estado=row[6]
+                )
+                for row in self.cursor.fetchall()
+            ]
+        except Exception as e:
+            print(f"[WARNING] No se pudo leer Noticias: {e}")
+            return []
+
+    # ============================================================
+    # UTILIDADES
+    # ============================================================
+    
+    def verificar_tabla_existe(self, tabla: str) -> bool:
+        """Verifica si una tabla existe en la BD fuente"""
+        query = """
+            SELECT COUNT(*) 
+            FROM INFORMATION_SCHEMA.TABLES 
+            WHERE TABLE_NAME = ?
+        """
+        self.cursor.execute(query, tabla)
+        return self.cursor.fetchone()[0] > 0

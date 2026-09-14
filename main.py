@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Migración de datos: SISMAPV1DB_ED → SISMAP_EDUCACION_M
+Migración de datos: SISMAPV1DB_SG → SISMAP_SEGURIDAD
 
 Uso:
     python main.py                    # Migración completa (extrae + carga)
@@ -17,7 +17,7 @@ from services.migration_service import MigrationService
 
 def main():
     # Argumentos
-    parser = argparse.ArgumentParser(description='Migración de base de datos')
+    parser = argparse.ArgumentParser(description='Migración de base de datos SISMAP Seguridad')
     parser.add_argument('--solo-extraer', action='store_true', 
                         help='Solo extrae datos a JSON sin cargar')
     parser.add_argument('--solo-cargar', type=str, metavar='CARPETA',
@@ -26,11 +26,13 @@ def main():
                         help='Limpia tablas destino antes de cargar')
     parser.add_argument('--sin-confirmar', action='store_true',
                         help='No pide confirmación antes de cargar')
+    parser.add_argument('--codigos', nargs='+',
+                        help='Lista opcional de códigos de sub-indicador específicos a migrar')
     
     args = parser.parse_args()
     
     print("=" * 60)
-    print("  MIGRACIÓN: SISMAPV1DB_ED → SISMAP_EDUCACION_M")
+    print("  MIGRACIÓN: SISMAPV1DB_SG → SISMAP_SEGURIDAD")
     print("=" * 60)
     
     # Conectar
@@ -41,14 +43,14 @@ def main():
     if not args.solo_cargar:
         conn_fuente = conectar_fuente()
         if not conn_fuente:
-            print("✗ No se pudo conectar a BD FUENTE")
+            print("✗ No se pudo conectar a BD FUENTE (SISMAPV1DB_SG)")
             return 1
     
     # Solo extraer no necesita conexión destino
     if not args.solo_extraer:
         conn_destino = conectar_destino()
         if not conn_destino:
-            print("✗ No se pudo conectar a BD DESTINO")
+            print("✗ No se pudo conectar a BD DESTINO (SISMAP_SEGURIDAD)")
             if conn_fuente:
                 conn_fuente.close()
             return 1
@@ -69,13 +71,14 @@ def main():
         else:
             # Migración completa
             exito = service.ejecutar_migracion(
+                sub_indicador_codigos=args.codigos,
                 limpiar_antes=args.limpiar,
                 confirmar=not args.sin_confirmar
             )
             if not exito:
                 return 1
         
-        print("\n✓ Proceso completado")
+        print("\n✓ Proceso completado exitosamente")
         return 0
         
     except KeyboardInterrupt:

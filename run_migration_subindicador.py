@@ -22,15 +22,25 @@ def main():
         return
 
     try:
-        # Fetch default user for Puntuacion
         cursor = conn_destino.cursor()
-        cursor.execute("SELECT TOP 1 Id FROM Usuario.Usuarios")
-        row = cursor.fetchone()
-        if not row:
-            print("ERROR: No se encontro ningun usuario en DESTINO (Usuario.Usuarios) para asignar scores.")
-            return
-        puntuador_id = str(row[0])
-        print(f"Usando PuntuadorUsuarioId: {puntuador_id}")
+        puntuador_id = None
+        try:
+            cursor.execute("SELECT TOP 1 CAST(Id AS NVARCHAR(36)) FROM Usuario.Usuarios WHERE IsActive = 1 AND IsDeleted = 0")
+            row = cursor.fetchone()
+            if row and row[0]:
+                puntuador_id = str(row[0])
+            else:
+                cursor.execute("SELECT TOP 1 CAST(Id AS NVARCHAR(36)) FROM Usuario.Usuarios")
+                row = cursor.fetchone()
+                if row and row[0]:
+                    puntuador_id = str(row[0])
+        except Exception as e:
+            print(f"Advertencia al consultar usuarios: {e}")
+
+        if puntuador_id:
+            print(f"Usando PuntuadorUsuarioId: {puntuador_id}")
+        else:
+            print("Aviso: No se encontró usuario en DESTINO. Se utilizará asignación por defecto.")
         
         service = MigrationService(conn_fuente, conn_destino)
         # Pass codigos to execute
